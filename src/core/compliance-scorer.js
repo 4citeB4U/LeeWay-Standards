@@ -138,7 +138,7 @@ function checkPlacement(filePath, header) {
     path.includes('/examples/') ||
     path.startsWith('examples/') ||
     path.includes('/cli/') ||
-    /(?:^|\/)index\.[a-z]+$/.test(path)
+    /(?:^|\/)index\.\w+$/.test(path)
   ) {
     return true;
   }
