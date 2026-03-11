@@ -67,7 +67,7 @@ export const REGIONS = {
     label: 'Utilities',
     description: 'Utility functions, formatters, helpers, and shared tools',
     color: '#6B7280',
-    paths: ['utils', 'util', 'helpers', 'helpers', 'shared', 'common', 'tools'],
+    paths: ['utils', 'util', 'helpers', 'shared', 'common', 'tools'],
   },
   MCP: {
     label: 'Multi-Component Processing',

@@ -66,7 +66,7 @@ export class ImportAgent {
       const importPath = importMatch[1];
 
       if (importPath.startsWith('.') && !importPath.includes('.js') && !importPath.includes('.ts')
-          && !importPath.includes('/') === false && moduleType === 'esm') {
+          && importPath.includes('/') && moduleType === 'esm') {
         const hasExtension = /\.[a-z]+$/.test(importPath);
         if (!hasExtension) {
           suggestions.push(`Line ${i + 1}: ESM local imports should include file extension: "${importPath}" → "${importPath}.js"`);
