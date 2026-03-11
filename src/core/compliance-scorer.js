@@ -133,6 +133,16 @@ function checkPlacement(filePath, header) {
   const path = filePath.toLowerCase().replace(/\\/g, '/');
   const region = header.region.split('.')[0];
 
+  // Examples, CLI entry points, and root-level index files are exempt from strict placement rules
+  if (
+    path.includes('/examples/') ||
+    path.startsWith('examples/') ||
+    path.includes('/cli/') ||
+    /(?:^|\/)index\.[a-z]+$/.test(path)
+  ) {
+    return true;
+  }
+
   const regionPathMap = {
     UI: ['components', 'pages', 'layouts', 'ui', 'views'],
     CORE: ['core', 'sdk', 'lib', 'runtime'],
