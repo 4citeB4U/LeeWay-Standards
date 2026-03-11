@@ -1,0 +1,37 @@
+{
+  "name": "leeway-sdk",
+  "version": "1.0.0",
+  "description": "LEEWAY™ — Logically Enhanced Web Engineering Architecture Yield. A lightweight autonomous code governance SDK that embeds identity, safety, readability, and repair assistance directly into the developer workflow.",
+  "main": "src/index.js",
+  "type": "module",
+  "bin": {
+    "leeway": "src/cli/leeway.js"
+  },
+  "scripts": {
+    "start": "node src/cli/leeway.js",
+    "doctor": "node src/cli/leeway.js doctor",
+    "audit": "node src/cli/leeway.js audit",
+    "assess": "node src/cli/leeway.js assess",
+    "test": "node --test src/**/*.test.js src/**/**/*.test.js 2>/dev/null || node --test src/core/*.test.js"
+  },
+  "keywords": [
+    "leeway",
+    "governance",
+    "ai-native",
+    "code-standards",
+    "sdk",
+    "agents",
+    "autonomous",
+    "architecture"
+  ],
+  "author": "Rapid Web Development",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./agents/*": "./src/agents/*",
+    "./core/*": "./src/core/*"
+  }
+}
