@@ -54,7 +54,7 @@ const BANNER = `
   ██║     ██╔══╝  ██╔══╝  ██║███╗██║██╔══██║  ╚██╔╝
   ███████╗███████╗███████╗╚███╔███╔╝██║  ██║   ██║
   ╚══════╝╚══════╝╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝
-  LEEWAY™ v1.0.0 — Autonomous Code Governance SDK
+  LEEWAY™ v1.0.1 — Autonomous Code Governance SDK
 `;
 
 const COMMANDS = {

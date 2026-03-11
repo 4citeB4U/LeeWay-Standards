@@ -53,7 +53,7 @@ export class RegistryAgent {
    */
   async build() {
     const registry = {
-      version: '1.0.0',
+      version: '1.0.1',
       built: new Date().toISOString(),
       rootDir: this.rootDir,
       files: {},

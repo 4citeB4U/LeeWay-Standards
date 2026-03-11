@@ -2,7 +2,7 @@
 
 ## The Autonomous Code Governance Framework
 
-**LEEWAY™ (Logically Enhanced Web Engineering Architecture Yield)** is a software development standard that transforms codebases into **self-describing, auditable, AI-readable systems**.
+**LEEWAY™ (Logically Enhanced Engineering Web Architecture Yield)** is a software development standard that transforms codebases into **self-describing, auditable, AI-readable systems**.
 
 The **LEEWAY SDK** is a lightweight agent platform that embeds governance, safety, readability, and repair assistance directly into the developer workflow — without requiring a heavy LLM runtime.
 
@@ -10,33 +10,17 @@ The **LEEWAY SDK** is a lightweight agent platform that embeds governance, safet
 
 ## Quick Start
 
+### Install (npm — after publishing)
 ```bash
-# Install
 npm install leeway-sdk
-
-# Run a full system diagnosis
 npx leeway doctor
+```
 
-# Check compliance across all files
+### Install (GitHub — works immediately)
+```bash
+npm install github:4citeB4U/LeeWay-Standards#main
+npx leeway doctor
 npx leeway audit
-
-# Survey what headers exist
-npx leeway assess
-
-# Add missing headers (dry run)
-npx leeway align
-
-# Apply missing headers
-npx leeway align --apply
-
-# Scan for hardcoded secrets
-npx leeway scan
-
-# Build the file/tag registry
-npx leeway registry
-
-# Generate architecture map
-npx leeway map
 ```
 
 ---

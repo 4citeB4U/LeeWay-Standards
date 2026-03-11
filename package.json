@@ -1,7 +1,7 @@
 {
   "name": "leeway-sdk",
-  "version": "1.0.0",
-  "description": "LEEWAY™ — Logically Enhanced Web Engineering Architecture Yield. A lightweight autonomous code governance SDK that embeds identity, safety, readability, and repair assistance directly into the developer workflow.",
+  "version": "1.0.1",
+  "description": "LEEWAY™ — Logically Enhanced Engineering Web Architecture Yield. A lightweight autonomous code governance SDK that embeds identity, safety, readability, and repair assistance directly into the developer workflow.",
   "main": "src/index.js",
   "type": "module",
   "bin": {
@@ -18,9 +18,11 @@
     "leeway",
     "governance",
     "ai-native",
+    "mcp",
+    "agents",
+    "llm",
     "code-standards",
     "sdk",
-    "agents",
     "autonomous",
     "architecture"
   ],
@@ -29,6 +31,25 @@
   "engines": {
     "node": ">=18.0.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4citeB4U/LeeWay-Standards.git"
+  },
+  "bugs": {
+    "url": "https://github.com/4citeB4U/LeeWay-Standards/issues"
+  },
+  "homepage": "https://github.com/4citeB4U/LeeWay-Standards#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src/",
+    "schemas/",
+    ".leeway/",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
   "exports": {
     ".": "./src/index.js",
     "./agents/*": "./src/agents/*",

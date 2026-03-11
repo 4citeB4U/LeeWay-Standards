@@ -47,7 +47,7 @@ export class SchemaAgent {
       name: config.name,
       description: config.description,
       url: config.url || '',
-      version: config.version || '1.0.0',
+      version: config.version || '1.0.1',
       author: {
         '@type': 'Organization',
         name: config.author || 'Unknown',
