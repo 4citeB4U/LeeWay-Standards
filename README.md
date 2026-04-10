@@ -49,37 +49,41 @@ In traditional codebases, files lose context over time, documentation rots, and 
 
 ## 🧠 How It Works: The System Layers
 
-![Architecture Layers](public/architecture_layers_1775788271113.png)
+![System Runtime](Docs/systemimages/systemruntime.png)
 
 A LEEWAY application is divided into architectural layers that mirror biological systems to create a deterministic living state.
 
 ```mermaid
-architecture-beta
-    group core(Core Processing)
-    group consensus(Hive Mind)
-    group security(Lockdown & Security)
+flowchart TD
+    subgraph core["Perception & Core"]
+        brainst[Brainstem]
+        percbus[Perception Bus]
+        uniexec[Execution Spine]
+    end
 
-    service brainst(Brainstem / Sovereign Runtime) in core
-    service percbus(Perception Bus) in core
-    service uniexec(Execution Spine) in core
+    subgraph consensus["Hive Mind"]
+        hive[HiveState]
+        vote[HiveConsensus]
+    end
 
-    service hive(HiveState) in consensus
-    service vote(HiveConsensus) in consensus
+    subgraph security["Security Lockdown"]
+        sanitize[Intent Sanitizer]
+        govtr[Governance Contract]
+        sandbox[Module Sandbox]
+    end
 
-    service sanitize(Intent Sanitizer) in security
-    service govtr(Governance Contract) in security
-    service sandbox(Module Loader Sandbox) in security
-
-    brainst:L --> R:percbus
-    percbus:B --> T:sanitize
-    sanitize:B --> T:uniexec
-    uniexec:L --> R:vote
-    vote:T --> B:hive
-    uniexec:R --> L:sandbox
-    sandbox:T --> B:govtr
+    brainst --> percbus
+    percbus --> sanitize
+    sanitize --> uniexec
+    uniexec --> vote
+    vote --> hive
+    uniexec --> sandbox
+    sandbox --> govtr
 ```
 
 ### 1. Perception Layer (Intake)
+![Perception Layer](Docs/systemimages/perceptionlayer.png)
+
 All user input, API requests, and autonomous AI events hit the `PerceptionBus` first. This bus sequentially queues everything as an `Intent`, ensuring zero race conditions and perfect chronological determinism.
 
 ### 2. Security Interceptor (Immune System)
@@ -92,7 +96,7 @@ Before mutating state, `HiveConsensus.vote()` is called. Agents must vote `APPRO
 
 ## 🤖 The Agents (Designed as NPCs)
 
-![Agent Fleet](public/agent_fleet_1775788317178.png)
+![Agent NPC Team](Docs/systemimages/NPCAgent.png)
 
 In LEEWAY, autonomous agents act structurally like **Non-Player Characters (NPCs)** in a highly controlled game environment. Every agent has defined roles, behavioral contracts, strict boundaries, and "health" parameters. 
 
@@ -147,7 +151,7 @@ classDiagram
 
 ## 🔄 The Execution Workflow
 
-![Workflow Consensus](public/workflow_consensus_1775788336583.png)
+![System Workflow](Docs/systemimages/Systemworkflow.png)
 
 Every action in LEEWAY must be an explicit, traceable sequence.
 
@@ -207,7 +211,7 @@ HOW = Deep-cloning state execution
 
 ## 🛡️ Governance & Runtime Security
 
-![Governance Runtime](public/governance_runtime_1775788428305.png)
+![LLM Integration](Docs/systemimages/llmintergration.png)
 
 ## ✨ Benefits at a Glance
 

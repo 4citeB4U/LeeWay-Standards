@@ -5,30 +5,34 @@ The LeeWay Sovereign Runtime completely abandons the traditional flat structural
 
 ### The Three Pillars of the Sovereign Stack
 
+![System Runtime](systemimages/systemruntime.png)
+
 ```mermaid
-architecture-beta
-    group core(Perception Layer)
-    group consensus(Cognition & Intelligence)
-    group security(Execution & Autonomic Security)
+flowchart TD
+    subgraph core["Perception Layer"]
+        bus[Perception Bus]
+        auth[Intent Sanitizer]
+    end
 
-    service bus(Perception Bus) in core
-    service auth(Intent Sanitizer) in core
+    subgraph consensus["Cognition & Intelligence"]
+        state[Shared HiveState]
+        vote[Hive Consensus Engine]
+        llm[Neural Mesh Adapters]
+    end
 
-    service state(Shared HiveState) in consensus
-    service vote(Hive Consensus Engine) in consensus
-    service llm(Neural LLM Adapters) in consensus
+    subgraph security["Execution & Security"]
+        uniexec[Execution Spine]
+        gov[Governance Sandbox]
+        data[Persistent Storage]
+    end
 
-    service uniexec(Execution Spine) in security
-    service gov(Governance Sandbox) in security
-    service data(Persistent Storage) in security
-
-    bus:B --> T:auth
-    auth:B --> T:vote
-    vote:R --> L:llm
-    vote:B --> T:uniexec
-    uniexec:R --> L:state
-    uniexec:B --> T:gov
-    gov:R --> L:data
+    bus --> auth
+    auth --> vote
+    vote --> llm
+    vote --> uniexec
+    uniexec --> state
+    uniexec --> gov
+    gov --> data
 ```
 
 ### Layer 1: Conception (The Perception Bus)
