@@ -1,14 +1,15 @@
 # System Workflow & Determinism
 
+![System Workflow](systemimages/Systemworkflow.png)
+
 The Sovereign Runtime enforces perfect chronological execution. There is no concept of untracked async drift.
 
 ## The Perception execution Pipeline
 
 ```mermaid
 flowchart TD
-    UI[Frontend User Interface \n or LLM Action] -->|Dispatches Command| PB[(Perception Bus)]
+    UI[Frontend User Interface \n or Action] -->|Dispatches Command| PB[(Perception Bus)]
     PB -->|Serializes into RAW_INTENT| IS([Intent Sanitizer])
-    IS -->|Detects anomalies / prompt strings| IS
     IS -->|CLEAN_INTENT| EX[Unified Execution Spine]
     
     EX -->|Request Signature| HC{Hive Consensus}

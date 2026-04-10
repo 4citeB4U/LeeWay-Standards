@@ -4,6 +4,8 @@ Agents in LeeWay are not simple background workers; they are represented structu
 
 ## Structural Class Composition
 
+![Agent NPC Roster](systemimages/NPCAgent.png)
+
 ```mermaid
 classDiagram
     direction TB

@@ -1,6 +1,8 @@
 # 🧠 Deterministic Neural Mesh (No-LLM Paradigm)
 
 ## The Cognitive Engine
+![Neural Mesh Integration](systemimages/llmintergration.png)
+
 The Sovereign Runtime completely eliminates the need for external Large Language Models (LLMs) like Gemini or GPT. Instead, the application runs entirely on a **Self-Hosted Deterministic Neural Mesh**, ensuring perfect privacy, zero latency, and absolutely no external API dependency.
 
 ```mermaid
