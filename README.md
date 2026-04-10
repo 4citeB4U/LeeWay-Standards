@@ -1,13 +1,6 @@
-<div align="center">
-  <img src="public/LeeWayStandardslogo.png" alt="LeeWay Logo" width="200" />
-  <br/>
-  <br/>
-  <img src="public/LeeWayStandards.png" alt="LeeWay Standards Sovereign Architecture" />
-</div>
+LEEWAY is a governance and architecture standard for AI-native software systems. It defines how agents, MCP services, LLM integrations, code artifacts, workflows, and SDKs must be structured, identified, validated, secured, and orchestrated so that an entire multi-agent ecosystem remains discoverable, auditable, repairable, and safe to evolve. <img src="public/LeeWayStandardslogo.png" align="right" width="60" alt="LeeWay Nano Logo" />
 
 <br/>
-
-LEEWAY is a governance and architecture standard for AI-native software systems. It defines how agents, MCP services, LLM integrations, code artifacts, workflows, and SDKs must be structured, identified, validated, secured, and orchestrated so that an entire multi-agent ecosystem remains discoverable, auditable, repairable, and safe to evolve. <img src="public/LeeWayStandardslogo.png" align="right" width="40" alt="LeeWay Nano Logo" />
 
 # LEEWAY™ STANDARDS & SOVEREIGN RUNTIME
 
