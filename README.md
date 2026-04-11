@@ -63,11 +63,10 @@ Lee operates as the **central orchestrator** of a structured multi-agent system.
 
 <div align="center">
 
-**[▶ Watch Demo Video](https://cdn.jsdelivr.net/gh/4citeB4U/LeeWay-Standards@main/public/readmevideo.mp4)** *(plays in browser)*
-
-or 
-
-**[🌐 Open in Player](https://cdn.jsdelivr.net/gh/4citeB4U/LeeWay-Standards@main/public/video-player.html)**
+<video width="640" controls style="max-width: 100%; border-radius: 8px;">
+  <source src="https://4citeb4u.github.io/LeeWay-Standards/public/readmevideo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 </div>
 
