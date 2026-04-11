@@ -59,17 +59,17 @@ Lee operates as the **central orchestrator** of a structured multi-agent system.
 
 ---
 
-## 🎥 System Demonstration
-
-<div align="center">
-
-[![Play System Demo Video](public/play_button.png)](https://4citeb4u.github.io/LeeWay-Standards/public/video-player.html)
+## 🎥 Sovereign Manifest — Lee in Action
 
 <p align="center">
-  <i>"Sovereign Manifest - Lee in Action"</i>
+  <a href="./assets/readmevideo.mp4">
+    <img src="./assets/play_button.png" alt="Watch the Leeway Innovations demo video" width="420">
+  </a>
 </p>
 
-</div>
+<p align="center">
+  <strong>Click the play button above to watch the demo.</strong>
+</p>
 
 ---
 
@@ -188,18 +188,6 @@ LEEWAY will:
 * Full execution traceability
 * Built-in governance and protection
 * Local-first architecture
-
----
-
-## ⚠️ Important Notes
-
-### Video Rendering
-
-To display video in README:
-
-1. Upload video via GitHub Issues/Discussions
-2. Copy generated `user-attachments` URL
-3. Replace `YOUR-VIDEO-ID-HERE`
 
 ---
 
