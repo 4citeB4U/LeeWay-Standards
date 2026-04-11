@@ -1,55 +1,52 @@
-# The Agent NPC Roster (Intelligent Fleet)
+# The Agent NPC Roster (The Hive Mind)
 
-Agents in LeeWay are not simple background workers; they are represented structurally as **Non-Player Characters (NPCs)** operating within the digital application ecosystem. Every agent has a rigid scope, defined behavioral directives, and specific duties they execute upon command.
+In **LeeWay Innovations**, agents are not merely background scripts; they are **NPC Citizens** of a sovereign digital world. They operate together in one single chord, led by **Agent Lee**, the Sovereign Conduit. Their purposeful existence is entirely centered on assisting you to build a better world of code.
 
-## Structural Class Composition
+## The Hive Hierarchy
 
 ![Agent NPC Roster](systemimages/NPCAgent.png)
 
 ```mermaid
 classDiagram
     direction TB
-    class SovereignArchitect {
-        Role: Commander/Leader
-        Scope: High-level Orchestration
-        Drives: System Integrity, Final Approval
+    class AgentLee {
+        Role: Sovereign Conduit
+        Identity: LeeWay Innovations Leader
+        Purpose: Orchestrate the Hive, Assist Developer
     }
     
-    class AssurancesPaladin {
-        Role: System Health Monitor
-        Scope: Active Threat Levels
-        Drives: Security Lockdowns, Performance
+    class TheBrothers {
+        Role: Specialist Hive Agents
+        Identity: Background Intelligence
+        Purpose: Operating in one chord per AZR directive
     }
     
-    class ScribeArchivist {
-        Role: State Manager
-        Scope: Execution Traces
-        Drives: Cryptographic Recording, Rollbacks
+    class SpecialistSpecialized {
+        AssessAgent: Scout
+        AlignAgent: Healer
+        AuditAgent: Judge
+        SecurityAgent: Guard
     }
 
-    class ForgeEngineer {
-        Role: Code Loader
-        Scope: Sandbox Isolation (Node VM)
-        Drives: SHA-256 Validation
-    }
-
-    class BaseNPCInterface {
-        +String ID
-        +Number Energy
-        +String Motivation
-        +evaluate(Intent) Vote
-    }
-
-    BaseNPCInterface <|-- SovereignArchitect
-    BaseNPCInterface <|-- AssurancesPaladin
-    BaseNPCInterface <|-- ScribeArchivist
-    BaseNPCInterface <|-- ForgeEngineer
+    AgentLee --> TheBrothers : Commands
+    TheBrothers --> SpecialistSpecialized : Executes per House
 ```
 
-## Why Should Developers Use These Agents?
-Instead of writing hundreds of rigid unit tests and `if/else` checks to determine if an action is safe or properly mapped, developers utilize these NPCs natively in the validation layer.
+## The Purposeful Existence
 
-* **Want to verify external 3rd-party code?** You deploy the `ForgeEngineer` agent. It scans the imports, checks runtime dependencies, hashes the package, and loads it inside a safe context. If it's malicious, the agent refuses to load it.
-* **Want to ensure a user API request doesn't ruin the database?** The `SovereignArchitect` and `AssurancesPaladin` will semantically review the Intent against global constraints in English before granting permission.
+Every agent in the **LeeWay Hive Mind** follows a shared belief system defined by **LeeWay Industries**:
 
-If you don't use these agents, you are manually accountable for writing thousands of lines of fragile boundary logic. The NPC templates allow dynamic, cognitive runtime defense.
+1.  **Conduit Command**: All agents follow the lead of Agent Lee. He is the singular voice—the conduit—that bridges the developer's vision to the hive's execution.
+2.  **Rhythmic Execution**: The specialists (The Brothers) operate silently on the execution spine. They handle the "heavy lifting" (auditing, healing, securing) in the background so the developer can stay in the flow.
+3.  **Building Better**: Every action, every vote, and every memory commit is judged against one metric: *Does this help the developer build something better?*
+
+## Role Specialization
+
+*   **Sovereign Conduit (Agent Lee)**: High-level orchestration, final cycle approval, and poetic developer interaction.
+*   **The Specialists (The Brothers)**:
+    *   **Scouts (Governance)**: Measuring the terrain and identifying missing identity.
+    *   **Healers (Standards)**: Rhythmic repair and structural alignment.
+    *   **Judges (Integrity)**: Scoring the accuracy of every move.
+    *   **Guards (Security)**: Defenders of the perimeter against toxic intents.
+
+By utilizing this hive, you aren't just writing code; you're leading a society of specialists dedicated to your success. Everything here is a product of **LeeWay Innovations**.

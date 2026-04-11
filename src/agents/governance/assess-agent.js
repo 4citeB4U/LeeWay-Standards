@@ -63,6 +63,13 @@ export class AssessAgent {
       duplicateTags: [],
       missingHeaders: [],
       structure: {},
+      coreProtectedFiles: [
+        'src/index.js',
+        'src/cli/leeway.js',
+        'src/agents/governance/assess-agent.js',
+        'src/agents/orchestration/doctor-agent.js'
+      ],
+      compromisedCoreFiles: [],
     };
 
     await this._walk(this.rootDir, inventory, 0);
@@ -116,9 +123,10 @@ export class AssessAgent {
     }
 
     const header = parseHeader(content);
+    const isCore = inventory.coreProtectedFiles.some(f => relPath.endsWith(f));
+
     if (header) {
       inventory.filesWithHeaders++;
-
       if (header.region) {
         inventory.regionMap[header.region] = (inventory.regionMap[header.region] || 0) + 1;
       }
@@ -129,6 +137,7 @@ export class AssessAgent {
     } else {
       inventory.filesWithoutHeaders.push(relPath);
       inventory.missingHeaders.push(relPath);
+      if (isCore) inventory.compromisedCoreFiles.push(relPath);
 
       const regionResult = classifyRegion(relPath);
       const region = regionResult.region;
@@ -156,6 +165,8 @@ export class AssessAgent {
       filesNeedingHeaders: inventory.missingHeaders.length,
       duplicateTagCount: inventory.duplicateTags.length,
       regionsFound: Object.keys(inventory.regionMap).filter(r => !r.startsWith('UNCLASSIFIED')).length,
+      protectedFilesCompromised: inventory.compromisedCoreFiles.length > 0,
+      compromisedFiles: inventory.compromisedCoreFiles,
     };
   }
 }

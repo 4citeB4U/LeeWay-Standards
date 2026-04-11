@@ -1,3 +1,35 @@
+/*
+LEEWAY HEADER — DO NOT REMOVE
+
+REGION: CORE
+TAG: CORE.SDK.LEEWAYUNIVERSE.MAIN
+
+COLOR_ONION_HEX:
+NEON=#39FF14
+FLUO=#0DFF94
+PASTEL=#C7FFD8
+
+ICON_ASCII:
+family=lucide
+glyph=file
+
+5WH:
+WHAT = LeeWayUniverse module
+WHY = Part of CORE region
+WHO = LEEWAY Align Agent
+WHERE = LeeWayUniverse.tsx
+WHEN = 2026
+HOW = Auto-aligned by LEEWAY align-agent
+
+AGENTS:
+ASSESS
+ALIGN
+AUDIT
+
+LICENSE:
+MIT
+*/
+
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
