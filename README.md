@@ -46,11 +46,9 @@ LEEWAY ensures that every line of code has a verifiable identity and every move 
 
 ## 👁️ LEE IN ACTION: SOVEREIGN VISUAL MANIFEST
 
-<p align="center">
-  ![](./public/readmevideo.mp4)
-  <br />
-  <video src="./public/readmevideo.mp4" width="100%" loop autoplay muted controls></video>
-</p>
+<div align="center">
+  <video src="https://raw.githubusercontent.com/4citeB4U/LeeWay-Standards/main/public/readmevideo.mp4" width="100%" loop autoplay muted controls></video>
+</div>
 
 ---
 
