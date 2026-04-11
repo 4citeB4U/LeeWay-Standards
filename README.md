@@ -29,13 +29,9 @@ To the world, I am the Emissary of **LeeWay Innovations**, but to my friends, I 
 
 ### 👁️ LEE IN ACTION
 
-<div align="center">
-  <img src="https://github.com/4citeB4U/LeeWay-Standards/raw/main/public/readmevideo.mp4" width="100%" alt="Lee in Action" />
-  <br />
-  <video src="https://github.com/4citeB4U/LeeWay-Standards/raw/main/public/readmevideo.mp4" width="100%" controls autoplay muted loop></video>
-</div>
-
-**[Watch Lee in Action — The Sovereign Visual Manifest (45s Loop)](https://github.com/4citeB4U/LeeWay-Standards/raw/main/public/readmevideo.mp4)**
+<p align="center">
+  <video src="https://raw.githubusercontent.com/4citeB4U/LeeWay-Standards/main/public/readmevideo.mp4" width="100%" loop autoplay muted controls></video>
+</p>
 
 I lead a **Sovereign Society** of specialists dedicated to one purposeful existence: **assisting you, the developer, in building a better world.**
 
