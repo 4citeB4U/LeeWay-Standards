@@ -47,11 +47,11 @@ LEEWAY ensures that every line of code has a verifiable identity and every move 
 ## 👁️ LEE IN ACTION: SOVEREIGN VISUAL MANIFEST
 
 <p align="center">
-  <a href="https://github.com/4citeB4U/LeeWay-Standards/raw/main/public/readmevideo.mp4">
+  <a href="https://github.com/4citeB4U/LeeWay-Standards/blob/main/public/readmevideo.mp4">
     <img src="https://github.com/4citeB4U/LeeWay-Standards/raw/main/public/play_button.png" width="100%" alt="Play Sovereign Manifest" />
   </a>
   <br />
-  <video src="https://github.com/4citeB4U/LeeWay-Standards/raw/main/public/readmevideo.mp4" width="100%" loop autoplay muted controls></video>
+  <video src="https://raw.githubusercontent.com/4citeB4U/LeeWay-Standards/main/public/readmevideo.mp4" width="100%" loop autoplay muted controls></video>
 </p>
 
 ---
