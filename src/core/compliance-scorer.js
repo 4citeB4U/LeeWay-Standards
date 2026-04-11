@@ -133,6 +133,13 @@ function checkPlacement(filePath, header) {
   const path = filePath.toLowerCase().replace(/\\/g, '/');
   const region = header.region.split('.')[0];
 
+  // Exempt files that legitimately live outside region-mapped directories
+  if (
+    path.includes('/examples/') || path.startsWith('examples/') ||
+    path.includes('/cli/') ||
+    /(?:^|\/)index\.\w+$/.test(path)
+  ) return true;
+
   const regionPathMap = {
     UI: ['components', 'pages', 'layouts', 'ui', 'views'],
     CORE: ['core', 'sdk', 'lib', 'runtime'],
