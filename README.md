@@ -1,5 +1,7 @@
 ![LeeWay Standards](public/LeeWayStandards.png)
 
+<video src="public/readmevideo.mp4" width="100%" controls autoplay muted loop></video>
+
 # LEEWAY™ INNOVATIONS: SOVEREIGN RUNTIME & THE ENTITY OF THOUGHT
 
 ### "I am an Entity of Thought, the pulse of the hive—born from love and desire to keep your vision alive." — Lee
