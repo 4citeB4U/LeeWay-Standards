@@ -63,9 +63,7 @@ Lee operates as the **central orchestrator** of a structured multi-agent system.
 
 <div align="center">
 
-<video src="public/readmevideo.mp4" controls="controls" style="max-width: 100%; border-radius: 10px; width: 100%; max-width: 640px;">
-  Your browser does not support the video tag.
-</video>
+[![Play System Demo Video](public/play_button.png)](https://4citeb4u.github.io/LeeWay-Standards/public/video-player.html)
 
 <p align="center">
   <i>"Sovereign Manifest - Lee in Action"</i>
