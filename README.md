@@ -63,9 +63,9 @@ Lee operates as the **central orchestrator** of a structured multi-agent system.
 
 <div align="center">
 
-[![Watch System Demo Video](https://img.shields.io/badge/▶%20PLAY%20DEMO%20VIDEO-Click%20Here-brightgreen?style=for-the-badge&logo=github&logoColor=white)](https://4citeb4u.github.io/LeeWay-Standards/public/video-player.html)
+[![Play System Demo Video](public/video-thumbnail.png)](https://4citeb4u.github.io/LeeWay-Standards/public/video-player.html)
 
-**Click the badge to watch the video demo on GitHub Pages**
+*Click the play button above to watch the full demo*
 
 </div>
 
