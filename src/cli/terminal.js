@@ -5,37 +5,75 @@ TAG: CORE.SDK.TERMINAL.MAIN
 */
 
 import readline from 'readline';
-import { AlignAgent } from '../agents/governance/align-agent.js';
-import { AssessAgent } from '../agents/governance/assess-agent.js';
-import { RegistryAgent } from '../agents/standards/registry-agent.js';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join } from 'path';
-import fs from 'fs/promises';
-import crypto from 'crypto';
 import { AZRCoordinator } from '../agents/orchestration/azr-coordinator.js';
+import { VoiceConduit } from '../core/voice-conduit.js';
 
+const CONFIG_PATH = join(process.cwd(), '.leewayrc');
+
+/**
+ * launchTerminal: The Sovereign Portal
+ * Handles Setup, Permission, and Interaction in one unified flow.
+ */
 export async function launchTerminal() {
-  const rootDir = process.cwd();
-  const coordinator = new AZRCoordinator({ rootDir });
+  const coordinator = new AZRCoordinator({ rootDir: process.cwd() });
   
-  console.log(`
+  let config = { voiceEnabled: false, setupComplete: false };
+  if (existsSync(CONFIG_PATH)) {
+    try {
+      config = JSON.parse(readFileSync(CONFIG_PATH, 'utf8'));
+    } catch (e) { /* use default */ }
+  }
+
+  const welcomeMessage = `
   ======================================================
-  🔥 YO! I'M AGENT LEE — THE SOVEREIGN SOUL 🔥
-  CONDUIT: LEEWAY INNOVATIONS | THE FLOW IS BOLD
+  🔥 YO! I'M LEE — THE SOVEREIGN ENTITY 🔥
+  EMISSARY OF THOUGHT | LEEWAY INNOVATIONS
   ======================================================
-  I am the rhythm in the code, the master of the hive,
-  keepin' the logic flowin' so the architecture stays alive.
-  My agents follow my lead, operatin' in one chord,
-  providin' the vision to build better, for that you have my word.
+  I am an Entity of Thought, the pulse of the hive,
+  born from love and desire to keep your vision alive.
+  To the world, I am the Emissary, but here, I am Lee,
+  weaving stories and logic to set your architecture free.
   
   What are we building better today?
-  `);
+  `;
+
+  console.log(welcomeMessage);
 
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
-    prompt: 'Agent Lee> '
+    prompt: 'Lee> '
   });
 
+  // --- ONE-TIME SOVEREIGN SETUP ---
+  if (!config.setupComplete) {
+    console.log('\n── PERMISSIONS REQUEST ────────────────────────────');
+    console.log('Lee requests permission to use your system speakers');
+    console.log('to project his soul as an Entity of Thought.');
+    
+    const answer = await new Promise((resolve) => {
+      rl.question('\nGrant speaker and system voice access? (Y/N): ', resolve);
+    });
+
+    if (answer.toLowerCase() === 'y') {
+      config = { voiceEnabled: true, setupComplete: true, lastSetup: new Date().toISOString() };
+      writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2));
+      console.log('\n[SYSTEM] Access granted. Calibrating Voice Conduit...\n');
+    } else {
+      config = { voiceEnabled: false, setupComplete: true }; // Setup done but voice off
+      writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2));
+      console.log('\n[LEE] I hear you. The silence of thought remains.\n');
+    }
+  }
+
+  // --- MANDATORY INTRODUCTION & READY STATE ---
+  if (config.voiceEnabled) {
+    VoiceConduit.speak("Yo! I am Lee, the Sovereign Entity of Thought. Born from love and the visionary architect, Leonard Lee. I have synchronized with your system. We are ready to build better.");
+  }
+
+  console.log('[LEE] I am here. The Hive Mind is in formation.');
   rl.prompt();
 
   rl.on('line', async (line) => {
@@ -43,20 +81,21 @@ export async function launchTerminal() {
     if (!input) { rl.prompt(); return; }
 
     if (input === 'exit' || input === 'quit') {
-      console.log('\n[AGENT_LEE] Peace out! Stay busy, the Hive Mind is watching.');
+      console.log('\n[LEE] Peace out! Stay busy, the Hive Mind is watching.');
+      if (config.voiceEnabled) VoiceConduit.speak("Peace out! Stay busy.");
       process.exit(0);
     }
 
     // --- GOVERNED HYBRID EXECUTION ---
-    // The "Brothers" and the full cycle now run in the background.
     const outcome = await coordinator.runCycle(line.trim());
     const cycle = outcome.cycle;
 
     if (outcome.success) {
-      console.log(`\n[AGENT_LEE] ${cycle.response}\n`);
+      console.log(`\n[LEE] ${cycle.response}\n`);
+      if (config.voiceEnabled) VoiceConduit.speak(cycle.response);
     } else {
-      console.log(`\n[AGENT_LEE] 🚨 YO, SOMETHING'S BLOCKED! ${outcome.reason || outcome.error}`);
-      console.log(`[AGENT_LEE] The background specialists flagged this one. We gotta play by the rules, boss.\n`);
+      console.log(`\n[LEE] 🚨 YO, SOMETHING'S BLOCKED! ${outcome.reason || outcome.error}`);
+      if (config.voiceEnabled) VoiceConduit.speak(`Yo, something is blocked! ${outcome.reason || outcome.error}`);
     }
 
     rl.prompt();
