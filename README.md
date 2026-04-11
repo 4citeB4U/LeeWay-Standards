@@ -63,11 +63,9 @@ Lee operates as the **central orchestrator** of a structured multi-agent system.
 
 <div align="center">
 
-[![Play System Demo Video](public/video-thumbnail.png)](https://4citeb4u.github.io/LeeWay-Standards/public/video-player.html)
+[![Play System Demo Video](public/play_button.png)](https://4citeb4u.github.io/LeeWay-Standards/public/video-player.html)
 
 **Click the play button to watch the full demo video on GitHub Pages**
-
-> To convert your shortened MP4 to an inline animated GIF, run: `python convert_video_to_gif.py`
 
 </div>
 
