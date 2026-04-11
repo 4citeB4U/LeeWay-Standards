@@ -61,8 +61,6 @@ Lee operates as the **central orchestrator** of a structured multi-agent system.
 
 ## 🎥 System Demonstration
 
-> ⚠️ GitHub requires video to be hosted as an attachment to render properly
-
 <div align="center">
   <video controls width="100%">
     <source src="https://github.com/user-attachments/assets/YOUR-VIDEO-ID-HERE" type="video/mp4">
