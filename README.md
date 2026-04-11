@@ -63,9 +63,7 @@ Lee operates as the **central orchestrator** of a structured multi-agent system.
 
 <div align="center">
 
-[![Play System Demo Video](public/video-thumbnail.png)](https://4citeb4u.github.io/LeeWay-Standards/public/video-player.html)
-
-*Click the play button above to watch the full demo*
+![System Demo Video](public/readmevideo.mp4)
 
 </div>
 
