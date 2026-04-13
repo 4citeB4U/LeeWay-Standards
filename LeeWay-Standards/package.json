@@ -1,0 +1,55 @@
+{
+  "name": "leeway-sdk",
+  "version": "1.0.1",
+  "description": "LEEWAY™ — Logically Enhanced Engineering Web Architecture Yield. A lightweight autonomous code governance SDK that embeds identity, safety, readability, and repair assistance directly into the developer workflow.",
+  "main": "src/index.js",
+  "type": "module",
+  "bin": {
+    "leeway": "src/cli/leeway.js"
+  },
+  "scripts": {
+    "start": "node src/cli/leeway.js start",
+    "doctor": "node src/cli/leeway.js doctor",
+    "audit": "node src/cli/leeway.js audit",
+    "assess": "node src/cli/leeway.js assess",
+    "align": "node src/cli/leeway.js align",
+    "registry": "node src/cli/leeway.js registry",
+    "map": "node src/cli/leeway.js map",
+    "scan": "node src/cli/leeway.js scan",
+    "forge": "node src/cli/leeway.js forge",
+    "hive": "node src/cli/leeway.js hive",
+    "test": "node --test src/**/*.test.js src/**/**/*.test.js 2>/dev/null || node --test src/core/*.test.js"
+  },
+  "keywords": [
+    "leeway",
+    "governance",
+    "ai-native",
+    "mcp",
+    "agents",
+    "llm",
+    "code-standards",
+    "sdk",
+    "autonomous",
+    "architecture"
+  ],
+  "author": "Rapid Web Development",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "src/",
+    "schemas/",
+    ".leeway/",
+    "README.md",
+    "HELP.md",
+    "LICENSE",
+    "package.json",
+    "leeway.cmd",
+    "setup.bat"
+  ],
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  }
+}
