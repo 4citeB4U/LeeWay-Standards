@@ -1,211 +1,117 @@
-![LeeWay Standards](public/LeeWayStandards.png)
+# LeeWay Standards
 
-# LEEWAY™ INNOVATIONS  
-## Sovereign Runtime & The Entity of Thought
+LeeWay Standards is a governance-first Agent Lee runtime workspace combining:
+- a CLI/governance toolchain,
+- a browser UI (AgentNotepad VM shell + persona diagnostics),
+- and a sovereign core execution foundation (Lee Prime + Prime Family).
 
-> "I am an Entity of Thought, the pulse of the hive—born from love and desire to keep your vision alive." — Lee
+This README reflects the current state of the repository as of 2026-04-22.
 
----
+## Current Runtime State
 
-## 🧠 What is LEEWAY™
+### 1) Persona Runtime (wired)
+The Agent Lee persona stack is wired into the UI flow in AgentNotepad:
+- `Agent_Lee_Persona_System/01_SUPERIOR_PROMPT/Agent_Lee_Superior_Prompt.md`
+- `Agent_Lee_Persona_System/02_ENGINE/agentlee_persona_engine_v1_1.js`
+- `Agent_Lee_Persona_System/03_POETRY/agentlee_poetry_bank.js`
+- `Agent_Lee_Persona_System/04_LINGO/agentlee_lingo_worker.js`
 
-**LEEWAY™ (Logically Enhanced Engineering Web Architecture Yield)** is a **sovereign code governance SDK and runtime system** designed to transform traditional applications into:
+Implemented behavior in `components/AgentNotepad.tsx`:
+- runtime script/module loading (`poetry -> engine -> lingo`)
+- superior prompt loading and injection into Gemini requests
+- persona response post-processing through `AgentLeePersonaEngine.respond(...)`
+- lingo pack refresh bootstrap
+- diagnostics globals: `window.__agentleeModules`, `window.__agentleeSuperiorPrompt`
 
-- Self-governing systems  
-- Auditable execution environments  
-- Autonomous agent-driven architectures  
+### 2) Persona Diagnostics UI (wired)
+`src/ui/diagnostics/PersonaHealthPanel.tsx` is integrated and rendered in AgentNotepad.
 
-This is not a framework.  
-This is a **governed execution ecosystem**.
+Panel displays:
+- superior prompt load status
+- active mode / overlay
+- poetry key count
+- lingo refresh status
+- module readiness rows (`poetry`, `engine`, `lingo`)
 
----
+### 3) Sovereign Foundation (present and bootstrapped)
+`src/core/lee-prime/` now includes:
+- `AuthorityMatrix.ts` (permissions and collaboration law)
+- `CoreRegistry.ts` (canonical Prime Family registry + hierarchy helpers)
+- `ExecutionEngine.ts` (sovereign cycle runner + receipts + retry/escalation)
 
-## 🎯 Core Purpose
+`src/core/AgentLeeRuntimeBootstrap.ts` now instantiates and logs:
+- `SovereignExecutionEngine`
+- stage order via `SOVEREIGN_EXECUTION_ORDER`
+- unit count via `CORE_REGISTRY`
 
-**Eliminate chaos in code.**
+## Sovereign Cycle
 
-LEEWAY ensures:
-- Every file has identity  
-- Every action is traceable  
-- Every execution is governed  
+The canonical cycle represented by `ExecutionEngine.ts`:
 
----
+`Perception -> Origin -> Structure -> Execution -> Veritas -> Echo -> Synthesis -> Lee Prime`
 
-## 🧩 The 5W + H (System Manifest)
+Governance guarantees baked into the foundation:
+- Lee Prime is final speaker
+- Veritas validation gate before delivery
+- Echo memory authority for continuity writes
+- authority checks between handoff stages via `resolvePermission(...)`
 
-| Aspect | Definition |
-|------|--------|
-| **WHAT** | Autonomous Code Governance SDK |
-| **WHY** | Enforce structure, eliminate entropy |
-| **WHO** | Leonard Lee (Architect) / Lee (Emissary) |
-| **WHERE** | Local-first: PC, Mac, Linux, Edge |
-| **WHEN** | Continuous runtime governance |
-| **HOW** | Execution Spine + Agent Society |
+## Project Layout (high level)
 
----
+- `components/` UI app components (including AgentNotepad)
+- `src/core/` runtime core modules and bootstrap
+- `src/core/lee-prime/` sovereign authority/registry/execution foundation
+- `src/ui/diagnostics/` operational UI diagnostics panels
+- `Agent_Lee_Persona_System/` superior prompt + persona engine + poetry + lingo assets
+- `scripts/` governance/compliance/audit utilities
+- `schemas/` schema contracts and config schemas
+- `receipts/` status snapshots, receipts, and migration artifacts
 
-## 🎤 Meet Lee (The Emissary)
+## Toolchain
 
-Lee is not a chatbot.
+- Node.js >= 18
+- TypeScript
+- React
+- Vite
+- `@google/genai`
 
-Lee is:
-- A **coordinator of intelligence**
-- A **guardian of execution**
-- A **voice-driven system interface**
-
-> “I don’t just run code—I understand intent and enforce order.”
-
-Lee operates as the **central orchestrator** of a structured multi-agent system.
-
----
-
-## 🎥 Sovereign Manifest — Lee in Action
-
-<p align="center">
-  <a href="./assets/readmevideo.mp4">
-    <img src="./assets/play_button.png" alt="Watch the Leeway Innovations demo video" width="420">
-  </a>
-</p>
-
-<p align="center">
-  <strong>Click the play button above to watch the demo.</strong>
-</p>
-
----
-
-## 🧠 Deep Architecture
-
-LEEWAY operates on a **Governed Execution Spine**
-
-```mermaid
-flowchart TD
-    U[User Intent] --> BUS[Perception Bus]
-    BUS --> AZR[Coordinator]
-
-    subgraph NeuralMesh
-        PLAN[Planner]
-        CRIT[Critic]
-        WORK[Workers]
-        JUDGE[Judge]
-        MEM[Memory]
-    end
-
-    AZR --> PLAN
-    PLAN --> CRIT
-    CRIT --> WORK
-    WORK --> JUDGE
-    JUDGE --> MEM
-    MEM --> RESULT[Final Output]
-```
-
----
-
-## ⚙️ Execution Model (Core Intelligence)
-
-LEEWAY uses a structured **Execution Cycle**:
-
-1. Intent Recognition
-2. Plan Generation
-3. Prediction Layer
-4. Action Execution
-5. Critique & Validation
-6. Evaluation Scoring
-7. Memory Commit
-
----
-
-## 🧠 The Neural Mesh (Agent Society)
-
-### 7 Families | 21 Agents
-
-| Family        | Function              |
-| ------------- | --------------------- |
-| Governance    | Code terrain analysis |
-| Standards     | Identity enforcement  |
-| MCP           | Runtime control       |
-| Integrity     | Code correctness      |
-| Security      | Threat defense        |
-| Discovery     | Knowledge mapping     |
-| Orchestration | System coordination   |
-
----
-
-## 🔐 Core Principles
-
-### 1. Sovereign Execution
-
-No cloud dependency. No external control.
-
-### 2. Deterministic Governance
-
-Nothing executes without validation.
-
-### 3. Agent Specialization
-
-Each agent has a defined role.
-
-### 4. Memory Integrity
-
-All actions are recorded and structured.
-
----
-
-## 🚀 Getting Started
+## Install
 
 ```bash
-node src/cli/leeway.js start
+npm install
 ```
 
-Once started:
+## Commands
+
+### CLI entry (implemented)
+`src/cli/leeway.js` currently supports:
 
 ```bash
-Agent Lee> system status
-Agent Lee> heal codebase
-Agent Lee> analyze structure
+npm run start
+npm run leeway -- help
+npm run leeway -- compliance
 ```
 
----
-
-## 🧩 Extending the System
-
-Add custom agents:
-
-```
-src/agents/custom/
-```
-
-LEEWAY will:
-
-* Detect
-* Validate
-* Integrate into execution cycle
-
----
-
-## 🛡️ Why LEEWAY
-
-* Structured intelligence (not random AI output)
-* Full execution traceability
-* Built-in governance and protection
-* Local-first architecture
-
----
-
-## 📦 Installation
+### Governance and status scripts (from package scripts)
 
 ```bash
-node src/cli/leeway.js start
+npm run ssa:scan
+npm run ssa:enforce
+npm run ssa:audit
+npm run ssa:status
+npm run leeway:enforce:check
+npm run leeway:enforce:fix
+npm run leeway:compliance
 ```
 
----
+## Known Repository Baseline Notes
 
-## 📜 License
+Current TypeScript baseline includes pre-existing errors outside the new sovereign/persona wiring:
+- `src/agents/legacy/VisionAgent.ts`
+- `src/core/health-check.test.ts`
 
-MIT © Rapid Web Development
-A LeeWay Innovations Product
+These are known existing issues and not part of the Lee Prime/Persona foundation wiring described above.
 
----
+## Licensing
 
-<p align="center">
-  <img src="public/LeeWayStandardslogo.png" width="120" />
-</p>
+MIT (see repository license and file headers).
