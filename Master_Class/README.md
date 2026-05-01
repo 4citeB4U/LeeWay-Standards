@@ -45,15 +45,51 @@ You will learn to construct the heartbeat of the ecosystem: The 8-Stage Cycle. E
 
 ![Workflow Consensus](../public/workflow_consensus_1775788336583.png)
 
-### 4. The Complete Fleet (100+ Agents)
-The repository houses a highly structured, 5-tier architecture containing over 100 specialized micro-agents:
-*   **Layer 1: The Core Families (`legacy/`)**: The original 7 Families (`Nexus`, `Nova`, `Shield`, `Atlas`, `Aura`, `Chronos`, `Prime`).
-*   **Layer 2: Orchestration & RTC (`rtc/`)**: High-speed synchronous agents managing memory and UI routing (`azr-coordinator.js`, `bus.ts`, `governor.ts`).
-*   **Layer 3: The Governance SDK (`governance/`, `standards/`, `security/`)**: The CLI enforcement fleet (`audit-agent`, `secret-scan-agent`, `align-agent`).
-*   **Layer 4: Autonomous Microservices (`service/`)**: Background daemons for quarantine, dead code reaping, and import monitoring.
-*   **Layer 5: Machine Control Protocols (`mcp/`)**: Agents designed to safely interface with the host OS (`process-agent`, `env-agent`, `transport-agent`).
+### 4. The Complete Agent Fleet (100+ Agents)
 
-*(To view the specific MCP tools utilized by the Prime Agent, see the **[MCP Capabilities Documentation](./Materials/MCP_Capabilities.md)**).*
+To master the ecosystem, you must understand the specialized roles of the 100+ agents that reside in `src/agents/`.
+
+#### 🏛️ Layer 1: The Core 7 Families (The Founders)
+| Agent Name | Role | Primary Responsibility |
+| :--- | :--- | :--- |
+| **Agent Lee** | Prime | System-wide orchestration and final user interaction. |
+| **Nova** | Forge | Writing, refactoring, and optimizing complex codebases. |
+| **Atlas** | Archive | Persistence of Triple-Threat memory and vector lookup. |
+| **Shield** | Sentry | Security scoring, secret scanning, and compliance loops. |
+| **Nexus** | Router | Managing the Perception Bus and inter-agent requests. |
+| **Aura** | Stylist | Voice, UI/UX consistency, and media synthesis. |
+| **Chronos** | Runner | Lifecycle management, CI/CD pipelines, and cron tasks. |
+
+#### 🔌 Layer 2: The MCP Execution Fleet (Self-Contained)
+These agents enable **One-Click Sovereignty**. They can be run via the CLI (`leeway mcp <name>`) or remotely via `npx`.
+
+| Agent Name | Purpose | Technical Domain |
+| :--- | :--- | :--- |
+| `frontend-mcp` | UI Scaffolding | React / Vite / Tailwind |
+| `backend-mcp` | Logic & Data | Node.js / Databases |
+| `memory-mcp` | Memory Access | Vector Stores / ONNX |
+| `scheduler-mcp` | Task Timing | Job Queues / Cron |
+| `qa-mcp` | Quality Audit | Unit Testing / Integration |
+| `creative-mcp` | Prompt Engineering | Media Synthesis |
+| `ui-builder-mcp` | Visual Forge | Real-time UI rendering |
+| `react-native-mcp` | Mobile Support | Cross-platform Apps |
+| `design-system-mcp` | Tokens & CSS | Style Governance |
+| `leeway-edge-optimizer` | Low Latency | Edge Runtime Tuning |
+| `leeway-build-auditor` | Build Metrics | Dependency Optimization |
+| `leeway-ci-blueprint` | Pipeline Gen | GitHub Actions / Docker |
+
+#### 🖥️ Layer 3: Host Control Protocols (The Prime Tools)
+The protocols that grant the Prime agent its "physical" presence on the machine.
+
+| Agent Name | Host Capability |
+| :--- | :--- |
+| `fs-nav-agent` | Filesystem Exploration (Read) |
+| `mutation-agent` | Code Evolution (Write) |
+| `host-exec-agent` | OS Terminal Authority (Execute) |
+| `perception-agent` | Internet & Browser Vision (Perceive) |
+| `media-forge-agent` | Visual Synthesis (Generate) |
+
+*(To view the technical specifications of these tools, see the **[MCP Capabilities Documentation](./Materials/MCP_Capabilities.md)**).*
 
 ---
 

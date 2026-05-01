@@ -92,6 +92,52 @@ npm run leeway -- scan
 
 ---
 
+## 🤖 The Sovereign Agent Registry
+
+LeeWay is powered by a high-fidelity hierarchy of over 100 specialized agents. Below is the primary registry of the fleet:
+
+### 🏛️ Layer 1: The Core 7 Families
+| Agent Name | Family | Purpose |
+| :--- | :--- | :--- |
+| **Agent Lee** | Prime | The Final Speaker and system-wide orchestrator. |
+| **Nova** | Coding | High-fidelity code generation, refactoring, and logic forging. |
+| **Atlas** | Memory | Manages semantic, episodic, and procedural memory stores. |
+| **Shield** | Security | Enforces strict governance, secret scanning, and compliance. |
+| **Nexus** | Routing | Central hub for agent-to-agent communication and routing. |
+| **Aura** | Media | Manages UI rendering, voice synthesis, and media generation. |
+| **Chronos** | Pipeline | Automates tasks, build loops, and cron-job execution. |
+
+### 🔌 Layer 2: The MCP Agent Fleet (Machine Control Protocols)
+These agents provide the physical capabilities for the Prime Agent to interact with the host and the web. All agents in this layer can be executed remotely via `npx`.
+
+| Agent Name | Category | Purpose |
+| :--- | :--- | :--- |
+| `frontend-mcp` | UI/UX | Frontend architecture and high-fidelity component scaffolding. |
+| `backend-mcp` | API/Server | Backend logic, database schemas, and server-side API design. |
+| `memory-mcp` | State | Interfaces with local vector stores and cloud-based memory. |
+| `scheduler-mcp` | Time | Orchestrates task timing and long-running job scheduling. |
+| `qa-mcp` | Quality | Executes automated test suites and validation audits. |
+| `creative-mcp` | Media | Synthesizes complex creative prompts and media assets. |
+| `ui-builder-mcp` | InsForge | Real-time React/Vite UI builder and component generator. |
+| `react-native-mcp` | Mobile | Scaffolds and manages React Native mobile architectures. |
+| `design-system-mcp` | Styling | Enforces consistent design tokens and CSS variables. |
+| `leeway-responsive-ui-mcp` | Performance | Audits and fixes UI responsiveness across all breakpoints. |
+| `leeway-edge-optimizer-mcp` | Performance | Optimizes code for edge-runtime and low-latency execution. |
+| `leeway-build-auditor-mcp` | Performance | Validates build sizes and optimizes dependency graphs. |
+| `leeway-ci-blueprint-mcp` | Performance | Generates high-efficiency GitHub Actions and CI pipelines. |
+| `leeway-full-repo-checker-mcp` | Performance | Performs a deep, multi-file audit of the entire repository. |
+
+### 🖥️ Layer 3: The Host Control MCPs
+| Agent Name | Category | Purpose |
+| :--- | :--- | :--- |
+| `fs-nav-agent` | Host | Absolute filesystem navigation (list, view, grep). |
+| `mutation-agent` | Host | Physical code modification and multi-chunk editing. |
+| `host-exec-agent` | Host | Native OS terminal command execution. |
+| `perception-agent` | Host | Internet search and autonomous browser navigation. |
+| `media-forge-agent` | Host | AI-driven image and asset synthesis. |
+
+---
+
 ## 🎥 Lee in Action
 
 <p align="center">
