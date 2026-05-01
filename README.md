@@ -1,117 +1,104 @@
-# LeeWay Standards
+<p align="center">
+  <img src="./public/LeeWayStandardslogo.png" alt="LeeWay Standards Logo" width="300" />
+</p>
 
-LeeWay Standards is a governance-first Agent Lee runtime workspace combining:
-- a CLI/governance toolchain,
-- a browser UI (AgentNotepad VM shell + persona diagnostics),
-- and a sovereign core execution foundation (Lee Prime + Prime Family).
+# LeeWay Standards: Sovereign Agent Architecture
 
-This README reflects the current state of the repository as of 2026-04-22.
+**LEEWAY™ (Logically Enhanced Engineering Web Architecture Yield)** is a sovereign code governance SDK, a React-based Agent UI Runtime, and a Master Class ecosystem designed to transform traditional applications into self-governing, auditable, and autonomous environments.
 
-## Current Runtime State
+![LeeWay Architecture Layers](./public/architecture_layers_1775788271113.png)
 
-### 1) Persona Runtime (wired)
-The Agent Lee persona stack is wired into the UI flow in AgentNotepad:
-- `Agent_Lee_Persona_System/01_SUPERIOR_PROMPT/Agent_Lee_Superior_Prompt.md`
-- `Agent_Lee_Persona_System/02_ENGINE/agentlee_persona_engine_v1_1.js`
-- `Agent_Lee_Persona_System/03_POETRY/agentlee_poetry_bank.js`
-- `Agent_Lee_Persona_System/04_LINGO/agentlee_lingo_worker.js`
+## 🧠 The Dual-Core System
 
-Implemented behavior in `components/AgentNotepad.tsx`:
-- runtime script/module loading (`poetry -> engine -> lingo`)
-- superior prompt loading and injection into Gemini requests
-- persona response post-processing through `AgentLeePersonaEngine.respond(...)`
-- lingo pack refresh bootstrap
-- diagnostics globals: `window.__agentleeModules`, `window.__agentleeSuperiorPrompt`
+The LeeWay repository is unified into two core experiences:
+1. **The AgentNotepad Web UI:** A React/Vite frontend housing the `Agent Lee Persona System`, rendering real-time diagnostics, poetry injection, and lingo processing.
+2. **The Sovereign CLI SDK:** A non-blocking, developer-friendly backend governance tool (`src/cli/leeway.js`) that audits compliance, scans secrets, and autonomously aligns code to the 85/100 score target without breaking CI/CD pipelines.
 
-### 2) Persona Diagnostics UI (wired)
-`src/ui/diagnostics/PersonaHealthPanel.tsx` is integrated and rendered in AgentNotepad.
+---
 
-Panel displays:
-- superior prompt load status
-- active mode / overlay
-- poetry key count
-- lingo refresh status
-- module readiness rows (`poetry`, `engine`, `lingo`)
+## 📚 The Sovereign Architect Master Class
 
-### 3) Sovereign Foundation (present and bootstrapped)
-`src/core/lee-prime/` now includes:
-- `AuthorityMatrix.ts` (permissions and collaboration law)
-- `CoreRegistry.ts` (canonical Prime Family registry + hierarchy helpers)
-- `ExecutionEngine.ts` (sovereign cycle runner + receipts + retry/escalation)
+The repository now contains the official **Sovereign Architect Master Class**. This is the definitive guide to understanding and deploying the LeeWay 8-Stage Cycle and the 7 Governed Families.
 
-`src/core/AgentLeeRuntimeBootstrap.ts` now instantiates and logs:
-- `SovereignExecutionEngine`
-- stage order via `SOVEREIGN_EXECUTION_ORDER`
-- unit count via `CORE_REGISTRY`
+**[👉 Enter the Master Class Curriculum Here](./Master_Class/README.md)**
 
-## Sovereign Cycle
+*Includes:*
+- **6 Core Modules:** From Philosophy & Governance to One-Click Sovereignty.
+- **Certification Materials:** 50-Question Exam, Flashcards, and Technical Labs.
+- **Automated Compliance:** Live `HeaderInjector.ps1` implementation.
 
-The canonical cycle represented by `ExecutionEngine.ts`:
+![Agent Fleet](./public/agent_fleet_1775788317178.png)
 
+---
+
+## ⚙️ The AgentNotepad Runtime State
+
+The `Agent Lee` persona stack is natively wired into the React UI (`components/AgentNotepad.tsx`), featuring:
+- **Runtime Module Loading:** Sequence of `poetry -> engine -> lingo`.
+- **Persona Diagnostics:** Live health panels for the Superior Prompt, active overlay, and poetry key count (`src/ui/diagnostics/PersonaHealthPanel.tsx`).
+- **Sovereign Bootstrap:** Orchestrated by `src/core/AgentLeeRuntimeBootstrap.ts`.
+
+![System Runtime](./Docs/systemimages/systemruntime.png)
+
+---
+
+## 🛡️ The Governed Execution Spine (Sovereign Cycle)
+
+Every agent action passes through the unbreakable 8-stage sequence (represented by `ExecutionEngine.ts`):
 `Perception -> Origin -> Structure -> Execution -> Veritas -> Echo -> Synthesis -> Lee Prime`
 
-Governance guarantees baked into the foundation:
-- Lee Prime is final speaker
-- Veritas validation gate before delivery
-- Echo memory authority for continuity writes
-- authority checks between handoff stages via `resolvePermission(...)`
+1. **Lee Prime is the Final Speaker.**
+2. **Veritas Validation Gate** strictly audits outputs before delivery.
+3. **Echo Memory Authority** handles continuity writes to local ONNX layers.
 
-## Project Layout (high level)
+![Governance Runtime](./public/governance_runtime_1775788428305.png)
 
-- `components/` UI app components (including AgentNotepad)
-- `src/core/` runtime core modules and bootstrap
-- `src/core/lee-prime/` sovereign authority/registry/execution foundation
-- `src/ui/diagnostics/` operational UI diagnostics panels
-- `Agent_Lee_Persona_System/` superior prompt + persona engine + poetry + lingo assets
-- `scripts/` governance/compliance/audit utilities
-- `schemas/` schema contracts and config schemas
-- `receipts/` status snapshots, receipts, and migration artifacts
+---
 
-## Toolchain
+## 🚀 Workflows & Infographics
 
-- Node.js >= 18
-- TypeScript
-- React
-- Vite
-- `@google/genai`
+The system is built on highly structured, modular intelligence:
 
-## Install
+### The Perception Layer
+![Perception Layer](./Docs/systemimages/perceptionlayer.png)
+
+### LLM Integration
+![LLM Integration](./Docs/systemimages/llmintergration.png)
+
+### Consensus & Workflows
+![Workflow Consensus](./public/workflow_consensus_1775788336583.png)
+![System Workflow](./Docs/systemimages/Systemworkflow.png)
+
+### NPC Agent Forge
+![NPC Agent](./Docs/systemimages/NPCAgent.png)
+
+---
+
+## 💻 Developer-Friendly CLI
+
+The `leeway` CLI has been hardened to be 100% developer-friendly. It acts as an advisor, generating an audit score but **gracefully exiting** to prevent breaking your GitHub Actions or Fly.io deployments.
 
 ```bash
 npm install
-```
 
-## Commands
-
-### CLI entry (implemented)
-`src/cli/leeway.js` currently supports:
-
-```bash
+# Start the interactive UI
 npm run start
-npm run leeway -- help
-npm run leeway -- compliance
+
+# Core Governance Scripts
+npm run leeway -- audit
+npm run leeway -- doctor
+npm run leeway -- scan
 ```
 
-### Governance and status scripts (from package scripts)
+---
 
-```bash
-npm run ssa:scan
-npm run ssa:enforce
-npm run ssa:audit
-npm run ssa:status
-npm run leeway:enforce:check
-npm run leeway:enforce:fix
-npm run leeway:compliance
-```
+## 🎥 Lee in Action
 
-## Known Repository Baseline Notes
+<p align="center">
+  <a href="./assets/readmevideo.mp4">
+    <img src="./assets/play_button.png" alt="Watch the Leeway Innovations demo video" width="200">
+  </a>
+</p>
 
-Current TypeScript baseline includes pre-existing errors outside the new sovereign/persona wiring:
-- `src/agents/legacy/VisionAgent.ts`
-- `src/core/health-check.test.ts`
-
-These are known existing issues and not part of the Lee Prime/Persona foundation wiring described above.
-
-## Licensing
-
-MIT (see repository license and file headers).
+## License
+MIT (see `LICENSE` file).
