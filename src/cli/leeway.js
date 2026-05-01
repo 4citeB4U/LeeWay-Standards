@@ -68,6 +68,7 @@ const COMMANDS = {
   scan:     'Scan for hardcoded secrets',
   forge:    'Forge a new custom NPC agent (alias: create)',
   hive:     'Check the status and health of the Agent Hive Mind',
+  mcp:      'Execute a self-contained MCP agent (e.g. leeway mcp frontend)',
   help:     'Show this help message',
 };
 
@@ -265,6 +266,39 @@ async function runHive() {
   console.log('\n[AGENT_LEE] The Hive Mind is coherent and awaiting directives.');
 }
 
+async function runMcp() {
+  const target = args[1];
+  const mcpArgs = args.slice(2);
+  
+  if (!target) {
+    console.log('Usage: leeway mcp <agent-name> [args]');
+    console.log('Example: leeway mcp frontend');
+    process.exit(1);
+  }
+
+  // Ensure the filename resolves correctly
+  const filename = target.endsWith('-mcp') ? `${target}.js` : `${target}-mcp.js`;
+  const mcpPath = join(rootDir, 'src', 'agents', 'mcp', filename);
+
+  try {
+    const mcpModule = await import(new URL('file://' + mcpPath));
+    if (mcpModule.run) {
+      await mcpModule.run(mcpArgs);
+    } else {
+      console.log(`[ERROR] MCP Agent ${target} does not export a 'run' function.`);
+      process.exit(1);
+    }
+  } catch (err) {
+    if (err.code === 'ERR_MODULE_NOT_FOUND') {
+      console.log(`[ERROR] MCP Agent '${target}' not found at src/agents/mcp/${filename}`);
+      console.log('Available MCPs can be viewed in the source repository.');
+    } else {
+      console.error(`[ERROR] Failed to execute MCP ${target}:`, err);
+    }
+    process.exit(1);
+  }
+}
+
 async function runAuto() {
   console.log(BANNER);
   console.log('⚡ Booting LEEWAY Sovereign Agent System... ⚡\n');
@@ -336,6 +370,7 @@ switch (command) {
   case 'forge':
   case 'create':   await runForge();    break;
   case 'hive':     await runHive();     break;
+  case 'mcp':      await runMcp();      break;
   case 'auto':     await runAuto();     break;
   case 'help':
   case '--help':

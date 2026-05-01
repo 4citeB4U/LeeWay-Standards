@@ -1,0 +1,10 @@
+# Ignore the massive Master Class directory so the SDK remains lightweight
+Master_Class/
+Docs/
+examples/
+receipts/
+
+# General ignores
+node_modules/
+.env
+*.log
