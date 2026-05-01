@@ -45,6 +45,16 @@ You will learn to construct the heartbeat of the ecosystem: The 8-Stage Cycle. E
 
 ![Workflow Consensus](../public/workflow_consensus_1775788336583.png)
 
+### 4. The Complete Fleet (100+ Agents)
+The repository houses a highly structured, 5-tier architecture containing over 100 specialized micro-agents:
+*   **Layer 1: The Core Families (`legacy/`)**: The original 7 Families (`Nexus`, `Nova`, `Shield`, `Atlas`, `Aura`, `Chronos`, `Prime`).
+*   **Layer 2: Orchestration & RTC (`rtc/`)**: High-speed synchronous agents managing memory and UI routing (`azr-coordinator.js`, `bus.ts`, `governor.ts`).
+*   **Layer 3: The Governance SDK (`governance/`, `standards/`, `security/`)**: The CLI enforcement fleet (`audit-agent`, `secret-scan-agent`, `align-agent`).
+*   **Layer 4: Autonomous Microservices (`service/`)**: Background daemons for quarantine, dead code reaping, and import monitoring.
+*   **Layer 5: Machine Control Protocols (`mcp/`)**: Agents designed to safely interface with the host OS (`process-agent`, `env-agent`, `transport-agent`).
+
+*(To view the specific MCP tools utilized by the Prime Agent, see the **[MCP Capabilities Documentation](./Materials/MCP_Capabilities.md)**).*
+
 ---
 
 ## 📚 Curriculum Index
@@ -58,6 +68,9 @@ The Master Class is divided into 6 Core Modules, supported by technical labs and
 *   **[Module 4: The Execution Spine & Sovereign Families](./Module_4_The_Execution_Spine.md)** - Organizing the Society of Agents into the 7 governed families.
 *   **[Module 5: Engineering for Compliance](./Module_5_Engineering_for_Compliance.md)** - Implementing code standards and utilizing the autonomous Compliance Fleet.
 *   **[Module 6: One-Click Sovereignty](./Module_6_One_Click_Sovereignty.md)** - Deploying the Four-Tier Stack (API, WebUI, ONNX) using Docker orchestration.
+
+### 🤖 The MCP Toolchain
+*   **[The Prime MCP Capabilities](./Materials/MCP_Capabilities.md)** - A complete index of the 13 Machine Control Protocols that grant the Agent fleet controlled access to your filesystem, terminals, and the internet.
 
 ---
 
