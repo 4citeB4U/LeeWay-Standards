@@ -27,6 +27,44 @@ LICENSE: PROPRIETARY
 
 > All agents operating in the LeeWay Construct Fabric must be declared in this registry. Undeclared agents are rejected by the AgentRegistry at boot. Each agent carries an `AgentVMIdentity` badge that traces it to this document.
 
+Machine-readable sovereign registry: [sovereign-runtime-registry.json](./sovereign-runtime-registry.json)
+
+---
+
+## Canonical LeeWay VS Code Sovereign Overlay
+
+The live LeeWay VS Code runtime now represents the primary working product of LeeWay Standards. The following sovereign agents must be treated as canonical runtime identities even where downstream manifests or extension registries describe them separately.
+
+These identities are sourced from LeeWay Standards first. Projection runtimes may consume them, but they do not own them.
+
+| Agent ID | Canonical Name | Runtime Role |
+|---|---|---|
+| `agent-lee-prime` | Agent Lee Prime | Primary sovereign agent and final speaker |
+| `fs-nav-agent` | FS Nav Agent | Governed filesystem navigation and discovery |
+| `host-exec-agent` | Host Exec Agent | Approval-bound local command execution |
+| `media-forge-agent` | Media Forge Agent | Media understanding and asset generation support |
+| `mutation-agent` | Mutation Agent | Controlled file mutation and patch application |
+| `perception-agent` | Perception Agent | Web perception, browser navigation, and search |
+| `leeway-visual-orchestrator-agent` | Leeway Visual Orchestrator Agent | Visual-governance lead for LVIS |
+| `shield-governor-agent` | Shield Governor Agent | Security boundaries, approvals, and sandbox enforcement |
+| `attestation-marshal-agent` | Attestation Marshal Agent | Evidence, receipts, and trust attestation |
+| `memory-warden-agent` | Memory Warden Agent | Provenance, continuity, and retention control |
+| `threat-sentinel-agent` | Threat Sentinel Agent | Threat detection and adversarial drift review |
+
+### Canonical LVIS Worker Units
+
+These workers operate under the visual-governance lane and must remain registered as governed execution units:
+
+- `leeway-vector-reconstruction-worker`
+- `leeway-voxel-reconstruction-worker`
+- `leeway-scene-reconstruction-worker`
+- `leeway-depth-synthesis-worker`
+- `leeway-structural-fidelity-worker`
+- `leeway-asset-repair-worker`
+- `leeway-manifest-export-worker`
+- `leeway-project-integration-worker`
+- `leeway-visual-memory-worker`
+
 ---
 
 ## Registry Index

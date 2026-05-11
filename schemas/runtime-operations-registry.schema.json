@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://leeway-standards.dev/schemas/runtime-operations-registry.schema.json",
+  "title": "LeeWay Runtime Operations Registry",
+  "description": "Machine-readable registry for internal runtime operations exposed by LeeWay VS Code and governed by LeeWay Standards.",
+  "type": "object",
+  "required": ["version", "authority", "operations"],
+  "properties": {
+    "version": { "type": "string" },
+    "authority": { "type": "string" },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "class", "domain", "description", "approval", "receiptRequired"],
+        "properties": {
+          "id": { "type": "string" },
+          "class": {
+            "type": "string",
+            "enum": ["verification", "routing", "policy", "repair", "registry", "persona", "sdk"]
+          },
+          "domain": {
+            "type": "string",
+            "enum": ["safety", "sandbox", "workspace", "knowledge", "logs", "memory", "patches", "reports", "governance"]
+          },
+          "description": { "type": "string" },
+          "approval": {
+            "type": "string",
+            "enum": ["not-required", "required-for-write", "always-required"]
+          },
+          "receiptRequired": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

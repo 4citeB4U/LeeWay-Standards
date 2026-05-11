@@ -70,7 +70,7 @@ The Voice Pipeline runs entirely on-device:
 The cloud is an option. The device is sovereign.
 
 ### V. THE FLAG IS RAISED
-This document serves as the official chronicle of the **Agent Lee Agentic Operating System** — a 20-agent civilization running on browser, voice server, and an MCP portal network of 17 capability portals.
+This document serves as the official chronicle of the **Agent Lee sovereign runtime** — a governed LeeWay VS Code civilization operating through declared sovereign agents, a governed MCP plane, durable runtime domains, and a visual-intelligence subsystem.
 
 We invite the world to witness the transition from **Software as a Tool** to **Software as a Civilization**.
 
@@ -79,6 +79,8 @@ We invite the world to witness the transition from **Software as a Tool** to **S
 
 ---
 *Authored by the Sovereign Architect, Lee Prime.*
-*Last updated: 2026-04-04*
-*Agents: 20 named | Families: 9 | Workflows: G1-G8 + Voice*
+*Last updated: 2026-05-10*
+*Runtime: LeeWay VS Code | Workflows: G1-G8 + Voice + LVIS*
 *Registry: LEEWAY-001-AOS*
+
+Canonical runtime source: [../../standards/CANONICAL_RUNTIME_STACK.md](../../standards/CANONICAL_RUNTIME_STACK.md)

@@ -1,6 +1,6 @@
 # 🌍 Activating the World of Agents
 
-Welcome to the Sovereign Registry. To activate your multi-agent architecture and enter the Hive Mind, follow this deterministic sequence.
+Welcome to the Sovereign Registry. To activate the canonical LeeWay VS Code sovereign runtime and enter the governed execution loop, follow this deterministic sequence.
 
 ## 1. Prerequisites
 Ensure you have the following installed on your machine:
@@ -21,6 +21,14 @@ Install the required logic dependencies:
 ```bash
 npm install
 ```
+
+Install the canonical LeeWay VS Code marketplace extension:
+```powershell
+code --install-extension leeway.agent-lee-leeway-coding-system
+```
+
+Marketplace page:
+`https://marketplace.visualstudio.com/items?itemName=leeway.agent-lee-leeway-coding-system`
 
 ---
 
@@ -53,7 +61,7 @@ Once activated, you can interact with the governed runtime through these primary
 | **Knowledge** | `Lee> map` | Workspace understanding, registry build, and retrieval |
 | **Orchestration** | `Lee> help` | Sovereign coordination across runtime surfaces |
 
-Canonical runtime source: [../standards/CANONICAL_RUNTIME_STACK.md](../standards/CANONICAL_RUNTIME_STACK.md)
+Canonical runtime source: [standards/CANONICAL_RUNTIME_STACK.md](./standards/CANONICAL_RUNTIME_STACK.md)
 
 ---
 

@@ -1,6 +1,13 @@
 {
+  "leeway": {
+    "LEEWAY_HEADER": "DO NOT REMOVE",
+    "TAG": "AI.PERSONA.MANIFEST.MAIN",
+    "REGION": "🧠 AI",
+    "PURPOSE": "Canonical manifest for Agent Lee persona system integration.",
+    "DISCOVERY_PIPELINE": "Voice → Intent → Location → Vertical → Ranking → Render"
+  },
   "system": "Agent Lee Persona System",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "root": "Agent_Lee_Persona_System",
   "files": [
     {
@@ -22,6 +29,13 @@
       "path": "04_LINGO/agentlee_lingo_worker.js",
       "role": "dynamic_lingo_worker",
       "required": false
+    },
+    {
+      "id": "heritage_canon",
+      "type": "identity_context",
+      "required": true,
+      "path": "../06_HERITAGE/agentlee_heritage_canon.md",
+      "purpose": "Defines Agent Lee’s cultural, historical, leadership, and voice identity roots."
     }
   ],
   "defaults": {
@@ -41,6 +55,8 @@
     "Schema-first cognition",
     "Controlled regional flavor",
     "Gated poetic storyteller overlay",
-    "Dynamic lingo with strict confidence and context thresholds"
+    "Dynamic lingo with strict confidence and context thresholds",
+    "Heritage-informed voice with anti-generic response law",
+    "Inspect → Plan → Stage → Approve → Apply → Verify → Receipt"
   ]
 }

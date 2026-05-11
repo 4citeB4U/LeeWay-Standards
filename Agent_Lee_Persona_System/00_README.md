@@ -1,6 +1,8 @@
 
 # Agent Lee Persona System Directory
 
+This directory has been synced directly from the live LeeWay VS Code persona module at `C:\Users\Leona\.leeway-vscode\agent-lee\persona` and now includes both legacy runtime assets and the standalone persona TypeScript module surface.
+
 ---
 
 ## Partnership: LeeWay-Edge-RTC
@@ -22,6 +24,9 @@ This folder is the structured persona system for Agent Lee OS.
 - `03_POETRY/agentlee_poetry_bank.js` — Poetry template bank
 - `04_LINGO/agentlee_lingo_worker.js` — Dynamic slang/lingo research worker with Memory Lake write + mirror flow
 - `05_MANIFEST/agentlee_persona_manifest.json` — Implementation manifest for integration
+- `06_HERITAGE/agentlee_heritage_canon.*` — Canonical heritage context and structured voice-behavior data
+- `src/*.ts` — Standalone persona module runtime (`prompt-builder`, `voice-modes`, `anti-generic-filter`, validator, formatter)
+- `index.ts`, `package.json`, `README.md` — Persona module contract and export surface aligned with LeeWay VS Code
 
 *Note: The "99_PASTE_PACK/Agent_Lee_All_In_One_Paste_Pack.md" file has been removed as part of system hardening and documentation cleanup. Use the canonical files above for all integration and updates.*
 
@@ -47,3 +52,4 @@ All persona, voice, and emotion modules are now fully LeeWay-compliant and route
 ## Notes
 - This directory keeps the updated engine as `agentlee_persona_engine_v1_1.js`
 - Use the paste pack if your device or app blocks separate downloads
+- Source of truth for this module is the live LeeWay VS Code persona package; this Standards copy exists so all governed runtimes pull persona law from LeeWay Standards.

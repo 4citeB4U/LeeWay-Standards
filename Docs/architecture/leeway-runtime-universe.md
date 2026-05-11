@@ -2,7 +2,7 @@
 DOC_CLASS: ARCHITECTURE
 DOC_ID: architecture.leeway-runtime-universe
 OWNER: Lee Prime
-LAST_UPDATED: 2026-04-04
+LAST_UPDATED: 2026-05-10
 -->
 
 
@@ -22,10 +22,80 @@ Agent Lee OS is fully partnered and live-connected with [LeeWay-Edge-RTC](https:
 
 ## Overview
 
-Agent Lee Agentic OS is a 20-agent multi-family civilization running across three execution surfaces:
-- **Browser** — React 19 + TypeScript 5.8 + Vite 6 (always active)
-- **Voice Server** — FastAPI + WebSocket (local subprocess, optional)
-- **MCP Portal** — Node.js agent servers in `MCP agents/` (optional)
+The canonical runtime target for LeeWay Standards is **LeeWay VS Code**, rooted at `%USERPROFILE%\.leeway-vscode`.
+
+That runtime is a governed sovereign stack spanning:
+- **VS Code Host Shell** — the primary execution host and user-facing environment
+- **Workspace Plane** — active code, patch, receipt, and validation work
+- **Safety Plane** — threat review, policy enforcement, and controlled execution boundaries
+- **Memory and Knowledge Plane** — evidence-bearing storage, recall, and registry state
+- **Visual Intelligence Plane** — SVG, voxel, 3D scene, and asset reconstruction under LVIS governance
+- **Reports and Logs Plane** — durable operational truth, attestation, and verification output
+
+The live runtime is larger than the original browser and voice model. LeeWay Standards must govern the full host, memory, safety, sandbox, workspace, and visual-intelligence surfaces because the VS Code product is now the primary execution product of the standards.
+
+## Canonical Local Model Stack
+
+| Model | Purpose |
+|---|---|
+| `qwen2.5-coder:1.5b` | Lightweight local coding and routing |
+| `qwen2.5-coder:7b` | Coding, classification, and tool orchestration |
+| `qwen2.5-coder:14b` | Backend synthesis and heavier engineering |
+| `deepseek-coder-v2:16b` | Multi-file reasoning and heavy code synthesis |
+| `llama3.1:8b` | Scene generation and structural synthesis |
+| `llava:7b` | Vision understanding and image interpretation |
+| `phi3:mini` | Lightweight execution tasks |
+| `nomic-embed-text` | Vector memory and retrieval |
+| `azr` | Repair-loop reasoning |
+| `echo` | Diagnostics, receipts, and memory continuity |
+
+## Canonical Runtime Domains
+
+| Domain | Runtime Role |
+|---|---|
+| `agent-lee` | Sovereign runtime, extension behavior, agent manifests, and governance wiring |
+| `safety` | Security policies, scanners, rollback, and safe execution boundaries |
+| `sandbox` | Contained experimentation and approval-bound isolation |
+| `workspace` | Active MCPs, host agents, pending edits, and work products |
+| `knowledge` | Documentation retrieval and standards memory |
+| `logs` | Operational events, drift, crash, and tool activity |
+| `memory` | Persistent chats, indexes, registry state, receipts, and summaries |
+| `patches` | Durable repair artifacts and controlled mutation packages |
+| `reports` | Verification reports, compliance evidence, and release truth |
+
+## Canonical MCP and Agent Plane
+
+LeeWay VS Code currently operates with the following declared execution units:
+
+- Sovereign agents: `agent-lee-prime`, `shield-governor-agent`, `attestation-marshal-agent`, `memory-warden-agent`, `threat-sentinel-agent`
+- Host-linked agents: `fs-nav-agent`, `host-exec-agent`, `media-forge-agent`, `mutation-agent`, `perception-agent`
+- Product MCPs: `frontend-mcp`, `backend-mcp`, `design-system-mcp`, `creative-mcp`, `memory-mcp`, `scheduler-mcp`, `ui-builder-mcp`, `qa-mcp`, `react-native-mcp`
+- LeeWay governance MCPs: `leeway-agent-registry`, `leeway-desktop-commander`, `leeway-docs-rag`, `leeway-health`, `leeway-insforge`, `leeway-memory`, `leeway-planner`, `leeway-playwright`, `leeway-scheduling`, `leeway-testsprite`, `leeway-validation`
+- Optimization MCPs: `leeway-build-auditor-mcp`, `leeway-ci-blueprint-mcp`, `leeway-edge-optimizer-mcp`, `leeway-full-repo-checker-mcp`, `leeway-responsive-ui-mcp`
+
+## Visual Intelligence Subsystem (LVIS)
+
+**LVIS = Leeway Visual Intelligence System**
+
+Purpose:
+- image -> SVG
+- image -> voxel
+- SVG -> voxel
+- image -> 3D scene
+- 3D asset -> React component
+- asset -> validated project integration
+
+Workers:
+- `leeway-visual-orchestrator-agent`
+- `leeway-vector-reconstruction-worker`
+- `leeway-voxel-reconstruction-worker`
+- `leeway-scene-reconstruction-worker`
+- `leeway-depth-synthesis-worker`
+- `leeway-structural-fidelity-worker`
+- `leeway-asset-repair-worker`
+- `leeway-manifest-export-worker`
+- `leeway-project-integration-worker`
+- `leeway-visual-memory-worker`
 
 ## Agent/Operative Separation
 

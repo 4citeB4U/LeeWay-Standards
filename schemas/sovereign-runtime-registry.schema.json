@@ -1,0 +1,139 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://leeway-standards.dev/schemas/sovereign-runtime-registry.schema.json",
+  "title": "LeeWay Sovereign Runtime Registry",
+  "description": "Machine-readable source of truth for the canonical LeeWay VS Code sovereign runtime governed by LeeWay Standards.",
+  "type": "object",
+  "required": [
+    "version",
+    "authority",
+    "canonicalHost",
+    "sourceOfTruth",
+    "marketplaceExtension",
+    "projectionRule",
+    "models",
+    "sovereignAgents",
+    "mcpPlane",
+    "lvisWorkers",
+    "runtimeDomains"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "authority": {
+      "type": "string"
+    },
+    "canonicalHost": {
+      "type": "string"
+    },
+    "sourceOfTruth": {
+      "type": "string"
+    },
+    "marketplaceExtension": {
+      "type": "object",
+      "required": ["publisher", "name", "extensionId", "marketplaceUrl", "vscodeUri"],
+      "properties": {
+        "publisher": { "type": "string" },
+        "name": { "type": "string" },
+        "displayName": { "type": "string" },
+        "version": { "type": "string" },
+        "extensionId": { "type": "string" },
+        "marketplaceUrl": { "type": "string" },
+        "vscodeUri": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "projectionRule": {
+      "type": "string"
+    },
+    "runtimeIdentity": {
+      "type": "object",
+      "required": [
+        "host",
+        "primarySovereignAgent",
+        "visualGovernanceAgent",
+        "visualSubsystem"
+      ],
+      "properties": {
+        "host": { "type": "string" },
+        "primarySovereignAgent": { "type": "string" },
+        "visualGovernanceAgent": { "type": "string" },
+        "visualSubsystem": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "purpose"],
+        "properties": {
+          "id": { "type": "string" },
+          "purpose": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "sovereignAgents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "role", "source", "consumptionMode"],
+        "properties": {
+          "id": { "type": "string" },
+          "role": { "type": "string" },
+          "source": { "type": "string" },
+          "consumptionMode": {
+            "type": "string",
+            "enum": ["canonical", "projected", "governed-worker"]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "mcpPlane": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "category"],
+        "properties": {
+          "id": { "type": "string" },
+          "category": { "type": "string" },
+          "route": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "lvisWorkers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "role"],
+        "properties": {
+          "id": { "type": "string" },
+          "role": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "runtimeDomains": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "authority", "doc"],
+        "properties": {
+          "id": { "type": "string" },
+          "authority": { "type": "string" },
+          "doc": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "governanceRules": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

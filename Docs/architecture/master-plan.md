@@ -2,7 +2,7 @@
 DOC_CLASS: ARCHITECTURE
 DOC_ID: architecture.master-plan
 OWNER: Leonard J Lee / Leeway Innovations
-LAST_UPDATED: 2026-04-04
+LAST_UPDATED: 2026-05-10
 -->
 
 # Agent Lee Agentic Operating System — Master Plan (Current State)
@@ -30,7 +30,9 @@ Endpoint classes:
 
 Canonical specification: `docs/architecture/operative-model.md`.
 
-## The 20-Agent System (9 Families)
+Canonical runtime source: [../../standards/CANONICAL_RUNTIME_STACK.md](../../standards/CANONICAL_RUNTIME_STACK.md)
+
+## The Canonical Runtime System
 
 ### Core Team (9 agents — `agents/` directory)
 | Agent | Family | Role |
@@ -54,7 +56,7 @@ Canonical specification: `docs/architecture/operative-model.md`.
 | **MarshalVerify** | AEGIS | G8 Governance lead + verification |
 | **LeewayStandardsAgent** | AEGIS | Header/tag/secret policy enforcement |
 
-### Voice Pipeline (6 agents — `agents/` directory)
+### Voice Pipeline (legacy specialized lane)
 | Agent | Family | Role |
 |---|---|---|
 | **LiveConductorAgent** | NEXUS | Voice session orchestrator |
@@ -66,6 +68,18 @@ Canonical specification: `docs/architecture/operative-model.md`.
 
 ### Supporting Cast (WorldRegistry only — no standalone files)
 Lily/Gabriel/Adam Cortex, Syntax/Patch/BugHunter Forge, Scribe Archive, Guard Aegis, Search Vector, Brain Sentinel, Health Sentinel
+
+### Sovereign Runtime Overlay
+The active LeeWay VS Code runtime also recognizes these canonical sovereign identities:
+
+- `agent-lee-prime`
+- `shield-governor-agent`
+- `attestation-marshal-agent`
+- `memory-warden-agent`
+- `threat-sentinel-agent`
+- `leeway-visual-orchestrator-agent`
+
+These identities should be treated as current runtime law even where older architectural breakdowns remain useful for historical explanation.
 
 ## Workflow Map (G1–G8 + Voice)
 

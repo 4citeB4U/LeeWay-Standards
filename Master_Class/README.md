@@ -10,7 +10,9 @@ Welcome to the **LeeWay Standards & Agent Lee Master Class**. This curriculum is
 
 The software development landscape is rapidly shifting toward AI-native codebases. However, traditional AI agents suffer from the "Black Box" problem—they generate code without auditability, lack persistent memory, and often break their host systems because they are not governed by strict architectural rules.
 
-**The Purpose of this Master Class** is to teach you how to build, deploy, and govern a multi-agent AI ecosystem that is **Discoverable, Auditable, Repairable, and Safe to Evolve**. You will learn how to transition from writing manual scripts to orchestrating the **7 Sovereign Agent Families** through a mandatory **8-Stage Execution Spine**.
+**The Purpose of this Master Class** is to teach you how to build, deploy, and govern a multi-agent AI ecosystem that is **Discoverable, Auditable, Repairable, and Safe to Evolve**. You will learn how to transition from writing manual scripts to governing the canonical LeeWay VS Code runtime through a mandatory **8-Stage Execution Spine**.
+
+Canonical runtime source: [../standards/CANONICAL_RUNTIME_STACK.md](../standards/CANONICAL_RUNTIME_STACK.md)
 
 ![LeeWay Architecture Layers](../public/architecture_layers_1775788271113.png)
 
@@ -27,15 +29,13 @@ Every Agent Lee system operates on four unbreakable pillars:
 
 ![Governance Runtime](../public/governance_runtime_1775788428305.png)
 
-### 2. The Society of Agents (The 7 Families)
-You will not manage a single massive LLM. You will orchestrate a fleet of specialized AI families:
-*   **Nexus:** Interface & Communication
-*   **Nova:** Coding & Refactoring
-*   **Atlas:** Knowledge & Memory
-*   **Shield:** Security & Compliance Enforcement
-*   **Aura:** Media & Presentation
-*   **Chronos:** Automated Chron-Jobs & Pipelines
-*   **Prime:** The Final Speaker (Agent Lee)
+### 2. The Canonical Runtime Stack
+You will not manage a single massive LLM. You will govern a sovereign runtime composed of:
+*   **LeeWay VS Code** as the host surface
+*   **Agent Lee Prime** as the final speaker
+*   **Governed sovereign agents** for filesystem, mutation, execution, perception, security, trust, memory, and threat review
+*   **A declared MCP plane** for engineering, validation, planning, memory, browser evidence, and optimization
+*   **LVIS** for visual reconstruction, asset repair, and project integration
 
 ![Agent Fleet](../public/agent_fleet_1775788317178.png)
 
@@ -49,7 +49,7 @@ You will learn to construct the heartbeat of the ecosystem: The 8-Stage Cycle. E
 
 To master the ecosystem, you must understand the specialized roles of the 100+ agents that reside in `src/agents/`.
 
-#### 🏛️ Layer 1: The Core 7 Families (The Founders)
+#### 🏛️ Layer 1: The Sovereign Runtime Core
 | Agent Name | Role | Primary Responsibility |
 | :--- | :--- | :--- |
 | **Agent Lee** | Prime | System-wide orchestration and final user interaction. |
@@ -101,12 +101,12 @@ The Master Class is divided into 6 Core Modules, supported by technical labs and
 *   **[Module 1: Philosophy & The Sovereignty Doctrine](./Module_1_Philosophy_and_Governance.md)** - Understanding the paradigm shift to Governance-First architecture.
 *   **[Module 2: Agent Anatomy & The LLM School](./Module_2_Agent_Anatomy_LLM_School.md)** - Deep dive into Skill Atoms, Workflows, and the Triple-Threat Memory System.
 *   **[Module 3: Operational Governance (The Sovereign Cycle)](./Module_3_Sovereign_Cycle.md)** - Mastering the mandatory 8-stage execution heartbeat.
-*   **[Module 4: The Execution Spine & Sovereign Families](./Module_4_The_Execution_Spine.md)** - Organizing the Society of Agents into the 7 governed families.
+*   **[Module 4: The Execution Spine & Runtime Governance](./Module_4_The_Execution_Spine.md)** - Organizing the sovereign runtime into governed execution lanes.
 *   **[Module 5: Engineering for Compliance](./Module_5_Engineering_for_Compliance.md)** - Implementing code standards and utilizing the autonomous Compliance Fleet.
 *   **[Module 6: One-Click Sovereignty](./Module_6_One_Click_Sovereignty.md)** - Deploying the Four-Tier Stack (API, WebUI, ONNX) using Docker orchestration.
 
 ### 🤖 The MCP Toolchain
-*   **[The Prime MCP Capabilities](./Materials/MCP_Capabilities.md)** - A complete index of the 13 Machine Control Protocols that grant the Agent fleet controlled access to your filesystem, terminals, and the internet.
+*   **[The Prime MCP Capabilities](./Materials/MCP_Capabilities.md)** - A complete index of the canonical LeeWay VS Code MCP plane and governed capability surfaces.
 
 ---
 

@@ -17,15 +17,17 @@ To understand how to design, govern, and deploy a multi-agent AI ecosystem that 
 *   **Module 1: The Philosophy of Sovereignty** - Shifting from fragmented AI execution to a unified, AI-native operating environment.
 *   **Module 2: Agent Anatomy & The LLM School** - Understanding modular Skill Atoms and the Triple-Threat Memory System.
 *   **Module 3: Operational Governance (The Sovereign Cycle)** - Mastering the mandatory 8-stage execution heartbeat.
-*   **Module 4: The Execution Spine** - Organizing the Society of Agents into 7 governed families.
-*   **Module 5: Engineering for Compliance** - Implementing mandatory code standards and utilizing the autonomous Compliance Fleet.
-*   **Module 6: One-Click Sovereignty** - Deploying the full stack (API, WebUI, ONNX) using Docker orchestration.
+*   **Module 4: The Execution Spine** - Organizing the sovereign runtime into governed execution lanes.
+*   **Module 5: Engineering for Compliance** - Implementing mandatory code standards and utilizing the governed compliance fleet.
+*   **Module 6: One-Click Sovereignty** - Deploying the canonical runtime stack and its governed service planes.
 
 ### Required Tools & Environment
-*   **FastAPI** (The Brain / Orchestrator)
-*   **React / Gradio** (The Execution Interface)
-*   **ONNX Vector Engine** (Local, cloud-free memory)
-*   **PowerShell** (For the automated Compliance Fleet)
-*   **Docker Compose** (For unified stack deployment)
+*   **LeeWay VS Code** (The sovereign host runtime)
+*   **React / TypeScript** (The governed UI and workspace surfaces)
+*   **Local model and memory services** (For retrieval, planning, and continuity)
+*   **PowerShell / Node.js** (For governed execution and automation)
+*   **Containerized support services** (Where deployment architecture requires them)
+
+Canonical runtime source: [../standards/CANONICAL_RUNTIME_STACK.md](../standards/CANONICAL_RUNTIME_STACK.md)
 
 *Score Target: All lab work must achieve the mandatory LeeWay Compliance score of 85/100.*

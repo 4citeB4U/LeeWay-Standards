@@ -1,0 +1,79 @@
+{
+  "$schema": "../schemas/runtime-operations-registry.schema.json",
+  "version": "1.0.0",
+  "authority": "LeeWay Standards",
+  "operations": [
+    {
+      "id": "leeway.scan",
+      "class": "verification",
+      "domain": "safety",
+      "description": "Security and risk scanning operation under Shield governance.",
+      "approval": "required-for-write",
+      "receiptRequired": true
+    },
+    {
+      "id": "leeway.fix",
+      "class": "repair",
+      "domain": "patches",
+      "description": "Governed repair-loop mutation operation for corrective changes.",
+      "approval": "required-for-write",
+      "receiptRequired": true
+    },
+    {
+      "id": "leeway.verify",
+      "class": "verification",
+      "domain": "reports",
+      "description": "Validation and attestation operation for runtime truth claims.",
+      "approval": "not-required",
+      "receiptRequired": true
+    },
+    {
+      "id": "leeway.model.route",
+      "class": "routing",
+      "domain": "workspace",
+      "description": "Model lane routing decision operation governed by deterministic-tools-first policy.",
+      "approval": "not-required",
+      "receiptRequired": true
+    },
+    {
+      "id": "persona.runtime.bridge",
+      "class": "persona",
+      "domain": "workspace",
+      "description": "Persona bridge operation between runtime orchestrator and governed output layer.",
+      "approval": "not-required",
+      "receiptRequired": true
+    },
+    {
+      "id": "write.policy",
+      "class": "policy",
+      "domain": "governance",
+      "description": "Write-policy evaluation operation for mutation approval and safety gates.",
+      "approval": "always-required",
+      "receiptRequired": true
+    },
+    {
+      "id": "engineering.loop",
+      "class": "repair",
+      "domain": "workspace",
+      "description": "Structured engineering loop operation using analyze -> patch -> verify cycles.",
+      "approval": "required-for-write",
+      "receiptRequired": true
+    },
+    {
+      "id": "sdk.validator",
+      "class": "sdk",
+      "domain": "reports",
+      "description": "SDK-level validation operation for standards compliance and release confidence.",
+      "approval": "not-required",
+      "receiptRequired": true
+    },
+    {
+      "id": "agent.registry.loader",
+      "class": "registry",
+      "domain": "knowledge",
+      "description": "Loads and validates canonical sovereign runtime and agent registries.",
+      "approval": "not-required",
+      "receiptRequired": true
+    }
+  ]
+}

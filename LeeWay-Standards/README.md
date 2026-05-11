@@ -43,7 +43,7 @@ Once the system is active, use the `leeway` command to govern your project.
 | `.\leeway audit` | Compliance Scoring | Generates a deterministic score of your project's integrity. |
 | `.\leeway align` | Structural Enforcement | Injects missing 5W headers into your files (use `--apply`). |
 | `.\leeway scan` | Security Secret Scan | Prevents leaking keys, tokens, or credentials before push. |
-| `.\leeway map` | Architecture Map | Visualizes the distribution of the 7 Agent Families. |
+| `.\leeway map` | Architecture Map | Visualizes the distribution of the governed runtime domains and execution lanes. |
 | `.\leeway registry` | Rebuild Agent Map | Updates the system's awareness of your files. |
 | `.\leeway forge` | Create NPC Agent | Expand the Hive Mind by forging a new specialized agent. |
 
@@ -107,7 +107,7 @@ flowchart TD
 
 1. **Sovereign Execution**: No cloud dependency. No external control.
 2. **Deterministic Governance**: Nothing executes without validation.
-3. **Agent Specialization**: Each agent has a defined role across 7 Families.
+3. **Agent Specialization**: Each agent has a declared role inside the sovereign runtime and its governance lanes.
 4. **Memory Integrity**: All actions are recorded, structured, and auditable.
 
 ---
@@ -147,6 +147,8 @@ MIT © Rapid Web Development
 A LeeWay Innovations Product
 
 ---
+
+Canonical runtime source: [../standards/CANONICAL_RUNTIME_STACK.md](../standards/CANONICAL_RUNTIME_STACK.md)
 
 <p align="center">
   <img src="public/LeeWayStandardslogo.png" width="120" />
