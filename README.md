@@ -73,6 +73,15 @@ LeeWay is powered by a high-fidelity hierarchy of governed intelligence. Every a
 | **Memory Warden** | `memory` | Provenance, Retention, Policy | Protects evidence-bearing continuity. | Ensures memory remains auditable and tamper-proof. |
 | **Threat Sentinel** | `security` | Adversarial Detection, Risk Analysis | Detects adversarial instructions and drift. | Proactively identifies and mitigates security risks. |
 
+### 🖥️ Layer 4: Host Control MCPs
+| Name | Family | Skills | Purpose | Job |
+| :--- | :--- | :--- | :--- | :--- |
+| **FS Nav Agent** | `host` | Filesystem Discovery, Tree Traversal | Governed filesystem navigation and discovery. | Maps and reads the workspace structure. |
+| **Mutation Agent** | `host` | Code Evolution, Patch Application | Controlled workspace mutation and repair. | Executes safe, multi-chunk edits to source files. |
+| **Host Exec Agent** | `host` | Terminal Authority, Command Execution | Approval-bound terminal execution. | Runs native OS commands within safety boundaries. |
+| **Perception Agent** | `host` | Browser Vision, Internet Search | Web perception and autonomous research. | Provides external intelligence and evidence. |
+| **Media Forge Agent** | `host` | Visual Synthesis, Asset Generation | Media analysis and asset generation support. | Synthesizes images, icons, and UI assets. |
+
 ---
 
 ## ⚙️ The Canonical Runtime Stack
