@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="./public/LeeWayStandards.png" alt="LeeWay Standards wordmark" width="360" />
+  <img src="./public/LeeWayStandardslogo.png" alt="LeeWay Standards Logo" width="480" />
 </p>
+
 
 # LeeWay Standards: Sovereign Agent Architecture
 
