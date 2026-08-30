@@ -93,6 +93,18 @@ The protocols that grant the Prime agent its "physical" presence on the machine.
 
 ---
 
+## 🧭 Reviewer Interactive Reading
+
+Reviewers should use the interactive ecosystem visualization alongside the written architecture standards. It provides a drill-down mind-map view of the LeeWay OS architecture, including Runtime Fabric, Formula, Memory Harness, Harness Fabric, Kernel Fabric, MCP Fabric, Skill Fabric, Veritas, Employment Center, Presence, inference levels, and external capability assimilation.
+
+**[Open the LeeWay OS Interactive Mind Map Demo](./Materials/LeeWay_OS_Interactive_MindMap_Demo.html)**
+
+For the normative architecture rules behind the visualization, read the **[LeeWay Kernel Fabric Architecture Standard](../Docs/architecture/leeway-kernel-fabric-architecture-standard.md)**.
+
+> The interactive visualization is a teaching/review artifact. The architecture standard remains the normative reference, and runtime claims still require Veritas evidence and receipts.
+
+---
+
 ## 📚 Curriculum Index
 
 The Master Class is divided into 6 Core Modules, supported by technical labs and certification exams.
