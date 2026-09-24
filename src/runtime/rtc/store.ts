@@ -152,11 +152,21 @@ export function useRTCStore(): RTCStoreAPI {
   const deviceRef       = useRef<mediasoupClient.Device | null>(null);
   const sendTransRef    = useRef<mediasoupClient.types.Transport | null>(null);
   const recvTransRef    = useRef<mediasoupClient.types.Transport | null>(null);
-  const producerRef     = useRef<mediasoupClient.types.Producer | null>(null);
+  const producersRef    = useRef<Map<string, mediasoupClient.types.Producer>>(new Map());
   const localStreamRef  = useRef<MediaStream | null>(null);
   const statsTimerRef   = useRef<ReturnType<typeof setInterval> | null>(null);
+  const reconnectTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const reconnectAttemptRef = useRef(0);
+  const manualDisconnectRef = useRef(false);
+  const connectRef = useRef<((roomId?: string, apiKey?: string) => Promise<void>) | null>(null);
+  const roomRef = useRef(DEFAULT_ROOM);
+  const apiKeyRef = useRef('');
   const pendingRef      = useRef<
-    Map<number, { resolve: (d: unknown) => void; reject: (e: Error) => void }>
+    Map<number, {
+      resolve: (d: unknown) => void;
+      reject: (e: Error) => void;
+      timer: ReturnType<typeof setTimeout>;
+    }>
   >(new Map());
 
   // ── addEvent ──────────────────────────────────────────────────────────────
@@ -178,10 +188,24 @@ export function useRTCStore(): RTCStoreAPI {
         reject(new Error('WebSocket not open'));
         return;
       }
+
       const id = nextId();
+
+      // Request timeout is a deployment profile, not a universal latency law.
+      // It deliberately exceeds the default server resume grace so a response
+      // queued during a transient disconnect can still settle after resume.
+      const timeoutMs = 45000;
+      const timer = setTimeout(() => {
+        const pending = pendingRef.current.get(id);
+        if (!pending) return;
+        pendingRef.current.delete(id);
+        pending.reject(new Error(`RTC RPC timeout: ${type}`));
+      }, timeoutMs);
+
       pendingRef.current.set(id, {
         resolve: resolve as (d: unknown) => void,
         reject,
+        timer,
       });
       ws.send(JSON.stringify({ id, type, ...data }));
     });
