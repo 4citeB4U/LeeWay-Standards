@@ -130,6 +130,9 @@ export const metrics = {
   wsConnections: new Counter('leeway_ws_connections_total'),
   wsMessages: new Counter('leeway_ws_messages_total'),
   signalingErrors: new Counter('leeway_signaling_errors_total'),
+  workers: new Counter('leeway_workers_active'),
+  workerDeaths: new Counter('leeway_worker_deaths_total'),
+  workerRestarts: new Counter('leeway_worker_restarts_total'),
   transportCreation: new DurationMetric('leeway_transport_creation_seconds'),
 };
 
@@ -153,6 +156,9 @@ function metricsJson() {
     counterJson(metrics.wsConnections),
     counterJson(metrics.wsMessages),
     counterJson(metrics.signalingErrors),
+    counterJson(metrics.workers),
+    counterJson(metrics.workerDeaths),
+    counterJson(metrics.workerRestarts),
     {
       name: 'leeway_transport_creation_seconds_mean',
       help: 'Mean SFU WebRTC transport creation time in seconds',
@@ -180,6 +186,9 @@ export const registry = {
       ...metrics.wsConnections.prometheus(),
       ...metrics.wsMessages.prometheus(),
       ...metrics.signalingErrors.prometheus(),
+      ...metrics.workers.prometheus(),
+      ...metrics.workerDeaths.prometheus(),
+      ...metrics.workerRestarts.prometheus(),
       ...metrics.transportCreation.prometheus(),
     ];
     return lines.join('\n') + '\n';
