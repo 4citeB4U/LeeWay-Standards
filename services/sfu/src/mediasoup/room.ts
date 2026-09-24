@@ -37,6 +37,7 @@ export class Room {
   private readonly router: types.Router;
   private readonly peers = new Map<string, PeerState>();
   private invalidated = false;
+  private roomMetricReleased = false;
 
   private constructor(id: string, router: types.Router) {
     this.id = id;
@@ -49,20 +50,16 @@ export class Room {
         'Room router invalidated because its Mediasoup worker closed',
       );
 
-      // Mediasoup closes child transports/producers/consumers with the worker.
-      // Clear LeeWay ownership maps so stale objects are never reused.
+      // Mediasoup emits transport/producer/consumer closure events as the
+      // worker tears down. Their existing handlers own those metric decrements.
+      // LeeWay only clears stale ownership maps here.
       for (const peer of this.peers.values()) {
-        for (const consumer of peer.consumers.values()) {
-          metrics.consumers.dec({ kind: consumer.kind });
-        }
-        for (const producer of peer.producers.values()) {
-          metrics.producers.dec({ kind: producer.kind });
-        }
         peer.consumers.clear();
         peer.producers.clear();
         peer.transports.clear();
       }
       this.peers.clear();
+      this.releaseRoomMetric();
     });
   }
 
@@ -83,6 +80,12 @@ export class Room {
 
   isUsable(): boolean {
     return !this.invalidated && !this.router.closed;
+  }
+
+  private releaseRoomMetric(): void {
+    if (this.roomMetricReleased) return;
+    this.roomMetricReleased = true;
+    metrics.rooms.dec();
   }
 
   addPeer(peerId: string): PeerState {
@@ -275,7 +278,7 @@ export class Room {
       this.removePeer(peer.id);
     }
     this.router.close();
-    metrics.rooms.dec();
+    this.releaseRoomMetric();
     logger.info({ roomId: this.id }, 'Room closed');
   }
 }
