@@ -108,6 +108,21 @@ const TOKEN_URL =
   '/dev/token';
 
 const DEFAULT_ROOM = 'leeway-main';
+const PEER_ID_STORAGE_KEY = 'leeway.rtc.peer-id.v1';
+
+function getStablePeerId(): string {
+  try {
+    const existing = window.localStorage.getItem(PEER_ID_STORAGE_KEY);
+    if (existing && /^[A-Za-z0-9._:-]{8,128}$/.test(existing)) return existing;
+    const generated = `operator-${crypto.randomUUID()}`;
+    window.localStorage.setItem(PEER_ID_STORAGE_KEY, generated);
+    return generated;
+  } catch {
+    // Browser storage may be unavailable in hardened/private contexts.
+    // The session still works, but durable resume cannot span page reload.
+    return `operator-${crypto.randomUUID()}`;
+  }
+}
 
 // ---------------------------------------------------------------------------
 // Internal helpers
@@ -294,7 +309,7 @@ export function useRTCStore(): RTCStoreAPI {
     for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
       try {
         // 1. JWT
-        const sub = `operator-${Math.random().toString(36).slice(2, 7)}`;
+        const sub = getStablePeerId();
         const tokenResp = await fetch(TOKEN_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -337,6 +352,7 @@ export function useRTCStore(): RTCStoreAPI {
           const pending = pendingRef.current.get(msg['id'] as number);
           if (pending) {
             pendingRef.current.delete(msg['id'] as number);
+            clearTimeout(pending.timer);
             if (msg['ok'] === false)
               pending.reject(new Error(String(msg['error'] ?? 'RPC error')));
             else
@@ -510,8 +526,8 @@ export function useRTCStore(): RTCStoreAPI {
     if (statsTimerRef.current) { clearInterval(statsTimerRef.current); statsTimerRef.current = null; }
     localStreamRef.current?.getTracks().forEach(t => t.stop());
     localStreamRef.current = null;
-    producerRef.current?.close();
-    producerRef.current = null;
+    for (const producer of producersRef.current.values()) producer.close();
+    producersRef.current.clear();
     sendTransRef.current?.close();
     sendTransRef.current = null;
     recvTransRef.current?.close();
@@ -563,7 +579,8 @@ export function useRTCStore(): RTCStoreAPI {
 
     for (const track of stream.getTracks()) {
       const producer = await sendTransRef.current!.produce({ track });
-      producerRef.current = producer;
+      producersRef.current.set(producer.id, producer);
+      producer.on('transportclose', () => producersRef.current.delete(producer.id));
     }
 
     setIsPublishing(true);
@@ -576,10 +593,10 @@ export function useRTCStore(): RTCStoreAPI {
 
   // ── stopPublish ───────────────────────────────────────────────────────────
   const stopPublish = useCallback(async () => {
-    if (producerRef.current) {
-      await request('closeProducer', { producerId: producerRef.current.id }).catch(() => null);
-      producerRef.current.close();
-      producerRef.current = null;
+    for (const producer of [...producersRef.current.values()]) {
+      await request('closeProducer', { producerId: producer.id }).catch(() => null);
+      producer.close();
+      producersRef.current.delete(producer.id);
     }
     localStreamRef.current?.getTracks().forEach(t => t.stop());
     localStreamRef.current = null;
