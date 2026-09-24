@@ -91,5 +91,10 @@ export const config = {
   ws: {
     maxConnectionsPerIp: intEnv('WS_MAX_CONNECTIONS_PER_IP', 10),
     maxMessageBytes: intEnv('WS_MAX_MESSAGE_BYTES', 65536),
+
+    // PH-05 realtime lifecycle profile. These are deployment defaults, not universal laws.
+    resumeGraceMs: intEnv('WS_RESUME_GRACE_MS', 30000),
+    pingIntervalMs: intEnv('WS_PING_INTERVAL_MS', 15000),
+    maxPendingNotifications: intEnv('WS_MAX_PENDING_NOTIFICATIONS', 128),
   },
 } as const;
