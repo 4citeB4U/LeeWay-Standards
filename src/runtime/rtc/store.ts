@@ -510,8 +510,22 @@ export function useRTCStore(): RTCStoreAPI {
           iceState: iceMap[s] ?? 'new',
           signalingState: s === 'connected' ? 'stable' : prev.signalingState,
         }));
-        if (s === 'connected')
+        if (s === 'connected') {
           addEvent({ type: 'rtc', level: 'success', message: 'WebRTC Transport connected', source: 'RTC' });
+        }
+
+        if ((s === 'failed' || s === 'closed') && !manualDisconnectRef.current) {
+          addEvent({
+            type: 'rtc',
+            level: 'warn',
+            message: `Receive transport entered ${s}; forcing signaling recovery`,
+            source: 'RTC',
+          });
+          const currentWs = wsRef.current;
+          if (currentWs?.readyState === WebSocket.OPEN) {
+            currentWs.close(4101, 'media transport recovery');
+          }
+        }
       });
 
       // 8. Mark connected + add local peer
@@ -603,6 +617,23 @@ export function useRTCStore(): RTCStoreAPI {
             kind,
             rtpParameters,
           }).then(({ producerId }) => cb({ id: producerId })).catch(eb);
+        });
+        sendTransport.on('connectionstatechange', (transportState) => {
+          if (
+            (transportState === 'failed' || transportState === 'closed') &&
+            !manualDisconnectRef.current
+          ) {
+            addEvent({
+              type: 'rtc',
+              level: 'warn',
+              message: `Send transport entered ${transportState}; forcing signaling recovery`,
+              source: 'RTC',
+            });
+            const currentWs = wsRef.current;
+            if (currentWs?.readyState === WebSocket.OPEN) {
+              currentWs.close(4101, 'media transport recovery');
+            }
+          }
         });
 
         for (const track of retainedTracks) {
@@ -740,6 +771,23 @@ export function useRTCStore(): RTCStoreAPI {
         request<{ producerId: string }>('produce', { transportId: sendTransport.id, kind, rtpParameters })
           .then(({ producerId }) => cb({ id: producerId }))
           .catch(eb);
+      });
+      sendTransport.on('connectionstatechange', (transportState) => {
+        if (
+          (transportState === 'failed' || transportState === 'closed') &&
+          !manualDisconnectRef.current
+        ) {
+          addEvent({
+            type: 'rtc',
+            level: 'warn',
+            message: `Send transport entered ${transportState}; forcing signaling recovery`,
+            source: 'RTC',
+          });
+          const currentWs = wsRef.current;
+          if (currentWs?.readyState === WebSocket.OPEN) {
+            currentWs.close(4101, 'media transport recovery');
+          }
+        }
       });
 
       addEvent({ type: 'rtc', level: 'success', message: 'Send transport ready', source: 'RTC' });
