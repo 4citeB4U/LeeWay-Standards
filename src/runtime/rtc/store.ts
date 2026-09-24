@@ -330,6 +330,7 @@ export function useRTCStore(): RTCStoreAPI {
         // 2. WebSocket with timeout
         const wsUrl = WS_URL(apiKey);
         const ws = new WebSocket(wsUrl);
+        let allowAutoReconnect = false;
         wsRef.current = ws;
 
         const WS_OPEN_TIMEOUT = 10000; // 10s timeout
@@ -393,7 +394,7 @@ export function useRTCStore(): RTCStoreAPI {
           statsTimerRef.current = null;
         }
 
-        if (!manualDisconnectRef.current) {
+        if (!manualDisconnectRef.current && allowAutoReconnect) {
           const attempt = reconnectAttemptRef.current++;
           const delay = Math.min(1000 * Math.pow(2, attempt), 8000);
           addEvent({
@@ -444,6 +445,7 @@ export function useRTCStore(): RTCStoreAPI {
           message: `Signaling resumed for room "${roomId}" without replacing healthy media transports`,
           source: 'LEEWAY',
         });
+        allowAutoReconnect = true;
         return;
       }
 
@@ -631,7 +633,9 @@ export function useRTCStore(): RTCStoreAPI {
       if (statsTimerRef.current) clearInterval(statsTimerRef.current);
       statsTimerRef.current = setInterval(() => { void pollStats(); }, 2000);
 
-        // Connection succeeded — exit retry loop
+        // Connection succeeded — future socket loss may now invoke the
+        // autonomous recovery path.
+        allowAutoReconnect = true;
         return;
       } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);
@@ -659,21 +663,55 @@ export function useRTCStore(): RTCStoreAPI {
 
   // ── disconnect ────────────────────────────────────────────────────────────
   const disconnect = useCallback(() => {
-    if (statsTimerRef.current) { clearInterval(statsTimerRef.current); statsTimerRef.current = null; }
-    localStreamRef.current?.getTracks().forEach(t => t.stop());
-    localStreamRef.current = null;
+    manualDisconnectRef.current = true;
+    reconnectAttemptRef.current = 0;
+
+    if (reconnectTimerRef.current) {
+      clearTimeout(reconnectTimerRef.current);
+      reconnectTimerRef.current = null;
+    }
+    if (statsTimerRef.current) {
+      clearInterval(statsTimerRef.current);
+      statsTimerRef.current = null;
+    }
+
+    // Explicit owner disconnect should release server room state immediately.
+    const ws = wsRef.current;
+    if (ws?.readyState === WebSocket.OPEN) {
+      try {
+        ws.send(JSON.stringify({ type: 'leaveRoom' }));
+      } catch { /* best effort; server grace cleanup remains fallback */ }
+    }
+
+    for (const [id, pending] of pendingRef.current) {
+      clearTimeout(pending.timer);
+      pending.reject(new Error('RTC session disconnected by owner'));
+      pendingRef.current.delete(id);
+    }
+
     for (const producer of producersRef.current.values()) producer.close();
     producersRef.current.clear();
+
+    localStreamRef.current?.getTracks().forEach(t => t.stop());
+    localStreamRef.current = null;
+
     sendTransRef.current?.close();
     sendTransRef.current = null;
     recvTransRef.current?.close();
     recvTransRef.current = null;
     deviceRef.current = null;
-    wsRef.current?.close();
+
+    ws?.close(1000, 'owner disconnect');
     wsRef.current = null;
+
     setIsPublishing(false);
     setState({ ...INITIAL_STATE });
-    addEvent({ type: 'system', level: 'info', message: 'Disconnected — session terminated', source: 'LEEWAY' });
+    addEvent({
+      type: 'system',
+      level: 'info',
+      message: 'Disconnected — owner terminated the RTC session',
+      source: 'LEEWAY',
+    });
   }, [addEvent]);
 
   // ── publish ───────────────────────────────────────────────────────────────
@@ -710,10 +748,28 @@ export function useRTCStore(): RTCStoreAPI {
       addEvent({ type: 'rtc', level: 'success', message: 'Send transport ready', source: 'RTC' });
     }
 
-    const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video });
-    localStreamRef.current = stream;
+    const currentStream = localStreamRef.current;
+    const liveAudio = currentStream?.getAudioTracks().some(t => t.readyState === 'live') ?? false;
+    const liveVideo = currentStream?.getVideoTracks().some(t => t.readyState === 'live') ?? false;
+
+    let stream = currentStream;
+    if (!stream || !liveAudio || (video && !liveVideo)) {
+      // Reuse already-authorized live tracks where possible. Only acquire a
+      // fresh stream when the requested media capability is missing.
+      const fresh = await navigator.mediaDevices.getUserMedia({
+        audio: !liveAudio,
+        video: video && !liveVideo,
+      });
+      const mergedTracks = [
+        ...(currentStream?.getTracks().filter(t => t.readyState === 'live') ?? []),
+        ...fresh.getTracks(),
+      ];
+      stream = new MediaStream(mergedTracks);
+      localStreamRef.current = stream;
+    }
 
     for (const track of stream.getTracks()) {
+      if ([...producersRef.current.values()].some(p => p.track?.id === track.id)) continue;
       const producer = await sendTransRef.current!.produce({ track });
       producersRef.current.set(producer.id, producer);
       producer.on('transportclose', () => producersRef.current.delete(producer.id));
@@ -747,8 +803,20 @@ export function useRTCStore(): RTCStoreAPI {
   // ── cleanup on unmount ────────────────────────────────────────────────────
   useEffect(() => {
     return () => {
+      manualDisconnectRef.current = true;
+      if (reconnectTimerRef.current) clearTimeout(reconnectTimerRef.current);
       if (statsTimerRef.current) clearInterval(statsTimerRef.current);
-      wsRef.current?.close();
+      for (const pending of pendingRef.current.values()) {
+        clearTimeout(pending.timer);
+        pending.reject(new Error('RTC store unmounted'));
+      }
+      pendingRef.current.clear();
+      for (const producer of producersRef.current.values()) producer.close();
+      producersRef.current.clear();
+      localStreamRef.current?.getTracks().forEach(t => t.stop());
+      sendTransRef.current?.close();
+      recvTransRef.current?.close();
+      wsRef.current?.close(1000, 'RTC store unmounted');
     };
   }, []);
 
