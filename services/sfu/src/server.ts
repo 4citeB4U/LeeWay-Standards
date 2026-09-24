@@ -23,7 +23,7 @@ import express from 'express';
 import { WebSocketServer } from 'ws';
 import { registry } from './metrics.js';
 import { attachSignalingServer } from './signaling/handler.js';
-import { issueToken } from './auth.js';
+import { issueToken, verifyToken } from './auth.js';
 import { logger } from './logger.js';
 import { config } from './config.js';
 import { agentRegistry, agentRuntime, agentBus } from './agents/registry.js';
@@ -31,23 +31,23 @@ import { agentRegistry, agentRuntime, agentBus } from './agents/registry.js';
 import { getRooms } from './mediasoup/room.js';
 import { roomConnections } from './signaling/handler.js';
 
-const LEEWAY_PREFIX = '-leeway23-';
-const API_KEYS = new Set(['-leeway23-MISSION', '-leeway23-ADMIN9', '-leeway23-SDKE22']);
-const BLACKLIST = new Set(['-leeway23-CORRUPT']);
-
-function isValidKey(key: string) {
-  if (!key || !key.startsWith(LEEWAY_PREFIX)) return false;
-  if (key.length < 16) return false;
-  if (BLACKLIST.has(key)) return false;
-  return API_KEYS.has(key);
-}
-
-function authMiddleware(req: any, res: any, next: any) {
-  const key = req.headers['x-api-key'] || req.query.apiKey;
-  if (!isValidKey(key)) {
-    return res.status(401).json({ error: 'LeeWay ACCESS_DENIED: Invalid, Non-Compliant, or Revoked API Key. Codebase must pass LeeWay SDK Audit.' });
+function sessionAuthMiddleware(req: any, res: any, next: any) {
+  const authorization = String(req.headers['authorization'] ?? '');
+  if (!authorization.startsWith('Bearer ')) {
+    return res.status(401).json({
+      error: 'LEEWAY_SESSION_AUTH_REQUIRED',
+    });
   }
-  next();
+
+  const token = authorization.slice('Bearer '.length).trim();
+  try {
+    req.leewaySession = verifyToken(token);
+    next();
+  } catch {
+    return res.status(401).json({
+      error: 'LEEWAY_SESSION_TOKEN_INVALID_OR_EXPIRED',
+    });
+  }
 }
 
 export async function createServer(): Promise<http.Server> {
@@ -55,8 +55,8 @@ export async function createServer(): Promise<http.Server> {
   app.use(express.json());
 
   // Apply Auth to specific endpoints
-  app.use('/agents', authMiddleware);
-  app.use('/metrics', authMiddleware);
+  app.use('/agents', sessionAuthMiddleware);
+  app.use('/metrics', sessionAuthMiddleware);
 
   // ─── Health ────────────────────────────────────────────────────────────────
   app.get('/health', (_req, res) => {
