@@ -57,6 +57,9 @@ export class Room {
   }
 
   addPeer(peerId: string): PeerState {
+    const existing = this.peers.get(peerId);
+    if (existing) return existing;
+
     const peer: PeerState = {
       id: peerId,
       transports: new Map(),
@@ -149,6 +152,9 @@ export class Room {
     transport.on('dtlsstatechange', (state: string) => {
       if (state === 'failed' || state === 'closed') {
         logger.warn({ transportId: transport.id, state }, 'DTLS state changed');
+      }
+      if (state === 'closed') {
+        peer.transports.delete(transport.id);
       }
     });
 
@@ -248,14 +254,26 @@ export class Room {
 // ─── Room Registry ──────────────────────────────────────────────────────────
 
 const rooms = new Map<string, Room>();
+const roomCreations = new Map<string, Promise<Room>>();
 
 export function getOrCreateRoom(roomId: string): Promise<Room> {
   const existing = rooms.get(roomId);
   if (existing) return Promise.resolve(existing);
-  return Room.create(roomId).then((room) => {
-    rooms.set(roomId, room);
-    return room;
-  });
+
+  const inFlight = roomCreations.get(roomId);
+  if (inFlight) return inFlight;
+
+  const creation = Room.create(roomId)
+    .then((room) => {
+      rooms.set(roomId, room);
+      return room;
+    })
+    .finally(() => {
+      roomCreations.delete(roomId);
+    });
+
+  roomCreations.set(roomId, creation);
+  return creation;
 }
 
 export function getRoom(roomId: string): Room | undefined {
@@ -268,8 +286,8 @@ export function getRooms(): Room[] {
 
 export function deleteRoom(roomId: string): void {
   const room = rooms.get(roomId);
-  if (room) {
-    room.close();
-    rooms.delete(roomId);
-  }
+  if (!room) return;
+  room.close();
+  rooms.delete(roomId);
+  logger.info({ roomId }, 'Room registry entry deleted');
 }
