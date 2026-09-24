@@ -23,7 +23,7 @@ import type { IncomingMessage } from 'http';
 import type { types } from 'mediasoup';
 
 import { verifyToken } from '../auth.js';
-import { getOrCreateRoom, getRoom } from '../mediasoup/room.js';
+import { deleteRoom, getOrCreateRoom, getRoom } from '../mediasoup/room.js';
 import { logger } from '../logger.js';
 import { metrics } from '../metrics.js';
 import { config } from '../config.js';
@@ -175,6 +175,10 @@ function drainNotifications(session: PeerSession): void {
 function releaseRoomMembership(peerId: string, roomId: string, reason: string): void {
   const room = getRoom(roomId);
   room?.removePeer(peerId);
+
+  if (room && room.getPeerCount() === 0) {
+    deleteRoom(roomId);
+  }
 
   const roomMap = roomConnections.get(roomId);
   if (roomMap) {
