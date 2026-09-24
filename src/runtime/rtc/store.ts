@@ -98,10 +98,9 @@ export interface RTCState {
 // ---------------------------------------------------------------------------
 
 // Vite proxies /ws → SFU ws://localhost:3000 and /dev → SFU http://localhost:3000
-const WS_URL = (apiKey: string) => {
-  const base = (import.meta as { env?: Record<string, string> }).env?.['VITE_SIGNALING_URL'] ?? `ws://${window.location.host}/ws`;
-  return `${base}?apiKey=${apiKey}`;
-};
+const WS_URL = () =>
+  (import.meta as { env?: Record<string, string> }).env?.['VITE_SIGNALING_URL']
+    ?? `ws://${window.location.host}/ws`;
 
 const TOKEN_URL =
   ((import.meta as { env?: Record<string, string> }).env?.['VITE_HTTP_BASE_URL'] ?? '') +
@@ -152,7 +151,7 @@ const INITIAL_STATE: RTCState = {
 export interface RTCStoreAPI {
   state: RTCState;
   addEvent: (event: Omit<RTCEvent, 'id' | 'timestamp'>) => void;
-  connect: (roomId?: string, apiKey?: string) => Promise<void>;
+  connect: (roomId?: string) => Promise<void>;
   disconnect: () => void;
   publish: (video?: boolean) => Promise<void>;
   stopPublish: () => Promise<void>;
@@ -173,9 +172,8 @@ export function useRTCStore(): RTCStoreAPI {
   const reconnectTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const reconnectAttemptRef = useRef(0);
   const manualDisconnectRef = useRef(false);
-  const connectRef = useRef<((roomId?: string, apiKey?: string) => Promise<void>) | null>(null);
+  const connectRef = useRef<((roomId?: string) => Promise<void>) | null>(null);
   const roomRef = useRef(DEFAULT_ROOM);
-  const apiKeyRef = useRef('');
   const pendingRef      = useRef<
     Map<number, {
       resolve: (d: unknown) => void;
@@ -297,12 +295,11 @@ export function useRTCStore(): RTCStoreAPI {
   }, []);
 
   // ── connect ───────────────────────────────────────────────────────────────
-  const connect = useCallback(async (roomId: string = DEFAULT_ROOM, apiKey: string = '') => {
+  const connect = useCallback(async (roomId: string = DEFAULT_ROOM) => {
     if (wsRef.current?.readyState === WebSocket.OPEN) return; // already connected
 
     manualDisconnectRef.current = false;
     roomRef.current = roomId;
-    apiKeyRef.current = apiKey;
     if (reconnectTimerRef.current) {
       clearTimeout(reconnectTimerRef.current);
       reconnectTimerRef.current = null;
@@ -328,7 +325,7 @@ export function useRTCStore(): RTCStoreAPI {
         addEvent({ type: 'signaling', level: 'success', message: 'JWT issued — opening WebSocket...', source: 'AUTH' });
 
         // 2. WebSocket with timeout
-        const wsUrl = WS_URL(apiKey);
+        const wsUrl = WS_URL();
         const ws = new WebSocket(wsUrl);
         let allowAutoReconnect = false;
         wsRef.current = ws;
@@ -406,7 +403,7 @@ export function useRTCStore(): RTCStoreAPI {
           if (reconnectTimerRef.current) clearTimeout(reconnectTimerRef.current);
           reconnectTimerRef.current = setTimeout(() => {
             reconnectTimerRef.current = null;
-            void connectRef.current?.(roomRef.current, apiKeyRef.current);
+            void connectRef.current?.(roomRef.current);
           }, delay);
         }
       };
