@@ -36,10 +36,34 @@ export class Room {
   readonly id: string;
   private readonly router: types.Router;
   private readonly peers = new Map<string, PeerState>();
+  private invalidated = false;
 
   private constructor(id: string, router: types.Router) {
     this.id = id;
     this.router = router;
+
+    router.on('workerclose', () => {
+      this.invalidated = true;
+      logger.error(
+        { roomId: this.id, routerId: router.id },
+        'Room router invalidated because its Mediasoup worker closed',
+      );
+
+      // Mediasoup closes child transports/producers/consumers with the worker.
+      // Clear LeeWay ownership maps so stale objects are never reused.
+      for (const peer of this.peers.values()) {
+        for (const consumer of peer.consumers.values()) {
+          metrics.consumers.dec({ kind: consumer.kind });
+        }
+        for (const producer of peer.producers.values()) {
+          metrics.producers.dec({ kind: producer.kind });
+        }
+        peer.consumers.clear();
+        peer.producers.clear();
+        peer.transports.clear();
+      }
+      this.peers.clear();
+    });
   }
 
   static async create(id: string): Promise<Room> {
@@ -53,7 +77,12 @@ export class Room {
   }
 
   get routerRtpCapabilities(): types.RtpCapabilities {
+    if (!this.isUsable()) throw new Error(`Room ${this.id} router is not usable`);
     return this.router.rtpCapabilities;
+  }
+
+  isUsable(): boolean {
+    return !this.invalidated && !this.router.closed;
   }
 
   addPeer(peerId: string): PeerState {
@@ -258,7 +287,11 @@ const roomCreations = new Map<string, Promise<Room>>();
 
 export function getOrCreateRoom(roomId: string): Promise<Room> {
   const existing = rooms.get(roomId);
-  if (existing) return Promise.resolve(existing);
+  if (existing?.isUsable()) return Promise.resolve(existing);
+  if (existing) {
+    rooms.delete(roomId);
+    logger.warn({ roomId }, 'Discarded unusable room before recreation');
+  }
 
   const inFlight = roomCreations.get(roomId);
   if (inFlight) return inFlight;
@@ -277,7 +310,11 @@ export function getOrCreateRoom(roomId: string): Promise<Room> {
 }
 
 export function getRoom(roomId: string): Room | undefined {
-  return rooms.get(roomId);
+  const room = rooms.get(roomId);
+  if (!room) return undefined;
+  if (room.isUsable()) return room;
+  rooms.delete(roomId);
+  return undefined;
 }
 
 export function getRooms(): Room[] {
