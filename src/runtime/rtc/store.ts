@@ -300,6 +300,14 @@ export function useRTCStore(): RTCStoreAPI {
   const connect = useCallback(async (roomId: string = DEFAULT_ROOM, apiKey: string = '') => {
     if (wsRef.current?.readyState === WebSocket.OPEN) return; // already connected
 
+    manualDisconnectRef.current = false;
+    roomRef.current = roomId;
+    apiKeyRef.current = apiKey;
+    if (reconnectTimerRef.current) {
+      clearTimeout(reconnectTimerRef.current);
+      reconnectTimerRef.current = null;
+    }
+
     setState(prev => ({ ...prev, connectionState: 'connecting', roomName: roomId }));
     addEvent({ type: 'signaling', level: 'info', message: 'Fetching session token...', source: 'AUTH' });
 
@@ -377,15 +385,87 @@ export function useRTCStore(): RTCStoreAPI {
       };
 
       ws.onclose = () => {
-        setState(prev => ({ ...prev, connectionState: 'disconnected', iceState: 'disconnected' }));
+        if (wsRef.current === ws) wsRef.current = null;
+        setState(prev => ({ ...prev, connectionState: 'disconnected' }));
         addEvent({ type: 'signaling', level: 'warn', message: 'WebSocket closed', source: 'SIGNAL' });
-        if (statsTimerRef.current) clearInterval(statsTimerRef.current);
+        if (statsTimerRef.current) {
+          clearInterval(statsTimerRef.current);
+          statsTimerRef.current = null;
+        }
+
+        if (!manualDisconnectRef.current) {
+          const attempt = reconnectAttemptRef.current++;
+          const delay = Math.min(1000 * Math.pow(2, attempt), 8000);
+          addEvent({
+            type: 'signaling',
+            level: 'warn',
+            message: `Signaling recovery scheduled in ${delay}ms (attempt ${attempt + 1})`,
+            source: 'SIGNAL',
+          });
+          if (reconnectTimerRef.current) clearTimeout(reconnectTimerRef.current);
+          reconnectTimerRef.current = setTimeout(() => {
+            reconnectTimerRef.current = null;
+            void connectRef.current?.(roomRef.current, apiKeyRef.current);
+          }, delay);
+        }
       };
 
       // 4. Auth
-      const authResp = await request<{ peerId: string }>('auth', { token });
+      const authResp = await request<{
+        peerId: string;
+        resumed?: boolean;
+        roomId?: string;
+        resumeGraceMs?: number;
+      }>('auth', { token });
       const { peerId } = authResp;
       setState(prev => ({ ...prev, peerId }));
+
+      const recvState = recvTransRef.current?.connectionState;
+      const sendState = sendTransRef.current?.connectionState;
+      const mediaHealthy =
+        Boolean(recvTransRef.current) &&
+        recvState !== 'failed' &&
+        recvState !== 'closed' &&
+        (!sendTransRef.current || (sendState !== 'failed' && sendState !== 'closed'));
+
+      if (authResp.resumed && authResp.roomId === roomId && mediaHealthy) {
+        reconnectAttemptRef.current = 0;
+        setState(prev => ({
+          ...prev,
+          connectionState: 'connected',
+          signalingState: 'stable',
+          iceState: recvState === 'connected' ? 'connected' : prev.iceState,
+        }));
+        if (statsTimerRef.current) clearInterval(statsTimerRef.current);
+        statsTimerRef.current = setInterval(() => { void pollStats(); }, 2000);
+        addEvent({
+          type: 'signaling',
+          level: 'success',
+          message: `Signaling resumed for room "${roomId}" without replacing healthy media transports`,
+          source: 'LEEWAY',
+        });
+        return;
+      }
+
+      if (authResp.resumed && authResp.roomId) {
+        // Server retained the prior room during the grace window, but the local
+        // media transport is no longer safe to reuse. Release the retained
+        // server-side transports before a clean rebuild.
+        await request('leaveRoom').catch(() => null);
+        for (const producer of producersRef.current.values()) producer.close();
+        producersRef.current.clear();
+        sendTransRef.current?.close();
+        sendTransRef.current = null;
+        recvTransRef.current?.close();
+        recvTransRef.current = null;
+        deviceRef.current = null;
+        addEvent({
+          type: 'rtc',
+          level: 'warn',
+          message: 'Retained signaling session found with unhealthy media; rebuilding transports',
+          source: 'RTC',
+        });
+      }
 
       // 5. mediasoup Device
       const device = new mediasoupClient.Device();
@@ -448,6 +528,7 @@ export function useRTCStore(): RTCStoreAPI {
           audio: false, video: false, screen: false,
         }],
       }));
+      reconnectAttemptRef.current = 0;
       addEvent({ type: 'signaling', level: 'success', message: 'LeeWay Edge RTC session established', source: 'LEEWAY' });
 
       // 9. Consume existing producers
@@ -494,7 +575,60 @@ export function useRTCStore(): RTCStoreAPI {
         }
       }
 
-      // 10. Stats polling
+      // 10. Restore already-authorized local tracks after a full transport
+      // rebuild. Reuse the existing MediaStream; do not re-prompt the user.
+      const retainedTracks = localStreamRef.current?.getTracks().filter(t => t.readyState === 'live') ?? [];
+      if (retainedTracks.length > 0) {
+        const sendInfo = await request<{
+          transportId: string;
+          iceParameters: mediasoupClient.types.IceParameters;
+          iceCandidates: mediasoupClient.types.IceCandidate[];
+          dtlsParameters: mediasoupClient.types.DtlsParameters;
+        }>('createTransport', { direction: 'send' });
+
+        const sendTransport = device.createSendTransport({
+          id:             sendInfo.transportId,
+          iceParameters:  sendInfo.iceParameters,
+          iceCandidates:  sendInfo.iceCandidates,
+          dtlsParameters: sendInfo.dtlsParameters,
+        });
+        sendTransRef.current = sendTransport;
+
+        sendTransport.on('connect', ({ dtlsParameters }, cb, eb) => {
+          request('connectTransport', { transportId: sendTransport.id, dtlsParameters })
+            .then(() => cb()).catch(eb);
+        });
+        sendTransport.on('produce', ({ kind, rtpParameters }, cb, eb) => {
+          request<{ producerId: string }>('produce', {
+            transportId: sendTransport.id,
+            kind,
+            rtpParameters,
+          }).then(({ producerId }) => cb({ id: producerId })).catch(eb);
+        });
+
+        for (const track of retainedTracks) {
+          const producer = await sendTransport.produce({ track });
+          producersRef.current.set(producer.id, producer);
+          producer.on('transportclose', () => producersRef.current.delete(producer.id));
+        }
+
+        const hasAudio = retainedTracks.some(t => t.kind === 'audio');
+        const hasVideo = retainedTracks.some(t => t.kind === 'video');
+        setIsPublishing(true);
+        setState(prev => ({
+          ...prev,
+          peers: prev.peers.map(p => p.isLocal ? { ...p, audio: hasAudio, video: hasVideo } : p),
+        }));
+        addEvent({
+          type: 'rtc',
+          level: 'success',
+          message: 'Restored previously authorized local media tracks after reconnect',
+          source: 'RTC',
+        });
+      }
+
+      // 11. Stats polling
+      if (statsTimerRef.current) clearInterval(statsTimerRef.current);
       statsTimerRef.current = setInterval(() => { void pollStats(); }, 2000);
 
         // Connection succeeded — exit retry loop
@@ -520,6 +654,8 @@ export function useRTCStore(): RTCStoreAPI {
       }
     }
   }, [request, pollStats, addEvent]);
+
+  connectRef.current = connect;
 
   // ── disconnect ────────────────────────────────────────────────────────────
   const disconnect = useCallback(() => {
