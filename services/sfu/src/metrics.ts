@@ -49,10 +49,12 @@ function prometheusLabels(key: string): string {
 
 class Counter {
   readonly name: string;
+  readonly metricType: 'counter' | 'gauge';
   private readonly values = new Map<string, number>();
 
-  constructor(name: string) {
+  constructor(name: string, metricType: 'counter' | 'gauge' = 'counter') {
     this.name = name;
+    this.metricType = metricType;
   }
 
   inc(labels?: Labels, amount = 1): void {
@@ -75,7 +77,7 @@ class Counter {
 
   prometheus(): string[] {
     const rows = this.snapshot();
-    if (rows.length === 0) rows.push({ labels: '', value: 0 });
+    if (rows.length === 0) rows.push({ labels: {}, labelKey: '', value: 0 });
     return rows.map(({ labelKey, value }) => `${this.name}${prometheusLabels(labelKey)} ${value}`);
   }
 }
@@ -124,13 +126,13 @@ class DurationMetric {
 }
 
 export const metrics = {
-  rooms: new Counter('leeway_rooms_total'),
-  producers: new Counter('leeway_producers_total'),
-  consumers: new Counter('leeway_consumers_total'),
-  wsConnections: new Counter('leeway_ws_connections_total'),
+  rooms: new Counter('leeway_rooms_total', 'gauge'),
+  producers: new Counter('leeway_producers_total', 'gauge'),
+  consumers: new Counter('leeway_consumers_total', 'gauge'),
+  wsConnections: new Counter('leeway_ws_connections_total', 'gauge'),
   wsMessages: new Counter('leeway_ws_messages_total'),
   signalingErrors: new Counter('leeway_signaling_errors_total'),
-  workers: new Counter('leeway_workers_active'),
+  workers: new Counter('leeway_workers_active', 'gauge'),
   workerDeaths: new Counter('leeway_worker_deaths_total'),
   workerRestarts: new Counter('leeway_worker_restarts_total'),
   transportCreation: new DurationMetric('leeway_transport_creation_seconds'),
@@ -142,7 +144,7 @@ function counterJson(metric: Counter) {
   return {
     name: metric.name,
     help: metric.name,
-    type: 'counter' as const,
+    type: metric.metricType,
     values,
   };
 }
