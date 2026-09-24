@@ -25,6 +25,17 @@ function labelKey(labels?: Labels): string {
     .join(',');
 }
 
+function parseLabelKey(key: string): Record<string, string> {
+  if (!key) return {};
+  const out: Record<string, string> = {};
+  for (const entry of key.split(',')) {
+    const i = entry.indexOf('=');
+    if (i <= 0) continue;
+    out[entry.slice(0, i)] = entry.slice(i + 1);
+  }
+  return out;
+}
+
 function prometheusLabels(key: string): string {
   if (!key) return '';
   const pairs = key.split(',').map((entry) => {
@@ -55,13 +66,17 @@ class Counter {
   }
 
   snapshot() {
-    return [...this.values.entries()].map(([labels, value]) => ({ labels, value }));
+    return [...this.values.entries()].map(([labelKeyValue, value]) => ({
+      labels: parseLabelKey(labelKeyValue),
+      labelKey: labelKeyValue,
+      value,
+    }));
   }
 
   prometheus(): string[] {
     const rows = this.snapshot();
     if (rows.length === 0) rows.push({ labels: '', value: 0 });
-    return rows.map(({ labels, value }) => `${this.name}${prometheusLabels(labels)} ${value}`);
+    return rows.map(({ labelKey, value }) => `${this.name}${prometheusLabels(labelKey)} ${value}`);
   }
 }
 
@@ -109,31 +124,48 @@ class DurationMetric {
 }
 
 export const metrics = {
-  rooms: new Counter('leeway_sfu_rooms'),
-  producers: new Counter('leeway_sfu_producers'),
-  consumers: new Counter('leeway_sfu_consumers'),
-  wsConnections: new Counter('leeway_sfu_ws_connections'),
-  wsMessages: new Counter('leeway_sfu_ws_messages_total'),
-  signalingErrors: new Counter('leeway_sfu_signaling_errors_total'),
-  transportCreation: new DurationMetric('leeway_sfu_transport_creation_seconds'),
+  rooms: new Counter('leeway_rooms_total'),
+  producers: new Counter('leeway_producers_total'),
+  consumers: new Counter('leeway_consumers_total'),
+  wsConnections: new Counter('leeway_ws_connections_total'),
+  wsMessages: new Counter('leeway_ws_messages_total'),
+  signalingErrors: new Counter('leeway_signaling_errors_total'),
+  transportCreation: new DurationMetric('leeway_transport_creation_seconds'),
 };
 
-function metricsJson() {
+function counterJson(metric: Counter) {
+  const values = metric.snapshot().map(({ labels, value }) => ({ labels, value }));
+  if (values.length === 0) values.push({ labels: {}, value: 0 });
   return {
-    authority: 'LEEWAY_SFU_NATIVE_METRICS',
-    generatedAt: new Date().toISOString(),
-    counters: {
-      rooms: metrics.rooms.snapshot(),
-      producers: metrics.producers.snapshot(),
-      consumers: metrics.consumers.snapshot(),
-      wsConnections: metrics.wsConnections.snapshot(),
-      wsMessages: metrics.wsMessages.snapshot(),
-      signalingErrors: metrics.signalingErrors.snapshot(),
-    },
-    durations: {
-      transportCreation: metrics.transportCreation.snapshot(),
-    },
+    name: metric.name,
+    help: metric.name,
+    type: 'counter' as const,
+    values,
   };
+}
+
+function metricsJson() {
+  const duration = metrics.transportCreation.snapshot();
+  return [
+    counterJson(metrics.rooms),
+    counterJson(metrics.producers),
+    counterJson(metrics.consumers),
+    counterJson(metrics.wsConnections),
+    counterJson(metrics.wsMessages),
+    counterJson(metrics.signalingErrors),
+    {
+      name: 'leeway_transport_creation_seconds_mean',
+      help: 'Mean SFU WebRTC transport creation time in seconds',
+      type: 'gauge' as const,
+      values: [{ labels: {}, value: duration.meanSeconds }],
+    },
+    {
+      name: 'leeway_transport_creation_seconds_max',
+      help: 'Maximum observed SFU WebRTC transport creation time in seconds',
+      type: 'gauge' as const,
+      values: [{ labels: {}, value: duration.maxSeconds }],
+    },
+  ];
 }
 
 export const registry = {
