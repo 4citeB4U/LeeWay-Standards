@@ -83,7 +83,8 @@
   "dependencies": {
     "@google/genai": "^1.50.1",
     "cors": "^2.8.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mediasoup-client": "^3.18.7"
   },
   "devDependencies": {
     "@types/react": "^19.2.14",
