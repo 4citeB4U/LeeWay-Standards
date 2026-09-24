@@ -124,6 +124,7 @@ interface PeerSession {
   connection?: PeerConnection;
   pendingNotifications: object[];
   cleanupTimer?: ReturnType<typeof setTimeout>;
+  operationChain: Promise<void>;
   lastSeen: number;
 }
 
@@ -135,6 +136,7 @@ function getOrCreatePeerSession(peerId: string): PeerSession {
     session = {
       peerId,
       pendingNotifications: [],
+      operationChain: Promise.resolve(),
       lastSeen: Date.now(),
     };
     peerSessions.set(peerId, session);
@@ -254,6 +256,31 @@ function sendError(ws: WebSocket, id: string | number | undefined, message: stri
   metrics.signalingErrors.inc({ reason: message.slice(0, 40) });
 }
 
+function sendToConnection(conn: PeerConnection, payload: object): void {
+  if (conn.ws.readyState === WebSocket.OPEN) {
+    send(conn.ws, payload);
+    return;
+  }
+  if (conn.peerId) queueNotification(conn.peerId, payload);
+}
+
+function sendOkConn(
+  conn: PeerConnection,
+  id: string | number | undefined,
+  data: object,
+): void {
+  sendToConnection(conn, { id, ok: true, ...data });
+}
+
+function sendErrorConn(
+  conn: PeerConnection,
+  id: string | number | undefined,
+  message: string,
+): void {
+  sendToConnection(conn, { id, ok: false, error: message });
+  metrics.signalingErrors.inc({ reason: message.slice(0, 40) });
+}
+
 // ─── Core handler ─────────────────────────────────────────────────────────────
 
 async function handleMessage(conn: PeerConnection, msg: IncomingMsg): Promise<void> {
@@ -264,7 +291,7 @@ async function handleMessage(conn: PeerConnection, msg: IncomingMsg): Promise<vo
 
   // Auth must happen first
   if (type !== 'auth' && !conn.authenticated) {
-    sendError(ws, id, 'Not authenticated');
+    sendErrorConn(conn, id, 'Not authenticated');
     return;
   }
 
@@ -300,7 +327,7 @@ async function handleMessage(conn: PeerConnection, msg: IncomingMsg): Promise<vo
           { peerId: conn.peerId, resumedRoomId: conn.roomId },
           'Peer authenticated',
         );
-        sendOk(ws, id, {
+        sendOkConn(conn, id, {
           peerId: conn.peerId,
           resumed: Boolean(conn.roomId),
           roomId: conn.roomId,
@@ -332,7 +359,7 @@ async function handleMessage(conn: PeerConnection, msg: IncomingMsg): Promise<vo
 
         // Notify about existing producers
         const existing = room.getOtherProducers(conn.peerId);
-        sendOk(ws, id, {
+        sendOkConn(conn, id, {
           routerRtpCapabilities: room.routerRtpCapabilities,
           existingProducers: existing.map((e) => ({
             producerId: e.producer.id,
@@ -348,7 +375,7 @@ async function handleMessage(conn: PeerConnection, msg: IncomingMsg): Promise<vo
         const roomId = conn.roomId;
         releaseRoomMembership(conn.peerId, roomId, 'explicit_leave');
         conn.roomId = undefined;
-        sendOk(ws, id, {});
+        sendOkConn(conn, id, {});
         break;
       }
 
@@ -357,7 +384,7 @@ async function handleMessage(conn: PeerConnection, msg: IncomingMsg): Promise<vo
         const room = getRoom(conn.roomId);
         if (!room) throw new Error('Room not found');
         const transport = await room.createWebRtcTransport(conn.peerId);
-        sendOk(ws, id, {
+        sendOkConn(conn, id, {
           transportId: transport.id,
           iceParameters: transport.iceParameters,
           iceCandidates: transport.iceCandidates,
@@ -371,7 +398,7 @@ async function handleMessage(conn: PeerConnection, msg: IncomingMsg): Promise<vo
         const room = getRoom(conn.roomId);
         if (!room) throw new Error('Room not found');
         await room.connectTransport(conn.peerId, msg.transportId, msg.dtlsParameters);
-        sendOk(ws, id, {});
+        sendOkConn(conn, id, {});
         break;
       }
 
@@ -396,7 +423,7 @@ async function handleMessage(conn: PeerConnection, msg: IncomingMsg): Promise<vo
           });
         });
 
-        sendOk(ws, id, { producerId: producer.id });
+        sendOkConn(conn, id, { producerId: producer.id });
         break;
       }
 
@@ -410,7 +437,7 @@ async function handleMessage(conn: PeerConnection, msg: IncomingMsg): Promise<vo
           msg.producerId,
           msg.rtpCapabilities,
         );
-        sendOk(ws, id, {
+        sendOkConn(conn, id, {
           consumerId: consumer.id,
           producerId: msg.producerId,
           kind: consumer.kind,
@@ -427,7 +454,7 @@ async function handleMessage(conn: PeerConnection, msg: IncomingMsg): Promise<vo
         const consumer = peer?.consumers.get(msg.consumerId);
         if (!consumer) throw new Error('Consumer not found');
         await consumer.resume();
-        sendOk(ws, id, {});
+        sendOkConn(conn, id, {});
         break;
       }
 
@@ -438,7 +465,7 @@ async function handleMessage(conn: PeerConnection, msg: IncomingMsg): Promise<vo
         const producer = peer?.producers.get(msg.producerId);
         if (!producer) throw new Error('Producer not found');
         await producer.pause();
-        sendOk(ws, id, {});
+        sendOkConn(conn, id, {});
         break;
       }
 
@@ -449,7 +476,7 @@ async function handleMessage(conn: PeerConnection, msg: IncomingMsg): Promise<vo
         const producer = peer?.producers.get(msg.producerId);
         if (!producer) throw new Error('Producer not found');
         await producer.resume();
-        sendOk(ws, id, {});
+        sendOkConn(conn, id, {});
         break;
       }
 
@@ -465,17 +492,17 @@ async function handleMessage(conn: PeerConnection, msg: IncomingMsg): Promise<vo
           type: 'producerClosed',
           producerId: msg.producerId,
         });
-        sendOk(ws, id, {});
+        sendOkConn(conn, id, {});
         break;
       }
 
       default:
-        sendError(ws, id, `Unknown message type`);
+        sendErrorConn(conn, id, `Unknown message type`);
     }
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
     logger.warn({ type, error: message }, 'Signaling error');
-    sendError(ws, id, message);
+    sendErrorConn(conn, id, message);
   }
 }
 
@@ -571,11 +598,19 @@ export function attachSignalingServer(wss: WebSocketServer): void {  // Forward 
         return;
       }
 
-      // Serialize signaling mutations per socket. Media control operations such
-      // as join/create/connect/produce must not race one another.
+      // Serialize first within this socket, then (after authentication) through
+      // the durable peer session so an old and resumed socket cannot mutate the
+      // same room concurrently.
       messageChain = messageChain
-        .then(() => handleMessage(conn, msg))
-        .then(() => {
+        .then(async () => {
+          if (msg.type === 'auth' || !conn.peerId) {
+            await handleMessage(conn, msg);
+          } else {
+            const session = getOrCreatePeerSession(conn.peerId);
+            session.operationChain = session.operationChain.then(() => handleMessage(conn, msg));
+            await session.operationChain;
+          }
+
           if (msg.type === 'joinRoom' && conn.peerId && conn.roomId) {
             let roomMap = roomConnections.get(conn.roomId);
             if (!roomMap) {
