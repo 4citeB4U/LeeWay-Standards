@@ -118,6 +118,101 @@ interface PeerConnection {
   authenticated: boolean;
 }
 
+interface PeerSession {
+  peerId: string;
+  roomId?: string;
+  connection?: PeerConnection;
+  pendingNotifications: object[];
+  cleanupTimer?: ReturnType<typeof setTimeout>;
+  lastSeen: number;
+}
+
+const peerSessions = new Map<string, PeerSession>();
+
+function getOrCreatePeerSession(peerId: string): PeerSession {
+  let session = peerSessions.get(peerId);
+  if (!session) {
+    session = {
+      peerId,
+      pendingNotifications: [],
+      lastSeen: Date.now(),
+    };
+    peerSessions.set(peerId, session);
+  }
+  return session;
+}
+
+function cancelSessionCleanup(session: PeerSession): void {
+  if (session.cleanupTimer) {
+    clearTimeout(session.cleanupTimer);
+    session.cleanupTimer = undefined;
+  }
+}
+
+function queueNotification(peerId: string, data: object): void {
+  const session = getOrCreatePeerSession(peerId);
+  session.pendingNotifications.push(data);
+  while (session.pendingNotifications.length > config.ws.maxPendingNotifications) {
+    session.pendingNotifications.shift();
+  }
+}
+
+function drainNotifications(session: PeerSession): void {
+  const ws = session.connection?.ws;
+  if (!ws || ws.readyState !== WebSocket.OPEN) return;
+  const queued = session.pendingNotifications.splice(0);
+  for (const item of queued) {
+    send(ws, item);
+    metrics.wsMessages.inc({
+      direction: 'out',
+      type: (item as BaseMessage).type ?? 'unknown',
+    });
+  }
+}
+
+function releaseRoomMembership(peerId: string, roomId: string, reason: string): void {
+  const room = getRoom(roomId);
+  room?.removePeer(peerId);
+
+  const roomMap = roomConnections.get(roomId);
+  if (roomMap) {
+    roomMap.delete(peerId);
+    if (roomMap.size === 0) roomConnections.delete(roomId);
+  }
+
+  broadcastToRoom(roomId, peerId, {
+    type: 'peerLeft',
+    peerId,
+    reason,
+  });
+
+  const session = peerSessions.get(peerId);
+  if (session) {
+    cancelSessionCleanup(session);
+    session.roomId = undefined;
+    session.pendingNotifications.length = 0;
+  }
+}
+
+function scheduleSessionCleanup(session: PeerSession): void {
+  cancelSessionCleanup(session);
+  if (!session.roomId) {
+    peerSessions.delete(session.peerId);
+    return;
+  }
+
+  session.cleanupTimer = setTimeout(() => {
+    const roomId = session.roomId;
+    if (session.connection?.ws.readyState === WebSocket.OPEN) return;
+    if (roomId) releaseRoomMembership(session.peerId, roomId, 'resume_grace_expired');
+    peerSessions.delete(session.peerId);
+    logger.info(
+      { peerId: session.peerId, roomId },
+      'Peer resume grace expired; room state released',
+    );
+  }, config.ws.resumeGraceMs);
+}
+
 // ─── Connection tracking for rate-limiting ────────────────────────────────────
 
 const connectionsByIp = new Map<string, Set<WebSocket>>();
@@ -179,16 +274,61 @@ async function handleMessage(conn: PeerConnection, msg: IncomingMsg): Promise<vo
         const payload = verifyToken(msg.token);
         conn.authenticated = true;
         conn.peerId = payload.sub;
-        logger.info({ peerId: conn.peerId }, 'Peer authenticated');
-        sendOk(ws, id, { peerId: conn.peerId });
+
+        const session = getOrCreatePeerSession(conn.peerId);
+        cancelSessionCleanup(session);
+
+        const previous = session.connection;
+        if (previous && previous !== conn && previous.ws.readyState === WebSocket.OPEN) {
+          previous.ws.close(4001, 'replaced by resumed peer connection');
+        }
+
+        conn.roomId = session.roomId;
+        session.connection = conn;
+        session.lastSeen = Date.now();
+
+        if (conn.roomId) {
+          let roomMap = roomConnections.get(conn.roomId);
+          if (!roomMap) {
+            roomMap = new Map();
+            roomConnections.set(conn.roomId, roomMap);
+          }
+          roomMap.set(conn.peerId, conn);
+        }
+
+        logger.info(
+          { peerId: conn.peerId, resumedRoomId: conn.roomId },
+          'Peer authenticated',
+        );
+        sendOk(ws, id, {
+          peerId: conn.peerId,
+          resumed: Boolean(conn.roomId),
+          roomId: conn.roomId,
+          resumeGraceMs: config.ws.resumeGraceMs,
+        });
+        drainNotifications(session);
         break;
       }
 
       case 'joinRoom': {
         if (!conn.peerId) throw new Error('No peerId');
+
+        const session = getOrCreatePeerSession(conn.peerId);
+        if (session.roomId && session.roomId !== msg.roomId) {
+          releaseRoomMembership(conn.peerId, session.roomId, 'room_switch');
+        }
+
         const room = await getOrCreateRoom(msg.roomId);
         conn.roomId = msg.roomId;
-        room.addPeer(conn.peerId);
+        session.roomId = msg.roomId;
+        session.connection = conn;
+        session.lastSeen = Date.now();
+
+        // A signaling reconnect may preserve the existing room peer. Do not
+        // overwrite that state and leak retained transports/producers.
+        if (!room.getPeer(conn.peerId)) {
+          room.addPeer(conn.peerId);
+        }
 
         // Notify about existing producers
         const existing = room.getOtherProducers(conn.peerId);
@@ -205,8 +345,8 @@ async function handleMessage(conn: PeerConnection, msg: IncomingMsg): Promise<vo
 
       case 'leaveRoom': {
         if (!conn.peerId || !conn.roomId) break;
-        const room = getRoom(conn.roomId);
-        room?.removePeer(conn.peerId);
+        const roomId = conn.roomId;
+        releaseRoomMembership(conn.peerId, roomId, 'explicit_leave');
         conn.roomId = undefined;
         sendOk(ws, id, {});
         break;
@@ -352,8 +492,16 @@ function broadcastToRoom(roomId: string, excludePeerId: string, data: object): v
   if (!connections) return;
   for (const [peerId, conn] of connections) {
     if (peerId === excludePeerId) continue;
-    send(conn.ws, data);
-    metrics.wsMessages.inc({ direction: 'out', type: (data as BaseMessage).type ?? 'unknown' });
+
+    if (conn.ws.readyState === WebSocket.OPEN) {
+      send(conn.ws, data);
+      metrics.wsMessages.inc({
+        direction: 'out',
+        type: (data as BaseMessage).type ?? 'unknown',
+      });
+    } else {
+      queueNotification(peerId, data);
+    }
   }
 }
 
@@ -378,6 +526,31 @@ export function attachSignalingServer(wss: WebSocketServer): void {  // Forward 
 
     metrics.wsConnections.inc();
     const conn: PeerConnection = { ws, authenticated: false };
+    let messageChain = Promise.resolve();
+    let heartbeatAlive = true;
+
+    const heartbeatTimer = setInterval(() => {
+      if (!heartbeatAlive) {
+        logger.warn({ ip, peerId: conn.peerId }, 'WebSocket heartbeat timeout');
+        ws.terminate();
+        return;
+      }
+      heartbeatAlive = false;
+      try {
+        ws.ping();
+      } catch {
+        ws.terminate();
+      }
+    }, config.ws.pingIntervalMs);
+
+    ws.on('pong', () => {
+      heartbeatAlive = true;
+      if (conn.peerId) {
+        const session = peerSessions.get(conn.peerId);
+        if (session) session.lastSeen = Date.now();
+      }
+    });
+
     allConnections.add(ws);
     logger.info({ ip }, 'WebSocket connected');
 
@@ -398,40 +571,68 @@ export function attachSignalingServer(wss: WebSocketServer): void {  // Forward 
         return;
       }
 
-      // Register in room connection map when peer joins a room
-      void handleMessage(conn, msg).then(() => {
-        if (msg.type === 'joinRoom' && conn.peerId && conn.roomId) {
-          let roomMap = roomConnections.get(conn.roomId);
-          if (!roomMap) {
-            roomMap = new Map();
-            roomConnections.set(conn.roomId, roomMap);
+      // Serialize signaling mutations per socket. Media control operations such
+      // as join/create/connect/produce must not race one another.
+      messageChain = messageChain
+        .then(() => handleMessage(conn, msg))
+        .then(() => {
+          if (msg.type === 'joinRoom' && conn.peerId && conn.roomId) {
+            let roomMap = roomConnections.get(conn.roomId);
+            if (!roomMap) {
+              roomMap = new Map();
+              roomConnections.set(conn.roomId, roomMap);
+            }
+            roomMap.set(conn.peerId, conn);
           }
-          roomMap.set(conn.peerId, conn);
-        }
-      });
+
+          if (conn.peerId) {
+            const session = getOrCreatePeerSession(conn.peerId);
+            session.connection = conn;
+            session.roomId = conn.roomId;
+            session.lastSeen = Date.now();
+          }
+        })
+        .catch((error) => {
+          logger.error(
+            { ip, peerId: conn.peerId, error: error instanceof Error ? error.message : String(error) },
+            'Serialized signaling handler failed',
+          );
+        });
     });
 
     ws.on('close', () => {
+      clearInterval(heartbeatTimer);
       metrics.wsConnections.dec();
       untrackConnection(ip, ws);
       allConnections.delete(ws);
 
-      if (conn.peerId && conn.roomId) {
-        const room = getRoom(conn.roomId);
-        room?.removePeer(conn.peerId);
+      if (conn.peerId) {
+        const session = getOrCreatePeerSession(conn.peerId);
 
-        const roomMap = roomConnections.get(conn.roomId);
-        if (roomMap) {
-          roomMap.delete(conn.peerId);
-          if (roomMap.size === 0) roomConnections.delete(conn.roomId);
+        // Ignore closure of a superseded socket after a resumed connection
+        // has already taken ownership.
+        if (session.connection === conn) {
+          session.connection = undefined;
+          session.roomId = conn.roomId;
+          session.lastSeen = Date.now();
+
+          if (conn.roomId) {
+            scheduleSessionCleanup(session);
+            broadcastToRoom(conn.roomId, conn.peerId, {
+              type: 'peerReconnecting',
+              peerId: conn.peerId,
+              resumeGraceMs: config.ws.resumeGraceMs,
+            });
+          } else {
+            peerSessions.delete(conn.peerId);
+          }
         }
-
-        broadcastToRoom(conn.roomId, conn.peerId, {
-          type: 'peerLeft',
-          peerId: conn.peerId,
-        });
       }
-      logger.info({ ip, peerId: conn.peerId }, 'WebSocket disconnected');
+
+      logger.info(
+        { ip, peerId: conn.peerId, roomId: conn.roomId, resumeGraceMs: config.ws.resumeGraceMs },
+        'WebSocket disconnected; resumable state retained when applicable',
+      );
     });
 
     ws.on('error', (err) => {
