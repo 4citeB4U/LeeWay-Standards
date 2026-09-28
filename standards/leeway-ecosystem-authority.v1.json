@@ -1,0 +1,332 @@
+{
+  "schemaVersion": "1.0.0",
+  "registryId": "LEEWAY_ECOSYSTEM_AUTHORITY_V1",
+  "title": "LeeWay GitHub Ecosystem Authority Registry",
+  "authority": {
+    "repository": "4citeB4U/LeeWay-Standards",
+    "branch": "main",
+    "registryPath": "standards/leeway-ecosystem-authority.v1.json",
+    "selfCommitPolicy": "SELF_COMMIT_RESOLVED_AT_CONSUMPTION",
+    "law": "GitHub repository identity, versioned source, contracts, evidence, and approved commits define ecosystem authority. Drive letters, Docker containers, localhost ports, browsers, devices, and model providers are implementation bindings, never LeeWay identity."
+  },
+  "formulaControl": {
+    "sourceRepository": "4citeB4U/Leeway-formula-live",
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "planFamilies": [
+      "F2_GOVERNANCE",
+      "F3_ROUTING",
+      "F4_VERITAS",
+      "F5_RECOVERY",
+      "F6_RESOURCES",
+      "F7_QUEUE",
+      "F8_AUTOMATION",
+      "F9_CONSENSUS",
+      "F10_AUTONOMY"
+    ],
+    "evaluatorClaim": "NOT_EXECUTED_BY_REGISTRY",
+    "law": "The registry may route to Formula authority but never invent Formula output, Q69 state, ranking, thresholds, hashes, or receipts."
+  },
+  "executionLaw": {
+    "sourceControl": "GITHUB",
+    "runtimeAuthority": "runtime-fabric",
+    "deviceExecutionAuthority": "device-bridge",
+    "dockerRole": "OPTIONAL_DEVELOPMENT_QUALIFICATION_PACKAGING_ADAPTER",
+    "recoveryRole": "HISTORICAL_FORENSIC_EVIDENCE_ONLY",
+    "pagesRole": "PUBLIC_STATIC_UI_DISCOVERY_CONTRACTS_PACKAGES",
+    "serverRole": "PERSISTENT_EXECUTION_REQUIRES_AUTHORIZED_RUNTIME"
+  },
+  "requiredCoreIds": [
+    "standards",
+    "formula",
+    "skills",
+    "runtime-fabric",
+    "device-bridge",
+    "federate-web",
+    "leeway-os"
+  ],
+  "authorities": [
+    {
+      "id": "standards",
+      "name": "LeeWay Standards",
+      "repo": "4citeB4U/LeeWay-Standards",
+      "role": "CONSTITUTIONAL_GOVERNANCE",
+      "authorityClass": "CONSTITUTIONAL",
+      "visibility": "public",
+      "approvedCommit": null,
+      "commitPolicy": "SELF_COMMIT_RESOLVED_AT_CONSUMPTION",
+      "pages": "https://4citeb4u.github.io/LeeWay-Standards/",
+      "capabilities": [
+        "governance",
+        "admission",
+        "registry",
+        "architecture",
+        "evidence-law"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "formula",
+      "name": "LeeWay Formula Live",
+      "repo": "4citeB4U/Leeway-formula-live",
+      "role": "MATHEMATICAL_CONTROL_AUTHORITY",
+      "authorityClass": "CORE",
+      "visibility": "public",
+      "approvedCommit": "7fae63185a4cbd4dd631ba13114e4d27accba52b",
+      "pages": null,
+      "capabilities": [
+        "formula-authority",
+        "formula-evaluator-contract",
+        "scientific-evidence",
+        "failure-ledger"
+      ],
+      "dependencies": [
+        "standards"
+      ]
+    },
+    {
+      "id": "skills",
+      "name": "LeeWay Agent Skills",
+      "repo": "4citeB4U/LeeWay-Agent-Skills",
+      "role": "CAPABILITY_ORCHESTRATION_AUTHORITY",
+      "authorityClass": "CORE",
+      "visibility": "public",
+      "approvedCommit": "0cfcc94b9e3a574f787670716a2bd34e57825d5e",
+      "pages": "https://4citeb4u.github.io/LeeWay-Agent-Skills/",
+      "capabilities": [
+        "skills",
+        "parallel-workplane",
+        "tool-governance",
+        "open-source-lineage"
+      ],
+      "dependencies": [
+        "standards",
+        "formula",
+        "runtime-fabric"
+      ]
+    },
+    {
+      "id": "runtime-fabric",
+      "name": "LeeWay Runtime Fabric",
+      "repo": "4citeB4U/Leeway-Runtime-Fabric",
+      "role": "PERSISTENT_EXECUTION_AUTHORITY",
+      "authorityClass": "CORE",
+      "visibility": "private",
+      "approvedCommit": "24dbad2e6114a9b3bf63f5c5a92b74e0c4ce8d4a",
+      "pages": null,
+      "capabilities": [
+        "persistent-workplane",
+        "worker-supervision",
+        "automation-runtime",
+        "runtime-control-plane",
+        "receipts"
+      ],
+      "dependencies": [
+        "standards",
+        "formula",
+        "skills"
+      ]
+    },
+    {
+      "id": "device-bridge",
+      "name": "LeeWay Device Bridge",
+      "repo": "4citeB4U/LEEWAY-DEVICE-BRIDGE",
+      "role": "NATIVE_DEVICE_EXECUTION_AUTHORITY",
+      "authorityClass": "CORE",
+      "visibility": "public",
+      "approvedCommit": "81703f27bf6968909ef844863518bde73cde5323",
+      "pages": "https://4citeb4u.github.io/LEEWAY-DEVICE-BRIDGE/",
+      "capabilities": [
+        "native-device",
+        "android",
+        "device-providers",
+        "sensory",
+        "physical-execution"
+      ],
+      "dependencies": [
+        "standards",
+        "formula",
+        "skills"
+      ]
+    },
+    {
+      "id": "federate-web",
+      "name": "LeeWay Federate Web",
+      "repo": "4citeB4U/Leeway-Federate-Web",
+      "role": "DISCOVERY_TRANSPORT_PROJECTION",
+      "authorityClass": "CORE_PROJECTION",
+      "visibility": "public",
+      "approvedCommit": "c40712136c31c4b61cb5d192cb86f6d7f6baeaf1",
+      "pages": "https://4citeb4u.github.io/Leeway-Federate-Web/",
+      "capabilities": [
+        "ecosystem-discovery",
+        "browser-federation",
+        "peer-transport",
+        "registry-projection"
+      ],
+      "dependencies": [
+        "standards",
+        "runtime-fabric",
+        "formula",
+        "skills",
+        "device-bridge"
+      ]
+    },
+    {
+      "id": "leeway-live",
+      "name": "LeeWay Live",
+      "repo": "4citeB4U/Leeway-live",
+      "role": "PHONE_BROWSER_AGENT_SURFACE",
+      "authorityClass": "PROJECTION",
+      "visibility": "public",
+      "approvedCommit": "37c6be76079911cb62b79b08bc6bb46dd21836db",
+      "pages": "https://4citeb4u.github.io/Leeway-live/",
+      "capabilities": [
+        "phone-bootstrap",
+        "agent-interaction",
+        "browser-sensory-diagnostics"
+      ],
+      "dependencies": [
+        "device-bridge",
+        "skills",
+        "formula"
+      ]
+    },
+    {
+      "id": "leeway-os",
+      "name": "LeeWay OS",
+      "repo": "4citeB4U/leeway-ecosystemv2.14",
+      "role": "PRIMARY_OPERATING_SYSTEM_EXPERIENCE",
+      "authorityClass": "PRIMARY_UI",
+      "visibility": "public",
+      "approvedCommit": "224b524162a69488f8fbce8c5047c5e231c76da5",
+      "pages": null,
+      "capabilities": [
+        "desktop-shell",
+        "app-launcher",
+        "workspaces",
+        "evidence-center",
+        "agent-surface",
+        "control-center"
+      ],
+      "dependencies": [
+        "standards",
+        "federate-web",
+        "runtime-fabric",
+        "skills",
+        "formula",
+        "device-bridge"
+      ],
+      "migrationState": "PRESERVE_FRONTEND_REPLACE_HOST_BOUND_DISCOVERY"
+    },
+    {
+      "id": "rapid-web-develop",
+      "name": "RapidWebDevelop",
+      "repo": "4citeB4U/RapidWebDev",
+      "role": "PUBLIC_CREATOR_AND_ECOSYSTEM_EXPERIENCE",
+      "authorityClass": "APPLICATION",
+      "visibility": "public",
+      "approvedCommit": "39003ada2f7d7586eaf87c62c68c2b15c94e2bae",
+      "pages": null,
+      "capabilities": [
+        "creator-story",
+        "portfolio",
+        "project-discovery",
+        "public-presentation"
+      ],
+      "dependencies": [
+        "standards",
+        "federate-web",
+        "skills"
+      ]
+    },
+    {
+      "id": "logistics",
+      "name": "LeeWay Logistics",
+      "repo": "4citeB4U/LEEWAY-LOGISTICS-",
+      "role": "FLAGSHIP_LOGISTICS_APPLICATION",
+      "authorityClass": "APPLICATION",
+      "visibility": "public",
+      "approvedCommit": "0da6c2c11d791a8249a91a839e1c27b0b9edaca3",
+      "pages": "https://4citeb4u.github.io/LEEWAY-LOGISTICS-/",
+      "capabilities": [
+        "logistics",
+        "transit-world",
+        "geospatial",
+        "cctv-catalog",
+        "fleet"
+      ],
+      "dependencies": [
+        "standards",
+        "skills",
+        "runtime-fabric"
+      ]
+    },
+    {
+      "id": "leolas-library",
+      "name": "Leola's Library",
+      "repo": "4citeB4U/leolasliabrary",
+      "role": "PUBLISHING_APPLICATION",
+      "authorityClass": "APPLICATION",
+      "visibility": "public",
+      "approvedCommit": "f10990074e09205060237de49c16d5333bd25944",
+      "pages": "https://leolasliabrary.vercel.app",
+      "capabilities": [
+        "publishing",
+        "library",
+        "author-experience"
+      ],
+      "dependencies": [
+        "standards",
+        "skills"
+      ]
+    },
+    {
+      "id": "recovery-20260925",
+      "name": "LeeWay D Drive Recovery 20260925",
+      "repo": "4citeB4U/LEEWAY-D-DRIVE-RECOVERY-20260925",
+      "role": "FORENSIC_RECOVERY_EVIDENCE",
+      "authorityClass": "EVIDENCE_ONLY",
+      "visibility": "private",
+      "approvedCommit": "6178396995a102f10422409fe32b33739946f0d7",
+      "pages": null,
+      "capabilities": [
+        "forensics",
+        "reconstruction-evidence",
+        "historical-docker-topology"
+      ],
+      "dependencies": [
+        "standards"
+      ],
+      "executionEligible": false
+    }
+  ],
+  "sharedApplicationManifest": {
+    "schema": "contracts/leeway-application-manifest.v1.schema.json",
+    "requiredFields": [
+      "schemaVersion",
+      "applicationId",
+      "repository",
+      "authorityRole",
+      "capabilities",
+      "dependencies",
+      "surfaces",
+      "runtimeBindings",
+      "evidence"
+    ],
+    "law": "Applications declare capabilities and dependencies. They do not duplicate constitutional, Formula, skill, runtime, or device authority."
+  },
+  "openSourceLineage": {
+    "authorityRepo": "4citeB4U/LeeWay-Agent-Skills",
+    "registryPath": "config/open-source-lineage-v1.json",
+    "publicPath": "docs/thank-you.html"
+  },
+  "truthLaws": [
+    "repository-visible != runtime-healthy",
+    "configured != proven",
+    "queued != executing",
+    "executing != verified",
+    "recovery-evidence != canonical-source",
+    "pages-visible != backend-executing",
+    "docker-running != LeeWay-authority"
+  ]
+}
