@@ -1,0 +1,29 @@
+name: Verify LeeWay ecosystem authority
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'standards/leeway-ecosystem-authority.v1.json'
+      - 'schemas/leeway-ecosystem-authority.v1.schema.json'
+      - 'contracts/leeway-application-manifest.v1.schema.json'
+      - 'scripts/verify-ecosystem-authority.mjs'
+      - '.github/workflows/verify-ecosystem-authority.yml'
+  pull_request:
+    paths:
+      - 'standards/leeway-ecosystem-authority.v1.json'
+      - 'schemas/leeway-ecosystem-authority.v1.schema.json'
+      - 'contracts/leeway-application-manifest.v1.schema.json'
+      - 'scripts/verify-ecosystem-authority.mjs'
+      - '.github/workflows/verify-ecosystem-authority.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/verify-ecosystem-authority.mjs

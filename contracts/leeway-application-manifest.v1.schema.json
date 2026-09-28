@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://4citeb4u.github.io/LeeWay-Standards/contracts/leeway-application-manifest.v1.schema.json",
+  "title": "LeeWay Application Manifest v1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "applicationId",
+    "repository",
+    "authorityRole",
+    "capabilities",
+    "dependencies",
+    "surfaces",
+    "runtimeBindings",
+    "evidence"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "applicationId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "repository": {
+      "type": "object",
+      "required": [
+        "fullName",
+        "approvedCommit"
+      ],
+      "properties": {
+        "fullName": {
+          "type": "string",
+          "pattern": "^[^/]+/[^/]+$"
+        },
+        "approvedCommit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        }
+      }
+    },
+    "authorityRole": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "surfaces": {
+      "type": "object"
+    },
+    "runtimeBindings": {
+      "type": "object",
+      "required": [
+        "persistentExecution",
+        "deviceExecution"
+      ],
+      "properties": {
+        "persistentExecution": {
+          "type": "string"
+        },
+        "deviceExecution": {
+          "type": "string"
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "veritasRequired",
+        "receiptRequired"
+      ],
+      "properties": {
+        "veritasRequired": {
+          "type": "boolean"
+        },
+        "receiptRequired": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
