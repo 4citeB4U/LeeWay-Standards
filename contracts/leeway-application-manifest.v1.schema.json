@@ -25,8 +25,7 @@
     "repository": {
       "type": "object",
       "required": [
-        "fullName",
-        "approvedCommit"
+        "fullName"
       ],
       "properties": {
         "fullName": {
@@ -34,10 +33,46 @@
           "pattern": "^[^/]+/[^/]+$"
         },
         "approvedCommit": {
-          "type": "string",
+          "type": [
+            "string",
+            "null"
+          ],
           "pattern": "^[0-9a-f]{40}$"
+        },
+        "commitPolicy": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "SELF_COMMIT_RESOLVED_AT_CONSUMPTION",
+            null
+          ]
         }
-      }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "approvedCommit"
+          ],
+          "properties": {
+            "approvedCommit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            }
+          }
+        },
+        {
+          "required": [
+            "commitPolicy"
+          ],
+          "properties": {
+            "commitPolicy": {
+              "const": "SELF_COMMIT_RESOLVED_AT_CONSUMPTION"
+            }
+          }
+        }
+      ]
     },
     "authorityRole": {
       "type": "string"
