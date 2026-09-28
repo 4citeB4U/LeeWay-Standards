@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://4citeb4u.github.io/LeeWay-Standards/schemas/leeway-ecosystem-authority.v1.schema.json",
+  "title": "LeeWay Ecosystem Authority Registry v1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "registryId",
+    "authority",
+    "formulaControl",
+    "executionLaw",
+    "requiredCoreIds",
+    "authorities",
+    "sharedApplicationManifest",
+    "truthLaws"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "registryId": {
+      "const": "LEEWAY_ECOSYSTEM_AUTHORITY_V1"
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "repository",
+        "branch",
+        "registryPath",
+        "selfCommitPolicy",
+        "law"
+      ]
+    },
+    "formulaControl": {
+      "type": "object",
+      "required": [
+        "sourceRepository",
+        "formulaId",
+        "evaluatorClaim",
+        "law"
+      ]
+    },
+    "executionLaw": {
+      "type": "object",
+      "required": [
+        "sourceControl",
+        "runtimeAuthority",
+        "deviceExecutionAuthority",
+        "dockerRole",
+        "recoveryRole",
+        "pagesRole"
+      ]
+    },
+    "requiredCoreIds": {
+      "type": "array",
+      "minItems": 7,
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "authorities": {
+      "type": "array",
+      "minItems": 7,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "repo",
+          "role",
+          "authorityClass",
+          "visibility",
+          "capabilities",
+          "dependencies"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "repo": {
+            "type": "string",
+            "pattern": "^[^/]+/[^/]+$"
+          },
+          "approvedCommit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "pages": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "executionEligible": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "sharedApplicationManifest": {
+      "type": "object",
+      "required": [
+        "schema",
+        "requiredFields",
+        "law"
+      ]
+    },
+    "truthLaws": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
