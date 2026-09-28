@@ -198,7 +198,7 @@
       "role": "PRIMARY_OPERATING_SYSTEM_EXPERIENCE",
       "authorityClass": "PRIMARY_UI",
       "visibility": "public",
-      "approvedCommit": "224b524162a69488f8fbce8c5047c5e231c76da5",
+      "approvedCommit": "7707df5e91911c59db0ab54e6f2bf78578fcc494",
       "pages": null,
       "capabilities": [
         "desktop-shell",
@@ -216,7 +216,7 @@
         "formula",
         "device-bridge"
       ],
-      "migrationState": "PRESERVE_FRONTEND_REPLACE_HOST_BOUND_DISCOVERY"
+      "migrationState": "GITHUB_AUTHORITY_DISCOVERY_MERGED_FRONTEND_PRESERVED"
     },
     {
       "id": "rapid-web-develop",
@@ -328,5 +328,9 @@
     "recovery-evidence != canonical-source",
     "pages-visible != backend-executing",
     "docker-running != LeeWay-authority"
-  ]
+  ],
+  "commitSemantics": {
+    "approvedCommit": "Last explicitly Standards-admitted source baseline. A newer repository HEAD is not automatically approved and must carry its own verification evidence before promotion.",
+    "selfReference": "Standards and other self-consuming projections resolve their own current revision at verification time to avoid recursive commit loops."
+  }
 }
