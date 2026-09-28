@@ -155,7 +155,7 @@
       "role": "DISCOVERY_TRANSPORT_PROJECTION",
       "authorityClass": "CORE_PROJECTION",
       "visibility": "public",
-      "approvedCommit": "c40712136c31c4b61cb5d192cb86f6d7f6baeaf1",
+      "approvedCommit": "6a3e95ca51dd1242d47743644a559be58de54bbe",
       "pages": "https://4citeb4u.github.io/Leeway-Federate-Web/",
       "capabilities": [
         "ecosystem-discovery",
@@ -169,7 +169,13 @@
         "formula",
         "skills",
         "device-bridge"
-      ]
+      ],
+      "verification": {
+        "state": "SOURCE_AND_PROJECTION_VERIFIED",
+        "pagesWorkflowRun": 36417083739,
+        "peerTransportWorkflowRun": 36417083877,
+        "selfRevisionPolicy": "CURRENT_REVISION_RESOLVED_BY_FEDERATE_VERIFICATION"
+      }
     },
     {
       "id": "leeway-live",
@@ -225,7 +231,7 @@
       "role": "PUBLIC_CREATOR_AND_ECOSYSTEM_EXPERIENCE",
       "authorityClass": "APPLICATION",
       "visibility": "public",
-      "approvedCommit": "39003ada2f7d7586eaf87c62c68c2b15c94e2bae",
+      "approvedCommit": "433eaf43a37313773718843eaa9a250ce37bb338",
       "pages": null,
       "capabilities": [
         "creator-story",
@@ -237,7 +243,15 @@
         "standards",
         "federate-web",
         "skills"
-      ]
+      ],
+      "verification": {
+        "state": "PUBLIC_STORY_VERIFIED",
+        "workflowRun": 36417795872,
+        "authorityCount": 12,
+        "upstreamRepositories": 41,
+        "foundationalLineage": "bilawalsidhu/gods-eye-view",
+        "formulaExecution": "NOT_EXECUTED"
+      }
     },
     {
       "id": "logistics",
@@ -332,5 +346,16 @@
   "commitSemantics": {
     "approvedCommit": "Last explicitly Standards-admitted source baseline. A newer repository HEAD is not automatically approved and must carry its own verification evidence before promotion.",
     "selfReference": "Standards and other self-consuming projections resolve their own current revision at verification time to avoid recursive commit loops."
+  },
+  "convergenceCheckpoint": {
+    "id": "LEEWAY_ECOSYSTEM_CONVERGENCE_20260928_GATES_A_C",
+    "state": "SOURCE_CONVERGED_RUNTIME_DEPLOYMENT_NEXT",
+    "gates": {
+      "A": "STANDARDS_AUTHORITY_REGISTRY_MERGED",
+      "B": "FEDERATE_DISCOVERY_VERIFIED",
+      "C": "LEEWAY_OS_GITHUB_NATIVE_DISCOVERY_VERIFIED",
+      "PUBLIC_STORY": "RAPIDWEBDEVELOP_VERIFIED"
+    },
+    "runtimeProofBoundary": "Canonical source convergence does not establish deployed Runtime Fabric, Formula execution, physical Device Bridge pairing, or a completed persistent workId."
   }
 }
