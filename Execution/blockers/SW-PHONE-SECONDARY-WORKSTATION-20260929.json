@@ -14,7 +14,10 @@
     "Runtime Fabric node registry created",
     "Codespaces devcontainer profile committed",
     "qualified Android v0.7.0 package located",
-    "remote pairing procedure located"
+    "remote pairing procedure located",
+    "Secondary Workstation Mode added to Device Bridge Pages source",
+    "local-only remote pairing/device.health qualification console added",
+    "live deployment verifier added and corrected to published /docs/ path"
   ],
   "nextGate": {
     "id": "SW2",
@@ -28,5 +31,22 @@
       "capture receipt"
     ]
   },
-  "returnRule": "After SW7 failover verification, return to P1.2 and rerun its acceptance gate."
+  "returnRule": "After SW7 failover verification, return to P1.2 and rerun its acceptance gate.",
+  "currentStep": {
+    "id": "SW2",
+    "state": "IN_PROGRESS",
+    "substep": "SW2.1_DEPLOYED_SETUP_SURFACE_AND_PHONE_INSTALL",
+    "deploymentGateRun": 36594784193,
+    "deploymentGateState": "IN_PROGRESS_PROPAGATION_WAIT",
+    "phoneActionRequired": [
+      "open Device Bridge Pages /docs/ surface",
+      "install/update Android v0.7.0 over existing app",
+      "enable LOCAL AGENT SESSION",
+      "enable ALWAYS-ON REMOTE BRIDGE",
+      "open Remote workstation qualification console",
+      "enter Device ID and owner token locally",
+      "run remote device.health",
+      "capture returned receipt"
+    ]
+  }
 }
