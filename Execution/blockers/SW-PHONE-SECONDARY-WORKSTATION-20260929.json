@@ -54,8 +54,10 @@
       "apkVerifyRun": 36598279684,
       "versionName": "0.8.4",
       "versionCode": 12,
-      "sha256": "f92d7a1703c4fefe1014be1c5a6adb17d4aa895eb2b57279c61c5d79ead58320",
-      "sizeBytes": 65902505
+      "sha256": "0b3fa67683bce25e48962063f3f07b6d60bf2d0f13fdd3b52e1df6b715d840a0",
+      "sizeBytes": 65902505,
+      "sourceCommit": "c8e04de70e55276756cd04dcfd44ad55b79fefb4",
+      "note": "Latest debug rebuild changed APK hash while preserving version 0.8.4. Current Pages metadata is authoritative."
     },
     "blocker": "The phone is not yet registered as a live remotely controllable workstation node in this chat. Physical installation/activation and a remote device.health receipt are still required.",
     "phoneActionRequired": [
