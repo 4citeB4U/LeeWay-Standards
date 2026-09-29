@@ -8,19 +8,18 @@
     "stepId": "P1.3",
     "stepName": "Verify UI-created local voice package lifecycle in production",
     "state": "IN_PROGRESS",
-    "blocker": null,
-    "blockerSubWork": null,
+    "blocker": "Acoustic audition/playback proof still executing on live Agent-Lee workstation browser",
+    "blockerSubWork": {
+      "lifecycleGate": "VERIFIED_PASS",
+      "lifecycleRun": 36625011130,
+      "workstationAuditionPid": 64248
+    },
     "returnPoint": "P1.3",
     "acceptanceStillRequired": [
-      "create local voice package in production UI",
-      "save reference audio and metadata",
-      "reload production page and rediscover package",
-      "select saved package",
-      "audition saved package through Voice Fabric",
-      "export selected package",
-      "delete local package and verify removal"
+      "audition selected Voice One/package through live Voice Fabric",
+      "observe real browser playback-start and completed spoken turn"
     ],
-    "nextAction": "Run production browser lifecycle gate for create/save/reload/select/export/delete; then execute live audition gate."
+    "nextAction": "Complete live workstation Voice One audition and capture playback-start evidence."
   },
   "phases": [
     {
