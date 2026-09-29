@@ -16,7 +16,6 @@ Automation authority belongs to LeeWay. External engines donate execution capabi
 - LeeWay Device Bridge: physical capability authority and provider registry.
 - n8n: deterministic workflow/orchestration provider.
 - Home Assistant: device/environment aggregation provider.
-- Automatisch: workflow-automation donor/provider; Community Edition is AGPL-3.0 and Enterprise files have separate licensing.
 - Agent Skills/Workflows: reusable procedural and workflow knowledge.
 - Veritas/Receipts/Learning Ledger: outcome proof and promotion.
 - LoRA/lightweight ML: optional learned routing/policy after verified evidence.
@@ -37,7 +36,6 @@ Automation Adapter Fabric
    ├─ native deterministic workflow
    ├─ n8n
    ├─ Home Assistant
-   ├─ Automatisch
    ├─ Device Bridge
    └─ robotics/actuator runtime
         ↓
@@ -50,7 +48,7 @@ Veritas → Receipt → Learning
 
 ## Provider law
 
-n8n, Home Assistant, Automatisch and future engines are providers, not LeeWay authority.
+n8n, Home Assistant and future approved engines are providers, not LeeWay authority.
 
 Do not copy foreign provider code into the LeeWay core merely to achieve integration. Use adapters/contracts unless a separately justified extraction is license-compatible and passes provenance review.
 
@@ -110,13 +108,13 @@ Robot embodiment MUST preserve emergency stop, permission, actuator limits, obse
 ## Roadmap
 
 ### A0 — Discovery and ownership
-Inventory existing Runtime Fabric automation-runtime, Device Bridge, n8n evidence, Home Assistant contracts, Automatisch fork, Agent Skills workflows and robotics artifacts.
+Inventory existing Runtime Fabric automation-runtime, Device Bridge, n8n evidence, Home Assistant contracts, Agent Skills workflows and robotics artifacts.
 
 ### A1 — Universal automation contract
 Define workflow/event/action/state/authorization/rollback/evidence schemas.
 
 ### A2 — Provider adapters
-Qualify native Runtime, n8n, Home Assistant and Automatisch independently.
+Qualify native Runtime, n8n and Home Assistant independently.
 
 ### A3 — Formula adapter
 Define six calibrated Automation-domain dimensions and 16×6 state mapping into canonical Formula runtime-state-v1.
