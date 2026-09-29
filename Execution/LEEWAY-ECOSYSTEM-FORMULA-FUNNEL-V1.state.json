@@ -5,18 +5,20 @@
   "current": {
     "phaseId": "P1",
     "phaseName": "Voice Fabric Production Closure",
-    "stepId": "P1.1",
-    "stepName": "Verify latest GitHub Pages production UI",
+    "stepId": "P1.2",
+    "stepName": "Verify live catalog discovery and package selection in a real browser",
     "state": "IN_PROGRESS",
     "blocker": null,
     "blockerSubWork": null,
-    "returnPoint": "P1.1",
+    "returnPoint": "P1.2",
     "acceptanceStillRequired": [
-      "production page renders latest multi-agent Voice Registry UI",
-      "versioned catalog is visible/usable",
-      "service SDK resources resolve from production"
+      "real browser loads the production Voice Fabric UI",
+      "built-in voice packages render in the catalog",
+      "Agent Lee Voice One is selectable",
+      "Chatterbox default profiles are selectable",
+      "selection updates the active package without loading another reasoning model"
     ],
-    "nextAction": "Verify the deployed production surface against current source and record evidence."
+    "nextAction": "Run browser-backed production UI interaction gate."
   },
   "phases": [
     {
@@ -50,5 +52,25 @@
       "state": "NOT_STARTED"
     }
   ],
-  "law": "Blocker repair never advances the parent cursor. After blocker closure, return to the frozen parent step and rerun its acceptance gate."
+  "law": "Blocker repair never advances the parent cursor. After blocker closure, return to the frozen parent step and rerun its acceptance gate.",
+  "history": [
+    {
+      "phaseId": "P1",
+      "stepId": "P1.1",
+      "state": "VERIFIED_PASS",
+      "evidence": {
+        "voiceFabricCommit": "8c6821527824ba8fbae92fa6261e9782c8a06df9",
+        "liveGateRun": 36587118282,
+        "result": "Voice Fabric Live Pages Gate completed success",
+        "verified": [
+          "production HTML contains latest Voice Registry UI markers",
+          "production SDK contains voice discovery/selection APIs",
+          "production registry/catalog resources resolve with expected current markers"
+        ]
+      },
+      "blocker": "Direct browser verification unavailable from chat/workstation route",
+      "blockerRepair": "Added repository-owned GitHub Actions live Pages verifier",
+      "returnPerformed": true
+    }
+  ]
 }
