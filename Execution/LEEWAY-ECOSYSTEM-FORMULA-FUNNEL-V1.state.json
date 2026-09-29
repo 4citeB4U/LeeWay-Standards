@@ -5,20 +5,22 @@
   "current": {
     "phaseId": "P1",
     "phaseName": "Voice Fabric Production Closure",
-    "stepId": "P1.2",
-    "stepName": "Verify live catalog discovery and package selection in a real browser",
+    "stepId": "P1.3",
+    "stepName": "Verify UI-created local voice package lifecycle in production",
     "state": "IN_PROGRESS",
     "blocker": null,
     "blockerSubWork": null,
-    "returnPoint": "P1.2",
+    "returnPoint": "P1.3",
     "acceptanceStillRequired": [
-      "real browser loads the production Voice Fabric UI",
-      "built-in voice packages render in the catalog",
-      "Agent Lee Voice One is selectable",
-      "Chatterbox default profiles are selectable",
-      "selection updates the active package without loading another reasoning model"
+      "create local voice package in production UI",
+      "save reference audio and metadata",
+      "reload production page and rediscover package",
+      "select saved package",
+      "audition saved package through Voice Fabric",
+      "export selected package",
+      "delete local package and verify removal"
     ],
-    "nextAction": "Run browser-backed production UI interaction gate."
+    "nextAction": "Run production browser lifecycle gate for create/save/reload/select/export/delete; then execute live audition gate."
   },
   "phases": [
     {
@@ -70,6 +72,27 @@
       },
       "blocker": "Direct browser verification unavailable from chat/workstation route",
       "blockerRepair": "Added repository-owned GitHub Actions live Pages verifier",
+      "returnPerformed": true
+    },
+    {
+      "phaseId": "P1",
+      "stepId": "P1.2",
+      "state": "VERIFIED_PASS",
+      "evidence": {
+        "voiceFabricCommit": "9acd9c237dd88693e083a5c63edd9b140f737dd8",
+        "liveBrowserGateRun": 36614340686,
+        "result": "Voice Fabric Live Browser Gate completed success",
+        "verified": [
+          "production Voice Fabric UI loaded in Chromium",
+          "Agent Lee Voice One rendered and selected from UI",
+          "Chatterbox calm/natural/lively rendered",
+          "Chatterbox Natural selected from UI",
+          "SDK listed built-ins and selected chatterbox-default-natural",
+          "bridge reported Voice Fabric v2"
+        ]
+      },
+      "blocker": "Production UI selector updated asynchronously after IndexedDB lookup; original verifier asserted too early",
+      "blockerRepair": "Use already-loaded package catalog for immediate selection and wait for rendered state in browser verifier",
       "returnPerformed": true
     }
   ]
