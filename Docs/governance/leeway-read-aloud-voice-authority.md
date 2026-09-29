@@ -10,13 +10,13 @@ For LeeWay-controlled Agent Lee surfaces:
 Agent Lee Voice One
 ```
 
-For ChatGPT-native surfaces where the ChatGPT client itself owns speech playback:
+ChatGPT-native voice is outside the LeeWay runtime dependency chain. It may be used only when the Creator explicitly chooses the ChatGPT application's own voice UI; LeeWay MUST NOT depend on it for speech.
+
+The canonical Creator-facing LeeWay voice is:
 
 ```
-Native ChatGPT voice selected/provided by the ChatGPT application
+agent-lee-voice-one
 ```
-
-These are the only approved read-aloud voice classes for the Creator-facing Agent Lee/ChatGPT experience.
 
 ## Forbidden fallback behavior
 
@@ -38,6 +38,6 @@ must be reported until Voice One is restored.
 
 ## Boundary
 
-LeeWay cannot command a proprietary ChatGPT client to start its native Read Aloud function unless that client exposes an authorized control/API for it. Native ChatGPT voice remains owned by the ChatGPT client.
-
 LeeWay-owned applications MUST route Creator-facing Agent Lee speech through `agent-lee-voice-one`.
+
+ChatGPT Read Aloud is not a runtime dependency, fallback, or authority for LeeWay.
