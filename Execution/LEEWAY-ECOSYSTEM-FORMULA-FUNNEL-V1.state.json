@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0.0",
+  "missionId": "LEEWAY-ECOSYSTEM-FORMULA-FUNNEL-V1",
+  "authorityPlan": "Docs/architecture/LEEWAY-ECOSYSTEM-EXECUTION-PLAN-FORMULA-FUNNEL-v1.md",
+  "current": {
+    "phaseId": "P1",
+    "phaseName": "Voice Fabric Production Closure",
+    "stepId": "P1.1",
+    "stepName": "Verify latest GitHub Pages production UI",
+    "state": "IN_PROGRESS",
+    "blocker": null,
+    "blockerSubWork": null,
+    "returnPoint": "P1.1",
+    "acceptanceStillRequired": [
+      "production page renders latest multi-agent Voice Registry UI",
+      "versioned catalog is visible/usable",
+      "service SDK resources resolve from production"
+    ],
+    "nextAction": "Verify the deployed production surface against current source and record evidence."
+  },
+  "phases": [
+    {
+      "id": "P1",
+      "name": "Voice Fabric Production Closure",
+      "state": "IN_PROGRESS"
+    },
+    {
+      "id": "P2",
+      "name": "Sensory Harness Contract",
+      "state": "NOT_STARTED"
+    },
+    {
+      "id": "P3",
+      "name": "Cognitive State Fabric",
+      "state": "NOT_STARTED"
+    },
+    {
+      "id": "P4",
+      "name": "Automation Fabric",
+      "state": "NOT_STARTED"
+    },
+    {
+      "id": "P5",
+      "name": "Device Bridge + Presence/LeeWay Live",
+      "state": "NOT_STARTED"
+    },
+    {
+      "id": "P6",
+      "name": "Robotics / Embodiment",
+      "state": "NOT_STARTED"
+    }
+  ],
+  "law": "Blocker repair never advances the parent cursor. After blocker closure, return to the frozen parent step and rerun its acceptance gate."
+}
