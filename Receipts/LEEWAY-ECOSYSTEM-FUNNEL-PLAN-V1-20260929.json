@@ -1,0 +1,25 @@
+{
+  "receiptId": "LEEWAY-ECOSYSTEM-FUNNEL-PLAN-V1-20260929",
+  "type": "ARCHITECTURE_FORMULA_FUNNEL_REVIEW",
+  "result": "PLAN_ACCEPTED_FOR_EXECUTION",
+  "formulaEvaluation": "NOT_EXECUTED",
+  "formulaReason": "This pass produced architecture and measurement/mapping requirements. Cross-domain calibrated 16x6 inputs were not available and no numeric Formula state was invented.",
+  "creatorDecisions": {
+    "automatisch": "REMOVED_FROM_PLAN",
+    "voice": "INDEPENDENT_FABRIC_AND_SENSORY_CAPABILITY",
+    "cognitiveState": "DEVELOP_AS_ENGINEERING_COGNITION_NOT_SUBJECTIVE_CONSCIOUSNESS_CLAIM",
+    "automation": "INDEPENDENT_HARNESS_WITH_NATIVE_RUNTIME_N8N_HOME_ASSISTANT_DEVICE_BRIDGE",
+    "deviceLive": "SEPARATE_AUTHORITIES_CONNECTED_BY_ADAPTERS",
+    "robotics": "DOWNSTREAM_GOVERNED_PHYSICAL_EXECUTION"
+  },
+  "startPhase": "PHASE_1_VOICE_FABRIC_PRODUCTION_CLOSURE",
+  "evidenceState": "ARCHITECTURE_REVIEW_COMMITTED_RUNTIME_EXECUTION_PENDING",
+  "rules": [
+    "no claims without receipts",
+    "generated != executed",
+    "executed != verified",
+    "provider != authority",
+    "LLM is optional capability, not system identity",
+    "first success is not completion"
+  ]
+}
