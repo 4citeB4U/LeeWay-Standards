@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "blockerId": "SW-PHONE-SECONDARY-WORKSTATION-20260929",
+  "parentMission": "LEEWAY-ECOSYSTEM-FORMULA-FUNNEL-V1",
+  "frozenParentCursor": "P1.2",
+  "classification": "BLOCKER_PREVENTION_SUBPROJECT",
+  "objective": "Qualify the phone as a persistent secondary workstation node with cloud-development attachment and Runtime Fabric failover.",
+  "state": "IN_PROGRESS",
+  "completed": [
+    "secondary workstation skill committed",
+    "secondary workstation Standards plan committed",
+    "phone execution-node manifest committed",
+    "Runtime Fabric execution-node contract committed",
+    "Runtime Fabric node registry created",
+    "Codespaces devcontainer profile committed",
+    "qualified Android v0.7.0 package located",
+    "remote pairing procedure located"
+  ],
+  "nextGate": {
+    "id": "SW2",
+    "name": "Phone runtime remote qualification",
+    "requires": [
+      "install/update current Android v0.7.0 package",
+      "enable local agent session",
+      "enable always-on remote bridge",
+      "obtain device ID and owner pairing token",
+      "prove remote device.health without USB",
+      "capture receipt"
+    ]
+  },
+  "returnRule": "After SW7 failover verification, return to P1.2 and rerun its acceptance gate."
+}
