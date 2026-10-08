@@ -1,6 +1,8 @@
 /*
 LEEWAY HEADER — DO NOT REMOVE
 
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+
 REGION: SEO.AGENT.INTENT
 TAG: SEO.INTENT.REGISTRY.MAIN
 
