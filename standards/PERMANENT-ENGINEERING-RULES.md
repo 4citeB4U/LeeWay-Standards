@@ -29,6 +29,7 @@ R21 Turn stable repeated work into reusable deterministic capabilities.
 R22 Require measurable gains in portability, reliability, reuse or execution.
 R23 Apply file standards to LeeWay-authored governed source, not vendor/generated files.
 R24 Human approval governs consequential actions and permission changes.
+R25 GitHub-First Source and Reuse Authority: At the beginning of every substantive LeeWay engineering task, recover the Master Checkpoint and inspect canonical GitHub repositories, branches, implementations, acceptance contracts, source versions, hashes, and verified evidence. Classify ALREADY BUILT, PARTIALLY BUILT, MISSING GLUE, or TRULY MISSING; extend the canonical owner rather than duplicating it. After implementation, return to GitHub to reconcile commit, PR, CI, provenance, and acceptance status. GitHub owns versioned source and release identity; physical runtime tests separately establish deployed behavior. Never use a particular drive, machine, provider, or historical deployment as canonical identity.
 
 ## Required lifecycle
 Investigate → Diagnose → Plan → Implement → Test → Validate → Repair → Retest → Verify → Evidence.
