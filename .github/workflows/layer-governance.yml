@@ -13,15 +13,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Verify canonical checkout scripts and policy exist
+        run: |
+          test -f .leeway/layer-policy.json
+          test -f scripts/check-layer-paths.mjs
+          test -f scripts/run-agents.mjs
+          test -f scripts/quarantine.mjs
       - name: Run layer path checks
-        working-directory: LeeWay-Standards
         run: node scripts/check-layer-paths.mjs
       - name: Run SSA scan
-        working-directory: LeeWay-Standards
         run: node scripts/run-agents.mjs --mode=scan
       - name: Run SSA purge plan
-        working-directory: LeeWay-Standards
         run: node scripts/run-agents.mjs --mode=purge-plan
       - name: Run SSA quarantine dry-run
-        working-directory: LeeWay-Standards
         run: node scripts/quarantine.mjs --dry-run
