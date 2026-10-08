@@ -9,6 +9,8 @@ on:
       - '**.jsx'
       - '**.mjs'
       - '.github/workflows/enforce-leeway-standards.yml'
+      - 'standards/PERMANENT-ENGINEERING-RULES.md'
+      - 'standards/permanent-engineering-rules.v1.json'
   push:
     branches:
       - main
@@ -19,6 +21,8 @@ on:
       - '**.jsx'
       - '**.mjs'
       - '.github/workflows/enforce-leeway-standards.yml'
+      - 'standards/PERMANENT-ENGINEERING-RULES.md'
+      - 'standards/permanent-engineering-rules.v1.json'
 
 jobs:
   enforce-standards:
