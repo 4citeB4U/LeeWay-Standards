@@ -2,6 +2,8 @@
 /*
 LEEWAY HEADER — DO NOT REMOVE
 
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+
 REGION: CORE.SDK.CLI
 TAG: CORE.SDK.CLI.LEEWAY
 

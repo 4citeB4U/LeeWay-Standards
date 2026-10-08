@@ -117,16 +117,25 @@ function buildHeader(relativePath) {
     'WHY = Enforce LeeWay architectural standards in this file',
     'WHO = Leeway Innovations / LeeWay Standards Enforcement Engine',
     `WHERE = ${relativePath.replace(/\\/g, '/')}`,
-    'WHEN = 2026-04-18',
+    'WHEN = Governance metadata applied 2026-10-08',
     'HOW = Auto-enforced header; update manually with full 5WH detail',
     '',
     'CHAIN: Standards → Integrated → Runtime → Projections',
-    'LICENSE: PROPRIETARY',
+    'LICENSE: Existing file and repository license terms remain unchanged',
     '*/',
     '',
   ].join('\n');
 }
 
+function prependHeader(content, relativePath) {
+  const bom = content.startsWith('\uFEFF') ? '\uFEFF' : '';
+  const source = content.slice(bom.length);
+  const end = source.indexOf('\n');
+  if (source.startsWith('#!') && end >= 0) {
+    return bom + source.slice(0, end + 1) + buildHeader(relativePath) + source.slice(end + 1);
+  }
+  return bom + buildHeader(relativePath) + source;
+}
 function hasRequiredMarkers(content) {
   return (
     content.includes('LEEWAY HEADER') &&
@@ -137,6 +146,7 @@ function hasRequiredMarkers(content) {
 }
 
 function patchExistingHeader(content, relativePath) {
+  const newline = content.includes('\r\n') ? '\r\n' : '\n';
   const lines = content.split(/\r?\n/);
   const patch = [];
 
@@ -156,12 +166,12 @@ function patchExistingHeader(content, relativePath) {
 
   const headerIndex = lines.findIndex((line) => line.includes('LEEWAY HEADER'));
   if (headerIndex === -1) {
-    return buildHeader(relativePath) + content;
+    return prependHeader(content, relativePath);
   }
 
   const insertIndex = Math.max(headerIndex + 1, 1);
   lines.splice(insertIndex, 0, '', ...patch);
-  return `${lines.join('\n')}${content.endsWith('\n') ? '' : '\n'}`;
+  return lines.join(newline);
 }
 
 async function walk(targetPath, files) {
@@ -189,6 +199,7 @@ async function main() {
     await walk(target, files);
   }
 
+  if(files.length === 0)throw new Error('NO_SCANNABLE_FILES_FOUND');
   const results = [];
   for (const filePath of files) {
     const content = await fs.readFile(filePath, 'utf8');
@@ -197,7 +208,7 @@ async function main() {
     let changed = false;
 
     if (!content.includes('LEEWAY HEADER')) {
-      nextContent = buildHeader(relativePath) + content;
+      nextContent = prependHeader(content, relativePath);
       changed = true;
     } else if (!hasRequiredMarkers(content)) {
       nextContent = patchExistingHeader(content, relativePath);
@@ -223,7 +234,7 @@ async function main() {
     strict: options.strict,
     scanned: results.length,
     changed: changedCount,
-    complianceScore: results.length === 0 ? 100 : Math.round(((results.length - changedCount) / results.length) * 100),
+    complianceScore: results.length === 0 ? 0 : Math.round(((results.length - changedCount) / results.length) * 100),
     results,
   };
 

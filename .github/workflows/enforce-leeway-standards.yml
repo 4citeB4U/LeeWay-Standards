@@ -8,6 +8,7 @@ on:
       - '**.js'
       - '**.jsx'
       - '**.mjs'
+      - '.github/workflows/enforce-leeway-standards.yml'
   push:
     branches:
       - main
@@ -17,6 +18,7 @@ on:
       - '**.js'
       - '**.jsx'
       - '**.mjs'
+      - '.github/workflows/enforce-leeway-standards.yml'
 
 jobs:
   enforce-standards:
@@ -30,6 +32,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+
+      - name: Verify Standards enforcer safety and portability
+        run: node --test tests/standards-enforcer.test.mjs
 
       - name: Run LeeWay File Governance Enforcer (Report Mode)
         id: scan
@@ -45,7 +50,7 @@ jobs:
           const report = JSON.parse(fs.readFileSync('enforcement-report.json', 'utf8'));
           const total = report.scanned || 0;
           const compliant = total - (report.changed || 0);
-          const score = total === 0 ? 100 : Math.round((compliant / total) * 100);
+          const score = total === 0 ? 0 : Math.round((compliant / total) * 100);
           
           console.log('=== LeeWay Standards Enforcement Report ===');
           console.log('Total Files Scanned:', total);
@@ -72,6 +77,7 @@ jobs:
           "
 
       - name: Comment PR with Enforcement Results
+        continue-on-error: true
         if: github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
@@ -80,22 +86,22 @@ jobs:
             const report = JSON.parse(fs.readFileSync('enforcement-report.json', 'utf8'));
             const total = report.scanned || 0;
             const compliant = total - (report.changed || 0);
-            const score = total === 0 ? 100 : Math.round((compliant / total) * 100);
+            const score = total === 0 ? 0 : Math.round((compliant / total) * 100);
             
             let icon = score < 70 ? '❌' : score < 95 ? '⚠️' : '✅';
             
             const body = `${icon} **LeeWay Standards Enforcement Report**
 
-| Metric | Value |
-|--------|-------|
-| Files Scanned | ${total} |
-| Compliant | ${compliant} |
-| Non-Compliant | ${report.changed || 0} |
-| **Score** | **${score}%** |
+            | Metric | Value |
+            |--------|-------|
+            | Files Scanned | ${total} |
+            | Compliant | ${compliant} |
+            | Non-Compliant | ${report.changed || 0} |
+            | **Score** | **${score}%** |
 
-${score < 70 ? '🚫 **FAILED** - Compliance below 70% threshold\n\nRun locally to auto-fix:\n```bash\nnode scripts/auto-enforce-file-governance.mjs --apply\n```' : score < 95 ? '⚠️ **PASSED** - But consider improving compliance\n\nRun to optimize:\n```bash\nnode scripts/auto-enforce-file-governance.mjs --apply\n```' : '✅ **PASSED** - All files compliant'}`;
+            ${score < 70 ? '🚫 **FAILED** - Compliance below 70% threshold\n\nRun locally to auto-fix:\n```bash\nnode scripts/auto-enforce-file-governance.mjs --apply\n```' : score < 95 ? '⚠️ **PASSED** - But consider improving compliance\n\nRun to optimize:\n```bash\nnode scripts/auto-enforce-file-governance.mjs --apply\n```' : '✅ **PASSED** - All files compliant'}`;
             
-            github.rest.issues.createComment({
+            await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,

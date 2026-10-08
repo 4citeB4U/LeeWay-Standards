@@ -11,6 +11,8 @@ const agents = [
 const template = (name) => `/*
 LEEWAY HEADER — DO NOT REMOVE
 
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+
 REGION: MCP.AGENT.${name.toUpperCase().replace(/-/g, '')}
 TAG: MCP.${name.toUpperCase().replace(/-/g, '_')}.MAIN
 

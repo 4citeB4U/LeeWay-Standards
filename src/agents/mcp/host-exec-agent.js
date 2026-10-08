@@ -1,6 +1,8 @@
 /*
 LEEWAY HEADER — DO NOT REMOVE
 
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+
 REGION: MCP.AGENT.HOSTEXEC
 TAG: MCP.HOSTEXEC.AGENT.MAIN
 

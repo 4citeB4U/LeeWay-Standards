@@ -1,6 +1,8 @@
 /*
 LEEWAY HEADER — DO NOT REMOVE
 
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+
 REGION: MCP.AGENT.TRANSPORT
 TAG: MCP.TRANSPORT.AGENT.MAIN
 
