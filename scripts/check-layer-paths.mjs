@@ -76,17 +76,29 @@ function extractImports(content) {
 }
 
 function findRepoByFile(filePath) {
-  const normalized = filePath.replaceAll("\\\\", "/");
-  for (const [repoKey, repo] of Object.entries(policy.repos)) {
-    const marker = `/${repo.path}/`;
-    if (normalized.includes(marker)) return { repoKey, repo };
+  const absolute = path.resolve(filePath);
+  for (const [repoKey, base] of repoBases) {
+    const relative = path.relative(base, absolute);
+    if (relative && relative !== '..' && !relative.startsWith('..' + path.sep) && !path.isAbsolute(relative)) {
+      return { repoKey, repo: policy.repos[repoKey] };
+    }
   }
   return null;
 }
 
 const files = [];
-for (const repo of Object.values(policy.repos)) {
-  await walk(path.join(workspaceRoot, repo.path), files);
+const repoBases = new Map();
+const absentRepositories = [];
+for (const [repoKey, repo] of Object.entries(policy.repos)) {
+  const candidate = path.resolve(workspaceRoot, repo.path);
+  const present = await fs.stat(candidate).then(stat => stat.isDirectory()).catch(() => false);
+  const selected = present ? candidate : (repoKey === 'standards' && !process.env.LEEWAY_WORKSPACE_ROOT ? standardsRoot : null);
+  if (!selected) { absentRepositories.push(repoKey); continue; }
+  repoBases.set(repoKey, selected);
+  await walk(selected, files);
+}
+if (process.env.LEEWAY_WORKSPACE_ROOT && absentRepositories.length) {
+  throw new Error('DECLARED_WORKSPACE_MISSING_REPOSITORIES:' + absentRepositories.join(','));
 }
 
 if (files.length === 0) {
@@ -128,4 +140,4 @@ if (violations.length > 0) {
   process.exit(1);
 }
 
-console.log(`Layer path validation passed. Scanned ${files.length} files.`);
+console.log(`Layer path validation passed. Scanned ${files.length} files across ${repoBases.size}/${Object.keys(policy.repos).length} declared repositories.`);

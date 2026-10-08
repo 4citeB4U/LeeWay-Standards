@@ -34,7 +34,7 @@ jobs:
           node-version: '24'
 
       - name: Verify Standards enforcer safety and portability
-        run: node --test tests/standards-enforcer.test.mjs
+        run: node --test tests/*.test.mjs
 
       - name: Run LeeWay File Governance Enforcer (Report Mode)
         id: scan

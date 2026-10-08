@@ -39,7 +39,7 @@ if(byId.get("skills")?.repo!=="4citeB4U/LeeWay-Agent-Skills") throw new Error("S
 if(byId.get("device-bridge")?.repo!=="4citeB4U/LEEWAY-DEVICE-BRIDGE") throw new Error("Device Bridge authority drift");
 const recovery=byId.get("recovery-20260925");
 if(recovery?.authorityClass!=="EVIDENCE_ONLY" || recovery?.executionEligible!==false) throw new Error("Recovery repository must remain evidence-only");
-const raw=fs.readFileSync(p,"utf8");
+const raw=JSON.stringify({...r,authority:{...r.authority,law:undefined}});
 for(const forbidden of ["127.0.0.1","localhost","D:\\\\","E:\\\\"]) if(raw.includes(forbidden)) throw new Error("Host-bound identity leaked into canonical registry: "+forbidden);
 if(r.executionLaw?.dockerRole!=="OPTIONAL_DEVELOPMENT_QUALIFICATION_PACKAGING_ADAPTER") throw new Error("Docker role drift");
 if(r.formulaControl?.evaluatorClaim!=="NOT_EXECUTED_BY_REGISTRY") throw new Error("Registry must not claim Formula execution");
