@@ -106,6 +106,11 @@ if (files.length === 0) {
   process.exit(2);
 }
 
+if (files.length === 0) {
+  console.error("Layer path validation blocked: no source files were discovered under the declared workspace.");
+  process.exit(2);
+}
+
 const violations = [];
 for (const filePath of files) {
   const repoInfo = findRepoByFile(filePath);
