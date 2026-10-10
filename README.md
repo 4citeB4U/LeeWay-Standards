@@ -1,3 +1,5 @@
+> **READ FIRST — CANONICAL ENGINEERING LAWS:** [Engineering, multi-team collaboration, continuous notes and recurring defect prevention](./Docs/governance/LEEWAY-CANONICAL-ENGINEERING-LAWS.md). Mandatory before any engineering or contributor work; preserves R01–R25 and existing authorities.
+
 <p align="center">
   <img src="./public/LeeWayStandardslogo.png" alt="LeeWay Standards Logo" width="480" />
 </p>
