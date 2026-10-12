@@ -23,7 +23,7 @@ test('R25 mandates GitHub before building and after verification without mistaki
 
 const canonicalLaws=read('../Docs/governance/LEEWAY-CANONICAL-ENGINEERING-LAWS.md');
 test('canonical LAW 01 through LAW 14 remain present exactly once',()=>{
- const ids=[...canonicalLaws.matchAll(/^## LAW (\\d{2}) — /gm)].map(x=>x[1]);
+ const ids=[...canonicalLaws.matchAll(/^## LAW (\d{2}) — /gm)].map(x=>x[1]);
  assert.deepEqual(ids,Array.from({length:14},(_,i)=>String(i+1).padStart(2,'0')));
 });
 test('canonical Formula/Loop law coupling preserves execution and learning evidence boundaries',()=>{
