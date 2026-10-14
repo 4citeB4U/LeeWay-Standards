@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: DEV.CODEGEN
@@ -30,7 +30,7 @@ L6_Execution: LiveConductorAgent.ts, L6_Execution: code_scout_agent.py
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L6_Execution: LiveConductorAgent.ts, L6_Execution: code_scout_agent.py. No unassigned Clones may natively execute this without Hive Mind routing.
 
