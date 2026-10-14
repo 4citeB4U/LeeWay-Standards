@@ -137,7 +137,7 @@ function prependHeader(content, relativePath) {
   return bom + buildHeader(relativePath) + source;
 }
 function leadingHeader(content, filePath = '') {
-  const source = content.replace(/^\uFEFF/, '').replace(/^#![^\n]*\n/, '');
+  const source = content.replace(/^\uFEFF/, '').replace(/^#![^\n]*\n/, '').replace(/^\s*\/\*\*[\s\S]*?SPDX-License-Identifier:[\s\S]*?\*\/\s*/, '');
   const extension = path.extname(filePath).toLowerCase();
   if (['.py', '.ps1', '.yaml', '.yml'].includes(extension)) {
     const match = source.match(/^(?:[ \t]*#[^\r\n]*(?:\r?\n|$))+/);
