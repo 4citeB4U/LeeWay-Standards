@@ -3,6 +3,7 @@ LEEWAY HEADER — DO NOT REMOVE
 
 REGION: CORE.TESTS.GOVERNANCE
 TAG: CORE.TESTS.STANDARDS_ENFORCER.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 5WH:
 WHAT = Regression tests for the canonical LeeWay governance enforcer
