@@ -1,8 +1,21 @@
-/**
- * LEEWAY COMPLIANCE HEADER
- * Path: /Master_Class/Materials/Quizzes.md
- * Status: ACTIVE COMPLIANCE MONITORING
- */
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.TRAINING.MASTER_CLASS
+TAG: CORE.TRAINING.MATERIALS_QUIZZES.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Sovereign Architect Certification Exam (50 Questions)
+WHY = Maintain existing LeeWay learning material and governance identity
+WHO = LeeWay Standards / Master Class
+WHERE = Master_Class/Materials/Quizzes.md
+WHEN = 2026-10-14 (header conformance review)
+HOW = Markdown learning or instructional material
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+LEGACY_HEADER: /** * LEEWAY COMPLIANCE HEADER * Path: /Master_Class/Materials/Quizzes.md * Status: ACTIVE COMPLIANCE MONITORING */ 
+-->
 
 # Sovereign Architect Certification Exam (50 Questions)
 
