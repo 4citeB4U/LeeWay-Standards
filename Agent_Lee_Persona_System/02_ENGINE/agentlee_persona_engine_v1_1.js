@@ -3,6 +3,24 @@
  * SPDX-License-Identifier: MIT
  */
 
+/*
+LEEWAY HEADER — DO NOT REMOVE
+REGION: AI.AGENT.PERSONA.ENGINE
+TAG: AI.AGENT.PERSONA.ENGINE.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Deterministic response selection and gated Agent Lee persona overlays
+WHY = Maintains Agent Lee persona behavior and response policy
+WHO = LeeWay Standards / Agent Lee Persona System
+WHERE = Agent_Lee_Persona_System/02_ENGINE/agentlee_persona_engine_v1_1.js
+WHEN = 2026-10-14 (governance review)
+HOW = Existing JavaScript module logic; no execution behavior changed
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+*/
+
 /* ============================================================================
    LEEWAY HEADER — DO NOT REMOVE
    PROFILE: LEEWAY-ORDER
