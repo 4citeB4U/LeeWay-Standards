@@ -1,10 +1,3 @@
-export enum AgentState {
-  IDLE = "IDLE",
-  LISTENING = "LISTENING",
-  THINKING = "THINKING",
-  SPEAKING = "SPEAKING",
-  ERROR = "ERROR"
-}
 /*
 LEEWAY HEADER — DO NOT REMOVE
 
@@ -37,6 +30,14 @@ AUDIT
 LICENSE:
 MIT
 */
+export enum AgentState {
+  IDLE = "IDLE",
+  LISTENING = "LISTENING",
+  THINKING = "THINKING",
+  SPEAKING = "SPEAKING",
+  ERROR = "ERROR"
+}
+
 
 /**
  * Agent Lee World of Agents — Core Types
