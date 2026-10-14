@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.TOOLS
@@ -30,7 +30,7 @@ L6_Execution: Azr-Coordinator, L2_Ingestion: Aria.ts
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L6_Execution: Azr-Coordinator, L2_Ingestion: Aria.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 
