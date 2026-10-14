@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.TRAINING.MASTER_CLASS
+TAG: CORE.DOCS.MASTER_CLASS_MATERIALS_EXTRACTED_NOTEBOOKLM_DATA.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Extracted NotebookLM Data: Sovereign Architect Master Class
+WHY = Preserve existing LeeWay-authored material and provenance
+WHO = LeeWay Standards / existing document owner subject to review
+WHERE = Master_Class/Materials/Extracted_NotebookLM_Data.md
+WHEN = 2026-10-14 (header review)
+HOW = Existing Markdown content, not executable implementation
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 /**
  * LEEWAY COMPLIANCE HEADER
  * Path: /Master_Class/Materials/Extracted_NotebookLM_Data.md
