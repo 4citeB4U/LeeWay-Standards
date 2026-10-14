@@ -137,8 +137,8 @@ function prependHeader(content, relativePath) {
   return bom + buildHeader(relativePath) + source;
 }
 function leadingHeader(content) {
-  const source = content.replace(/^\\uFEFF/, '').replace(/^#![^\\n]*\\n/, '');
-  const start = source.search(/^\\s*\\/\\*/);
+  const source = content.replace(/^\uFEFF/, '').replace(/^#![^\n]*\n/, '');
+  const start = source.search(/^\s*\/\*/);
   if (start !== 0) return '';
   const end = source.indexOf('*/');
   if (end < 0) return '';
@@ -158,10 +158,10 @@ function validateLeadingHeader(content) {
   const header = leadingHeader(content);
   const errors = [];
   if (!/LEEWAY HEADER(?: —| -) DO NOT REMOVE/.test(header)) errors.push('MISSING_HEADER_IDENTITY');
-  if (!/^REGION:\\s*\\S+/m.test(header)) errors.push('MISSING_REGION');
-  if (!/^TAG:\\s*\\S+(?:\\.\\S+){2,}/m.test(header)) errors.push('MISSING_TAG');
-  if (!/^LICENSE:\\s*\\S+/m.test(header)) errors.push('MISSING_LICENSE');
-  if (!/^5WH:\\s*$/m.test(header)) errors.push('MISSING_5WH_BLOCK');
+  if (!/^REGION:\s*\S+/m.test(header)) errors.push('MISSING_REGION');
+  if (!/^TAG:\s*\S+(?:\.\S+){2,}/m.test(header)) errors.push('MISSING_TAG');
+  if (!/^LICENSE:\s*\S+/m.test(header)) errors.push('MISSING_LICENSE');
+  if (!/^5WH:\s*$/m.test(header)) errors.push('MISSING_5WH_BLOCK');
   for (const field of ['WHAT', 'WHY', 'WHO', 'WHERE', 'WHEN', 'HOW']) {
     if (!new RegExp('^' + field + '\\s*=\\s*\\S+', 'm').test(header)) errors.push('MISSING_5WH_' + field);
   }
