@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.AGENT.ORCHESTRATION
@@ -30,7 +30,7 @@ L4_Consensus: MarshalVerify.ts, L2_Ingestion: RouterAgent.ts
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L4_Consensus: MarshalVerify.ts, L2_Ingestion: RouterAgent.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 
