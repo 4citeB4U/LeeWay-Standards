@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.AGENT.PATTERNS
@@ -30,7 +30,7 @@ L8_Delivery: AgentLee.ts, L1_Perception: StreamingSTTAgent.ts
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L8_Delivery: AgentLee.ts, L1_Perception: StreamingSTTAgent.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 
