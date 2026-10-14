@@ -21,6 +21,7 @@ WHY = Ensures Agent Lee never speaks or displays raw PII or adversarial injectio
 WHO = Leeway Innovations / Agent Lee System Engineer
 WHERE = agents/SafetyRedactionAgent.ts
 WHEN = 2026-04-04
+HOW = Applies declared text redaction patterns and publishes redaction events through EventBus
 
 AGENTS:
 ASSESS
