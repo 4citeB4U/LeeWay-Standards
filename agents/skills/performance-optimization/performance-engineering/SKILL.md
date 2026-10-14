@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.SKILL.PERFORMANCE_OPTIMIZATION
@@ -30,7 +30,7 @@ L4_Consensus: Sovereign-Auditor
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L4_Consensus: Sovereign-Auditor. No unassigned Clones may natively execute this without Hive Mind routing.
 
