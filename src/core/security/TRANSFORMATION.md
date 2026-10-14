@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.STANDARDS
+TAG: CORE.DOCS.SRC_CORE_SECURITY_TRANSFORMATION.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Security Transformation: From Hard-Lock to Creator-Recoverable
+WHY = Preserve preexisting LeeWay documentation and trace its source
+WHO = LeeWay Standards repository / original author pending confirmation
+WHERE = src/core/security/TRANSFORMATION.md
+WHEN = 2026-10-14 (header review)
+HOW = Markdown technical documentation
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # Security Transformation: From Hard-Lock to Creator-Recoverable
 
 ## Problem: The Original System
