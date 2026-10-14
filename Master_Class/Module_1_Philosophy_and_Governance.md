@@ -1,8 +1,21 @@
-/**
- * LEEWAY COMPLIANCE HEADER
- * Path: /Master_Class/Module_1_Philosophy_and_Governance.md
- * Status: ACTIVE COMPLIANCE MONITORING
- */
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.TRAINING.MASTER_CLASS
+TAG: CORE.TRAINING.MODULE_1_PHILOSOPHY_AND_GOVERNANCE.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Module 1: Philosophy & The Sovereignty Doctrine
+WHY = Preserve existing LeeWay training material and source identity
+WHO = LeeWay Standards / Master Class
+WHERE = Master_Class/Module_1_Philosophy_and_Governance.md
+WHEN = 2026-10-14 (header conformance review)
+HOW = Markdown instructional document
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+LEGACY_HEADER: /** * LEEWAY COMPLIANCE HEADER * Path: /Master_Class/Module_1_Philosophy_and_Governance.md * Status: ACTIVE COMPLIANCE M
+-->
 
 # Module 1: Philosophy & The Sovereignty Doctrine
 
