@@ -1,8 +1,23 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
 DOC_CLASS: ARCHITECTURE
 DOC_ID: architecture.documentation-authority-map
 OWNER: Librarian Aegis / Creator Authority
 LAST_UPDATED: 2026-10-02
+REGION: CORE.DOCS.GOVERNANCE
+TAG: CORE.DOCS.ARCHITECTURE_DOCUMENTATION_AUTHORITY_MAP.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = LeeWay Documentation Authority Map
+WHY = Preserve existing canonical source authority and governed documentation
+WHO = Librarian Aegis / Creator Authority
+WHERE = Docs/architecture/documentation-authority-map.md
+WHEN = 2026-10-14 (header review)
+HOW = Existing Markdown governance document
+AGENTS:
+AUDIT
+LICENSE:
+MIT
 -->
 
 # LeeWay Documentation Authority Map
