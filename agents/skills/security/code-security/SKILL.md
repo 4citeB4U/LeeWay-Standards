@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: DEV.SECURITY
@@ -30,7 +30,7 @@ L5_Governance: SafetyRedactionAgent.ts, L5_Governance: Shield.ts
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L5_Governance: SafetyRedactionAgent.ts, L5_Governance: Shield.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 
