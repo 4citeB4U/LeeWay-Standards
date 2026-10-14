@@ -21,6 +21,7 @@ WHY = UI components can react to speaking/done/cancelled events without coupling
 WHO = Leeway Innovations / Agent Lee System Engineer
 WHERE = agents/StreamingTTSAgent.ts
 WHEN = 2026-04-04
+HOW = Tracks EventBus speech synthesis events and exposes speaking-state listeners; synthesis is server-side
 
 AGENTS:
 ASSESS
