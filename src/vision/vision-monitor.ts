@@ -7,6 +7,14 @@ REGION: 🧠 AI
 DISCOVERY_PIPELINE:
 Voice → Intent → Vision Monitor → Environment → Runtime Mode → Output
 
+5WH:
+WHAT = Enhance the existing LeeWay runtime with a lightweight, always-on vision monitor that operates under current governance and runtime constraints.
+WHY = Preserve existing Vision operational constraints and governing intent
+WHO = LeeWay-Standards (declared source authority)
+WHERE = src/vision/vision-monitor.ts
+WHEN = 2026-10-14 (header conformance review)
+HOW = Original TypeScript implementation constrained by its existing governance header
+
 PURPOSE:
 Enhance the existing LeeWay runtime with a lightweight, always-on vision monitor that operates under current governance and runtime constraints.
 
