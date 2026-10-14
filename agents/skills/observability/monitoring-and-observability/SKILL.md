@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.SKILL.OBSERVABILITY
@@ -30,7 +30,7 @@ L5_Governance: sentinel_agent.py
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L5_Governance: sentinel_agent.py. No unassigned Clones may natively execute this without Hive Mind routing.
 
