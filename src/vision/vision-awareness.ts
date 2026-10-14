@@ -7,6 +7,14 @@ REGION: 🧠 AI
 DISCOVERY_PIPELINE:
 Vision → Signals → Normalization → Awareness → Packet
 
+5WH:
+WHAT = Convert raw vision outputs into structured, agent-consumable awareness packets.
+WHY = Follow the existing Vision governing purpose and constraints
+WHO = LeeWay-Standards (existing AUTHORITY field)
+WHERE = src/vision/vision-awareness.ts
+WHEN = 2026-10-14 (header conformance review)
+HOW = Existing TypeScript module governed by the documented constraints
+
 PURPOSE:
 Convert raw vision outputs into structured, agent-consumable awareness packets.
 
