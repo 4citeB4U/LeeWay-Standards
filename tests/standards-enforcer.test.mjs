@@ -74,3 +74,19 @@ test('SPDX license preamble before LeeWay identity remains valid',t=>{
  assert.equal(JSON.parse(r.stdout).changed,0);
  assert.equal(fs.readFileSync(f,'utf8'),source);
 });
+
+test('indented 5WH lines already used in LeeWay source validate',t=>{
+ const root=fixture(t),f=path.join(root,'aligned.ts');
+ const source=[
+ '/*','LEEWAY HEADER — DO NOT REMOVE','REGION: CORE.TEST.ALIGN',
+ 'TAG: CORE.TEST.ALIGN.MAIN','DISCOVERY_PIPELINE: governed',
+ '5WH:','  WHAT = Source file','  WHY  = Preserve alignment',
+ '  WHO  = LeeWay','  WHERE = aligned.ts','  WHEN = 2026',
+ '  HOW  = Node test','LICENSE: MIT','*/','export const ok=1;',''
+ ].join('\n');
+ fs.writeFileSync(f,source);
+ const r=run(root,['--strict']);
+ assert.equal(r.status,0,r.stderr+' '+r.stdout);
+ assert.equal(JSON.parse(r.stdout).invalid,0);
+ assert.equal(fs.readFileSync(f,'utf8'),source);
+});
