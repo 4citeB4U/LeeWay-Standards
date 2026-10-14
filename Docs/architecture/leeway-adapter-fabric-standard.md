@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.ARCHITECTURE.ADAPTER
+TAG: CORE.ARCHITECTURE.ADAPTER.STANDARD
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Canonical architectural requirements for LeeWay adapter contracts
+WHY = Preserve portable core authority across external runtime and provider boundaries
+WHO = LeeWay Standards / Creator Authority
+WHERE = Docs/architecture/leeway-adapter-fabric-standard.md
+WHEN = 2026-10-14 (file-governance review)
+HOW = Governing Markdown standard for adapters, bindings, qualification, and evidence
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # LeeWay Adapter Fabric Standard
 
 **Authority:** LeeWay Standards  
