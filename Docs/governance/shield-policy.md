@@ -1,8 +1,23 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
 DOC_CLASS: GOVERNANCE
 DOC_ID: governance.shield-policy
 OWNER: Shield Aegis
 LAST_UPDATED: 2026-04-03
+REGION: CORE.DOCS.GOVERNANCE
+TAG: CORE.DOCS.GOVERNANCE_SHIELD_POLICY.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Shield Aegis — Security Policy
+WHY = Preserve existing canonical source authority and governed documentation
+WHO = Shield Aegis
+WHERE = Docs/governance/shield-policy.md
+WHEN = 2026-10-14 (header review)
+HOW = Existing Markdown governance document
+AGENTS:
+AUDIT
+LICENSE:
+MIT
 -->
 
 # Shield Aegis — Security Policy
