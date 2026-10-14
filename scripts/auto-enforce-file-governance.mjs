@@ -170,7 +170,7 @@ function validateLeadingHeader(content, filePath) {
   if (!/^LICENSE:\s*\S+/m.test(header)) errors.push('MISSING_LICENSE');
   if (!/^5WH:\s*$/m.test(header)) errors.push('MISSING_5WH_BLOCK');
   for (const field of ['WHAT', 'WHY', 'WHO', 'WHERE', 'WHEN', 'HOW']) {
-    if (!new RegExp('^' + field + '\\s*=\\s*\\S+', 'm').test(header)) errors.push('MISSING_5WH_' + field);
+    if (!new RegExp('^[ \\t]*' + field + '\\s*=\\s*\\S+', 'm').test(header)) errors.push('MISSING_5WH_' + field);
   }
   return errors;
 }
