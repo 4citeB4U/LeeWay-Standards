@@ -90,3 +90,18 @@ test('indented 5WH lines already used in LeeWay source validate',t=>{
  assert.equal(JSON.parse(r.stdout).invalid,0);
  assert.equal(fs.readFileSync(f,'utf8'),source);
 });
+
+test('Markdown skill header with complete canonical 5WH does not require discovery marker',t=>{
+ const root=fixture(t),f=path.join(root,'SKILL.md');
+ const source=[
+ '<!--','LEEWAY HEADER — DO NOT REMOVE','REGION: AI.SKILL.TEST',
+ 'TAG: AI.SKILL.TEST.CANONICAL','5WH:',
+ 'WHAT = Skill','WHY = Identity','WHO = LeeWay',
+ 'WHERE = SKILL.md','WHEN = 2026','HOW = Markdown','LICENSE:','MIT','-->',
+ '# Skill',''].join('\n');
+ fs.writeFileSync(f,source);
+ const result=run(root,['--strict']);
+ assert.equal(result.status,0,result.stderr+' '+result.stdout);
+ assert.equal(JSON.parse(result.stdout).changed,0);
+ assert.equal(JSON.parse(result.stdout).invalid,0);
+});
