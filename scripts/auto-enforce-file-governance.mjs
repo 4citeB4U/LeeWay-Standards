@@ -153,6 +153,9 @@ function leadingHeader(content, filePath = '') {
 
 function hasRequiredMarkers(content, filePath) {
   const header = leadingHeader(content, filePath);
+  if (path.extname(filePath).toLowerCase() === '.md') {
+    return validateLeadingHeader(content, filePath).length === 0;
+  }
   return (
     header.includes('LEEWAY HEADER') &&
     header.includes('REGION:') &&
