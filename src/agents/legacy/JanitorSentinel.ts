@@ -21,6 +21,7 @@ WHY = Unchecked log growth crashes mobile devices; Janitor enforces size/time ro
 WHO = Leeway Innovations / Agent Lee System Engineer
 WHERE = agents/JanitorSentinel.ts
 WHEN = 2026-04-04
+HOW = Schedules retention review using RetentionCleaner, ReportWriter, ReportIndex and EventBus
 
 AGENTS:
 ASSESS
