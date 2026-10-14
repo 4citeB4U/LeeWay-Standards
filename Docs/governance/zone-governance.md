@@ -1,8 +1,23 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
 DOC_CLASS: GOVERNANCE
 DOC_ID: governance.zone-model
 OWNER: Lee Prime
 LAST_UPDATED: 2026-04-03
+REGION: CORE.DOCS.GOVERNANCE
+TAG: CORE.DOCS.GOVERNANCE_ZONE_GOVERNANCE.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Zone Governance Model
+WHY = Preserve existing canonical source authority and governed documentation
+WHO = Lee Prime
+WHERE = Docs/governance/zone-governance.md
+WHEN = 2026-10-14 (header review)
+HOW = Existing Markdown governance document
+AGENTS:
+AUDIT
+LICENSE:
+MIT
 -->
 
 # Zone Governance Model
