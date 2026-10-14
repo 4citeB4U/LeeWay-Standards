@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.GOVERNANCE.STANDARDS
+TAG: CORE.GOVERNANCE.EXECUTION.CURSOR
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Defines execution cursor and blocker-return discipline
+WHY = Preserve the existing canonical LeeWay Execution Cursor and Blocker Discipline without a competing authority
+WHO = LeeWay Standards / Creator Authority
+WHERE = Docs/governance/leeway-execution-cursor-blocker-discipline.md
+WHEN = 2026-10-14 (governance header review)
+HOW = Markdown governing document, no executable change
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # LeeWay Execution Cursor & Blocker Discipline
 
 **Status:** Canonical execution law  
