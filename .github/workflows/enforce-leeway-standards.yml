@@ -1,3 +1,16 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: CORE.CI.GOVERNANCE
+# TAG: CORE.CI.STANDARDS_ENFORCEMENT.MAIN
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+# 5WH:
+# WHAT = Enforce the existing LeeWay source compliance gate in GitHub Actions
+# WHY = Prevent unqualified code and document changes from being admitted
+# WHO = LeeWay Standards engineering
+# WHERE = .github/workflows/enforce-leeway-standards.yml
+# WHEN = 2026-10-14 (review of existing workflow)
+# HOW = GitHub Actions runs the canonical file governance enforcer and tests
+# LICENSE:
+# MIT
 name: Enforce LeeWay Standards
 
 on:
@@ -53,7 +66,7 @@ jobs:
           const fs = require('fs');
           const report = JSON.parse(fs.readFileSync('enforcement-report.json', 'utf8'));
           const total = report.scanned || 0;
-          const compliant = total - (report.changed || 0) - (report.invalid || 0);
+          const compliant = (report.results || []).filter(item => !item.changed && (!item.validationErrors || item.validationErrors.length === 0)).length;
           const score = total === 0 ? 0 : Math.round((compliant / total) * 100);
           
           console.log('=== LeeWay Standards Enforcement Report ===');
