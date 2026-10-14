@@ -27,7 +27,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const standardsRoot = path.resolve(__dirname, '..');
 
-const SUPPORTED_EXTENSIONS = new Set(['.js', '.jsx', '.ts', '.tsx', '.mjs', '.cjs']);
+const SUPPORTED_EXTENSIONS = new Set(['.js', '.jsx', '.ts', '.tsx', '.mjs', '.cjs', '.md']);
 const SKIP_SEGMENTS = new Set(['node_modules', '.git', 'dist', 'build', 'coverage', '.next', '__quarantine__']);
 const DISCOVERY_PIPELINE = 'Voice → Intent → Location → Vertical → Ranking → Render';
 
@@ -136,27 +136,51 @@ function prependHeader(content, relativePath) {
   }
   return bom + buildHeader(relativePath) + source;
 }
+function leadingHeader(content) {
+  const source = content.replace(/^\uFEFF/, '').replace(/^#![^\n]*\n/, '');
+  const js = source.match(/^\s*\/\*[\s\S]*?\*\//);
+  if (js) return js[0];
+  const md = source.match(/^\s*<!--[\s\S]*?-->/);
+  return md ? md[0] : '';
+}
+
 function hasRequiredMarkers(content) {
+  const header = leadingHeader(content);
   return (
-    content.includes('LEEWAY HEADER') &&
-    content.includes('REGION:') &&
-    content.includes('TAG:') &&
-    content.includes('DISCOVERY_PIPELINE:')
+    header.includes('LEEWAY HEADER') &&
+    header.includes('REGION:') &&
+    header.includes('TAG:') &&
+    header.includes('DISCOVERY_PIPELINE:')
   );
+}
+
+function validateLeadingHeader(content) {
+  const header = leadingHeader(content);
+  const errors = [];
+  if (!/LEEWAY HEADER(?: —| -) DO NOT REMOVE/.test(header)) errors.push('MISSING_HEADER_IDENTITY');
+  if (!/^REGION:\s*\S+/m.test(header)) errors.push('MISSING_REGION');
+  if (!/^TAG:\s*\S+(?:\.\S+){2,}/m.test(header)) errors.push('MISSING_TAG');
+  if (!/^LICENSE:\s*\S+/m.test(header)) errors.push('MISSING_LICENSE');
+  if (!/^5WH:\s*$/m.test(header)) errors.push('MISSING_5WH_BLOCK');
+  for (const field of ['WHAT', 'WHY', 'WHO', 'WHERE', 'WHEN', 'HOW']) {
+    if (!new RegExp('^' + field + '\\s*=\\s*\\S+', 'm').test(header)) errors.push('MISSING_5WH_' + field);
+  }
+  return errors;
 }
 
 function patchExistingHeader(content, relativePath) {
   const newline = content.includes('\r\n') ? '\r\n' : '\n';
   const lines = content.split(/\r?\n/);
   const patch = [];
+  const header = leadingHeader(content);
 
-  if (!content.includes('REGION:')) {
+  if (!header.includes('REGION:')) {
     patch.push(`REGION: ${inferRegion(relativePath)}`);
   }
-  if (!content.includes('TAG:')) {
+  if (!header.includes('TAG:')) {
     patch.push(`TAG: ${inferTag(relativePath)}`);
   }
-  if (!content.includes('DISCOVERY_PIPELINE:')) {
+  if (!header.includes('DISCOVERY_PIPELINE:')) {
     patch.push(`DISCOVERY_PIPELINE: ${DISCOVERY_PIPELINE}`);
   }
 
@@ -207,7 +231,7 @@ async function main() {
     let nextContent = content;
     let changed = false;
 
-    if (!content.includes('LEEWAY HEADER')) {
+    if (!leadingHeader(content).includes('LEEWAY HEADER')) {
       nextContent = prependHeader(content, relativePath);
       changed = true;
     } else if (!hasRequiredMarkers(content)) {
@@ -215,11 +239,16 @@ async function main() {
       changed = nextContent !== content;
     }
 
+    if (changed && options.apply && path.extname(filePath).toLowerCase() === '.md') {
+      throw new Error('MARKDOWN_AUTO_REPAIR_NOT_AUTHORIZED: ' + relativePath);
+    }
     if (changed && options.apply) {
       await fs.writeFile(filePath, nextContent, 'utf8');
     }
 
+    const validationErrors = validateLeadingHeader(options.apply ? nextContent : content);
     results.push({
+      validationErrors,
       filePath,
       relativePath,
       changed,
@@ -228,12 +257,14 @@ async function main() {
   }
 
   const changedCount = results.filter((result) => result.changed).length;
+  const invalidCount = results.filter((result) => result.validationErrors.length > 0).length;
   const summary = {
     root: options.root,
     apply: options.apply,
     strict: options.strict,
     scanned: results.length,
     changed: changedCount,
+    invalid: invalidCount,
     complianceScore: results.length === 0 ? 0 : Math.round(((results.length - changedCount) / results.length) * 100),
     results,
   };
@@ -242,7 +273,7 @@ async function main() {
   if (!options.apply && changedCount > 0) {
     process.exit(2);
   }
-  if (options.strict && changedCount > 0) {
+  if (options.strict && (changedCount > 0 || invalidCount > 0)) {
     process.exit(1);
   }
 }
