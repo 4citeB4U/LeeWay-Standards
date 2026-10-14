@@ -54,6 +54,13 @@ Prioritization is evidence-bound and governed by the actual LeeWay Formula where
 ## LAW 11 — PREVENT RECURRENCE, NOT JUST CLOSE INCIDENTS
 Every verified repeated mistake must produce an appropriate prevention mechanism within existing authority: checked source contract, regression case, bootstrap check, deployment reconciliation, receipt field, contributor warning or documentation link. After a fix, inspect whether sibling products share its failure mode, test those existing integrations without overwriting peer work, and inform affected teams. **Every completed task should reduce the cost of the next similar task.** Breadth without reuse creates entropy. Build once. Verify once. Reuse many times.
 
+## LAW 11A — MANDATORY LEEWAY FILE AUTHORING GATE
+This operationalizes existing R23 without establishing another authority. Before creating or changing LeeWay-authored governed source, inspect the owner's canonical file standard and validate the resulting leading identity header: REGION, TAG, WHAT, WHY, WHO, WHERE, WHEN and HOW (5WH), applicable authorized agent roles, actual file owner/path, and license. Do not invent authorship, dates, rights, or roles; unresolved ownership or licensing remains BLOCKED. Respect format-specific syntax, interpreter shebangs, SPDX attribution, and intact source behavior. Vendor, generated, lock, receipt and binary content is exempt where canonical rules require; record the exception rather than inserting unsafe comments.
+
+A LeeWay API, wrapper, adapter, service, widget or application must identify its genuine contract owner and authority boundary. Third-party APIs and dependencies retain original names, attribution and license. A renamed symbol, header or manifest is not proof of a functional governed integration.
+
+For every affected source change, use the existing canonical validator and relevant syntax/build/CI tests; inspect the diff and GitHub readback; record commit SHA, file scope, exceptions, rollback, and PASS/FAIL/UNVERIFIED results in the owning contributor issue/PR. Never equate generated headers, passing source checks or GitHub publication with live Runtime Fabric/Veritas acceptance.
+
 ## LAW 12 — PROOF, READBACK AND ACCEPTANCE
 Maintain separate statuses: **SOURCE_IMPLEMENTED / TESTED / CI_PASS / DEPLOYED / LIVE_OBSERVED / VERITAS_VERIFIED / QUALIFIED**. No health-200, model response, synthetic click or local-only render passes a physical PC+phone acceptance gate. Verify real source/owner, authorized actor, pre/post state, both devices as required, audio/vision/cursor interaction where required, actual user behavior, Veritas and receipts. A failed or unverified gate stays open. Explicitly include the outstanding acceptance denominator and no false progress.
 
