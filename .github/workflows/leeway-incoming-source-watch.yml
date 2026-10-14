@@ -1,3 +1,16 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: CORE.CI.GOVERNANCE
+# TAG: CORE.CI.INCOMING_SOURCE_WATCH.MAIN
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+# 5WH:
+# WHAT = GitHub Actions incoming LeeWay source and document governance check
+# WHY = Reject unverified incoming code metadata without automatically mutating files
+# WHO = LeeWay Standards engineering
+# WHERE = .github/workflows/leeway-incoming-source-watch.yml
+# WHEN = 2026-10-14 (governance review)
+# HOW = Node.js canonical enforcer executes on changed governed source
+# LICENSE:
+# MIT
 name: LeeWay Incoming Source Watch
 on:
   pull_request:
