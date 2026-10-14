@@ -27,7 +27,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const standardsRoot = path.resolve(__dirname, '..');
 
-const SUPPORTED_EXTENSIONS = new Set(['.js', '.jsx', '.ts', '.tsx', '.mjs', '.cjs', '.md']);
+const SUPPORTED_EXTENSIONS = new Set(['.js', '.jsx', '.ts', '.tsx', '.mjs', '.cjs', '.md', '.py', '.ps1', '.html', '.htm', '.yaml', '.yml']);
 const SKIP_SEGMENTS = new Set(['node_modules', '.git', 'dist', 'build', 'coverage', '.next', '__quarantine__']);
 const DISCOVERY_PIPELINE = 'Voice → Intent → Location → Vertical → Ranking → Render';
 
@@ -136,16 +136,23 @@ function prependHeader(content, relativePath) {
   }
   return bom + buildHeader(relativePath) + source;
 }
-function leadingHeader(content) {
+function leadingHeader(content, filePath = '') {
   const source = content.replace(/^\uFEFF/, '').replace(/^#![^\n]*\n/, '');
-  const js = source.match(/^\s*\/\*[\s\S]*?\*\//);
-  if (js) return js[0];
-  const md = source.match(/^\s*<!--[\s\S]*?-->/);
-  return md ? md[0] : '';
+  const extension = path.extname(filePath).toLowerCase();
+  if (['.py', '.ps1', '.yaml', '.yml'].includes(extension)) {
+    const match = source.match(/^(?:[ \t]*#[^\r\n]*(?:\r?\n|$))+/);
+    return match ? match[0].split(/\r?\n/).map(line => line.replace(/^[ \t]*#[ \t]?/, '')).join('\n') : '';
+  }
+  if (['.html', '.htm', '.md'].includes(extension)) {
+    const match = source.match(/^[ \t]*<!--[\s\S]*?-->/);
+    return match ? match[0] : '';
+  }
+  const match = source.match(/^\s*\/\*[\s\S]*?\*\//);
+  return match ? match[0] : '';
 }
 
-function hasRequiredMarkers(content) {
-  const header = leadingHeader(content);
+function hasRequiredMarkers(content, filePath) {
+  const header = leadingHeader(content, filePath);
   return (
     header.includes('LEEWAY HEADER') &&
     header.includes('REGION:') &&
@@ -154,8 +161,8 @@ function hasRequiredMarkers(content) {
   );
 }
 
-function validateLeadingHeader(content) {
-  const header = leadingHeader(content);
+function validateLeadingHeader(content, filePath) {
+  const header = leadingHeader(content, filePath);
   const errors = [];
   if (!/LEEWAY HEADER(?: —| -) DO NOT REMOVE/.test(header)) errors.push('MISSING_HEADER_IDENTITY');
   if (!/^REGION:\s*\S+/m.test(header)) errors.push('MISSING_REGION');
@@ -231,22 +238,22 @@ async function main() {
     let nextContent = content;
     let changed = false;
 
-    if (!leadingHeader(content).includes('LEEWAY HEADER')) {
+    if (!leadingHeader(content, filePath).includes('LEEWAY HEADER')) {
       nextContent = prependHeader(content, relativePath);
       changed = true;
-    } else if (!hasRequiredMarkers(content)) {
+    } else if (!hasRequiredMarkers(content, filePath)) {
       nextContent = patchExistingHeader(content, relativePath);
       changed = nextContent !== content;
     }
 
-    if (changed && options.apply && path.extname(filePath).toLowerCase() === '.md') {
-      throw new Error('MARKDOWN_AUTO_REPAIR_NOT_AUTHORIZED: ' + relativePath);
+    if (changed && options.apply && ['.md', '.py', '.ps1', '.html', '.htm', '.yaml', '.yml'].includes(path.extname(filePath).toLowerCase())) {
+      throw new Error('FORMAT_AUTO_REPAIR_NOT_AUTHORIZED: ' + relativePath);
     }
     if (changed && options.apply) {
       await fs.writeFile(filePath, nextContent, 'utf8');
     }
 
-    const validationErrors = validateLeadingHeader(options.apply ? nextContent : content);
+    const validationErrors = validateLeadingHeader(options.apply ? nextContent : content, filePath);
     results.push({
       validationErrors,
       filePath,
