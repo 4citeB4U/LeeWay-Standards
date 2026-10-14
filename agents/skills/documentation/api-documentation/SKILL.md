@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.SKILL.DOCUMENTATION
@@ -30,7 +30,7 @@ L7_Memory: ScribeArchive.ts
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L7_Memory: ScribeArchive.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 
