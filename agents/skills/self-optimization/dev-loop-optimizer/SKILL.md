@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.OPTIMIZATION
@@ -30,7 +30,7 @@ L3_Cognition: Echo.ts
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L3_Cognition: Echo.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 
