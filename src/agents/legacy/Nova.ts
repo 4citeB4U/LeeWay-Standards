@@ -21,6 +21,7 @@ WHY = Provides VM-first software engineering capability so Agent Lee can produce
 WHO = Leeway Innovations / Agent Lee System Engineer
 WHERE = agents/Nova.ts
 WHEN = 2026-04-04
+HOW = Uses LeewayInferenceClient and the Agent Lee core prompt to assist code-writing and debugging workflows
 
 AGENTS:
 ASSESS
