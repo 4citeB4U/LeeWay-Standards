@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.ARCHITECTURE.VOICE
+TAG: CORE.ARCHITECTURE.VOICE.STANDARD
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Defines canonical LeeWay Voice Fabric architecture
+WHY = Preserves voice package ownership and adapter separation
+WHO = LeeWay Standards / Creator Authority
+WHERE = Docs/architecture/leeway-voice-fabric-standard.md
+WHEN = 2026-10-14 (governance review)
+HOW = Markdown governance contract, no executable behavior altered
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # LeeWay Voice Fabric Standard
 
 **Status:** Canonical architecture law  
