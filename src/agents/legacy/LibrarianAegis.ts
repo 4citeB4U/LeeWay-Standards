@@ -21,6 +21,7 @@ WHY = Without a librarian, markdown sprawls outside docs/ and loses classificati
 WHO = Leeway Innovations / Agent Lee System Engineer
 WHERE = agents/LibrarianAegis.ts
 WHEN = 2026-04-04
+HOW = Classifies documentation paths and header metadata, and reports drift through existing report and event interfaces
 
 AGENTS:
 ASSESS
