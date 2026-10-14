@@ -7,6 +7,14 @@ REGION: 🧠 AI
 DISCOVERY_PIPELINE:
 Voice → Intent → Inspect → Region Crop → Signal Extraction → Output
 
+5WH:
+WHAT = Provide a deeper, single-frame analysis using only detected regions.
+WHY = Preserve existing Vision operational constraints and governing intent
+WHO = LeeWay-Standards (declared source authority)
+WHERE = src/vision/vision-inspect.ts
+WHEN = 2026-10-14 (header conformance review)
+HOW = Original TypeScript implementation constrained by its existing governance header
+
 PURPOSE:
 Provide a deeper, single-frame analysis using only detected regions.
 
