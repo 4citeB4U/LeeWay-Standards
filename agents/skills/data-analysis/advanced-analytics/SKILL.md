@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.SKILL.DATA_ANALYSIS
@@ -30,7 +30,7 @@ L3_Cognition: LilyCortex.ts, L7_Memory: Sage.ts
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L3_Cognition: LilyCortex.ts, L7_Memory: Sage.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 
