@@ -53,7 +53,7 @@ jobs:
           const fs = require('fs');
           const report = JSON.parse(fs.readFileSync('enforcement-report.json', 'utf8'));
           const total = report.scanned || 0;
-          const compliant = total - (report.changed || 0);
+          const compliant = total - (report.changed || 0) - (report.invalid || 0);
           const score = total === 0 ? 0 : Math.round((compliant / total) * 100);
           
           console.log('=== LeeWay Standards Enforcement Report ===');
@@ -63,21 +63,15 @@ jobs:
           console.log('Compliance Score:', score + '%');
           console.log('');
           
-          if (score < 70) {
-            console.error('❌ ENFORCEMENT FAILURE: Compliance score below 70%');
-            console.error('Required: 70% compliance or higher');
-            console.error('');
-            console.error('To auto-fix, run locally:');
-            console.error('  node scripts/auto-enforce-file-governance.mjs --apply');
+          const invalid = report.invalid || 0;
+          const flagged = report.changed || 0;
+          if (total === 0 || flagged !== 0 || invalid !== 0) {
+            console.error('LEEWAY 100% GATE FAILED: every eligible file must pass');
+            console.error('Flagged:', flagged, 'Invalid:', invalid, 'Scanned:', total);
+            console.error('Review classifications and repair source on a separate branch; do not bulk auto-apply.');
             process.exit(1);
           }
-          
-          if (score < 95) {
-            console.warn('⚠️  WARNING: Compliance score below 95%');
-            console.warn('Consider running auto-fix before merge');
-          } else {
-            console.log('✅ ENFORCEMENT PASSED: All files compliant');
-          }
+          console.log('LEEWAY 100% GATE PASSED for scanned files; other file classes and runtime bindings require separate qualification');
           "
 
       - name: Comment PR with Enforcement Results
@@ -92,19 +86,9 @@ jobs:
             const compliant = total - (report.changed || 0);
             const score = total === 0 ? 0 : Math.round((compliant / total) * 100);
             
-            let icon = score < 70 ? '❌' : score < 95 ? '⚠️' : '✅';
-            
-            const body = `${icon} **LeeWay Standards Enforcement Report**
+            const pass = total > 0 && (report.changed || 0) === 0 && (report.invalid || 0) === 0;
+            const body = `${pass ? 'PASS' : 'FAIL'} LeeWay 100% scanned-source gate: scanned=${total}, flagged=${report.changed || 0}, invalid=${report.invalid || 0}. No partial-threshold waiver; exemptions and unscanned files require independent qualification.`;
 
-            | Metric | Value |
-            |--------|-------|
-            | Files Scanned | ${total} |
-            | Compliant | ${compliant} |
-            | Non-Compliant | ${report.changed || 0} |
-            | **Score** | **${score}%** |
-
-            ${score < 70 ? '🚫 **FAILED** - Compliance below 70% threshold\n\nRun locally to auto-fix:\n```bash\nnode scripts/auto-enforce-file-governance.mjs --apply\n```' : score < 95 ? '⚠️ **PASSED** - But consider improving compliance\n\nRun to optimize:\n```bash\nnode scripts/auto-enforce-file-governance.mjs --apply\n```' : '✅ **PASSED** - All files compliant'}`;
-            
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
