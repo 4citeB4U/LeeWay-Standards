@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.ARCHITECTURE
+TAG: CORE.DOCS.ARCHITECTURE_LEEWAY_AUTOMATION_FABRIC_PLAN.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = LeeWay Automation Fabric Architecture Plan
+WHY = Retain current LeeWay architecture document and its source identity
+WHO = LeeWay Standards
+WHERE = Docs/architecture/leeway-automation-fabric-plan.md
+WHEN = 2026-10-14 (header conformance review)
+HOW = Markdown architectural planning document
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # LeeWay Automation Fabric Architecture Plan
 
 **Status:** Canonical architecture plan  
