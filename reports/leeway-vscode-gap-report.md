@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.STANDARDS
+TAG: CORE.DOCS.REPORTS_LEEWAY_VSCODE_GAP_REPORT.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = LeeWay VS Code Documentation Gap Report
+WHY = Preserve preexisting LeeWay documentation and trace its source
+WHO = LeeWay Standards repository / original author pending confirmation
+WHERE = reports/leeway-vscode-gap-report.md
+WHEN = 2026-10-14 (header review)
+HOW = Markdown technical documentation
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # LeeWay VS Code Documentation Gap Report
 
 **Compared against:** `C:\Users\Leona\.leeway-vscode`  
