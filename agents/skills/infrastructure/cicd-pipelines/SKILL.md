@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.SKILL.INFRASTRUCTURE
@@ -30,7 +30,7 @@ L5_Governance: BrainSentinel.ts, L5_Governance: LeewayStandardsAgent.ts
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L5_Governance: BrainSentinel.ts, L5_Governance: LeewayStandardsAgent.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 
