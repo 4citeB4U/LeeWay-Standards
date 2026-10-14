@@ -1,8 +1,23 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
 DOC_CLASS: CANON
 DOC_ID: canon.agent-lee-manifesto
 OWNER: Lee Prime / Leeway Innovations
 LAST_UPDATED: 2026-04-04
+REGION: CORE.DOCS.CANON
+TAG: CORE.DOCS.CANON_AGENT_LEE_MANIFESTO.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = THE AGENT LEE MANIFESTO
+WHY = Preserve existing LeeWay architecture authority
+WHO = Lee Prime / Leeway Innovations
+WHERE = Docs/canon/agent-lee-manifesto.md
+WHEN = 2026-10-14 (header conformance review)
+HOW = Markdown governing document under existing owner
+AGENTS:
+AUDIT
+LICENSE:
+MIT
 -->
 
 # THE AGENT LEE MANIFESTO
