@@ -58,3 +58,19 @@ test('incoming noncompliant Python and YAML are reported, never rewritten',t=>{
  assert.equal(JSON.parse(r.stdout).invalid,2);
  assert.equal(fs.readFileSync(path.join(root,'bad.py'),'utf8'),'print(1)\n');
 });
+
+test('SPDX license preamble before LeeWay identity remains valid',t=>{
+ const root=fixture(t),f=path.join(root,'spdx.mjs');
+ const source=[
+ '/**',' * @license',' * SPDX-License-Identifier: MIT',' */',
+ '/*','LEEWAY HEADER — DO NOT REMOVE','REGION: CORE.TEST.MODULE','TAG: CORE.TEST.SPDX.MODULE',
+ 'DISCOVERY_PIPELINE: governed','5WH:','WHAT = Source test','WHY = Preserve notices',
+ 'WHO = LeeWay','WHERE = spdx.mjs','WHEN = 2026-10-14','HOW = Node test',
+ 'LICENSE: MIT','*/','export const ok = true;',''].join('\n');
+ fs.writeFileSync(f,source);
+ const r=run(root,['--strict']);
+ assert.equal(r.status,0,r.stderr+' '+r.stdout);
+ assert.equal(JSON.parse(r.stdout).invalid,0);
+ assert.equal(JSON.parse(r.stdout).changed,0);
+ assert.equal(fs.readFileSync(f,'utf8'),source);
+});
