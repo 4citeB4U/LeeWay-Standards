@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: DEV.DEVOPS
@@ -30,7 +30,7 @@ L2_Ingestion: Nexus.ts, L4_Consensus: GuardAegis.ts
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L2_Ingestion: Nexus.ts, L4_Consensus: GuardAegis.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 
