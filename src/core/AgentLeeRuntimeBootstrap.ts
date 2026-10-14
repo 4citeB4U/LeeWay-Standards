@@ -1,5 +1,3 @@
-// Ensure CollectiveRuntime is attached to globalThis before any runtime checks
-import '../core/AgentLeeCollectiveRuntime';
 /*
 LEEWAY HEADER — DO NOT REMOVE
 
@@ -33,6 +31,9 @@ AUDIT
 LICENSE:
 MIT
 */
+// Ensure CollectiveRuntime is attached to globalThis before any runtime checks
+import '../core/AgentLeeCollectiveRuntime';
+
 
 /**
  * AGENT LEE UNIFIED RUNTIME BOOTSTRAP
