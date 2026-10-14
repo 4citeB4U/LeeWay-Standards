@@ -1,3 +1,35 @@
+/*
+LEEWAY HEADER — DO NOT REMOVE
+
+REGION: AI.ORCHESTRATION.AGENT.BEHAVIOR
+TAG: AI.ORCHESTRATION.AGENT.BEHAVIOR.CONTRACT
+
+COLOR_ONION_HEX:
+NEON=#EF4444
+FLUO=#F87171
+PASTEL=#FECACA
+
+ICON_ASCII:
+family=lucide
+glyph=shield-check
+
+5WH:
+WHAT = Agent Lee's behavioral contract — required behaviors, forbidden behaviors, and response rules
+WHY = To prevent behavioral drift by codifying exactly what the agent must and must never do
+WHO = Leeway Innovations / Agent Lee System Engineer
+WHERE = core/agent_lee_behavior_contract.ts
+WHEN = 2026
+HOW = TypeScript const object used by orchestrator, prompt assembler, and audit agents
+
+AGENTS:
+ASSESS
+AUDIT
+ALIGN
+leeway
+
+LICENSE:
+MIT
+*/
 // --- Agent Lee Mic Morph Forms and Generators ---
 export const MORPH_FORMS = ["Eagle", "Cat", "Rabbit"];
 export const V_RES = 2;
@@ -33,38 +65,7 @@ export const Generators: Record<string, () => any[]> = {
     return out;
   }
 };
-/*
-LEEWAY HEADER — DO NOT REMOVE
 
-REGION: AI.ORCHESTRATION.AGENT.BEHAVIOR
-TAG: AI.ORCHESTRATION.AGENT.BEHAVIOR.CONTRACT
-
-COLOR_ONION_HEX:
-NEON=#EF4444
-FLUO=#F87171
-PASTEL=#FECACA
-
-ICON_ASCII:
-family=lucide
-glyph=shield-check
-
-5WH:
-WHAT = Agent Lee's behavioral contract — required behaviors, forbidden behaviors, and response rules
-WHY = To prevent behavioral drift by codifying exactly what the agent must and must never do
-WHO = Leeway Innovations / Agent Lee System Engineer
-WHERE = core/agent_lee_behavior_contract.ts
-WHEN = 2026
-HOW = TypeScript const object used by orchestrator, prompt assembler, and audit agents
-
-AGENTS:
-ASSESS
-AUDIT
-ALIGN
-leeway
-
-LICENSE:
-MIT
-*/
 
 /**
  * LEEWAY HEADER
