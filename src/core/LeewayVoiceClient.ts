@@ -12,6 +12,7 @@ WHY = Provides voice session interface for Agent Lee using only LeeWay-owned inf
 WHO = Leonard Lee — LeeWay Innovations
 WHERE = core/LeewayVoiceClient.ts
 WHEN = 2026
+HOW = Uses configured LeeWay WebSocket endpoint to exchange voice-session messages
 
 LICENSE:
 MIT — LeeWay Industries
