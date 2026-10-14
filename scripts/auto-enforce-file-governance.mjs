@@ -136,27 +136,51 @@ function prependHeader(content, relativePath) {
   }
   return bom + buildHeader(relativePath) + source;
 }
+function leadingHeader(content) {
+  const source = content.replace(/^\uFEFF/, '').replace(/^#![^\n]*\n/, '');
+  const start = source.search(/^\s*\/\*/);
+  if (start !== 0) return '';
+  const end = source.indexOf('*/');
+  if (end < 0) return '';
+  return source.slice(0, end + 2);
+}
 function hasRequiredMarkers(content) {
+  const header = leadingHeader(content);
   return (
-    content.includes('LEEWAY HEADER') &&
-    content.includes('REGION:') &&
-    content.includes('TAG:') &&
-    content.includes('DISCOVERY_PIPELINE:')
+    header.includes('LEEWAY HEADER') &&
+    header.includes('REGION:') &&
+    header.includes('TAG:') &&
+    header.includes('DISCOVERY_PIPELINE:')
   );
+}
+
+function validateLeadingHeader(content) {
+  const header = leadingHeader(content);
+  const errors = [];
+  if (!/LEEWAY HEADER(?: —| -) DO NOT REMOVE/.test(header)) errors.push('MISSING_HEADER_IDENTITY');
+  if (!/^REGION:\s*\S+/m.test(header)) errors.push('MISSING_REGION');
+  if (!/^TAG:\s*\S+(?:\.\S+){2,}/m.test(header)) errors.push('MISSING_TAG');
+  if (!/^LICENSE:\s*\S+/m.test(header)) errors.push('MISSING_LICENSE');
+  if (!/^5WH:\s*$/m.test(header)) errors.push('MISSING_5WH_BLOCK');
+  for (const field of ['WHAT', 'WHY', 'WHO', 'WHERE', 'WHEN', 'HOW']) {
+    if (!new RegExp('^' + field + '\\s*=\\s*\\S+', 'm').test(header)) errors.push('MISSING_5WH_' + field);
+  }
+  return errors;
 }
 
 function patchExistingHeader(content, relativePath) {
   const newline = content.includes('\r\n') ? '\r\n' : '\n';
   const lines = content.split(/\r?\n/);
   const patch = [];
+  const header = leadingHeader(content);
 
-  if (!content.includes('REGION:')) {
+  if (!header.includes('REGION:')) {
     patch.push(`REGION: ${inferRegion(relativePath)}`);
   }
-  if (!content.includes('TAG:')) {
+  if (!header.includes('TAG:')) {
     patch.push(`TAG: ${inferTag(relativePath)}`);
   }
-  if (!content.includes('DISCOVERY_PIPELINE:')) {
+  if (!header.includes('DISCOVERY_PIPELINE:')) {
     patch.push(`DISCOVERY_PIPELINE: ${DISCOVERY_PIPELINE}`);
   }
 
@@ -207,7 +231,7 @@ async function main() {
     let nextContent = content;
     let changed = false;
 
-    if (!content.includes('LEEWAY HEADER')) {
+    if (!leadingHeader(content).includes('LEEWAY HEADER')) {
       nextContent = prependHeader(content, relativePath);
       changed = true;
     } else if (!hasRequiredMarkers(content)) {
@@ -219,7 +243,9 @@ async function main() {
       await fs.writeFile(filePath, nextContent, 'utf8');
     }
 
+    const validationErrors = validateLeadingHeader(options.apply ? nextContent : content);
     results.push({
+      validationErrors,
       filePath,
       relativePath,
       changed,
@@ -228,12 +254,14 @@ async function main() {
   }
 
   const changedCount = results.filter((result) => result.changed).length;
+  const invalidCount = results.filter((result) => result.validationErrors.length > 0).length;
   const summary = {
     root: options.root,
     apply: options.apply,
     strict: options.strict,
     scanned: results.length,
     changed: changedCount,
+    invalid: invalidCount,
     complianceScore: results.length === 0 ? 0 : Math.round(((results.length - changedCount) / results.length) * 100),
     results,
   };
@@ -242,7 +270,7 @@ async function main() {
   if (!options.apply && changedCount > 0) {
     process.exit(2);
   }
-  if (options.strict && changedCount > 0) {
+  if (options.strict && (changedCount > 0 || invalidCount > 0)) {
     process.exit(1);
   }
 }
