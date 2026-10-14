@@ -1,8 +1,23 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
 DOC_CLASS: ARCHITECTURE
 DOC_ID: architecture.operative-model
 OWNER: Lee Prime
 LAST_UPDATED: 2026-04-16
+REGION: CORE.DOCS.ARCHITECTURE
+TAG: CORE.DOCS.ARCHITECTURE_OPERATIVE_MODEL.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = LeeWay Operative Model
+WHY = Preserve existing LeeWay architecture authority
+WHO = Lee Prime
+WHERE = Docs/architecture/operative-model.md
+WHEN = 2026-10-14 (header conformance review)
+HOW = Markdown governing document under existing owner
+AGENTS:
+AUDIT
+LICENSE:
+MIT
 -->
 
 # LeeWay Operative Model
