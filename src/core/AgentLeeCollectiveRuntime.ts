@@ -1,16 +1,3 @@
-// Attach a minimal CollectiveRuntime to globalThis for runtime integrity checks
-export class CollectiveRuntime {
-  static getState() {
-    return { activeWorkflowId: null };
-  }
-}
-
-// Ensure the runtime is attached to globalThis as an INSTANCE, not just the class
-if (typeof globalThis !== 'undefined') {
-  if (!globalThis.CollectiveRuntime) {
-    globalThis.CollectiveRuntime = new CollectiveRuntime();
-  }
-}
 /*
 LEEWAY HEADER — DO NOT REMOVE
 
@@ -44,6 +31,20 @@ AUDIT
 LICENSE:
 MIT
 */
+// Attach a minimal CollectiveRuntime to globalThis for runtime integrity checks
+export class CollectiveRuntime {
+  static getState() {
+    return { activeWorkflowId: null };
+  }
+}
+
+// Ensure the runtime is attached to globalThis as an INSTANCE, not just the class
+if (typeof globalThis !== 'undefined') {
+  if (!globalThis.CollectiveRuntime) {
+    globalThis.CollectiveRuntime = new CollectiveRuntime();
+  }
+}
+
 
 /*
  * AGENT LEE COLLECTIVE RUNTIME — SOVEREIGN SYNTHESIS LAYER
