@@ -7,6 +7,14 @@ REGION: 🧠 AI
 DISCOVERY_PIPELINE:
 Voice → Intent → Scan Request → Frame Capture → Detection → Output
 
+5WH:
+WHAT = Add a controlled, on-demand scan layer that detects regions of interest using minimal compute.
+WHY = Preserve existing Vision operational constraints and governing intent
+WHO = LeeWay-Standards (declared source authority)
+WHERE = src/vision/vision-scanner.ts
+WHEN = 2026-10-14 (header conformance review)
+HOW = Original TypeScript implementation constrained by its existing governance header
+
 PURPOSE:
 Add a controlled, on-demand scan layer that detects regions of interest using minimal compute.
 
