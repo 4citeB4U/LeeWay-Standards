@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.STANDARDS
+TAG: CORE.DOCS.STANDARDS_CANONICAL_RUNTIME_STACK.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = LeeWay Canonical Runtime Stack
+WHY = Preserve existing documentation and source ownership
+WHO = LeeWay Standards
+WHERE = standards/CANONICAL_RUNTIME_STACK.md
+WHEN = 2026-10-14 (header review)
+HOW = Markdown source documentation
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # LeeWay Canonical Runtime Stack
 
 **Authority:** LeeWay Standards  
