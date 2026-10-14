@@ -136,12 +136,21 @@ function prependHeader(content, relativePath) {
   }
   return bom + buildHeader(relativePath) + source;
 }
+function leadingHeader(content) {
+  const source = content.replace(/^\\uFEFF/, '').replace(/^#![^\\n]*\\n/, '');
+  const start = source.search(/^\\s*\\/\\*/);
+  if (start !== 0) return '';
+  const end = source.indexOf('*/');
+  if (end < 0) return '';
+  return source.slice(0, end + 2);
+}
 function hasRequiredMarkers(content) {
+  const header = leadingHeader(content);
   return (
-    content.includes('LEEWAY HEADER') &&
-    content.includes('REGION:') &&
-    content.includes('TAG:') &&
-    content.includes('DISCOVERY_PIPELINE:')
+    header.includes('LEEWAY HEADER') &&
+    header.includes('REGION:') &&
+    header.includes('TAG:') &&
+    header.includes('DISCOVERY_PIPELINE:')
   );
 }
 
@@ -149,14 +158,15 @@ function patchExistingHeader(content, relativePath) {
   const newline = content.includes('\r\n') ? '\r\n' : '\n';
   const lines = content.split(/\r?\n/);
   const patch = [];
+  const header = leadingHeader(content);
 
-  if (!content.includes('REGION:')) {
+  if (!header.includes('REGION:')) {
     patch.push(`REGION: ${inferRegion(relativePath)}`);
   }
-  if (!content.includes('TAG:')) {
+  if (!header.includes('TAG:')) {
     patch.push(`TAG: ${inferTag(relativePath)}`);
   }
-  if (!content.includes('DISCOVERY_PIPELINE:')) {
+  if (!header.includes('DISCOVERY_PIPELINE:')) {
     patch.push(`DISCOVERY_PIPELINE: ${DISCOVERY_PIPELINE}`);
   }
 
@@ -207,7 +217,7 @@ async function main() {
     let nextContent = content;
     let changed = false;
 
-    if (!content.includes('LEEWAY HEADER')) {
+    if (!leadingHeader(content).includes('LEEWAY HEADER')) {
       nextContent = prependHeader(content, relativePath);
       changed = true;
     } else if (!hasRequiredMarkers(content)) {
