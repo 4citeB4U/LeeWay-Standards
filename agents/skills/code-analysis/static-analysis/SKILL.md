@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: DEV.ANALYSIS
@@ -30,7 +30,7 @@ L6_Execution: SyntaxForge.ts
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L6_Execution: SyntaxForge.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 
