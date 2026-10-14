@@ -1,13 +1,22 @@
 /*
-LEEWAY HEADER - DO NOT REMOVE
-REGION: CORE
+LEEWAY HEADER — DO NOT REMOVE
+
+REGION: CORE.TESTS.GOVERNANCE
 TAG: CORE.TESTS.STANDARDS_ENFORCER.MAIN
-DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
-WHAT: Verify governance repair without changing executable source semantics.
-WHY: Prevent source relicensing and line-ending mutation.
-WHO: LeeWay Standards engineering. WHERE: tests/standards-enforcer.test.mjs.
-WHEN: Qualification 2026-10-08.
-HOW: Temporary fixtures and actual CLI.
+
+5WH:
+WHAT = Regression tests for the canonical LeeWay governance enforcer
+WHY = Prevent misleading header acceptance and unsafe changes to source semantics
+WHO = LeeWay Standards engineering
+WHERE = tests/standards-enforcer.test.mjs
+WHEN = 2026-10-14 (header governance review)
+HOW = Node.js test runner invokes the real governance CLI against temporary fixtures
+
+AGENTS:
+AUDIT
+
+LICENSE:
+MIT
 */
 import test from 'node:test';
 import assert from 'node:assert/strict';
