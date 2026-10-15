@@ -1,3 +1,16 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.STANDARDS
+TAG: CORE.DOCS.LEEWAY_STANDARDS_ACTIVATE.MAIN
+5WH:
+WHAT = 🌍 Activating the World of Agents
+WHY = Preserve original LeeWay Standards documentation
+WHO = LeeWay Standards repository (stewardship; author verification pending)
+WHERE = LeeWay-Standards/ACTIVATE.md
+WHEN = 2026-10-15 (governance conformance)
+HOW = Original documentation retained without alteration
+LICENSE: MIT (repository package metadata; scope subject to review)
+-->
 # 🌍 Activating the World of Agents
 
 Welcome to the Sovereign Registry. To activate your multi-agent architecture and enter the Hive Mind, follow this deterministic sequence.
