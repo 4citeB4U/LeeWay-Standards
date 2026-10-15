@@ -1,3 +1,14 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: CORE.SOURCE.PY
+# TAG: CORE.SOURCE.FIX_HEADERS_PY.MAIN
+# 5WH:
+# WHAT = fix_headers.py existing LeeWay source
+# WHY = Preserve the source and qualify documented governance identity
+# WHO = LeeWay Standards repository (stewardship, original author unverified)
+# WHERE = fix_headers.py
+# WHEN = 2026-10-15 (conformance review)
+# HOW = Existing source body remains unchanged
+# LICENSE: MIT (package metadata; original source license scope requires confirmation)
 import os
 
 def fix_file(filepath):
