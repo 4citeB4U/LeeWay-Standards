@@ -1,4 +1,22 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.GOVERNANCE
+TAG: CORE.DOCS.GOVERNANCE_LEEWAY_CANONICAL_ENGINEERING_LAWS.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = LeeWay Canonical Engineering Laws — Execution, Collaboration & Recurring Failure Prevention
+WHY = Preserve the existing LeeWay engineering authority document
+WHO = LeeWay-Standards repository governance
+WHERE = Docs/governance/LEEWAY-CANONICAL-ENGINEERING-LAWS.md
+WHEN = 2026-10-15 (metadata conformance)
+HOW = Original Markdown canonical documentation
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
+<!--
 DOC_CLASS: GOVERNANCE
 DOC_ID: leeway.canonical-engineering-laws.collaboration
 OWNER: LeeWay Standards / Creator Authority
