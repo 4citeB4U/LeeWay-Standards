@@ -1,3 +1,16 @@
+/*
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.SOURCE.MODULE
+TAG: CORE.SOURCE.SCRIPTS_GENERATE_MCPS_MJS.MAIN
+5WH:
+WHAT = generate-mcps.mjs existing LeeWay implementation
+WHY = Retain source authority and existing module behavior
+WHO = LeeWay Standards repository stewardship (original author to be verified)
+WHERE = scripts/generate-mcps.mjs
+WHEN = 2026-10-15 (conformance review)
+HOW = Original implementation preserved
+LICENSE: MIT (repository package metadata; scope requires review)
+*/
 import { writeFile, mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
 
