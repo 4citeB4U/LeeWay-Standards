@@ -5,6 +5,15 @@ TAG: MCP.RTC.FEDERATION.ROUTER
 REGION: 🟣 MCP
 DISCOVERY_PIPELINE:
 Voice → Intent → Location → Vertical → Ranking → Render
+
+5WH:
+WHAT = Federates RTC nodes and selects an available regional transport
+WHY = Routes RTC traffic through an existing governed node-selection module
+WHO = LeeWay-Standards (existing AUTHORITY declaration)
+WHERE = src/runtime/rtc/federation-router.ts
+WHEN = 2026-10-15 (governance review)
+HOW = Existing source implementation below this header, unmodified
+LICENSE: Existing file and repository license terms remain unchanged
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
 
