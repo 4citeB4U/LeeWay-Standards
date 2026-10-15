@@ -4,9 +4,15 @@ DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → R
 AUTHORITY: LeeWay-Standards
 REGION: RUNTIME.ECONOMIC
 TAG: ENGINE.ECONOMIC
+5WH:
 WHAT = Economic engine for usage accounting and resource cost control
 WHY = Tracks worker jobs, runtime cost, and usage ledger
 WHO = Leeway Innovations
+WHERE = src/runtime/engines/economic.engine.js
+WHEN = 2026-10-15 (header review)
+HOW = Existing JavaScript runtime engine implementation
+LICENSE:
+MIT (repository package.json)
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
 
