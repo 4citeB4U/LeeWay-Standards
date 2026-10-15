@@ -1,3 +1,16 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.STANDARDS
+TAG: CORE.DOCS.STANDARDS_PERMANENT_ENGINEERING_RULES.MAIN
+5WH:
+WHAT = LeeWay Permanent Engineering Rules
+WHY = Preserve original LeeWay Standards documentation
+WHO = LeeWay Standards repository (stewardship; author verification pending)
+WHERE = standards/PERMANENT-ENGINEERING-RULES.md
+WHEN = 2026-10-15 (governance conformance)
+HOW = Original documentation retained without alteration
+LICENSE: MIT (repository package metadata; scope subject to review)
+-->
 # LeeWay Permanent Engineering Rules
 
 Authority: LeeWay Standards. Active mission: Golden Package C3. Existing law remains authoritative.
