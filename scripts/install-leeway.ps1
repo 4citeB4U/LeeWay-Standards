@@ -1,3 +1,14 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: CORE.SOURCE.PS1
+# TAG: CORE.SOURCE.SCRIPTS_INSTALL_LEEWAY_PS1.MAIN
+# 5WH:
+# WHAT = install-leeway.ps1 existing LeeWay source
+# WHY = Preserve the source and qualify documented governance identity
+# WHO = LeeWay Standards repository (stewardship, original author unverified)
+# WHERE = scripts/install-leeway.ps1
+# WHEN = 2026-10-15 (conformance review)
+# HOW = Existing source body remains unchanged
+# LICENSE: MIT (package metadata; original source license scope requires confirmation)
 # ======================================================
 # 🔥 LEEWAY™ SOVEREIGN ONE-COMMAND INSTALLER 🔥
 # ======================================================
