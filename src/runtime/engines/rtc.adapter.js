@@ -3,7 +3,7 @@ LEEWAY HEADER — DO NOT REMOVE
 DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 AUTHORITY: LeeWay-Standards
 REGION: RUNTIME.RTC
-TAG: ADAPTER.RTC
+TAG: RUNTIME.ENGINE.RTC.MAIN
 5WH:
 WHAT = RTC adapter for the Integrated motherboard shell
 WHY = Exposes the existing RTC bridge with a runtime-compatible API
@@ -11,8 +11,7 @@ WHO = Leeway Innovations
 WHERE = src/runtime/engines/rtc.adapter.js
 WHEN = 2026-10-15 (header review)
 HOW = Existing JavaScript runtime engine module
-LICENSE:
-MIT (repository package.json)
+LICENSE: MIT (repository package.json)
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
 
