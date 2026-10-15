@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.REFERENCE
+TAG: CORE.DOCS.AGENTS_SKILLS_AGENTS.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Autonomous Agent Ecosystem
+WHY = Preserve existing LeeWay reference content and identity
+WHO = LeeWay-Standards repository governance
+WHERE = agents/skills/agents.md
+WHEN = 2026-10-15 (metadata conformance)
+HOW = Existing Markdown reference document
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # Autonomous Agent Ecosystem
 
 The LeeWay Edge RTC framework operates via an automated task force of intelligence modules. Rather than a flat, unmanaged codebase, the entire WebRTC environment is stewarded by specialized agents that monitor, repair, and enforce architectural integrity.
