@@ -1,4 +1,17 @@
 /*
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.SOURCE.MODULE
+TAG: CORE.SOURCE.SRC_RUNTIME_ENGINES_CORTICES_ADAPTER_CONTRACTS_TS.MAIN
+5WH:
+WHAT = cortices-adapter-contracts.ts existing LeeWay source
+WHY = Preserve original functionality and enforce source identity
+WHO = LeeWay Standards source stewardship (original author pending review)
+WHERE = src/runtime/engines/cortices-adapter-contracts.ts
+WHEN = 2026-10-15 (conformance review)
+HOW = Original source is retained below the leading governance comment
+LICENSE: PROPRIETARY
+*/
+/*
 LEEWAY HEADER
 TAG: INTEGRATED.RUNTIME.ADAPTER.CORTICES
 REGION: INTEGRATED
