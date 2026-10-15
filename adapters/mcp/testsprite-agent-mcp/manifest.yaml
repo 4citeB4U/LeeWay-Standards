@@ -1,3 +1,18 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: AI.MCP.MANIFEST
+# TAG: AI.MCP.TESTSPRITE_AGENT_MCP.MANIFEST
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+# 5WH:
+# WHAT = TestSpriteAgent MCP manifest
+# WHY = Identify this existing LeeWay MCP registration contract
+# WHO = LeeWay-Standards repository governance
+# WHERE = adapters/mcp/testsprite-agent-mcp/manifest.yaml
+# WHEN = 2026-10-15 (metadata conformance)
+# HOW = Declarative YAML registration data
+# AGENTS:
+# AUDIT
+# LICENSE:
+# MIT
 entrypoint: dist/testsprite-agent-mcp/index.js
 
 network_transport:
