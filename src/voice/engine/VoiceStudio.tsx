@@ -10,6 +10,14 @@ WHY  = Complete voice matching engine with functional microphone testing
 WHO  = LEEWAY INNOVATIONS
 WHERE = src/voice/VoiceStudio.tsx
 WHEN = 2026
+5WH:
+WHAT = VOICE.ENGINE.UI.WORKFLOW
+WHY = Preserve declared governing authority and purpose of this module
+WHO = LeeWay-Standards (existing authority declaration)
+WHERE = src/voice/engine/VoiceStudio.tsx
+WHEN = 2026-10-15 (governance metadata review)
+HOW = Existing TypeScript module implementation, unchanged
+
 LICENSE: PROPRIETARY
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
