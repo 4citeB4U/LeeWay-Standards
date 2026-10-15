@@ -4,6 +4,15 @@ DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → R
 AUTHORITY: LeeWay-Standards
 TAG: AI.RTC.VECTOR.ROUTER
 REGION: 🧠 AI
+
+5WH:
+WHAT = Tracks RTC network metrics to select routing behavior
+WHY = Makes latency and packet-loss observations available for governed RTC routing
+WHO = LeeWay-Standards (existing AUTHORITY declaration)
+WHERE = src/runtime/rtc/vector-agent.ts
+WHEN = 2026-10-15 (governance review)
+HOW = Existing source implementation below this header, unmodified
+LICENSE: Existing file and repository license terms remain unchanged
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
 
