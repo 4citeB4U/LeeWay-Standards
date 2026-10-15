@@ -103,6 +103,15 @@ TESTING CRITERIA:
 
 SUCCESS:
 User can now see exactly where the AI is looking and what regions it's analyzing.
+
+5WH:
+WHAT = Renders Vision face and text-region overlays
+WHY = Makes existing visual detection regions observable
+WHO = LeeWay-Standards (existing AUTHORITY declaration)
+WHERE = src/vision/VisualOverlayRenderer.ts
+WHEN = 2026-10-15 (governance review)
+HOW = Existing source implementation below this header, unmodified
+LICENSE: Existing file and repository license terms remain unchanged
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
 
