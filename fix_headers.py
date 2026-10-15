@@ -1,4 +1,5 @@
 # LEEWAY HEADER — DO NOT REMOVE
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 # REGION: CORE.SOURCE.PY
 # TAG: CORE.SOURCE.FIX_HEADERS_PY.MAIN
 # 5WH:
