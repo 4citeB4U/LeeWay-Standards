@@ -4,9 +4,15 @@ DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → R
 AUTHORITY: LeeWay-Standards
 REGION: RUNTIME.GRAPH
 TAG: ENGINE.GRAPH
+5WH:
 WHAT = Graph engine for task dependency routing and execution planning
 WHY = Orders multi-step jobs and decides what to execute next
 WHO = LeeWay Innovations
+WHERE = src/runtime/engines/graph.engine.js
+WHEN = 2026-10-15 (header review)
+HOW = Existing JavaScript runtime engine implementation
+LICENSE:
+MIT (repository package.json)
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
 
