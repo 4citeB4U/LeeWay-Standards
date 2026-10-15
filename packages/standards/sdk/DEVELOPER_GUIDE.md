@@ -1,3 +1,19 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.STANDARDS
+TAG: CORE.DOCS.PACKAGES_STANDARDS_SDK_DEVELOPER_GUIDE.MAIN
+5WH:
+WHAT = LeeWay Developer Guide — Writing Compliant Code
+WHY = Preserve original LeeWay Standards documentation
+WHO = LeeWay Standards repository (stewardship; author verification pending)
+WHERE = packages/standards/sdk/DEVELOPER_GUIDE.md
+WHEN = 2026-10-15 (governance conformance)
+HOW = Original documentation retained without alteration
+LICENSE: MIT (repository package metadata; scope subject to review)
+-->
+
+<!--
+ORIGINAL LEGACY HEADER (preserved):
 /*
 LEEWAY HEADER — DO NOT REMOVE
 
@@ -17,7 +33,9 @@ HOW = Auto-enforced header; update manually with full 5WH detail
 
 CHAIN: Standards → Integrated → Runtime → Projections
 LICENSE: PROPRIETARY
-*/
+* /
+-->
+
 
 # LeeWay Developer Guide — Writing Compliant Code
 
