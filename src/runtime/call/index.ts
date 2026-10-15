@@ -3,7 +3,7 @@ LEEWAY HEADER — DO NOT REMOVE
 DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 AUTHORITY: LeeWay-Standards
 
-TAG: RUNTIME.INDEX
+TAG: RUNTIME.CALL.MODE.INDEX
 REGION: 🔵 RUNTIME
 PURPOSE: Orchestrate real-time voice sessions with Call Mode
 5WH:
