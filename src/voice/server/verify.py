@@ -1,5 +1,6 @@
 #
 # LEEWAY HEADER — DO NOT REMOVE
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 #
 # REGION: CORE
 # TAG: CORE.SDK.VERIFY.MAIN
