@@ -6,6 +6,14 @@ DESCRIPTION: Cortices Adapter Contracts — Integrated-layer ownership declarati
 AUTHORITY: LeeWay-Standards
 DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 CHAIN: Standards → Integrated → Runtime → Projections
+5WH:
+WHAT = Cortices Adapter Contracts — Integrated-layer ownership declaration
+WHY = Preserve declared governing authority and purpose of this module
+WHO = LeeWay-Standards (existing authority declaration)
+WHERE = src/runtime/engines/cortices-adapter-contracts.ts
+WHEN = 2026-10-15 (governance metadata review)
+HOW = Existing TypeScript module implementation, unchanged
+
 LICENSE: PROPRIETARY
 */
 
