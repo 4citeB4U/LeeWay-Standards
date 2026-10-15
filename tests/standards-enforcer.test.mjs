@@ -105,3 +105,20 @@ test('Markdown skill header with complete canonical 5WH does not require discove
  assert.equal(JSON.parse(result.stdout).changed,0);
  assert.equal(JSON.parse(result.stdout).invalid,0);
 });
+
+test('immutable move-apply backups are excluded without hiding live source',t=>{
+ const root=fixture(t);
+ const archive=path.join(root,'receipts','move-apply-backups','snapshot','old.ts');
+ const live=path.join(root,'src','live.ts');
+ fs.mkdirSync(path.dirname(archive),{recursive:true});
+ fs.mkdirSync(path.dirname(live),{recursive:true});
+ fs.writeFileSync(archive,'export const historic=true;\n');
+ fs.writeFileSync(live,'export const current=true;\n');
+ const r=run(root,['--strict']);
+ assert.notEqual(r.status,0);
+ const report=JSON.parse(r.stdout);
+ assert.equal(report.scanned,1);
+ assert.equal(report.invalid,1);
+ assert.equal(report.results[0].relativePath,'src/live.ts');
+ assert.equal(fs.readFileSync(archive,'utf8'),'export const historic=true;\n');
+});
