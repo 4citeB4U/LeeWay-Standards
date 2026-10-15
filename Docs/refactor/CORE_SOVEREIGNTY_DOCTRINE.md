@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.GOVERNANCE
+TAG: CORE.DOCS.REFACTOR_CORE_SOVEREIGNTY_DOCTRINE.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = LeeWay Core Sovereignty Doctrine
+WHY = Preserve the existing LeeWay engineering authority document
+WHO = LeeWay-Standards repository governance
+WHERE = Docs/refactor/CORE_SOVEREIGNTY_DOCTRINE.md
+WHEN = 2026-10-15 (metadata conformance)
+HOW = Original Markdown canonical documentation
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # LeeWay Core Sovereignty Doctrine
 
 Status: ratified architectural law
