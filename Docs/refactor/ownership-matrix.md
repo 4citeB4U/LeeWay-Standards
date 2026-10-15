@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.GOVERNANCE
+TAG: CORE.DOCS.REFACTOR_OWNERSHIP_MATRIX.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Repo Ownership Matrix
+WHY = Preserve the existing LeeWay engineering authority document
+WHO = LeeWay-Standards repository governance
+WHERE = Docs/refactor/ownership-matrix.md
+WHEN = 2026-10-15 (metadata conformance)
+HOW = Original Markdown canonical documentation
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # Repo Ownership Matrix
 
 Policy statement: no layer executes independently. All execution flow is Standards -> Integrated -> Runtime.
