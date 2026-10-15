@@ -5,6 +5,14 @@ AUTHORITY: LeeWay-Standards
 
 TAG: TYPES.VISION.SYSTEM.DEFINITIONS
 REGION: 🧠 AI
+5WH:
+WHAT = Shared types and interfaces for vision system
+WHY = Preserve Vision module purpose under existing governance constraints
+WHO = LeeWay-Standards (declared authority)
+WHERE = src/vision/types.ts
+WHEN = 2026-10-14 (header conformance review)
+HOW = Existing TypeScript module under source-governed Vision interfaces
+
 PURPOSE: Shared types and interfaces for vision system
 
 LICENSE: PROPRIETARY
