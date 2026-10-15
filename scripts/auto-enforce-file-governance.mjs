@@ -238,6 +238,9 @@ async function main() {
   for (const filePath of files) {
     const content = await fs.readFile(filePath, 'utf8');
     const relativePath = path.relative(options.root, filePath) || path.basename(filePath);
+    // Historical move/apply snapshots are immutable evidence, not active authored source.
+    // This exact root-scoped exclusion must not affect any live file outside the archive.
+    if (relativePath.replace(/\\/g, '/').startsWith('receipts/move-apply-backups/')) continue;
     let nextContent = content;
     let changed = false;
 
