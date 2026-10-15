@@ -21,6 +21,7 @@ WHY = Bridges local IndexedDB (Pallium) with external vector and relational data
 WHO = Leonard Lee — LeeWay Innovations
 WHERE = core/PalliumGateway.ts
 WHEN = 2026
+HOW = Coordinates data requests and event notifications through existing gateway and EventBus interfaces
 
 LICENSE:
 MIT — LeeWay Industries

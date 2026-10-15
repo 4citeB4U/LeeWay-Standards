@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.REFERENCE
+TAG: CORE.DOCS.AGENTS_SKILLS_INVESTOR_PRESENTATION.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = LeeWay Edge RTC — Investor & Developer Presentation
+WHY = Preserve existing LeeWay reference content and identity
+WHO = LeeWay-Standards repository governance
+WHERE = agents/skills/investor_presentation.md
+WHEN = 2026-10-15 (metadata conformance)
+HOW = Existing Markdown reference document
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # LeeWay Edge RTC — Investor & Developer Presentation
 
 **Building the Future of Autonomous Edge Perception & Voice**

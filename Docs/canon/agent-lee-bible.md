@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.REFERENCE
+TAG: CORE.DOCS.DOCS_CANON_AGENT_LEE_BIBLE.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Agent Lee Bible
+WHY = Preserve existing LeeWay reference content and identity
+WHO = LeeWay-Standards repository governance
+WHERE = Docs/canon/agent-lee-bible.md
+WHEN = 2026-10-15 (metadata conformance)
+HOW = Existing Markdown reference document
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 ## LeeWay-Compliant Local Model Workflow (2026)
 
 **All inference is performed locally using Ollama models. No leeway fallback is used except for explicit automation.**

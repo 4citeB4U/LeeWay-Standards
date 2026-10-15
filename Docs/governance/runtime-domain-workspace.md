@@ -1,8 +1,23 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
 DOC_CLASS: GOVERNANCE
 DOC_ID: governance.runtime-domain-workspace
 OWNER: Agent Lee Prime
 LAST_UPDATED: 2026-05-11
+REGION: CORE.DOCS.GOVERNANCE
+TAG: CORE.DOCS.GOVERNANCE_RUNTIME_DOMAIN_WORKSPACE.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Runtime Domain Governance — Workspace
+WHY = Preserve the documented LeeWay governance and ownership contract
+WHO = Agent Lee Prime
+WHERE = Docs/governance/runtime-domain-workspace.md
+WHEN = 2026-10-14 (header conformance review)
+HOW = Markdown governance documentation under original document owner
+AGENTS:
+AUDIT
+LICENSE:
+MIT
 -->
 
 # Runtime Domain Governance — Workspace

@@ -1,34 +1,33 @@
-/*
-LEEWAY HEADER — DO NOT REMOVE
-
-REGION: CORE
-TAG: CORE.SDK.CONVERT_TO_GIF.MAIN
-
-COLOR_ONION_HEX:
-NEON=#39FF14
-FLUO=#0DFF94
-PASTEL=#C7FFD8
-
-ICON_ASCII:
-family=lucide
-glyph=file
-
-5WH:
-WHAT = convert_to_gif module
-WHY = Part of CORE region
-WHO = LEEWAY Align Agent
-WHERE = convert_to_gif.py
-WHEN = 2026
-HOW = Auto-aligned by LEEWAY align-agent
-
-AGENTS:
-ASSESS
-ALIGN
-AUDIT
-
-LICENSE:
-MIT
-*/
+# LEEWAY HEADER — DO NOT REMOVE
+# 
+# REGION: CORE
+# TAG: CORE.SDK.CONVERT_TO_GIF.MAIN
+# 
+# COLOR_ONION_HEX:
+# NEON=#39FF14
+# FLUO=#0DFF94
+# PASTEL=#C7FFD8
+# 
+# ICON_ASCII:
+# family=lucide
+# glyph=file
+# 
+# 5WH:
+# WHAT = convert_to_gif module
+# WHY = Part of CORE region
+# WHO = LEEWAY Align Agent
+# WHERE = convert_to_gif.py
+# WHEN = 2026
+# HOW = Auto-aligned by LEEWAY align-agent
+# 
+# AGENTS:
+# ASSESS
+# ALIGN
+# AUDIT
+# 
+# LICENSE:
+# MIT
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 #!/usr/bin/env python3
 """Convert MP4 to animated GIF for GitHub README display."""

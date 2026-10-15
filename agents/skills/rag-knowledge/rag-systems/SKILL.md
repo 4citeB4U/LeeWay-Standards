@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.RAG
@@ -30,7 +30,7 @@ L7_Memory: LibrarianAegis.ts
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L7_Memory: LibrarianAegis.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 

@@ -6,6 +6,14 @@ AUTHORITY: LeeWay-Standards
 TAG: VOICE.OUTPUT.ADAPTER
 REGION: 🎤 VOICE
 PURPOSE: Speak utterances using saved voice configuration
+5WH:
+WHAT = Speak utterances using saved voice configuration
+WHY = Preserve declared governing authority and purpose of this module
+WHO = LeeWay-Standards (existing authority declaration)
+WHERE = src/voice/engine/voice-output.ts
+WHEN = 2026-10-15 (governance metadata review)
+HOW = Existing TypeScript module implementation, unchanged
+
 LICENSE: PROPRIETARY
 */
 // CHAIN: Standards → Integrated → Runtime → Projections

@@ -7,6 +7,14 @@ REGION: 💾 DATA
 DISCOVERY_PIPELINE:
 Vision → Packet → Storage → Retrieval
 
+5WH:
+WHAT = Store vision outputs using existing local storage patterns.
+WHY = Preserve existing Vision operational constraints and governing intent
+WHO = LeeWay-Standards (declared source authority)
+WHERE = src/vision/vision-storage.ts
+WHEN = 2026-10-14 (header conformance review)
+HOW = Original TypeScript implementation constrained by its existing governance header
+
 PURPOSE:
 Store vision outputs using existing local storage patterns.
 

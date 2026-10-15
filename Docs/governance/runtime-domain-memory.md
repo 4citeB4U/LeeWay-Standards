@@ -1,8 +1,23 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
 DOC_CLASS: GOVERNANCE
 DOC_ID: governance.runtime-domain-memory
 OWNER: Memory Warden
 LAST_UPDATED: 2026-05-10
+REGION: CORE.GOVERNANCE.RUNTIME.MEMORY
+TAG: CORE.GOVERNANCE.RUNTIME.MEMORY.STANDARD
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Governance contract for LeeWay memory and provenance
+WHY = Preserve source-of-truth runtime domain rules
+WHO = LeeWay Standards; original document owner preserved above
+WHERE = Docs/governance/runtime-domain-memory.md
+WHEN = 2026-10-14 (governance header review)
+HOW = Markdown governance document
+AGENTS:
+AUDIT
+LICENSE:
+MIT
 -->
 
 # Runtime Domain Governance — Memory

@@ -1,3 +1,15 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+# REGION: CORE.SOURCE.PS1
+# TAG: CORE.SOURCE.MASTER_CLASS_SCRIPTS_HEADERINJECTOR_PS1.MAIN
+# 5WH:
+# WHAT = HeaderInjector.ps1 existing LeeWay source
+# WHY = Preserve the source and qualify documented governance identity
+# WHO = LeeWay Standards repository (stewardship, original author unverified)
+# WHERE = Master_Class/Scripts/HeaderInjector.ps1
+# WHEN = 2026-10-15 (conformance review)
+# HOW = Existing source body remains unchanged
+# LICENSE: MIT (package metadata; original source license scope requires confirmation)
 # == 📦 StandardsAgent: HeaderInjector ==
 # Task: Automatically scan and inject mandatory LeeWay headers into compliant files.
 # Standard: Score Target 85/100 required.

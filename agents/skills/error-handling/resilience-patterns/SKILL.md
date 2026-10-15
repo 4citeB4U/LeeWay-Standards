@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.SKILL.ERROR_HANDLING
@@ -30,7 +30,7 @@ L5_Governance: Shield.ts, L5_Governance: JanitorSentinel.ts
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L5_Governance: Shield.ts, L5_Governance: JanitorSentinel.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 

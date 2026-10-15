@@ -3,10 +3,15 @@ LEEWAY HEADER — DO NOT REMOVE
 DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 AUTHORITY: LeeWay-Standards
 REGION: RUNTIME.TRUST
-TAG: ENGINE.TRUST
+TAG: RUNTIME.ENGINE.TRUST.MAIN
+5WH:
 WHAT = Trust engine for runtime permission and execution safety
 WHY = Validates room joins, media permissions, and compute authorization
 WHO = LeeWay Innovations
+WHERE = src/runtime/engines/trust.engine.js
+WHEN = 2026-10-15 (header review)
+HOW = Existing JavaScript runtime engine module
+LICENSE: MIT (repository package.json)
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
 

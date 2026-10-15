@@ -21,6 +21,7 @@ WHY = Centralises session lifecycle, barge-in coordination, and pipeline state b
 WHO = Leeway Innovations / Agent Lee System Engineer
 WHERE = agents/LiveConductorAgent.ts
 WHEN = 2026-04-04
+HOW = Coordinates VoiceSession callbacks and forwards realtime state and speech events through EventBus
 
 AGENTS:
 ASSESS

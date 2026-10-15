@@ -7,6 +7,14 @@ REGION: 🟢 CORE
 DISCOVERY_PIPELINE:
 Vision → Awareness → Governance → Filter → Output
 
+5WH:
+WHAT = Extend the existing governance system to include vision-specific constraints.
+WHY = Follow the existing Vision governing purpose and constraints
+WHO = LeeWay-Standards (existing AUTHORITY field)
+WHERE = src/vision/vision-governance.ts
+WHEN = 2026-10-14 (header conformance review)
+HOW = Existing TypeScript module governed by the documented constraints
+
 PURPOSE:
 Extend the existing governance system to include vision-specific constraints.
 

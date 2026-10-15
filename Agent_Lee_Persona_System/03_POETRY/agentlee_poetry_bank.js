@@ -3,6 +3,24 @@
  * SPDX-License-Identifier: MIT
  */
 
+/*
+LEEWAY HEADER — DO NOT REMOVE
+REGION: AI.AGENT.PERSONA.POETRY
+TAG: AI.AGENT.PERSONA.POETRY.BANK
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Agent Lee intent-tagged poetry and storytelling template bank
+WHY = Provides optional persona language overlays for existing responses
+WHO = LeeWay Standards / Agent Lee Persona System
+WHERE = Agent_Lee_Persona_System/03_POETRY/agentlee_poetry_bank.js
+WHEN = 2026-10-14 (governance review)
+HOW = Existing JavaScript module logic; no execution behavior changed
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+*/
+
 /* ============================================================================
    LEEWAY HEADER — DO NOT REMOVE
    PROFILE: LEEWAY-ORDER

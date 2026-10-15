@@ -1,9 +1,25 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
 DOC_CLASS: GOVERNANCE
 DOC_ID: governance.brain-sentinel-budgets
 OWNER: Brain Sentinel
 LAST_UPDATED: 2026-04-03
+REGION: CORE.GOVERNANCE.BUDGETS
+TAG: CORE.GOVERNANCE.BRAIN_SENTINEL.BUDGETS
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Defines Brain Sentinel runtime resource modes and concurrency budgets
+WHY = Preserves existing governed agent scheduling limits
+WHO = LeeWay Standards / Creator Authority
+WHERE = Docs/governance/brain-sentinel-budgets.md
+WHEN = 2026-10-14 (governance review)
+HOW = Markdown governance contract, no executable behavior altered
+AGENTS:
+AUDIT
+LICENSE:
+MIT
 -->
+
 
 # Brain Sentinel — Runtime Budgets
 

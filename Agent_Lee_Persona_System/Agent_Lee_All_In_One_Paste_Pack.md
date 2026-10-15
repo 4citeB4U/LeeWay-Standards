@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: AI.AGENT.PERSONA.DOCS
+TAG: AI.PERSONA.DOCS.AGENT_LEE_ALL_IN_ONE_PASTE_PACK.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Agent Lee All-In-One Paste Pack
+WHY = Preserve preexisting Agent Lee persona documentation and attribution
+WHO = Agent Lee Persona System / original author pending review
+WHERE = Agent_Lee_Persona_System/Agent_Lee_All_In_One_Paste_Pack.md
+WHEN = 2026-10-14 (header review)
+HOW = Existing Markdown persona material, content unchanged
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # Agent Lee All-In-One Paste Pack
 
 Copy the sections below into your application as separate files if needed.

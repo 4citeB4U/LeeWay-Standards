@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.ARCHITECTURE
+TAG: CORE.DOCS.ARCHITECTURE_LEEWAY_ECOSYSTEM_EXECUTION_PLAN_FORMULA_FUNNEL_V1.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = LeeWay Ecosystem Execution Plan — Formula Funnel v1
+WHY = Retain current LeeWay architecture document and its source identity
+WHO = LeeWay Standards
+WHERE = Docs/architecture/LEEWAY-ECOSYSTEM-EXECUTION-PLAN-FORMULA-FUNNEL-v1.md
+WHEN = 2026-10-14 (header conformance review)
+HOW = Markdown architectural planning document
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # LeeWay Ecosystem Execution Plan — Formula Funnel v1
 
 **Status:** CANONICAL EXECUTION PLAN  

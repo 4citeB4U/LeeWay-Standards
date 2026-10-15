@@ -3,10 +3,15 @@ LEEWAY HEADER — DO NOT REMOVE
 DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 AUTHORITY: LeeWay-Standards
 REGION: RUNTIME.SIGNATURE
-TAG: ENGINE.SIGNATURE
+TAG: RUNTIME.ENGINE.SIGNATURE.MAIN
+5WH:
 WHAT = Leeway runtime signature system for integrity verification
 WHY = Ensures runtime modules are authentic and the execution chain is intact
 WHO = Leeway Innovations
+WHERE = src/runtime/engines/signature.engine.js
+WHEN = 2026-10-15 (header review)
+HOW = Existing JavaScript runtime engine module
+LICENSE: MIT (repository package.json)
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
 

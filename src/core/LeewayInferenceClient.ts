@@ -22,6 +22,7 @@ WHY = Sovereign, private inference for Agent Lee OS. No external vendor dependen
 WHO = Leonard Lee — LeeWay Innovations
 WHERE = core/LeewayInferenceClient.ts
 WHEN = 2026
+HOW = Resolves configured local Ollama endpoint and model before sending inference requests
 
 LICENSE:
 MIT — LeeWay Industries

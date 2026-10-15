@@ -21,6 +21,7 @@ WHY = The system is a contract-driven civilization; tests must validate governan
 WHO = Leeway Innovations / Agent Lee System Engineer
 WHERE = agents/MarshalVerify.ts
 WHEN = 2026-04-04
+HOW = Validates GovernanceContract workflows through existing AgentRouter, Shield, TaskGraph, ReportWriter and EventBus interfaces
       ReportWriter, EventBus. ZERO Playwright. ZERO external deps. Edge-device safe.
 
 AGENTS:

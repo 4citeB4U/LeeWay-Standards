@@ -21,6 +21,7 @@ WHY = Central startup routine for full multimedia connectivity; voice commands +
 WHO = Leeway Innovations / Agent Lee System Engineer
 WHERE = core/RTCInitializer.ts
 WHEN = 2026-04-07
+HOW = Re-exports the canonical sensory RTC initializer without duplicating startup logic
 
 AGENTS:
 ARIA (Voice Coordinator)

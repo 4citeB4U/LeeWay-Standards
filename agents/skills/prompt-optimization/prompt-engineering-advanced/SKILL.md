@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.PROMPTS
@@ -30,7 +30,7 @@ L3_Cognition: Agent.Phi-3.5-Orchestrator.json
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L3_Cognition: Agent.Phi-3.5-Orchestrator.json. No unassigned Clones may natively execute this without Hive Mind routing.
 

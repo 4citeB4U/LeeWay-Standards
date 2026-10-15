@@ -1,3 +1,15 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+# REGION: CORE.SOURCE.MODULE
+# TAG: CORE.SOURCE.SSA_AUDIT_SSA_AUDIT_GEN_PY.MAIN
+# 5WH:
+# WHAT = _ssa_audit_gen.py existing LeeWay implementation
+# WHY = Retain source authority and existing module behavior
+# WHO = LeeWay Standards repository stewardship (original author to be verified)
+# WHERE = ssa-audit/_ssa_audit_gen.py
+# WHEN = 2026-10-15 (conformance review)
+# HOW = Original implementation preserved
+# LICENSE: MIT (repository package metadata; scope requires review)
 import csv
 import re
 from collections import Counter

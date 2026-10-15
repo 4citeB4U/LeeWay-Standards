@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.REFERENCE
+TAG: CORE.DOCS.ADAPTERS_MCP_VSCODE_MCP_TOOLING_README.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = VS Code MCP Tooling
+WHY = Preserve existing LeeWay reference content and identity
+WHO = LeeWay-Standards repository governance
+WHERE = adapters/mcp/vscode-mcp-tooling/README.md
+WHEN = 2026-10-15 (metadata conformance)
+HOW = Existing Markdown reference document
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 <!-- LEEWAY HEADER BLOCK -->
 <!-- File: vscode-mcp-tooling/README.md -->
 <!-- Purpose: Agent Lee OS MCP tooling documentation -->

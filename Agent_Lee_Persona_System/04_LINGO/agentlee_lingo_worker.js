@@ -3,6 +3,24 @@
  * SPDX-License-Identifier: MIT
  */
 
+/*
+LEEWAY HEADER — DO NOT REMOVE
+REGION: AI.AGENT.PERSONA.LINGO
+TAG: AI.AGENT.PERSONA.LINGO.WORKER
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Worker preparing and filtering candidate language entries
+WHY = Maintains existing optional lexicon update capability
+WHO = LeeWay Standards / Agent Lee Persona System
+WHERE = Agent_Lee_Persona_System/04_LINGO/agentlee_lingo_worker.js
+WHEN = 2026-10-14 (governance review)
+HOW = Existing JavaScript module logic; no execution behavior changed
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+*/
+
 /* ============================================================================
    LEEWAY HEADER — DO NOT REMOVE
    PROFILE: LEEWAY-ORDER

@@ -1,3 +1,16 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.STANDARDS
+TAG: CORE.DOCS.LEEWAY_STANDARDS_HELP.MAIN
+5WH:
+WHAT = 📖 LEEWAY™ Terminal Command Encyclopedia
+WHY = Preserve original LeeWay Standards documentation
+WHO = LeeWay Standards repository (stewardship; author verification pending)
+WHERE = LeeWay-Standards/HELP.md
+WHEN = 2026-10-15 (governance conformance)
+HOW = Original documentation retained without alteration
+LICENSE: MIT (repository package metadata; scope subject to review)
+-->
 # 📖 LEEWAY™ Terminal Command Encyclopedia
 
 Welcome to the Sovereign CLI. This document provides a step-by-step guide on how to utilize the LEEWAY SDK to govern your codebase.

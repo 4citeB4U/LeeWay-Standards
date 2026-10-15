@@ -21,6 +21,7 @@ WHY = Provides grounded research intelligence so Agent Lee can cite real sources
 WHO = Leeway Innovations / Agent Lee System Engineer
 WHERE = agents/Atlas.ts
 WHEN = 2026-04-04 and EventBus for UI updates
+HOW = Uses the existing LeewayInferenceClient, research prompt assembler and EventBus to deliver research agent responses
 
 AGENTS:
 ASSESS

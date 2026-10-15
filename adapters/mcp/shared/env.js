@@ -1,3 +1,17 @@
+/*
+LEEWAY HEADER — DO NOT REMOVE
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+REGION: CORE.SOURCE.MODULE
+TAG: CORE.SOURCE.ADAPTERS_MCP_SHARED_ENV_JS.MAIN
+5WH:
+WHAT = env.js existing LeeWay implementation
+WHY = Retain source authority and existing module behavior
+WHO = LeeWay Standards repository stewardship (original author to be verified)
+WHERE = adapters/mcp/shared/env.js
+WHEN = 2026-10-15 (conformance review)
+HOW = Original implementation preserved
+LICENSE: MIT (repository package metadata; scope requires review)
+*/
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.env = env;

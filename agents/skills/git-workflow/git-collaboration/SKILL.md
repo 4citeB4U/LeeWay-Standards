@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.SKILL.GIT_WORKFLOW
@@ -30,7 +30,7 @@ L7_Memory: Archivist.py
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L7_Memory: Archivist.py. No unassigned Clones may natively execute this without Hive Mind routing.
 

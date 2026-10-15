@@ -3,10 +3,15 @@ LEEWAY HEADER — DO NOT REMOVE
 DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 AUTHORITY: LeeWay-Standards
 REGION: RUNTIME.IDENTITY
-TAG: ENGINE.IDENTITY
+TAG: RUNTIME.ENGINE.IDENTITY.MAIN
+5WH:
 WHAT = Identity engine for rooms, sessions, workers and agents
 WHY = Provides deterministic IDs, identity registry, and signed identity records
 WHO = LeeWay Innovations
+WHERE = src/runtime/engines/identity.engine.js
+WHEN = 2026-10-15 (header review)
+HOW = Existing JavaScript runtime engine implementation
+LICENSE: MIT (repository package.json)
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
 

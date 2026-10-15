@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.SKILL.WEB_DEVELOPMENT
@@ -30,7 +30,7 @@ L8_Delivery: Pixel.ts, L8_Delivery: Agent.Interface-Designer.json
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L8_Delivery: Pixel.ts, L8_Delivery: Agent.Interface-Designer.json. No unassigned Clones may natively execute this without Hive Mind routing.
 

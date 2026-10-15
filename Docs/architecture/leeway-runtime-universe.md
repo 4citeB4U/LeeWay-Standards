@@ -1,8 +1,23 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
 DOC_CLASS: ARCHITECTURE
 DOC_ID: architecture.leeway-runtime-universe
 OWNER: Lee Prime
 LAST_UPDATED: 2026-05-10
+REGION: CORE.DOCS.ARCHITECTURE
+TAG: CORE.DOCS.ARCHITECTURE_LEEWAY_RUNTIME_UNIVERSE.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Leeway Runtime Universe — Architecture
+WHY = Preserve existing LeeWay architecture authority
+WHO = Lee Prime
+WHERE = Docs/architecture/leeway-runtime-universe.md
+WHEN = 2026-10-14 (header conformance review)
+HOW = Markdown governing document under existing owner
+AGENTS:
+AUDIT
+LICENSE:
+MIT
 -->
 
 

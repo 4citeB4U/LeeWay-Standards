@@ -1,3 +1,16 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.STANDARDS
+TAG: CORE.DOCS.README.MAIN
+5WH:
+WHAT = LeeWay Standards: Sovereign Agent Architecture
+WHY = Preserve original LeeWay Standards documentation
+WHO = LeeWay Standards repository (stewardship; author verification pending)
+WHERE = README.md
+WHEN = 2026-10-15 (governance conformance)
+HOW = Original documentation retained without alteration
+LICENSE: MIT (repository package metadata; scope subject to review)
+-->
 > **READ FIRST — CANONICAL ENGINEERING LAWS:** [Engineering, multi-team collaboration, continuous notes and recurring defect prevention](./Docs/governance/LEEWAY-CANONICAL-ENGINEERING-LAWS.md). Mandatory before any engineering or contributor work; preserves R01–R25 and existing authorities.
 
 <p align="center">

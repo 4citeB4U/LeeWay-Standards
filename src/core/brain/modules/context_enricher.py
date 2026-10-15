@@ -1,6 +1,36 @@
-
+# LEEWAY HEADER — DO NOT REMOVE
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+#
+# REGION: AI
+# TAG: CORE.SDK.CONTEXT_ENRICHER.MAIN
+#
+# COLOR_ONION_HEX:
+# NEON=#39FF14
+# FLUO=#0DFF94
+# PASTEL=#C7FFD8
+#
+# ICON_ASCII:
+# family=lucide
+# glyph=file
+#
+# 5WH:
+# WHAT = context_enricher module
+# WHY = Part of AI region
+# WHO = LEEWAY Align Agent
+# WHERE = brain\modules\context_enricher.py
+# WHEN = 2026
+# HOW = Auto-aligned by LEEWAY align-agent
+#
+# AGENTS:
+# ASSESS
+# ALIGN
+# AUDIT
+#
+# LICENSE:
+# MIT
 """
-LEEWAY HEADER -- DO NOT REMOVE
+LEEWAY HEADER — DO NOT REMOVE
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 REGION: AI
 TAG: CORE.SDK.CONTEXT_ENRICHER.MAIN

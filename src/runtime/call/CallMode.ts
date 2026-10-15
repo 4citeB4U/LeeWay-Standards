@@ -6,6 +6,14 @@ AUTHORITY: LeeWay-Standards
 TAG: RUNTIME.CALL.MODE.CONTROLLER
 REGION: 🔵 RUNTIME
 PURPOSE: Orchestrates real-time call sessions with voice I/O, turn-taking, and governance integration
+5WH:
+WHAT = Orchestrates real-time call sessions with voice I/O, turn-taking, and governance integration
+WHY = Preserve declared governing authority and purpose of this module
+WHO = LeeWay-Standards (existing authority declaration)
+WHERE = src/runtime/call/CallMode.ts
+WHEN = 2026-10-15 (governance metadata review)
+HOW = Existing TypeScript module implementation, unchanged
+
 LICENSE: PROPRIETARY
 */
 // CHAIN: Standards → Integrated → Runtime → Projections

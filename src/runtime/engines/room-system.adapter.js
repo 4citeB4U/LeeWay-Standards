@@ -3,10 +3,15 @@ LEEWAY HEADER - DO NOT REMOVE
 DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 AUTHORITY: LeeWay-Standards
 REGION: RUNTIME.ROOMSYSTEM.ADAPTER
-TAG: ADAPTER.ROOMSYSTEM
+TAG: RUNTIME.ENGINE.ROOM_SYSTEM.MAIN
+5WH:
 WHAT = Integrated-side adapter boundary for room-system capabilities
 WHY = Prevents direct ownership imports from UI/integrated entrypoints into transport-bound modules
 WHO = Leeway Innovations
+WHERE = src/runtime/engines/room-system.adapter.js
+WHEN = 2026-10-15 (header review)
+HOW = Existing JavaScript runtime engine implementation
+LICENSE: MIT (repository package.json)
 */
 
 let roomSystemPromise = null;

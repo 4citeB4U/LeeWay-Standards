@@ -4,6 +4,15 @@ DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → R
 AUTHORITY: LeeWay-Standards
 TAG: MCP.RTC.NATIVE.SDK
 REGION: 🟣 MCP
+
+5WH:
+WHAT = Wraps native WebRTC peer connections and media capture
+WHY = Keeps native RTC transport in a bounded adapter
+WHO = LeeWay-Standards (existing AUTHORITY declaration)
+WHERE = src/runtime/rtc/leeway-rtc-native.ts
+WHEN = 2026-10-15 (governance review)
+HOW = Existing source implementation below this header, unmodified
+LICENSE: Existing file and repository license terms remain unchanged
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
 

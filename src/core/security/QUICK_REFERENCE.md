@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.STANDARDS
+TAG: CORE.DOCS.SRC_CORE_SECURITY_QUICK_REFERENCE.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Creator-Recoverable Security Framework - Quick Reference
+WHY = Preserve preexisting LeeWay documentation and trace its source
+WHO = LeeWay Standards repository / original author pending confirmation
+WHERE = src/core/security/QUICK_REFERENCE.md
+WHEN = 2026-10-14 (header review)
+HOW = Markdown technical documentation
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # Creator-Recoverable Security Framework - Quick Reference
 
 ## Quick Start

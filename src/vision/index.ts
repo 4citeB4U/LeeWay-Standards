@@ -5,6 +5,14 @@ AUTHORITY: LeeWay-Standards
 
 TAG: CORE.VISION.SYSTEM.ORCHESTRATOR
 REGION: 🧠 AI
+5WH:
+WHAT = Main orchestrator for vision system
+WHY = Preserve Vision module purpose under existing governance constraints
+WHO = LeeWay-Standards (declared authority)
+WHERE = src/vision/index.ts
+WHEN = 2026-10-14 (header conformance review)
+HOW = Existing TypeScript module under source-governed Vision interfaces
+
 PURPOSE: Main orchestrator for vision system
 
 LICENSE: PROPRIETARY

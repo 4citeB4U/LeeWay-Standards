@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.ARCHITECTURE
+TAG: CORE.DOCS.ARCHITECTURE_LEEWAY_GITHUB_ECOSYSTEM_AUTHORITY.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = LeeWay GitHub Ecosystem Authority
+WHY = Retain current LeeWay architecture document and its source identity
+WHO = LeeWay Standards
+WHERE = Docs/architecture/leeway-github-ecosystem-authority.md
+WHEN = 2026-10-14 (header conformance review)
+HOW = Markdown architectural planning document
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # LeeWay GitHub Ecosystem Authority
 
 This registry converts the recovered LeeWay estate into a GitHub-first control plane without erasing the architecture learned from the earlier workstation and Docker deployments.

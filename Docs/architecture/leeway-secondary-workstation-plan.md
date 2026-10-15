@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.ARCHITECTURE
+TAG: CORE.DOCS.ARCHITECTURE_LEEWAY_SECONDARY_WORKSTATION_PLAN.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = LeeWay Secondary Workstation Plan
+WHY = Retain current LeeWay architecture document and its source identity
+WHO = LeeWay Standards
+WHERE = Docs/architecture/leeway-secondary-workstation-plan.md
+WHEN = 2026-10-14 (header conformance review)
+HOW = Markdown architectural planning document
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # LeeWay Secondary Workstation Plan
 
 **Parent mission:** LEEWAY-ECOSYSTEM-FORMULA-FUNNEL-V1  

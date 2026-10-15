@@ -7,6 +7,14 @@ REGION: 🟢 CORE
 DISCOVERY_PIPELINE:
 Runtime → Load → Budget → Enforcement
 
+5WH:
+WHAT = Ensure vision operations stay within edge device limits.
+WHY = Follow the existing Vision governing purpose and constraints
+WHO = LeeWay-Standards (existing AUTHORITY field)
+WHERE = src/vision/vision-budget.ts
+WHEN = 2026-10-14 (header conformance review)
+HOW = Existing TypeScript module governed by the documented constraints
+
 PURPOSE:
 Ensure vision operations stay within edge device limits.
 

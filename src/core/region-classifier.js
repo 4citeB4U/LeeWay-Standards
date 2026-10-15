@@ -1,3 +1,17 @@
+/*
+LEEWAY HEADER — DO NOT REMOVE
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+REGION: CORE.SOURCE.MODULE
+TAG: CORE.SOURCE.SRC_CORE_REGION_CLASSIFIER_JS.MAIN
+5WH:
+WHAT = region-classifier.js existing LeeWay implementation
+WHY = Retain source authority and existing module behavior
+WHO = LeeWay Standards repository stewardship (original author to be verified)
+WHERE = src/core/region-classifier.js
+WHEN = 2026-10-15 (conformance review)
+HOW = Original implementation preserved
+LICENSE: MIT (repository package metadata; scope requires review)
+*/
 /**
  * LEEWAY HEADER
  * TAG: CORE.CLASSIFIER.REGION.MAIN

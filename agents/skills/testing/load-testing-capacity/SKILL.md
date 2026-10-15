@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: DEV.QA
@@ -30,7 +30,7 @@ L6_Execution: BugHunterForge.ts
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L6_Execution: BugHunterForge.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 

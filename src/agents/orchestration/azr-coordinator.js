@@ -8,7 +8,11 @@ TAG: AGENT.AZR.COORDINATOR
   WHAT = AZR Coordinator Agent
   WHY = Orchestrates the ExecutionCycle across specialized agents
   WHO = Sovereign Manager
+  WHERE = src/agents/orchestration/azr-coordinator.js
+  WHEN = 2026-10-15 (metadata review)
   HOW = Governs the state transition from Intent to Memory Commit
+LICENSE:
+MIT (repository package.json)
 */
 
 import { SOVEREIGN_TEMPLATES } from '../../core/templates.js';

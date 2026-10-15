@@ -7,6 +7,14 @@ REGION: 🧠 AI
 DISCOVERY_PIPELINE:
 Awareness → Governance → Agent Adapter → Response
 
+5WH:
+WHAT = Translate awareness packets into agent-ready outputs.
+WHY = Follow the existing Vision governing purpose and constraints
+WHO = LeeWay-Standards (existing AUTHORITY field)
+WHERE = src/vision/vision-adapter.ts
+WHEN = 2026-10-14 (header conformance review)
+HOW = Existing TypeScript module governed by the documented constraints
+
 PURPOSE:
 Translate awareness packets into agent-ready outputs.
 

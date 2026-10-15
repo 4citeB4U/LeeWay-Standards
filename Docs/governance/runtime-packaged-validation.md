@@ -1,8 +1,23 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
 DOC_CLASS: GOVERNANCE
 DOC_ID: governance.runtime-packaged-validation
 OWNER: Attestation Marshal
 LAST_UPDATED: 2026-05-11
+REGION: CORE.DOCS.GOVERNANCE
+TAG: CORE.DOCS.GOVERNANCE_RUNTIME_PACKAGED_VALIDATION.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Runtime Governance — Packaged Validation
+WHY = Preserve the documented LeeWay governance and ownership contract
+WHO = Attestation Marshal
+WHERE = Docs/governance/runtime-packaged-validation.md
+WHEN = 2026-10-14 (header conformance review)
+HOW = Markdown governance documentation under original document owner
+AGENTS:
+AUDIT
+LICENSE:
+MIT
 -->
 
 # Runtime Governance — Packaged Validation

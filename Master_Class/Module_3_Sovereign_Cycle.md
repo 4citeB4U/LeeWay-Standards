@@ -1,8 +1,21 @@
-/**
- * LEEWAY COMPLIANCE HEADER
- * Path: /Master_Class/Module_3_Sovereign_Cycle.md
- * Status: ACTIVE COMPLIANCE MONITORING
- */
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.TRAINING.MASTER_CLASS
+TAG: CORE.TRAINING.MODULE_3_SOVEREIGN_CYCLE.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Module 3: Operational Governance — The Sovereign Cycle
+WHY = Preserve existing LeeWay training material and source identity
+WHO = LeeWay Standards / Master Class
+WHERE = Master_Class/Module_3_Sovereign_Cycle.md
+WHEN = 2026-10-14 (header conformance review)
+HOW = Markdown instructional document
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+LEGACY_HEADER: /** * LEEWAY COMPLIANCE HEADER * Path: /Master_Class/Module_3_Sovereign_Cycle.md * Status: ACTIVE COMPLIANCE MONITORING 
+-->
 
 # Module 3: Operational Governance — The Sovereign Cycle
 

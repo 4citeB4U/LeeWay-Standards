@@ -1,3 +1,18 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: AI.MCP.MANIFEST
+# TAG: AI.MCP.DOCS_RAG_AGENT_MCP.MANIFEST
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+# 5WH:
+# WHAT = DocsRAGAgent existing MCP manifest
+# WHY = Record the existing MCP contract identity and declared capabilities
+# WHO = LeeWay-Standards repository governance
+# WHERE = adapters/mcp/docs-rag-agent-mcp/manifest.yaml
+# WHEN = 2026-10-15 (metadata conformance)
+# HOW = Declarative YAML manifest consumed by MCP registration
+# AGENTS:
+# AUDIT
+# LICENSE:
+# MIT
 id: docs-rag-agent-mcp
 name: DocsRAGAgent
 version: "1.0.0"

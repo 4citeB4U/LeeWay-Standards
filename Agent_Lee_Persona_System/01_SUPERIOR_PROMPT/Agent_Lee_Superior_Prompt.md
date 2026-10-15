@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: AI.AGENT.PERSONA.DOCS
+TAG: AI.PERSONA.DOCS.01_SUPERIOR_PROMPT_AGENT_LEE_SUPERIOR_PROMPT.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = AGENT LEE — SUPERIOR SYSTEM PROMPT (COPY/PASTE)
+WHY = Preserve preexisting Agent Lee persona documentation and attribution
+WHO = Agent Lee Persona System / original author pending review
+WHERE = Agent_Lee_Persona_System/01_SUPERIOR_PROMPT/Agent_Lee_Superior_Prompt.md
+WHEN = 2026-10-14 (header review)
+HOW = Existing Markdown persona material, content unchanged
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 <!-- ===========================================================================
 LEEWAY HEADER — DO NOT REMOVE
 PROFILE: LEEWAY-ORDER

@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.GOVERNANCE.STANDARDS
+TAG: CORE.GOVERNANCE.VOICE.AUTHORITY
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Defines the allowable voice identity and fallback policy
+WHY = Preserve the existing canonical LeeWay Read-Aloud Voice Authority without a competing authority
+WHO = LeeWay Standards / Creator Authority
+WHERE = Docs/governance/leeway-read-aloud-voice-authority.md
+WHEN = 2026-10-14 (governance header review)
+HOW = Markdown governing document, no executable change
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # LeeWay Read-Aloud Voice Authority
 
 **Status:** Canonical voice law

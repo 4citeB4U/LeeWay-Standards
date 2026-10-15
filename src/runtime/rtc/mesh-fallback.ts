@@ -4,6 +4,15 @@ DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → R
 AUTHORITY: LeeWay-Standards
 TAG: MCP.RTC.MESH.FALLBACK
 REGION: 🟣 MCP
+
+5WH:
+WHAT = Provides a local WebRTC fallback connection
+WHY = Preserves local connectivity when no external route is available
+WHO = LeeWay-Standards (existing AUTHORITY declaration)
+WHERE = src/runtime/rtc/mesh-fallback.ts
+WHEN = 2026-10-15 (governance review)
+HOW = Existing source implementation below this header, unmodified
+LICENSE: Existing file and repository license terms remain unchanged
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
 

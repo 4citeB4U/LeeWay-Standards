@@ -1,4 +1,5 @@
-# LEEWAY HEADER - DO NOT REMOVE
+# LEEWAY HEADER — DO NOT REMOVE
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 #
 # REGION: AI
 # TAG: CORE.SDK.MAIN.MAIN

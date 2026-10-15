@@ -1,4 +1,4 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.SKILL.DATABASE_DESIGN
@@ -30,7 +30,7 @@ L7_Memory: ClerkArchive.ts, L7_Memory: indexer.py
 
 LICENSE:
 MIT
-*/
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L7_Memory: ClerkArchive.ts, L7_Memory: indexer.py. No unassigned Clones may natively execute this without Hive Mind routing.
 

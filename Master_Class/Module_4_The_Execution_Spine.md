@@ -1,8 +1,21 @@
-/**
- * LEEWAY COMPLIANCE HEADER
- * Path: /Master_Class/Module_4_The_Execution_Spine.md
- * Status: ACTIVE COMPLIANCE MONITORING
- */
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.TRAINING.MASTER_CLASS
+TAG: CORE.TRAINING.MODULE_4_THE_EXECUTION_SPINE.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Module 4: The Execution Spine & Runtime Governance
+WHY = Preserve existing LeeWay training material and source identity
+WHO = LeeWay Standards / Master Class
+WHERE = Master_Class/Module_4_The_Execution_Spine.md
+WHEN = 2026-10-14 (header conformance review)
+HOW = Markdown instructional document
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+LEGACY_HEADER: /** * LEEWAY COMPLIANCE HEADER * Path: /Master_Class/Module_4_The_Execution_Spine.md * Status: ACTIVE COMPLIANCE MONITOR
+-->
 
 # Module 4: The Execution Spine & Runtime Governance
 

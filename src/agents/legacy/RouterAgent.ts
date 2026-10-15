@@ -21,6 +21,7 @@ WHY = Minimises leeway API spend by handling simple intents locally via llama.cp
 WHO = Leeway Innovations / Agent Lee System Engineer
 WHERE = agents/RouterAgent.ts
 WHEN = 2026-04-04
+HOW = Applies local intent-pattern rules for client-side hints and emits classification through EventBus; server remains authoritative
 
 AGENTS:
 ASSESS

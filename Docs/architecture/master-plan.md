@@ -1,8 +1,23 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
 DOC_CLASS: ARCHITECTURE
 DOC_ID: architecture.master-plan
 OWNER: Leonard J Lee / Leeway Innovations
 LAST_UPDATED: 2026-08-30
+REGION: CORE.DOCS.ARCHITECTURE
+TAG: CORE.DOCS.ARCHITECTURE_MASTER_PLAN.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Agent Lee Agentic Operating System — Master Plan (Current State)
+WHY = Preserve existing LeeWay architecture authority
+WHO = Leonard J Lee / Leeway Innovations
+WHERE = Docs/architecture/master-plan.md
+WHEN = 2026-10-14 (header conformance review)
+HOW = Markdown governing document under existing owner
+AGENTS:
+AUDIT
+LICENSE:
+MIT
 -->
 
 # Agent Lee Agentic Operating System — Master Plan (Current State)

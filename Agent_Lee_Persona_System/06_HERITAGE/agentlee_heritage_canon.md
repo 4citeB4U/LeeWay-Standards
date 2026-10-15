@@ -1,4 +1,22 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: AI.AGENT.PERSONA.DOCS
+TAG: CORE.DOCS.AGENT_LEE_PERSONA_SYSTEM_06_HERITAGE_AGENTLEE_HERITAGE_CANON.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Agent Lee Heritage Canon
+WHY = Preserve existing LeeWay-authored material and provenance
+WHO = LeeWay Standards / existing document owner subject to review
+WHERE = Agent_Lee_Persona_System/06_HERITAGE/agentlee_heritage_canon.md
+WHEN = 2026-10-14 (header review)
+HOW = Existing Markdown content, not executable implementation
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
+<!--
 LEEWAY_HEADER - DO NOT REMOVE
 TAG: AI.PERSONA.HERITAGE.CANON
 REGION: 🧠 AI

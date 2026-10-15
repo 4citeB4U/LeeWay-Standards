@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.STANDARDS
+TAG: CORE.DOCS.ADAPTERS_MCP_STARTUP.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Agent Lee OS — MCP Startup & Deployment Map
+WHY = Preserve existing documentation and source ownership
+WHO = LeeWay Standards
+WHERE = adapters/mcp/STARTUP.md
+WHEN = 2026-10-14 (header review)
+HOW = Markdown source documentation
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # Agent Lee OS — MCP Startup & Deployment Map
 
 ## Overview

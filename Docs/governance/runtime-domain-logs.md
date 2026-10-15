@@ -1,8 +1,23 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
 DOC_CLASS: GOVERNANCE
 DOC_ID: governance.runtime-domain-logs
 OWNER: Janitor Sentinel
 LAST_UPDATED: 2026-05-11
+REGION: CORE.GOVERNANCE.RUNTIME.LOGS
+TAG: CORE.GOVERNANCE.RUNTIME.LOGS.STANDARD
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Governance contract for LeeWay operational logging
+WHY = Preserve source-of-truth runtime domain rules
+WHO = LeeWay Standards; original document owner preserved above
+WHERE = Docs/governance/runtime-domain-logs.md
+WHEN = 2026-10-14 (governance header review)
+HOW = Markdown governance document
+AGENTS:
+AUDIT
+LICENSE:
+MIT
 -->
 
 # Runtime Domain Governance — Logs

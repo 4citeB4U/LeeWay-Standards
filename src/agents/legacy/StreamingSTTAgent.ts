@@ -21,6 +21,7 @@ WHY = Lets UI components and other agents react to speech events without couplin
 WHO = Leeway Innovations / Agent Lee System Engineer
 WHERE = agents/StreamingSTTAgent.ts
 WHEN = 2026-04-04
+HOW = Subscribes to EventBus speech-transcription events and exposes transcript listeners; transcription is server-side
 
 AGENTS:
 ASSESS

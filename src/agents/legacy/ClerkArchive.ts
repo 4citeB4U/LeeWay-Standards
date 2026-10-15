@@ -21,6 +21,7 @@ WHY = Without a clerk, agents skip reporting or use wrong paths; this enforces t
 WHO = Leeway Innovations / Agent Lee System Engineer
 WHERE = agents/ClerkArchive.ts
 WHEN = 2026-04-04
+HOW = Validates ReportEvent schema and classification, writes through ReportWriter and ReportIndex, and publishes via EventBus
 
 AGENTS:
 ASSESS

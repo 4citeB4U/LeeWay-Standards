@@ -8,7 +8,11 @@ TAG: AGENT.MEMORY.MGR
   WHAT = Memory & Wisdom Agent
   WHY = Manages the persistent learning loop and wisdom synthesis
   WHO = Sovereign Historian
+  WHERE = src/agents/orchestration/memory-agent.js
+  WHEN = 2026-10-15 (metadata review)
   HOW = Documents every cycle and performs deep study upon Awakening
+LICENSE:
+MIT (repository package.json)
 */
 
 import { writeFileSync, readFileSync, existsSync, mkdirSync, readdirSync } from 'fs';

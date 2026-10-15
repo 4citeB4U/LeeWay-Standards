@@ -1,3 +1,16 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: CORE.CI.GOVERNANCE
+# TAG: CORE.CI.LAYER_GOVERNANCE.MAIN
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+# 5WH:
+# WHAT = Checks LeeWay governance layer requirements in GitHub Actions
+# WHY = Rejects changes that violate canonical layer governance
+# WHO = LeeWay Standards engineering
+# WHERE = .github/workflows/layer-governance.yml
+# WHEN = 2026-10-14 (governance header review)
+# HOW = GitHub Actions executes the existing workflow configuration
+# LICENSE:
+# MIT
 name: layer-governance
 
 on:

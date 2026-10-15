@@ -1,3 +1,17 @@
+/*
+LEEWAY HEADER — DO NOT REMOVE
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+REGION: CORE.SOURCE.MODULE
+TAG: CORE.SOURCE.CONTRACTS_AGENT_CONTRACTS_TS.MAIN
+5WH:
+WHAT = agent-contracts.ts existing LeeWay implementation
+WHY = Retain source authority and existing module behavior
+WHO = LeeWay Standards repository stewardship (original author to be verified)
+WHERE = contracts/agent-contracts.ts
+WHEN = 2026-10-15 (conformance review)
+HOW = Original implementation preserved
+LICENSE: MIT (repository package metadata; scope requires review)
+*/
 import { Capability, WorkflowRole, AgentOps } from "./capability-vocab.js";
 
 /*

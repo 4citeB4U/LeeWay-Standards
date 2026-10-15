@@ -1,3 +1,18 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: AI.MCP.MANIFEST
+# TAG: AI.MCP.DESKTOP_COMMANDER_AGENT_MCP.MANIFEST
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+# 5WH:
+# WHAT = DesktopCommanderAgent existing MCP manifest
+# WHY = Record the existing MCP contract identity and declared capabilities
+# WHO = LeeWay-Standards repository governance
+# WHERE = adapters/mcp/desktop-commander-agent-mcp/manifest.yaml
+# WHEN = 2026-10-15 (metadata conformance)
+# HOW = Declarative YAML manifest consumed by MCP registration
+# AGENTS:
+# AUDIT
+# LICENSE:
+# MIT
 id: desktop-commander-agent-mcp
 name: DesktopCommanderAgent
 version: 1.0.0

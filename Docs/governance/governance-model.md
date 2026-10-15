@@ -1,8 +1,23 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
 DOC_CLASS: GOVERNANCE
 DOC_ID: governance.model
 OWNER: Lee Prime
 LAST_UPDATED: 2026-05-10
+REGION: CORE.DOCS.GOVERNANCE
+TAG: CORE.DOCS.GOVERNANCE_MODEL.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Agent Lee — Governance Model
+WHY = Preserve canonical Agent Lee governance and source ownership
+WHO = Lee Prime
+WHERE = Docs/governance/governance-model.md
+WHEN = 2026-10-14 (header conformance review)
+HOW = Markdown governing contract used by Agent Lee runtime owners
+AGENTS:
+AUDIT
+LICENSE:
+MIT
 -->
 
 # Agent Lee — Governance Model

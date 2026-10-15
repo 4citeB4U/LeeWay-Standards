@@ -1,3 +1,21 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.GOVERNANCE
+TAG: CORE.DOCS.REFACTOR_IMPLEMENTATION_NOTES.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Phase 1 Implementation Notes
+WHY = Preserve the existing LeeWay engineering authority document
+WHO = LeeWay-Standards repository governance
+WHERE = Docs/refactor/implementation-notes.md
+WHEN = 2026-10-15 (metadata conformance)
+HOW = Original Markdown canonical documentation
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
 # Phase 1 Implementation Notes
 
 Scope: safe, non-destructive implementation artifacts only.

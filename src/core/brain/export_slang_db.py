@@ -1,6 +1,36 @@
-
+# LEEWAY HEADER — DO NOT REMOVE
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+#
+# REGION: DATA
+# TAG: CORE.SDK.EXPORT_SLANG_DB.MAIN
+#
+# COLOR_ONION_HEX:
+# NEON=#39FF14
+# FLUO=#0DFF94
+# PASTEL=#C7FFD8
+#
+# ICON_ASCII:
+# family=lucide
+# glyph=file
+#
+# 5WH:
+# WHAT = export_slang_db module
+# WHY = Part of DATA region
+# WHO = LEEWAY Align Agent
+# WHERE = brain\export_slang_db.py
+# WHEN = 2026
+# HOW = Auto-aligned by LEEWAY align-agent
+#
+# AGENTS:
+# ASSESS
+# ALIGN
+# AUDIT
+#
+# LICENSE:
+# MIT
 """
-LEEWAY HEADER -- DO NOT REMOVE
+LEEWAY HEADER — DO NOT REMOVE
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 REGION: DATA
 TAG: CORE.SDK.EXPORT_SLANG_DB.MAIN
