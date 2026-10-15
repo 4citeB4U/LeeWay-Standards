@@ -4,9 +4,15 @@ DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → R
 AUTHORITY: LeeWay-Standards
 REGION: RUNTIME.EVOLUTION
 TAG: ENGINE.EVOLUTION
+5WH:
 WHAT = Evolution engine for tracking performance and recommending improvements
 WHY = Learns from task outcomes and improves worker and room selection
 WHO = Leeway Innovations
+WHERE = src/runtime/engines/evolution.engine.js
+WHEN = 2026-10-15 (header review)
+HOW = Existing JavaScript runtime engine implementation
+LICENSE:
+MIT (repository package.json)
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
 
