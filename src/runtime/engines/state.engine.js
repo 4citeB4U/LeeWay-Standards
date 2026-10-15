@@ -4,9 +4,15 @@ DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → R
 AUTHORITY: LeeWay-Standards
 REGION: RUNTIME.STATE
 TAG: ENGINE.STATE
+5WH:
 WHAT = Central runtime state engine for rooms, workers, tasks, and telemetry
 WHY = Publishes live runtime state for UI and orchestration
 WHO = LeeWay Innovations
+WHERE = src/runtime/engines/state.engine.js
+WHEN = 2026-10-15 (header review)
+HOW = Existing JavaScript runtime engine module
+LICENSE:
+MIT (repository package.json)
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
 
