@@ -1,4 +1,22 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.DOCS.GOVERNANCE
+TAG: CORE.DOCS.ARCHITECTURE_LEEWAY_KERNEL_FABRIC_ARCHITECTURE_STANDARD.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = LeeWay Kernel Fabric Architecture Standard
+WHY = Preserve the existing LeeWay engineering authority document
+WHO = LeeWay-Standards repository governance
+WHERE = Docs/architecture/leeway-kernel-fabric-architecture-standard.md
+WHEN = 2026-10-15 (metadata conformance)
+HOW = Original Markdown canonical documentation
+AGENTS:
+AUDIT
+LICENSE:
+MIT
+-->
+
+<!--
 DOC_CLASS: ARCHITECTURE_STANDARD
 DOC_ID: architecture.leeway-kernel-fabric
 OWNER: Leonard J Lee / LeeWay
