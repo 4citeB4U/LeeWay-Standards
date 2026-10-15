@@ -4,9 +4,15 @@ DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → R
 AUTHORITY: LeeWay-Standards
 REGION: RUNTIME.IDENTITY
 TAG: ENGINE.IDENTITY
+5WH:
 WHAT = Identity engine for rooms, sessions, workers and agents
 WHY = Provides deterministic IDs, identity registry, and signed identity records
 WHO = LeeWay Innovations
+WHERE = src/runtime/engines/identity.engine.js
+WHEN = 2026-10-15 (header review)
+HOW = Existing JavaScript runtime engine implementation
+LICENSE:
+MIT (repository package.json)
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
 
