@@ -4,9 +4,15 @@ DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → R
 AUTHORITY: LeeWay-Standards
 REGION: RUNTIME.GPU
 TAG: ADAPTER.GPU
+5WH:
 WHAT = GPU adapter for the Integrated motherboard shell
 WHY = Wraps the GPU compute task API behind a stable runtime adapter
 WHO = Leeway Innovations
+WHERE = src/runtime/engines/gpu.adapter.js
+WHEN = 2026-10-15 (header review)
+HOW = Existing JavaScript runtime engine implementation
+LICENSE:
+MIT (repository package.json)
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
 
