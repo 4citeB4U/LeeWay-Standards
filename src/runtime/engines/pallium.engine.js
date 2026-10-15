@@ -3,7 +3,7 @@ LEEWAY HEADER — DO NOT REMOVE
 DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 AUTHORITY: LeeWay-Standards
 REGION: RUNTIME.PALLIUM
-TAG: ENGINE.PALLIUM
+TAG: RUNTIME.ENGINE.PALLIUM.MAIN
 5WH:
 WHAT = Pallium runtime engine for room-level memory and database context
 WHY = Provides room-aware persistent stores, memory lake mounting, and database routing
@@ -11,8 +11,7 @@ WHO = Leeway Innovations
 WHERE = src/runtime/engines/pallium.engine.js
 WHEN = 2026-10-15 (header review)
 HOW = Existing JavaScript runtime engine implementation
-LICENSE:
-MIT (repository package.json)
+LICENSE: MIT (repository package.json)
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
 
