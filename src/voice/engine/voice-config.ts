@@ -6,6 +6,14 @@ AUTHORITY: LeeWay-Standards
 TAG: VOICE.CONFIG.PERSISTENCE
 REGION: 🎤 VOICE
 PURPOSE: Persistent storage and retrieval of user voice preferences
+5WH:
+WHAT = Persistent storage and retrieval of user voice preferences
+WHY = Preserve declared governing authority and purpose of this module
+WHO = LeeWay-Standards (existing authority declaration)
+WHERE = src/voice/engine/voice-config.ts
+WHEN = 2026-10-15 (governance metadata review)
+HOW = Existing TypeScript module implementation, unchanged
+
 LICENSE: PROPRIETARY
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
