@@ -1,0 +1,37 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.STANDARDS.CI
+# TAG: LEEWAY.STANDARDS.CI.COMPLIANCE_INVENTORY
+# DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+# 5WH:
+# WHAT = Publish immutable CI artifact listing actual unresolved governance debt
+# WHY = Enable narrow audited fixes instead of unsafe repo-wide automatic rewriting
+# WHO = LeeWay Standards engineering
+# WHERE = .github/workflows/standards-compliance-inventory.yml
+# WHEN = 2026-10-25
+# HOW = Existing scanner read-only with classified report artifact
+# LICENSE: Existing LeeWay repository terms
+name: LeeWay Standards Compliance Inventory
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/inventory-compliance-debt.mjs'
+      - '.github/workflows/standards-compliance-inventory.yml'
+jobs:
+  evidence-inventory:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Capture canonical scanner debt without modifying files
+        run: node scripts/inventory-compliance-debt.mjs > standards-compliance-inventory.json
+      - name: Upload classified debt evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: leeway-standards-compliance-inventory
+          path: standards-compliance-inventory.json
+          retention-days: 30
