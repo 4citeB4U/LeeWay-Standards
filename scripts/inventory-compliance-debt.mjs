@@ -24,7 +24,7 @@ if (![0, 2].includes(proc.status) || !proc.stdout) {
   process.exit(1);
 }
 let report;
-try { report = JSON.parse(proc.stdout); } catch { process.stderr.write('SCANNER_REPORT_NOT_JSON\n'); process.exit(1); }
+try { report = JSON.parse(proc.stdout); } catch { process.stderr.write('SCANNER_REPORT_NOT_JSON prefix=' + JSON.stringify(proc.stdout.slice(0, 300)) + '\n'); process.exit(1); }
 const groups = { compliant: [], missingLeadingHeader: [], malformedOrIncompleteHeader: [], unknown: [] };
 for (const item of report.results || []) {
   const relativePath = String(item.relativePath || '').replaceAll('\\', '/');
