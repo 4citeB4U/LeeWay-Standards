@@ -37,7 +37,7 @@ jobs:
           const diff = spawnSync('git', ['diff', '--name-only', '--diff-filter=ACMR', '-z', base, head], {encoding:'utf8'});
           if (diff.status !== 0) { console.error(diff.stderr); process.exit(1); }
           const names = diff.stdout.split('\0').filter(Boolean);
-          const governed = names.filter(name => /\.(js|jsx|ts|tsx|mjs|cjs|md)$/i.test(name) && fs.existsSync(name));
+          const governed = names.filter(name => /\.(js|jsx|ts|tsx|mjs|cjs|md|py|ps1|html|htm|yaml|yml)$/i.test(name) && fs.existsSync(name));
           console.log(JSON.stringify({changed:names.length,governed:governed.length,paths:governed}));
           if (!governed.length) {
             console.log('No governed JS/TS/Markdown file changes in this commit range; other types are NOT QUALIFIED by this watcher.');
