@@ -14,17 +14,33 @@ LICENSE: Existing LeeWay repository terms
 */
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
+import fs from 'node:fs';
+import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const scanner = path.join(root, 'scripts/auto-enforce-file-governance.mjs');
-const proc = spawnSync(process.execPath, [scanner, '--root', root], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
-if (![0, 2].includes(proc.status) || !proc.stdout) {
-  process.stderr.write('SCANNER_EXECUTION_BLOCKED: ' + String(proc.stderr || proc.status) + '\n');
-  process.exit(1);
-}
+const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'leeway-standards-inventory-'));
 let report;
-try { report = JSON.parse(proc.stdout); } catch (error) { process.stderr.write('SCANNER_REPORT_NOT_JSON ' + error.message + ' size=' + proc.stdout.length + ' suffix=' + JSON.stringify(proc.stdout.slice(-300)) + '\n'); process.exit(1); }
+try {
+  const file = path.join(temp, 'scanner-report.json');
+  const descriptor = fs.openSync(file, 'w');
+  let proc;
+  try {
+    proc = spawnSync(process.execPath, [scanner, '--root', root], {
+      encoding: 'utf8', stdio: ['ignore', descriptor, 'pipe'], maxBuffer: 64 * 1024 * 1024
+    });
+  } finally { fs.closeSync(descriptor); }
+  if (![0, 2].includes(proc.status)) {
+    process.stderr.write('SCANNER_EXECUTION_BLOCKED: ' + String(proc.stderr || proc.status) + '\\n');
+    process.exitCode = 1;
+    throw Error('SCANNER_EXIT_UNEXPECTED');
+  }
+  report = JSON.parse(fs.readFileSync(file, 'utf8'));
+} catch (error) {
+  process.stderr.write('SCANNER_INVENTORY_READ_FAILED: ' + error.message + '\\n');
+  process.exit(1);
+} finally { fs.rmSync(temp, { recursive: true, force: true }); }
 const groups = { compliant: [], missingLeadingHeader: [], malformedOrIncompleteHeader: [], unknown: [] };
 for (const item of report.results || []) {
   const relativePath = String(item.relativePath || '').replaceAll('\\', '/');
