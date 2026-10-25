@@ -1,3 +1,15 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.STANDARDS.CI
+# TAG: LEEWAY.STANDARDS.WATCH.INCOMING
+# DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+# 5WH:
+# WHAT = Verify incoming governed source without mutation
+# WHY = Reject incomplete source headers before integration
+# WHO = LeeWay Standards engineering
+# WHERE = .github/workflows/leeway-incoming-source-watch.yml
+# WHEN = 2026-10-25
+# HOW = GitHub Actions scoped changed-file validation
+# LICENSE: Existing LeeWay repository terms
 name: LeeWay Incoming Source Watch
 on:
   pull_request:
