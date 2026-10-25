@@ -27,7 +27,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const standardsRoot = path.resolve(__dirname, '..');
 
-const SUPPORTED_EXTENSIONS = new Set(['.js', '.jsx', '.ts', '.tsx', '.mjs', '.cjs']);
+const SUPPORTED_EXTENSIONS = new Set(['.js', '.jsx', '.ts', '.tsx', '.mjs', '.cjs', '.md']);
 const SKIP_SEGMENTS = new Set(['node_modules', '.git', 'dist', 'build', 'coverage', '.next', '__quarantine__']);
 const DISCOVERY_PIPELINE = 'Voice → Intent → Location → Vertical → Ranking → Render';
 
@@ -138,11 +138,10 @@ function prependHeader(content, relativePath) {
 }
 function leadingHeader(content) {
   const source = content.replace(/^\uFEFF/, '').replace(/^#![^\n]*\n/, '');
-  const start = source.search(/^\s*\/\*/);
-  if (start !== 0) return '';
-  const end = source.indexOf('*/');
-  if (end < 0) return '';
-  return source.slice(0, end + 2);
+  const js = source.match(/^\s*\/\*[\s\S]*?\*\//);
+  if (js) return js[0];
+  const md = source.match(/^\s*<!--[\s\S]*?-->/);
+  return md ? md[0] : '';
 }
 function hasRequiredMarkers(content) {
   const header = leadingHeader(content);
@@ -239,6 +238,9 @@ async function main() {
       changed = nextContent !== content;
     }
 
+    if (changed && options.apply && path.extname(filePath).toLowerCase() === '.md') {
+      throw new Error('MARKDOWN_AUTO_REPAIR_NOT_AUTHORIZED: ' + relativePath);
+    }
     if (changed && options.apply) {
       await fs.writeFile(filePath, nextContent, 'utf8');
     }
