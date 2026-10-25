@@ -1,13 +1,16 @@
 /*
-LEEWAY HEADER - DO NOT REMOVE
-REGION: CORE
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.TESTS.GOVERNANCE
 TAG: CORE.TESTS.STANDARDS_ENFORCER.MAIN
 DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
-WHAT: Verify governance repair without changing executable source semantics.
-WHY: Prevent source relicensing and line-ending mutation.
-WHO: LeeWay Standards engineering. WHERE: tests/standards-enforcer.test.mjs.
-WHEN: Qualification 2026-10-08.
-HOW: Temporary fixtures and actual CLI.
+5WH:
+WHAT = Verify canonical header scanner and Markdown watcher regressions
+WHY = Reject spoofed authority markers and unsafe document rewrites
+WHO = LeeWay Standards engineering
+WHERE = tests/standards-enforcer.test.mjs
+WHEN = 2026-10-25
+HOW = Node test fixtures and real canonical CLI
+LICENSE: MIT
 */
 import test from 'node:test';
 import assert from 'node:assert/strict';
