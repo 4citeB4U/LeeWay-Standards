@@ -1,13 +1,16 @@
 /*
-LEEWAY HEADER - DO NOT REMOVE
-REGION: CORE
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.TESTS.GOVERNANCE
 TAG: CORE.TESTS.STANDARDS_ENFORCER.MAIN
 DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
-WHAT: Verify governance repair without changing executable source semantics.
-WHY: Prevent source relicensing and line-ending mutation.
-WHO: LeeWay Standards engineering. WHERE: tests/standards-enforcer.test.mjs.
-WHEN: Qualification 2026-10-08.
-HOW: Temporary fixtures and actual CLI.
+5WH:
+WHAT = Verify canonical header scanner and Markdown watcher regressions
+WHY = Reject spoofed authority markers and unsafe document rewrites
+WHO = LeeWay Standards engineering
+WHERE = tests/standards-enforcer.test.mjs
+WHEN = 2026-10-25
+HOW = Node test fixtures and real canonical CLI
+LICENSE: MIT
 */
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -27,3 +30,6 @@ test('partial header gets markers without changing CRLF',t=>{const root=fixture(
 test('header-looking strings in source body cannot bypass scan',t=>{const root=fixture(t),f=path.join(root,'spoof.mjs');const source="const x='LEEWAY HEADER REGION: TAG: DISCOVERY_PIPELINE:';\\n";fs.writeFileSync(f,source);const r=run(root);assert.notEqual(r.status,0);assert.equal(JSON.parse(r.stdout).changed,1);assert.equal(fs.readFileSync(f,'utf8'),source)});
 
 test('strict scan rejects markers without complete 5WH and license',t=>{const root=fixture(t),f=path.join(root,'partial.mjs');const source='/*\nLEEWAY HEADER — DO NOT REMOVE\nREGION: CORE\nTAG: CORE.TEST.PARTIAL.MAIN\nDISCOVERY_PIPELINE: valid\n*/\nexport const x=1;\n';fs.writeFileSync(f,source);const r=run(root,['--strict']);assert.notEqual(r.status,0);const report=JSON.parse(r.stdout);assert.equal(report.invalid,1);assert.ok(report.results[0].validationErrors.includes('MISSING_LICENSE'));assert.ok(report.results[0].validationErrors.includes('MISSING_5WH_WHAT'));assert.equal(fs.readFileSync(f,'utf8'),source)});
+
+test('markdown marker spoofing remains blocked and content immutable',t=>{const root=fixture(t),f=path.join(root,'spoof.md');const source='body LEEWAY HEADER REGION: TAG: DISCOVERY_PIPELINE: license';fs.writeFileSync(f,source);const r=run(root,['--strict']);assert.notEqual(r.status,0);assert.equal(fs.readFileSync(f,'utf8'),source);});
+test('markdown apply refuses unreviewed header auto repair',t=>{const root=fixture(t),f=path.join(root,'incomplete.md');const source='# Existing owner text\\n';fs.writeFileSync(f,source);const r=run(root,['--apply']);assert.notEqual(r.status,0);assert.equal(fs.readFileSync(f,'utf8'),source);});

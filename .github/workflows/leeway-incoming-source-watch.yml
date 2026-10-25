@@ -1,0 +1,58 @@
+name: LeeWay Incoming Source Watch
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  changed-file-governance:
+    name: Incoming LeeWay Source and Documents
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify existing enforcement regression tests
+        run: node --test tests/standards-enforcer.test.mjs
+      - name: Inspect every changed governed source/document without mutation
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          node <<'NODE'
+          const {spawnSync} = require('node:child_process');
+          const fs = require('node:fs');
+          const base = process.env.BASE_SHA;
+          const head = process.env.HEAD_SHA;
+          if (!base || !head || /^0+$/.test(base)) {
+            console.error('BLOCKED: commit comparison baseline unavailable');
+            process.exit(1);
+          }
+          const diff = spawnSync('git', ['diff', '--name-only', '--diff-filter=ACMR', '-z', base, head], {encoding:'utf8'});
+          if (diff.status !== 0) { console.error(diff.stderr); process.exit(1); }
+          const names = diff.stdout.split('\0').filter(Boolean);
+          const governed = names.filter(name => /\.(js|jsx|ts|tsx|mjs|cjs|md)$/i.test(name) && fs.existsSync(name));
+          console.log(JSON.stringify({changed:names.length,governed:governed.length,paths:governed}));
+          if (!governed.length) {
+            console.log('No governed JS/TS/Markdown file changes in this commit range; other types are NOT QUALIFIED by this watcher.');
+            process.exit(0);
+          }
+          const args = ['scripts/auto-enforce-file-governance.mjs','--root','.','--strict'];
+          for (const name of governed) args.push('--include',name);
+          const scan = spawnSync(process.execPath,args,{encoding:'utf8',maxBuffer:32*1024*1024});
+          if (scan.stdout) console.log(scan.stdout);
+          if (scan.stderr) console.error(scan.stderr);
+          if (scan.status !== 0) { console.error('BLOCKED: changed governed files lack valid LeeWay header fields'); process.exit(1); }
+          const report = JSON.parse(scan.stdout);
+          if (report.invalid !== 0 || report.changed !== 0 || report.scanned !== governed.length) {
+            console.error('BLOCKED: incomplete governance coverage or invalid file metadata');
+            process.exit(1);
+          }
+          console.log('PASS: scoped incoming governed files checked. This does not prove API runtime binding or whole-repository compliance.');
+          NODE
