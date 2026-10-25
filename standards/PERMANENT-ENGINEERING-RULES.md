@@ -27,7 +27,7 @@ R19 Maintain checkpoints across interruptions, errors and conversations.
 R20 Finish the approved milestone before broadening scope.
 R21 Turn stable repeated work into reusable deterministic capabilities.
 R22 Require measurable gains in portability, reliability, reuse or execution.
-R23 Apply file standards to LeeWay-authored governed source, not vendor/generated files.
+R23 Apply LeeWay file standards at creation and every change to LeeWay-authored governed source, not vendor/generated/binary/lock/receipt files. Validate the leading header, REGION, TAG, complete 5WH, true owner/path, authorized roles and license before acceptance; preserve syntax, shebangs and upstream attribution. APIs, wrappers, adapters and services must have verified LeeWay contracts and authority bindings, not cosmetic names. Record exemptions and missing proof as BLOCKED, never invent metadata or claim a header is runtime verification.
 R24 Human approval governs consequential actions and permission changes.
 R25 GitHub-First Source and Reuse Authority: At the beginning of every substantive LeeWay engineering task, recover the Master Checkpoint and inspect canonical GitHub repositories, branches, implementations, acceptance contracts, source versions, hashes, and verified evidence. Classify ALREADY BUILT, PARTIALLY BUILT, MISSING GLUE, or TRULY MISSING; extend the canonical owner rather than duplicating it. After implementation, return to GitHub to reconcile commit, PR, CI, provenance, and acceptance status. GitHub owns versioned source and release identity; physical runtime tests separately establish deployed behavior. Never use a particular drive, machine, provider, or historical deployment as canonical identity.
 
