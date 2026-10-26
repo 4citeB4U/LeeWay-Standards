@@ -1,8 +1,17 @@
-/**
- * LEEWAY COMPLIANCE HEADER
- * Path: /Master_Class/Module_5_Engineering_for_Compliance.md
- * Status: ACTIVE COMPLIANCE MONITORING
- */
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.EDUCATION
+TAG: LEEWAY.STANDARDS.EDUCATION.MODULE_5_ENGINEERING_COMPLIANCE.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Preserve existing LeeWay Module_5_Engineering_for_Compliance.md curriculum
+WHY = Qualify legacy leading Markdown governance metadata without altering curriculum
+WHO = Agent Lee / LeeWay Standards repository stewardship
+WHERE = Master_Class/Module_5_Engineering_for_Compliance.md
+WHEN = 2026-10-25 (metadata qualification)
+HOW = Replace only legacy leading comment and retain lesson body verbatim
+LICENSE: Existing file and repository terms remain unchanged
+-->
 
 # Module 5: Engineering for Compliance
 
