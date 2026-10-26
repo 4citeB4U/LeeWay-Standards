@@ -27,6 +27,8 @@ ASSESS
 AUDIT
 LIVECONDUCTOR
 
+HOW = Existing governed implementation; preserve source behavior during metadata qualification
+
 LICENSE:
 MIT
 */
