@@ -3,6 +3,18 @@ DOC_CLASS: CANON
 DOC_ID: canon.agent-lee-manifesto
 OWNER: Lee Prime / Leeway Innovations
 LAST_UPDATED: 2026-04-04
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.CANON
+TAG: LEEWAY.STANDARDS.CANON.AGENT_LEE_MANIFESTO
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Preserve the existing Agent Lee manifesto canon document
+WHY = Qualify its existing governance comment for source compliance
+WHO = Existing OWNER: Lee Prime / Leeway Innovations; no ownership change
+WHERE = Docs/canon/agent-lee-manifesto.md
+WHEN = 2026-10-25 (header qualification; original LAST_UPDATED preserved)
+HOW = Extend existing leading metadata only, preserving body verbatim
+LICENSE: Existing file and repository terms remain unchanged
 -->
 
 # THE AGENT LEE MANIFESTO
