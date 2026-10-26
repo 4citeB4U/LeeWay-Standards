@@ -7,12 +7,12 @@ TAG: SFU.NPC.HEALTH_MONITOR
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=heart-pulse
 5WH:
-  WHAT = ARIA — Adaptive RTC Infrastructure Agent | Health Monitor NPC
-  WHY  = Continuously pings /health endpoint and broadcasts anomalies to all clients
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = services/sfu/src/agents/aria.ts
-  WHEN = 2026
-  HOW  = setInterval 30s → HTTP GET /health → agentBus.emit('agentEvent')
+WHAT = ARIA — Adaptive RTC Infrastructure Agent | Health Monitor NPC
+WHY  = Continuously pings /health endpoint and broadcasts anomalies to all clients
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = services/sfu/src/agents/aria.ts
+WHEN = 2026
+HOW  = setInterval 30s → HTTP GET /health → agentBus.emit('agentEvent')
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY
 */

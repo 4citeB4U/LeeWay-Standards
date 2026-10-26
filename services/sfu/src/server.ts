@@ -7,12 +7,12 @@ TAG: SFU.HTTP.WEBSOCKET.SERVER
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=network
 5WH:
-  WHAT = LeeWay SFU HTTP + WebSocket server with agent REST endpoints
-  WHY  = Exposes /health, /metrics, /agents, /dev/token and WS signaling
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = services/sfu/src/server.ts
-  WHEN = 2026
-  HOW  = Express HTTP + ws.WebSocketServer + agentRegistry REST layer
+WHAT = LeeWay SFU HTTP + WebSocket server with agent REST endpoints
+WHY  = Exposes /health, /metrics, /agents, /dev/token and WS signaling
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = services/sfu/src/server.ts
+WHEN = 2026
+HOW  = Express HTTP + ws.WebSocketServer + agentRegistry REST layer
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY
 */
