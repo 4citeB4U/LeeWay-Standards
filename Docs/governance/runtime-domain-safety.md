@@ -3,6 +3,18 @@ DOC_CLASS: GOVERNANCE
 DOC_ID: governance.runtime-domain-safety
 OWNER: Shield Governor
 LAST_UPDATED: 2026-05-10
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.GOVERNANCE
+TAG: LEEWAY.STANDARDS.GOVERNANCE.RUNTIME_DOMAIN_SAFETY
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Preserve the existing safety runtime-domain governance document
+WHY = Qualify existing source ownership without changing established policy
+WHO = Shield Governor
+WHERE = Docs/governance/runtime-domain-safety.md
+WHEN = 2026-10-25 header qualification; original LAST_UPDATED remains 2026-05-10
+HOW = Retain original body and authority boundaries intact
+LICENSE: Existing file and repository terms remain unchanged
 -->
 
 # Runtime Domain Governance — Safety
