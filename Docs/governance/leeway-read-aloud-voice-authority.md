@@ -1,3 +1,18 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.GOVERNANCE
+TAG: LEEWAY.STANDARDS.GOVERNANCE.LEEWAY.READ.ALOUD.VOICE.AUTHORITY
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Preserve existing leeway-read-aloud-voice-authority.md LeeWay source document
+WHY = Bring documented governance provenance under existing source-header standard
+WHO = LeeWay Standards
+WHERE = Docs/governance/leeway-read-aloud-voice-authority.md
+WHEN = 2026-10-25 header qualification, original document history preserved
+HOW = Add leading comment without changing existing document content
+LICENSE: Existing file and repository terms remain unchanged
+-->
+
 # LeeWay Read-Aloud Voice Authority
 
 **Status:** Canonical voice law
