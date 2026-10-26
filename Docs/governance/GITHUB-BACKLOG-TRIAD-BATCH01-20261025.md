@@ -2,6 +2,7 @@
 LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.STANDARDS.GITHUB
 TAG: LEEWAY.STANDARDS.GITHUB.BACKLOG_TRIAD_BATCH01
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
 5WH:
 WHAT = Organize safe pull-request review in bounded batches, preserving existing evidence.
 WHY = Prevent repeated source rebuilds and unsafe merges of unrelated code.
