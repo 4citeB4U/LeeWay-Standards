@@ -1,3 +1,18 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.ARCHITECTURE
+TAG: LEEWAY.STANDARDS.ARCHITECTURE.VOICE_FABRIC
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Record the existing independent Voice Fabric service authority
+WHY = Preserve the original architecture contract and defined authority boundaries
+WHO = LeeWay Standards
+WHERE = Docs/architecture/leeway-voice-fabric-standard.md
+WHEN = 2026-10-25 metadata qualification, not original document authorship date
+HOW = Add standards-compliant leading comment while retaining original text and service attribution
+LICENSE: Existing file and repository terms remain unchanged
+-->
+
 # LeeWay Voice Fabric Standard
 
 **Status:** Canonical architecture law  
