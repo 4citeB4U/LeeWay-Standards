@@ -149,8 +149,12 @@ function leadingHeader(content, filePath = '') {
     return match ? match[0].split(/\r?\n/).map(line => line.replace(/^[ \t]*#[ \t]?/, '')).join('\n') : '';
   }
   if (['.html', '.htm', '.md'].includes(extension)) {
-    const match = headerSource.match(/^[ \t]*<!--[\s\S]*?-->/);
-    return match ? match[0] : '';
+    const prefix = headerSource.match(/^(?:[ \t]*<!--[\s\S]*?-->[ \t]*(?:\r?\n[ \t]*)*)+/);
+    if (!prefix) return '';
+    const blocks = [...prefix[0].matchAll(/<!--[\s\S]*?-->/g)].map(m => m[0]);
+    // Each governance header must be complete inside one comment block.
+    // Do not combine fields from unrelated metadata comments.
+    return blocks.find(block => /LEEWAY HEADER(?: —| -) DO NOT REMOVE/.test(block)) || blocks[0] || '';
   }
   const match = source.match(/^\s*\/\*[\s\S]*?\*\//);
   return match ? match[0] : '';
