@@ -16,6 +16,7 @@ on:
   pull_request:
     paths:
       - 'scripts/inventory-compliance-debt.mjs'
+      - 'scripts/auto-enforce-file-governance.mjs'
       - 'Docs/governance/STANDARDS-COMPLIANCE-REBASELINE-20261025.md'
       - '.github/workflows/standards-compliance-inventory.yml'
 jobs:
