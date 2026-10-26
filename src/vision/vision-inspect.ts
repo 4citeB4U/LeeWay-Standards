@@ -15,6 +15,14 @@ CONSTRAINTS:
 - Must not run continuously
 - Must remain governed by runtime mode
 
+5WH:
+WHAT = Provide a deeper, single-frame analysis using only detected regions.
+WHY = Retain the existing stated component purpose
+WHO = LeeWay-Standards
+WHERE = Existing component identity retained in TAG
+WHEN = 2026-10-25 metadata qualification
+HOW = Preserve the existing implementation and its declared purpose
+
 LICENSE: PROPRIETARY
 */
 // CHAIN: Standards → Integrated → Runtime → Projections

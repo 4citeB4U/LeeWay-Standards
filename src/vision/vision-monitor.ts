@@ -16,6 +16,14 @@ CONSTRAINTS:
 - Must remain <3% CPU usage
 - Must emit compact telemetry only
 
+5WH:
+WHAT = Enhance the existing LeeWay runtime with a lightweight, always-on vision monitor that operates under current governance and runtime constraints.
+WHY = Retain the existing stated component purpose
+WHO = LeeWay-Standards
+WHERE = Existing component identity retained in TAG
+WHEN = 2026-10-25 metadata qualification
+HOW = Preserve the existing implementation and its declared purpose
+
 LICENSE: PROPRIETARY
 */
 // CHAIN: Standards → Integrated → Runtime → Projections

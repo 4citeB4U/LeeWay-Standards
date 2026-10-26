@@ -14,6 +14,14 @@ CONSTRAINTS:
 - Must NOT create a new governance system
 - Must integrate into existing GOVERNOR / Guardian logic
 
+5WH:
+WHAT = Extend the existing governance system to include vision-specific constraints.
+WHY = Retain the existing stated component purpose
+WHO = LeeWay-Standards
+WHERE = Existing component identity retained in TAG
+WHEN = 2026-10-25 metadata qualification
+HOW = Preserve the existing implementation and its declared purpose
+
 LICENSE: PROPRIETARY
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
