@@ -3,6 +3,18 @@ DOC_CLASS: GOVERNANCE
 DOC_ID: governance.runtime-domain-memory
 OWNER: Memory Warden
 LAST_UPDATED: 2026-05-10
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.GOVERNANCE
+TAG: LEEWAY.STANDARDS.GOVERNANCE.RUNTIME_DOMAIN_MEMORY
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Document memory-domain provenance, retention, and authority boundaries
+WHY = Preserve existing governance ownership and operational boundaries
+WHO = Memory Warden
+WHERE = Docs/governance/runtime-domain-memory.md
+WHEN = 2026-10-25 header verification; original LAST_UPDATED preserved
+HOW = Qualify owner metadata without changing the original governing body
+LICENSE: Existing file and repository terms remain unchanged
 -->
 
 # Runtime Domain Governance — Memory
