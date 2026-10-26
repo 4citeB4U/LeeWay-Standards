@@ -7,13 +7,13 @@ TAG: VOICE.PERSONA.ENGINE
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=brain
 5WH:
-  WHAT = Agent Lee Persona Engine — rule-based response system (no LLM required)
-  WHY  = Delivers fast, on-brand voice responses for known intents and RTC context
+WHAT = Agent Lee Persona Engine — rule-based response system (no LLM required)
+WHY  = Delivers fast, on-brand voice responses for known intents and RTC context
          without network latency or API cost
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = src/voice/persona.ts
-  WHEN = 2026
-  HOW  = Pattern → Response lookup; RTC-aware layer reads live system state;
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = src/voice/persona.ts
+WHEN = 2026
+HOW  = Pattern → Response lookup; RTC-aware layer reads live system state;
          frustration/intent detection gates poetry/escalation
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY

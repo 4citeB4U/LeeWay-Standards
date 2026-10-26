@@ -7,12 +7,12 @@ TAG: VOICE.PROTOCOL.TYPES
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=mic
 5WH:
-  WHAT = Shared TypeScript types for the LeeWay Voice Loop system
-  WHY  = Provides a single contract across STT, TTS, persona, and loop controller
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = src/voice/types.ts
-  WHEN = 2026
-  HOW  = Pure type declarations — no runtime code
+WHAT = Shared TypeScript types for the LeeWay Voice Loop system
+WHY  = Provides a single contract across STT, TTS, persona, and loop controller
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = src/voice/types.ts
+WHEN = 2026
+HOW  = Pure type declarations — no runtime code
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY
 */

@@ -7,13 +7,13 @@ TAG: VOICE.PRESETS.PROFILES
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=sliders-horizontal
 5WH:
-  WHAT = LeeWay Voice Presets — 3M + 3F pinnable voice profiles
-  WHY  = Lets users pin a preferred agent voice; stores only name+rate/pitch/volume —
+WHAT = LeeWay Voice Presets — 3M + 3F pinnable voice profiles
+WHY  = Lets users pin a preferred agent voice; stores only name+rate/pitch/volume —
          no bundled audio, no vendor TTS API — pure browser SpeechSynthesis
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = src/voice/voice-presets.ts
-  WHEN = 2026
-  HOW  = Static preset table; voiceRegistry resolves the best matching
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = src/voice/voice-presets.ts
+WHEN = 2026
+HOW  = Static preset table; voiceRegistry resolves the best matching
          SpeechSynthesisVoice at runtime from each preset's voiceNameHints array
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY
