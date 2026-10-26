@@ -75,6 +75,21 @@ export interface CreatorManifest {
  * Creator authentication context
  * Includes proof of founder identity without exposing secrets
  */
+/** Canonical attribution is not an authentication credential. */
+export const LEEWAY_CREATOR = Object.freeze({
+  id: 'leeway.creator.leonard-jerome-lee',
+  fullName: 'Leonard Jerome Lee',
+  organization: 'LeeWay Industries',
+  location: 'Milwaukee, Wisconsin',
+  role: 'SOLE_CREATOR_FINAL_HUMAN_AUTHORITY',
+});
+
+/** Provided only by a separately authenticated host bootstrap; not user input. */
+export interface CreatorTrustVerifier {
+  verifyManifestSignature(manifest: Readonly<CreatorManifest>): boolean;
+  verifyProofToken(token: string, expectedCreatorId: string): boolean;
+}
+
 export interface CreatorContext {
   creatorId: string;
   authLevel: CreatorAuthLevel;
@@ -82,7 +97,7 @@ export interface CreatorContext {
   authProofToken: string;
   expiresAt: number;
   recoveryMode: boolean;
-  overrideCapabilities: string[];
+  overrideCapabilities: readonly string[];
 }
 
 /**
@@ -90,6 +105,11 @@ export interface CreatorContext {
  * All cryptographic operations are framework only - real keys must be external
  */
 export class CreatorAuthority {
+  private readonly trustVerifier: CreatorTrustVerifier | null;
+  constructor(trustVerifier: CreatorTrustVerifier | null = null) {
+    // No trusted host verifier means no authentication: never self-issue a root.
+    this.trustVerifier = trustVerifier;
+  }
   private manifest: CreatorManifest | null = null;
   private activeContexts: Map<string, CreatorContext> = new Map();
   private authenticationLog: Array<{
@@ -112,6 +132,7 @@ export class CreatorAuthority {
         return false;
       }
 
+      this.activeContexts.clear(); // Invalidate sessions on any verified authority reload.
       this.manifest = manifest;
       this.logAuthentication(manifest.founderId, manifest.authorityLevel, 'initialize', 'success');
       return true;
@@ -146,13 +167,14 @@ export class CreatorAuthority {
         creatorId: this.manifest.founderId,
         authLevel: grantedLevel,
         isAuthenticated: true,
-        authProofToken: proofToken,
+        authProofToken: '', // Never retain or return the sensitive proof token.
         expiresAt: Date.now() + 3600000, // 1 hour expiry
         recoveryMode: grantedLevel === CreatorAuthLevel.RECOVERY,
-        overrideCapabilities: this.getCapabilities(grantedLevel)
+        overrideCapabilities: Object.freeze(this.getCapabilities(grantedLevel))
       };
 
       const contextId = crypto.randomUUID();
+      Object.freeze(context);
       this.activeContexts.set(contextId, context);
       this.logAuthentication(this.manifest.founderId, grantedLevel, 'authenticate', 'success');
 
@@ -169,7 +191,9 @@ export class CreatorAuthority {
    */
   isAuthorized(context: CreatorContext | null, capability: string): boolean {
     if (!context || !context.isAuthenticated) return false;
-    if (context.expiresAt < Date.now()) return false;
+    if (context.creatorId !== LEEWAY_CREATOR.id || context.expiresAt <= Date.now()) return false;
+    // A caller-crafted object with 'isAuthenticated: true' is never a session.
+    if (![...this.activeContexts.values()].some(active => active === context)) return false;
     if (!context.overrideCapabilities.includes(capability)) return false;
     return true;
   }
@@ -178,7 +202,7 @@ export class CreatorAuthority {
    * Get current manifest (for audit/display only)
    */
   getManifest(): CreatorManifest | null {
-    return this.manifest ? { ...this.manifest } : null;
+    return this.manifest ? { ...this.manifest, currentKeypair: { ...this.manifest.currentKeypair, privateKeyPath: '[REDACTED]' } } : null;
   }
 
   /**
@@ -193,15 +217,15 @@ export class CreatorAuthority {
   // ============== INTERNAL METHODS ==============
 
   private verifyManifestSignature(manifest: CreatorManifest): boolean {
-    // In production: verify against creator's public key
-    // This is framework structure only - real verification uses external crypto
-    return manifest.selfSignature !== '' && manifest.founderId === 'Lee';
+    // Reject missing or untrusted roots: a name and nonempty signature are not authentication.
+    if (!this.trustVerifier || manifest.founderId !== LEEWAY_CREATOR.id || !manifest.selfSignature) return false;
+    return this.trustVerifier.verifyManifestSignature(manifest) === true;
   }
 
   private verifyProofToken(token: string, expectedCreatorId: string): boolean {
-    // In production: verify token against HSM or vault
-    // Framework check: token should be non-empty and creatorId should match
-    return token.length > 0 && expectedCreatorId !== '';
+    // Trusted host must enforce challenge, signature, expiry and one-use replay policy.
+    if (!this.trustVerifier || expectedCreatorId !== LEEWAY_CREATOR.id || !token) return false;
+    return this.trustVerifier.verifyProofToken(token, expectedCreatorId) === true;
   }
 
   private determineAuthLevel(requested: CreatorAuthLevel, manifested: CreatorAuthLevel): CreatorAuthLevel {
@@ -289,6 +313,7 @@ export class CreatorAuthority {
 }
 
 /**
- * Singleton instance of creator authority
+ * Singleton default remains UNBOUND and fail-closed until a genuinely authenticated
+ * host wires a secured verifier. Source attribution alone does not grant a session.
  */
 export const creatorAuthority = new CreatorAuthority();
