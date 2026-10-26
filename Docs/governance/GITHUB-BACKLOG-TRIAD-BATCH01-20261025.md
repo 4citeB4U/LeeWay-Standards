@@ -1,13 +1,14 @@
 <!--
 LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.STANDARDS.GITHUB
-TAG: BACKLOG_TRIAD_BATCH01
-WHAT: Organize safe pull-request review in bounded batches, preserving existing evidence.
-WHY: Prevent repeated source rebuilds and unsafe merges of unrelated code.
-WHO: LeeWay Industries, creator-authorized workflow.
-WHERE: GitHub review workflow and existing LeeWay Audit Triad.
-WHEN: 2026-10-25.
-HOW: Discover → pin → diff → verify → test → review → merge → readback.
+TAG: LEEWAY.STANDARDS.GITHUB.BACKLOG_TRIAD_BATCH01
+5WH:
+WHAT = Organize safe pull-request review in bounded batches, preserving existing evidence.
+WHY = Prevent repeated source rebuilds and unsafe merges of unrelated code.
+WHO = LeeWay Industries, creator-authorized workflow.
+WHERE = Docs/governance/GITHUB-BACKLOG-TRIAD-BATCH01-20261025.md
+WHEN = 2026-10-25
+HOW = Discover → pin → diff → verify → test → review → merge → readback.
 AUTHORITY: OWNER_APPROVED_REVIEW_WORKFLOW; this file grants no signing, administrator or bypass capability.
 LICENSE: Existing LeeWay terms.
 -->
