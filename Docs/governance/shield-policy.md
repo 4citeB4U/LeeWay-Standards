@@ -3,6 +3,18 @@ DOC_CLASS: GOVERNANCE
 DOC_ID: governance.shield-policy
 OWNER: Shield Aegis
 LAST_UPDATED: 2026-04-03
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.GOVERNANCE
+TAG: LEEWAY.STANDARDS.GOVERNANCE.SHIELD_POLICY
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Document original Shield Aegis security policy and threat gates
+WHY = Preserve the original governed policy and documented authority
+WHO = Shield Aegis
+WHERE = Docs/governance/shield-policy.md
+WHEN = 2026-10-25 header qualification; original LAST_UPDATED preserved
+HOW = Retain the original governance body and established roles without altering runtime
+LICENSE: Existing file and repository terms remain unchanged
 -->
 
 # Shield Aegis — Security Policy

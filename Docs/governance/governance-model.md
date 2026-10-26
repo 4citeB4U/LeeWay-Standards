@@ -3,6 +3,18 @@ DOC_CLASS: GOVERNANCE
 DOC_ID: governance.model
 OWNER: Lee Prime
 LAST_UPDATED: 2026-05-10
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.GOVERNANCE
+TAG: LEEWAY.STANDARDS.GOVERNANCE.MODEL
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Describe established Agent Lee governance and existing agent execution constraints
+WHY = Preserve the original governed policy and documented authority
+WHO = Lee Prime
+WHERE = Docs/governance/governance-model.md
+WHEN = 2026-10-25 header qualification; original LAST_UPDATED preserved
+HOW = Retain the original governance body and established roles without altering runtime
+LICENSE: Existing file and repository terms remain unchanged
 -->
 
 # Agent Lee — Governance Model
