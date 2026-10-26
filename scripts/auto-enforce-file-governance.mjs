@@ -246,8 +246,8 @@ async function main() {
       changed = nextContent !== content;
     }
 
-    if (changed && options.apply && path.extname(filePath).toLowerCase() === '.md') {
-      throw new Error('MARKDOWN_AUTO_REPAIR_NOT_AUTHORIZED: ' + relativePath);
+    if (changed && options.apply && ['.md', '.py', '.ps1', '.yaml', '.yml', '.html', '.htm'].includes(path.extname(filePath).toLowerCase())) {
+      throw new Error('FORMAT_AUTO_REPAIR_NOT_AUTHORIZED: ' + relativePath);
     }
     if (changed && options.apply) {
       await fs.writeFile(filePath, nextContent, 'utf8');
