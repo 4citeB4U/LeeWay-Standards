@@ -1,3 +1,18 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.DOCUMENTATION
+TAG: LEEWAY.STANDARDS.DOCUMENTATION.README
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Identify the existing canonical LeeWay Standards repository overview
+WHY = Preserve explicit governance metadata while retaining existing engineering-law links
+WHO = LeeWay Standards
+WHERE = README.md
+WHEN = 2026-10-25 header qualification, not original authorship
+HOW = Add a leading documentation comment without changing the original contents
+LICENSE: Existing file and repository terms remain unchanged
+-->
+
 > **READ FIRST — CANONICAL ENGINEERING LAWS:** [Engineering, multi-team collaboration, continuous notes and recurring defect prevention](./Docs/governance/LEEWAY-CANONICAL-ENGINEERING-LAWS.md). Mandatory before any engineering or contributor work; preserves R01–R25 and existing authorities.
 
 <p align="center">
