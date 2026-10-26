@@ -3,6 +3,18 @@ DOC_CLASS: GOVERNANCE
 DOC_ID: governance.zone-model
 OWNER: Lee Prime
 LAST_UPDATED: 2026-04-03
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.GOVERNANCE
+TAG: LEEWAY.STANDARDS.GOVERNANCE.ZONE_MODEL
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Describe the existing three-zone Agent Lee governance model
+WHY = Preserve existing governance ownership and operational boundaries
+WHO = Lee Prime
+WHERE = Docs/governance/zone-governance.md
+WHEN = 2026-10-25 header verification; original LAST_UPDATED preserved
+HOW = Qualify owner metadata without changing the original governing body
+LICENSE: Existing file and repository terms remain unchanged
 -->
 
 # Zone Governance Model
