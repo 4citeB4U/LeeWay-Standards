@@ -3,6 +3,18 @@ DOC_CLASS: ARCHITECTURE
 DOC_ID: architecture.documentation-authority-map
 OWNER: Librarian Aegis / Creator Authority
 LAST_UPDATED: 2026-10-02
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.ARCHITECTURE
+TAG: LEEWAY.STANDARDS.ARCHITECTURE.DOCUMENTATION_AUTHORITY_MAP
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Maintain the canonical documentation ownership map
+WHY = Route evidence and changes to each existing source-of-truth owner
+WHO = Librarian Aegis / Creator Authority
+WHERE = Docs/architecture/documentation-authority-map.md
+WHEN = 2026-10-25 header qualification; original LAST_UPDATED preserved
+HOW = Authoritative architecture index pointing to owning repositories without copying source
+LICENSE: Existing file and repository terms remain unchanged
 -->
 
 # LeeWay Documentation Authority Map
