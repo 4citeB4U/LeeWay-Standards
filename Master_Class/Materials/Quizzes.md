@@ -1,8 +1,17 @@
-/**
- * LEEWAY COMPLIANCE HEADER
- * Path: /Master_Class/Materials/Quizzes.md
- * Status: ACTIVE COMPLIANCE MONITORING
- */
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.EDUCATION
+TAG: LEEWAY.STANDARDS.EDUCATION.QUIZZES.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Document original Quizzes.md curriculum material
+WHY = Qualify leading governance metadata without altering original training content
+WHO = Agent Lee / LeeWay Standards repository stewardship
+WHERE = Master_Class/Materials/Quizzes.md
+WHEN = 2026-10-25 (header qualification)
+HOW = Replace legacy leading comment only, retaining body and links verbatim
+LICENSE: Existing file and repository terms remain unchanged
+-->
 
 # Sovereign Architect Certification Exam (50 Questions)
 
