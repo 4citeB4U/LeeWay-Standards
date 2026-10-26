@@ -52,6 +52,12 @@ jobs:
           const records = report.results || [];
           const malformed = !Array.isArray(records) || records.length !== scanned;
           console.log('LeeWay strict admission:', {scanned, changed, invalid, malformed});
+          const flagged = Array.isArray(records) ? records.filter(r => r.changed || (Array.isArray(r.validationErrors) && r.validationErrors.length)) : [];
+          console.log('STRICT_ADMISSION_FLAGGED_COUNT:', flagged.length);
+          for (const r of flagged.slice(0, 40)) {
+            console.log('STRICT_ADMISSION_FLAGGED:', JSON.stringify({path:r.relativePath, changed:r.changed, errors:r.validationErrors}));
+          }
+          if (flagged.length > 40) console.log('STRICT_ADMISSION_ADDITIONAL_FLAGGED:', flagged.length - 40);
           if (scanned === 0 || changed !== 0 || invalid !== 0 || malformed) {
             console.error('STRICT_ADMISSION_FAILED: all scanned governed source must comply; no threshold rounding');
             process.exit(1);
