@@ -1,8 +1,17 @@
-/**
- * LEEWAY COMPLIANCE HEADER
- * Path: /Master_Class/Materials/Technical_Implementation_Labs.md
- * Status: ACTIVE COMPLIANCE MONITORING
- */
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.EDUCATION
+TAG: LEEWAY.STANDARDS.EDUCATION.TECHNICAL_LABS.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Document original Technical_Implementation_Labs.md curriculum material
+WHY = Qualify leading governance metadata without altering original training content
+WHO = Agent Lee / LeeWay Standards repository stewardship
+WHERE = Master_Class/Materials/Technical_Implementation_Labs.md
+WHEN = 2026-10-25 (header qualification)
+HOW = Replace legacy leading comment only, retaining body and links verbatim
+LICENSE: Existing file and repository terms remain unchanged
+-->
 
 # Technical Implementation Labs
 
