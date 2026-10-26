@@ -7,13 +7,13 @@ TAG: SFU.AGENT.POLICY_ENGINE
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=scale
 5WH:
-  WHAT = LeeWay agent governance engine — enforces policy rules across all agents
-  WHY  = Keeps every agent within defined action limits, tool permissions, and
+WHAT = LeeWay agent governance engine — enforces policy rules across all agents
+WHY  = Keeps every agent within defined action limits, tool permissions, and
          tier constraints; prevents runaway behaviour on edge hardware
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = services/sfu/src/agents/governance.ts
-  WHEN = 2026
-  HOW  = Policy registry + rate-limiter + rule checker called by AgentRuntime
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = services/sfu/src/agents/governance.ts
+WHEN = 2026
+HOW  = Policy registry + rate-limiter + rule checker called by AgentRuntime
          before every agent action; logs violations to combined.log + governance.log
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY
