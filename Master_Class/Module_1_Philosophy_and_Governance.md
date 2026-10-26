@@ -1,8 +1,17 @@
-/**
- * LEEWAY COMPLIANCE HEADER
- * Path: /Master_Class/Module_1_Philosophy_and_Governance.md
- * Status: ACTIVE COMPLIANCE MONITORING
- */
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.EDUCATION
+TAG: LEEWAY.STANDARDS.EDUCATION.MODULE_1.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Document original Module_1_Philosophy_and_Governance.md education material
+WHY = Qualify governance metadata without altering original content
+WHO = Agent Lee / LeeWay Standards repository stewardship
+WHERE = Master_Class/Module_1_Philosophy_and_Governance.md
+WHEN = 2026-10-25 (header qualification)
+HOW = Replace legacy leading comment and preserve document body verbatim
+LICENSE: Existing file and repository terms remain unchanged
+-->
 
 # Module 1: Philosophy & The Sovereignty Doctrine
 

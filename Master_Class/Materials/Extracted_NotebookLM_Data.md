@@ -1,8 +1,17 @@
-/**
- * LEEWAY COMPLIANCE HEADER
- * Path: /Master_Class/Materials/Extracted_NotebookLM_Data.md
- * Status: ACTIVE COMPLIANCE MONITORING
- */
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.EDUCATION
+TAG: LEEWAY.STANDARDS.EDUCATION.EXTRACTED_NOTEBOOK_DATA.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Document original Extracted_NotebookLM_Data.md education material
+WHY = Qualify governance metadata without altering original content
+WHO = Agent Lee / LeeWay Standards repository stewardship
+WHERE = Master_Class/Materials/Extracted_NotebookLM_Data.md
+WHEN = 2026-10-25 (header qualification)
+HOW = Replace legacy leading comment and preserve document body verbatim
+LICENSE: Existing file and repository terms remain unchanged
+-->
 
 # Extracted NotebookLM Data: Sovereign Architect Master Class
 
