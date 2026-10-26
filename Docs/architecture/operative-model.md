@@ -1,4 +1,19 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.ARCHITECTURE
+TAG: LEEWAY.STANDARDS.ARCHITECTURE.OPERATIVE.MODEL
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Preserve the existing operative-model.md LeeWay source document
+WHY = Bring documented governance provenance under the existing source-header standard
+WHO = Lee Prime
+WHERE = Docs/architecture/operative-model.md
+WHEN = 2026-10-25 header qualification, original document history preserved
+HOW = Add leading comment without changing existing document content
+LICENSE: Existing file and repository terms remain unchanged
+-->
+
+<!--
 DOC_CLASS: ARCHITECTURE
 DOC_ID: architecture.operative-model
 OWNER: Lee Prime
