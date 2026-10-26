@@ -1,8 +1,17 @@
-/**
- * LEEWAY COMPLIANCE HEADER
- * Path: /Master_Class/Module_2_Agent_Anatomy_LLM_School.md
- * Status: ACTIVE COMPLIANCE MONITORING
- */
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.EDUCATION
+TAG: LEEWAY.STANDARDS.EDUCATION.MODULE_2_AGENT_ANATOMY.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Preserve existing LeeWay Agent Anatomy module curriculum
+WHY = Qualify existing Markdown governance header without changing teaching content
+WHO = Agent Lee / LeeWay Standards repository stewardship
+WHERE = Master_Class/Module_2_Agent_Anatomy_LLM_School.md
+WHEN = 2026-10-25 (governance metadata qualification)
+HOW = Replace legacy leading comment metadata only; preserve remainder of source
+LICENSE: Existing file and repository terms remain unchanged
+-->
 
 # Module 2: Agent Anatomy — The "LLM School" Framework
 
