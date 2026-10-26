@@ -1,3 +1,18 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.DOCUMENTATION
+TAG: LEEWAY.STANDARDS.DOCUMENTATION.ACTIVATE
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Preserve existing documented LeeWay activation instructions
+WHY = Qualify the source document without changing installation or execution behavior
+WHO = LeeWay Standards documentation authority
+WHERE = ACTIVATE.md
+WHEN = 2026-10-25 governance header qualification, not original authoring date
+HOW = Insert leading metadata comment and retain original steps verbatim
+LICENSE: Existing file and repository terms remain unchanged
+-->
+
 # 🌍 Activating the World of Agents
 
 Welcome to the Sovereign Registry. To activate the canonical LeeWay VS Code sovereign runtime and enter the governed execution loop, follow this deterministic sequence.
