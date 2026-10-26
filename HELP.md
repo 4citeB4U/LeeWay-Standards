@@ -1,3 +1,18 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.DOCUMENTATION
+TAG: LEEWAY.STANDARDS.DOCUMENTATION.HELP.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Document existing LeeWay terminal command help
+WHY = Preserve governed help documentation and traceable source identity
+WHO = Agent Lee / LeeWay Standards repository stewardship
+WHERE = HELP.md
+WHEN = 2026-10-25 (governance metadata review)
+HOW = Add leading HTML comment only; preserve existing help text
+LICENSE: Existing file and repository terms remain unchanged
+-->
+
 # 📖 LEEWAY™ Terminal Command Encyclopedia
 
 Welcome to the Sovereign CLI. This document provides a step-by-step guide on how to utilize the LEEWAY SDK to govern your codebase.
