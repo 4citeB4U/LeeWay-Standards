@@ -41,14 +41,14 @@ try {
   process.stderr.write('SCANNER_INVENTORY_READ_FAILED: ' + error.message + '\\n');
   process.exit(1);
 } finally { fs.rmSync(temp, { recursive: true, force: true }); }
-const groups = { compliant: [], missingLeadingHeader: [], malformedOrIncompleteHeader: [], unknown: [] };
+const groups = { compliant: [], missingLeadingHeader: [], malformedOrIncompleteHeader: [], legacyMarkerMismatch: [] };
 for (const item of report.results || []) {
   const relativePath = String(item.relativePath || '').replaceAll('\\', '/');
   const problems = Array.isArray(item.validationErrors) ? item.validationErrors : [];
   const key = problems.length === 0 && !item.changed ? 'compliant'
     : problems.includes('MISSING_HEADER_IDENTITY') ? 'missingLeadingHeader'
-    : problems.length ? 'malformedOrIncompleteHeader' : 'unknown';
-  groups[key].push({ path: relativePath, errors: problems });
+    : problems.length ? 'malformedOrIncompleteHeader' : 'legacyMarkerMismatch';
+  groups[key].push({ path: relativePath, errors: problems, scannerWouldChange: Boolean(item.changed) });
 }
 const counts = Object.fromEntries(Object.entries(groups).map(([k, v]) => [k, v.length]));
 const output = {
@@ -61,6 +61,7 @@ const output = {
   classifiedTotal: Object.values(counts).reduce((a, b) => a + b, 0),
   counts,
   reviewNeeded: [
+    'Legacy marker mismatch means the scanner proposes a change without a validation error; inspect original DISCOVERY_PIPELINE and leading-header marker checks before editing.',
     'Manually check ownership, SPDX and generated/vendor/immutable provenance before editing.',
     'Do not treat file path alone as a permitted exemption.',
     'Do not use --apply or publish invented file owner/license metadata.',
