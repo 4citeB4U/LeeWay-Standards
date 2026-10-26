@@ -1,8 +1,17 @@
-/**
- * LEEWAY COMPLIANCE HEADER
- * Path: /Master_Class/Module_3_Sovereign_Cycle.md
- * Status: ACTIVE COMPLIANCE MONITORING
- */
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.EDUCATION
+TAG: LEEWAY.STANDARDS.EDUCATION.MODULE_3_SOVEREIGN_CYCLE.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Preserve existing LeeWay Sovereign Cycle module curriculum
+WHY = Qualify existing Markdown governance header without changing teaching content
+WHO = Agent Lee / LeeWay Standards repository stewardship
+WHERE = Master_Class/Module_3_Sovereign_Cycle.md
+WHEN = 2026-10-25 (governance metadata qualification)
+HOW = Replace legacy leading comment metadata only; preserve remainder of source
+LICENSE: Existing file and repository terms remain unchanged
+-->
 
 # Module 3: Operational Governance — The Sovereign Cycle
 
