@@ -28,6 +28,8 @@ AUDIT
 SECURITY
 SAFETYREDACTION
 
+HOW = Existing governed implementation; preserve source behavior during metadata qualification
+
 LICENSE:
 MIT
 */

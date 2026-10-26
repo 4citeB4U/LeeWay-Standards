@@ -7,15 +7,15 @@ TAG: GUARDIAN.SLOW-LANE.SUMMARY-WORKER
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=file-text
 5WH:
-  WHAT = LeeWay Summary Worker — slow-lane aggregator and optional LLM bridge
-  WHY  = Keeps 10-30 second rolling summaries of system state without ever sending
+WHAT = LeeWay Summary Worker — slow-lane aggregator and optional LLM bridge
+WHY  = Keeps 10-30 second rolling summaries of system state without ever sending
          raw stat arrays to an LLM; in Mode A the LLM path is completely disabled
          and summarisation still runs for the dashboard log; in Mode B/C it emits
          compact JSON briefings to whichever local model endpoint is configured
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = services/sfu/src/guardian/summary-worker.ts
-  WHEN = 2026
-  HOW  = Consumes StatsBuffer.toCompactJSON() at summaryIntervalMs cadence.
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = services/sfu/src/guardian/summary-worker.ts
+WHEN = 2026
+HOW  = Consumes StatsBuffer.toCompactJSON() at summaryIntervalMs cadence.
          Builds a SystemBriefing plain object. In LLM-enabled modes, POSTs the
          briefing to a configurable local HTTP endpoint (e.g. llama.cpp server,
          Ollama) using the native fetch API. No vendor SDK, no cloud calls.

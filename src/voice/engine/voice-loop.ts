@@ -7,13 +7,13 @@ TAG: VOICE.LOOP.ORCHESTRATOR
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=radio
 5WH:
-  WHAT = LeeWay Voice Loop — the real-time voice heartbeat for Agent Lee
-  WHY  = Wires STT → local brain (persona.ts) → TTS into a continuous,
+WHAT = LeeWay Voice Loop — the real-time voice heartbeat for Agent Lee
+WHY  = Wires STT → local brain (persona.ts) → TTS into a continuous,
          self-restarting loop so Agent Lee is always listening and always responding
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = src/voice/voice-loop.ts
-  WHEN = 2026
-  HOW  = Web Speech API (SpeechRecognition continuous mode) for STT;
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = src/voice/voice-loop.ts
+WHEN = 2026
+HOW  = Web Speech API (SpeechRecognition continuous mode) for STT;
          respondToInput() (persona.ts) for local intelligence — zero LLM cost;
          SpeechSynthesis for TTS; optional PCM path to SFU voice server;
          RTC state injected as live context; automatic barge-in cancels speaking

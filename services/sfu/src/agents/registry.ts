@@ -7,13 +7,13 @@ TAG: SFU.AGENT.REGISTRY
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=list
 5WH:
-  WHAT = LeeWay Agent Registry — instantiates all 8 agents and wires them to the runtime
-  WHY  = Single entry-point for agent fleet; enforces one-instance-per-agent rule via
+WHAT = LeeWay Agent Registry — instantiates all 8 agents and wires them to the runtime
+WHY  = Single entry-point for agent fleet; enforces one-instance-per-agent rule via
          AgentRuntime; injects lazy runtime references into REPAIR and GOVERNOR
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = services/sfu/src/agents/registry.ts
-  WHEN = 2026
-  HOW  = Creates agents → registers with AgentRuntime → wires circular deps lazily
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = services/sfu/src/agents/registry.ts
+WHEN = 2026
+HOW  = Creates agents → registers with AgentRuntime → wires circular deps lazily
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY
 */

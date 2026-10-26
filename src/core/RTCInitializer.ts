@@ -27,6 +27,8 @@ ARIA (Voice Coordinator)
 OBSERVER (Vision AI)
 NEXUS (Orchestration)
 
+HOW = Existing governed implementation; preserve source behavior during metadata qualification
+
 LICENSE:
 MIT
 */

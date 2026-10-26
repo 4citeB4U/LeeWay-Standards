@@ -7,14 +7,14 @@ TAG: VOICE.SPEECH.QUEUE
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=list-ordered
 5WH:
-  WHAT = LeeWay Speech Queue — priority-ordered TTS utterance manager
-  WHY  = Ensures HIGH-priority system alerts barge in and cancel ambient speech;
+WHAT = LeeWay Speech Queue — priority-ordered TTS utterance manager
+WHY  = Ensures HIGH-priority system alerts barge in and cancel ambient speech;
          NORMAL responses are ordered correctly; LOW ambient filler never blocks
          operational comms — all with zero vendor TTS dependency
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = src/voice/speech-queue.ts
-  WHEN = 2026
-  HOW  = SpeechSynthesisUtterance + custom priority queue;
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = src/voice/speech-queue.ts
+WHEN = 2026
+HOW  = SpeechSynthesisUtterance + custom priority queue;
          pauseBeforeMs injected via setTimeout;
          onIdle callback fires when queue empties
 AGENTS: ASSESS ALIGN AUDIT

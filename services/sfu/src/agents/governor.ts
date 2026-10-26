@@ -7,14 +7,14 @@ TAG: SFU.NPC.MASTER_GOVERNANCE
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=gavel
 5WH:
-  WHAT = GOVERNOR (AGT-007) — Governance Operations & Verification Engine
-  WHY  = Top-level oversight agent; audits all 7 peers, enforces policy,
+WHAT = GOVERNOR (AGT-007) — Governance Operations & Verification Engine
+WHY  = Top-level oversight agent; audits all 7 peers, enforces policy,
          issues suspend/resume directives, generates governance reports,
          and is the only agent that cannot be auto-suspended
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = services/sfu/src/agents/governor.ts
-  WHEN = 2026
-  HOW  = setInterval 60s → evaluate all agents via governance.ts → if violations
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = services/sfu/src/agents/governor.ts
+WHEN = 2026
+HOW  = setInterval 60s → evaluate all agents via governance.ts → if violations
          found issue suspend directive via runtime; publish compliance score to bus
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY

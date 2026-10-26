@@ -7,12 +7,12 @@ TAG: SFU.WS.SIGNALING.HANDLER
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=zap
 5WH:
-  WHAT = WebSocket signaling handler — auth, room join, transport, produce, consume
-  WHY  = Drives the mediasoup signaling protocol over persistent WS connections
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = services/sfu/src/signaling/handler.ts
-  WHEN = 2026
-  HOW  = Message-type dispatch per WS connection; JWT validation; agentBus event relay
+WHAT = WebSocket signaling handler — auth, room join, transport, produce, consume
+WHY  = Drives the mediasoup signaling protocol over persistent WS connections
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = services/sfu/src/signaling/handler.ts
+WHEN = 2026
+HOW  = Message-type dispatch per WS connection; JWT validation; agentBus event relay
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY
 */

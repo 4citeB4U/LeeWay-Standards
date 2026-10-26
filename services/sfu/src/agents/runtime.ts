@@ -7,13 +7,13 @@ TAG: SFU.AGENT.RUNTIME_MANAGER
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=cpu
 5WH:
-  WHAT = LeeWay Agent Runtime — single-process manager for all 8 agents
-  WHY  = Ensures only ONE instance of each agent runs, prevents battery drain
+WHAT = LeeWay Agent Runtime — single-process manager for all 8 agents
+WHY  = Ensures only ONE instance of each agent runs, prevents battery drain
          on edge devices by suspending idle agents, and enforces governance
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = services/sfu/src/agents/runtime.ts
-  WHEN = 2026
-  HOW  = Singleton class; agents register on startup; idle watchdog suspends
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = services/sfu/src/agents/runtime.ts
+WHEN = 2026
+HOW  = Singleton class; agents register on startup; idle watchdog suspends
          non-core agents that haven't acted in maxIdleMs; GOVERNOR gets audit
          stream; trace IDs on every action for distributed tracing
 AGENTS: ASSESS ALIGN AUDIT

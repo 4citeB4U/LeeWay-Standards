@@ -14,6 +14,14 @@ CONSTRAINTS:
 - Must use existing runtime/budget mechanisms
 - Must not introduce separate control logic
 
+5WH:
+WHAT = Ensure vision operations stay within edge device limits.
+WHY = Retain the existing stated component purpose
+WHO = LeeWay-Standards
+WHERE = Existing component identity retained in TAG
+WHEN = 2026-10-25 metadata qualification
+HOW = Preserve the existing implementation and its declared purpose
+
 LICENSE: PROPRIETARY
 */
 // CHAIN: Standards → Integrated → Runtime → Projections
