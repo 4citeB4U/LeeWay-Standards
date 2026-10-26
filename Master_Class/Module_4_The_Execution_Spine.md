@@ -1,8 +1,17 @@
-/**
- * LEEWAY COMPLIANCE HEADER
- * Path: /Master_Class/Module_4_The_Execution_Spine.md
- * Status: ACTIVE COMPLIANCE MONITORING
- */
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.EDUCATION
+TAG: LEEWAY.STANDARDS.EDUCATION.MODULE_4_EXECUTION_SPINE.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Preserve existing LeeWay Module_4_The_Execution_Spine.md curriculum
+WHY = Qualify legacy leading Markdown governance metadata without altering curriculum
+WHO = Agent Lee / LeeWay Standards repository stewardship
+WHERE = Master_Class/Module_4_The_Execution_Spine.md
+WHEN = 2026-10-25 (metadata qualification)
+HOW = Replace only legacy leading comment and retain lesson body verbatim
+LICENSE: Existing file and repository terms remain unchanged
+-->
 
 # Module 4: The Execution Spine & Runtime Governance
 
