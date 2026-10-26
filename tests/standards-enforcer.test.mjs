@@ -54,3 +54,16 @@ test('incoming noncompliant Python and YAML are reported, never rewritten',t=>{
  assert.equal(JSON.parse(r.stdout).invalid,2);
  assert.equal(fs.readFileSync(path.join(root,'bad.py'),'utf8'),'print(1)\n');
 });
+
+test('apply refuses unsupported format mutation and preserves bytes', t => {
+ for (const ext of ['md', 'py', 'ps1', 'yaml', 'yml', 'html', 'htm']) {
+  const root = fixture(t);
+  const f = path.join(root, 'unqualified.' + ext);
+  const source = ext === 'html' || ext === 'htm' ? '<!doctype html>\n<p>Owner content</p>\n' : 'owner content\n';
+  fs.writeFileSync(f, source);
+  const result = run(root, ['--apply']);
+  assert.notEqual(result.status, 0, 'unexpected mutation approval: ' + ext);
+  assert.match(result.stderr, /FORMAT_AUTO_REPAIR_NOT_AUTHORIZED/, ext);
+  assert.equal(fs.readFileSync(f, 'utf8'), source, 'original bytes changed: ' + ext);
+ }
+});
