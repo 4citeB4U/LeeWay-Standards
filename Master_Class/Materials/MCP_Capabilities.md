@@ -1,3 +1,18 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.EDUCATION
+TAG: LEEWAY.STANDARDS.EDUCATION.MCP_CAPABILITIES.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Document original MCP_Capabilities.md education material
+WHY = Qualify governance metadata without altering original content
+WHO = Agent Lee / LeeWay Standards repository stewardship
+WHERE = Master_Class/Materials/MCP_Capabilities.md
+WHEN = 2026-10-25 (header qualification)
+HOW = Prepend metadata comment and preserve document body verbatim
+LICENSE: Existing file and repository terms remain unchanged
+-->
+
 # 🔌 Machine Control Protocol (MCP) Capabilities
 
 LeeWay Standards now governs the canonical **LeeWay VS Code MCP plane**. These MCPs are not generic tool names; they are declared runtime capabilities routed through **Agent Lee Prime first**. Tools do not speak directly to the user, and no MCP bypasses governance, receipts, or validation.
