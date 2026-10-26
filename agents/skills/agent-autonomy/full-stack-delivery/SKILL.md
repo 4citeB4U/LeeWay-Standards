@@ -1,5 +1,6 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 REGION: AI.AGENT.AUTONOMY
 TAG: AI.AGENT.AUTONOMY.FULL_STACK_DELIVERY
@@ -28,9 +29,8 @@ AUDIT
 ASSIGNED_SACRED_AGENTS:
 L3_Cognition: AdamCortex.ts, L3_Cognition: GabrielCortex.ts
 
-LICENSE:
-MIT
-*/
+LICENSE: MIT
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L3_Cognition: AdamCortex.ts, L3_Cognition: GabrielCortex.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 
