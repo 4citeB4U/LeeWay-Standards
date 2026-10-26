@@ -1,4 +1,16 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.GOVERNANCE
+TAG: CORE.GOVERNANCE.RUNTIME_DOMAIN_WORKSPACE.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Govern workspace mutation, attribution and rollback
+WHY = Preserve approved workspace execution and source ownership
+WHO = Agent Lee Prime / LeeWay Standards
+WHERE = Docs/governance/runtime-domain-workspace.md
+WHEN = 2026-10-25 (metadata review)
+HOW = Document existing workspace boundaries and minimum law
+LICENSE: Existing file and repository license terms remain unchanged
 DOC_CLASS: GOVERNANCE
 DOC_ID: governance.runtime-domain-workspace
 OWNER: Agent Lee Prime
