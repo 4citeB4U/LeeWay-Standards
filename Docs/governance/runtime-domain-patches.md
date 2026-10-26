@@ -1,4 +1,19 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.GOVERNANCE
+TAG: LEEWAY.STANDARDS.GOVERNANCE.RUNTIME.DOMAIN.PATCHES
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Preserve existing runtime-domain-patches.md LeeWay source document
+WHY = Bring documented governance provenance under existing source-header standard
+WHO = Nova Forge
+WHERE = Docs/governance/runtime-domain-patches.md
+WHEN = 2026-10-25 header qualification, original document history preserved
+HOW = Add leading comment without changing existing document content
+LICENSE: Existing file and repository terms remain unchanged
+-->
+
+<!--
 DOC_CLASS: GOVERNANCE
 DOC_ID: governance.runtime-domain-patches
 OWNER: Nova Forge

@@ -1,4 +1,19 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.ARCHITECTURE
+TAG: LEEWAY.STANDARDS.ARCHITECTURE.MASTER.PLAN
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Preserve the existing master-plan.md LeeWay source document
+WHY = Bring documented governance provenance under the existing source-header standard
+WHO = Leonard J Lee / Leeway Innovations
+WHERE = Docs/architecture/master-plan.md
+WHEN = 2026-10-25 header qualification, original document history preserved
+HOW = Add leading comment without changing existing document content
+LICENSE: Existing file and repository terms remain unchanged
+-->
+
+<!--
 DOC_CLASS: ARCHITECTURE
 DOC_ID: architecture.master-plan
 OWNER: Leonard J Lee / Leeway Innovations

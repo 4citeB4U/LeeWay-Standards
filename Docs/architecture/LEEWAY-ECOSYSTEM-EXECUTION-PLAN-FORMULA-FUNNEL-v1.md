@@ -1,3 +1,18 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.ARCHITECTURE
+TAG: LEEWAY.STANDARDS.ARCHITECTURE.LEEWAY.ECOSYSTEM.EXECUTION.PLAN.FORMULA.FUNNEL.V1
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Preserve the existing LEEWAY-ECOSYSTEM-EXECUTION-PLAN-FORMULA-FUNNEL-v1.md LeeWay source document
+WHY = Bring documented governance provenance under the existing source-header standard
+WHO = LeeWay Standards
+WHERE = Docs/architecture/LEEWAY-ECOSYSTEM-EXECUTION-PLAN-FORMULA-FUNNEL-v1.md
+WHEN = 2026-10-25 header qualification, original document history preserved
+HOW = Add leading comment without changing existing document content
+LICENSE: Existing file and repository terms remain unchanged
+-->
+
 # LeeWay Ecosystem Execution Plan — Formula Funnel v1
 
 **Status:** CANONICAL EXECUTION PLAN  

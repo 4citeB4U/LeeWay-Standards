@@ -1,3 +1,18 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.ARCHITECTURE
+TAG: LEEWAY.STANDARDS.ARCHITECTURE.LEEWAY.SECONDARY.WORKSTATION.PLAN
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Preserve the existing leeway-secondary-workstation-plan.md LeeWay source document
+WHY = Bring documented governance provenance under the existing source-header standard
+WHO = LeeWay Standards
+WHERE = Docs/architecture/leeway-secondary-workstation-plan.md
+WHEN = 2026-10-25 header qualification, original document history preserved
+HOW = Add leading comment without changing existing document content
+LICENSE: Existing file and repository terms remain unchanged
+-->
+
 # LeeWay Secondary Workstation Plan
 
 **Parent mission:** LEEWAY-ECOSYSTEM-FORMULA-FUNNEL-V1  
