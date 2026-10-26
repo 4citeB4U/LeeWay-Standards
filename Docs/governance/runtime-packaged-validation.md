@@ -1,4 +1,16 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.GOVERNANCE
+TAG: CORE.GOVERNANCE.RUNTIME_PACKAGED_VALIDATION.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Define packaged runtime validation evidence
+WHY = Require verifiable packaging, installation, and runtime attestation
+WHO = Attestation Marshal / LeeWay Standards
+WHERE = Docs/governance/runtime-packaged-validation.md
+WHEN = 2026-10-25 (metadata review)
+HOW = Document existing package validation phases
+LICENSE: Existing file and repository license terms remain unchanged
 DOC_CLASS: GOVERNANCE
 DOC_ID: governance.runtime-packaged-validation
 OWNER: Attestation Marshal
