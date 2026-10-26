@@ -1,5 +1,3 @@
-# LeeWay Standards — post-repair compliance rebaseline
-
 <!--
 LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.STANDARDS.AUDIT
@@ -14,6 +12,8 @@ WHEN = 2026-10-25
 HOW = Existing GitHub Actions compliance inventory workflow against current source
 LICENSE: Existing LeeWay repository terms
 -->
+
+# LeeWay Standards — post-repair compliance rebaseline
 
 The earlier inventory was generated before Standards PRs #30–#36. Its counts must not be presented as the current state.
 
