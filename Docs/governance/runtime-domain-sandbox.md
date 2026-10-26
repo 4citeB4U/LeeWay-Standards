@@ -1,4 +1,16 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: CORE.GOVERNANCE
+TAG: CORE.GOVERNANCE.RUNTIME_DOMAIN_SANDBOX.MAIN
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Constrain sandbox runtime execution under LeeWay governance
+WHY = Preserve sandbox isolation, owner authority and controlled promotion
+WHO = Shield Governor / LeeWay Standards
+WHERE = Docs/governance/runtime-domain-sandbox.md
+WHEN = 2026-10-25 (metadata review)
+HOW = Document sandbox-domain rules without changing operational policy
+LICENSE: Existing file and repository license terms remain unchanged
 DOC_CLASS: GOVERNANCE
 DOC_ID: governance.runtime-domain-sandbox
 OWNER: Shield Governor
