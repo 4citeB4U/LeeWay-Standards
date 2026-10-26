@@ -3,6 +3,18 @@ DOC_CLASS: GOVERNANCE
 DOC_ID: governance.brain-sentinel-budgets
 OWNER: Brain Sentinel
 LAST_UPDATED: 2026-04-03
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.GOVERNANCE
+TAG: LEEWAY.STANDARDS.GOVERNANCE.BRAIN_SENTINEL_BUDGETS
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Document existing Brain Sentinel resource and execution budgets
+WHY = Preserve declared execution lanes and limits under canonical governance
+WHO = Brain Sentinel
+WHERE = Docs/governance/brain-sentinel-budgets.md
+WHEN = 2026-10-25 header qualification; original LAST_UPDATED preserved
+HOW = Maintain original budget table and descriptive control policy
+LICENSE: Existing file and repository terms remain unchanged
 -->
 
 # Brain Sentinel — Runtime Budgets
