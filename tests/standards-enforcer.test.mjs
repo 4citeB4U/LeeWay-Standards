@@ -87,3 +87,22 @@ test('HTML doctype before valid metadata is accepted, but body markers are not',
  fs.writeFileSync(f,'<!doctype html>\n<html><body>'+header+'</body></html>');
  result=run(root,['--strict']);assert.notEqual(result.status,0);
 });
+
+
+test('canonical governance block after adjacent document metadata qualifies',t=>{
+ const root=fixture(t),f=path.join(root,'canon.md');
+ const metadata='<!--\nDOC_CLASS: CANON\nOWNER: Original owner\n-->\n';
+ const canonical='<!--\nLEEWAY HEADER — DO NOT REMOVE\nREGION: CORE.DOCS.CANON\nTAG: CORE.DOCS.CANON.MAIN\nDISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render\n5WH:\nWHAT = canon\nWHY = governed\nWHO = Original owner\nWHERE = stable identity\nWHEN = 2026-10-25\nHOW = reviewed\nLICENSE: Existing terms\n-->\n';
+ fs.writeFileSync(f,metadata+canonical+'# Canon body\n');
+ const ok=run(root,['--strict']);assert.equal(ok.status,0,ok.stdout);
+ fs.writeFileSync(f,metadata+'# prose\n'+canonical);
+ const fail=run(root,['--strict']);assert.notEqual(fail.status,0);
+});
+test('multiple leading metadata blocks cannot combine incomplete authority fields',t=>{
+ const root=fixture(t),f=path.join(root,'split.md');
+ const identity='<!--\nLEEWAY HEADER — DO NOT REMOVE\nREGION: CORE.DOCS.CANON\nTAG: CORE.DOCS.CANON.MAIN\nDISCOVERY_PIPELINE: valid\n-->\n';
+ const extra='<!--\n5WH:\nWHAT = split\nWHY = invalid\nWHO = no\nWHERE = no\nWHEN = no\nHOW = no\nLICENSE: Existing terms\n-->\n';
+ fs.writeFileSync(f,identity+extra+'# Body\n');
+ const result=run(root,['--strict']);assert.notEqual(result.status,0);
+ assert.equal(JSON.parse(result.stdout).invalid,1);
+});
