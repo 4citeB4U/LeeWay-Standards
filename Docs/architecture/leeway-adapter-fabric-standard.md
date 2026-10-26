@@ -1,3 +1,18 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.ARCHITECTURE
+TAG: LEEWAY.STANDARDS.ARCHITECTURE.ADAPTER_FABRIC
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Record the existing portable adapter boundary standard
+WHY = Preserve the original architecture contract and defined authority boundaries
+WHO = LeeWay Standards
+WHERE = Docs/architecture/leeway-adapter-fabric-standard.md
+WHEN = 2026-10-25 metadata qualification, not original document authorship date
+HOW = Add standards-compliant leading comment while retaining original text and service attribution
+LICENSE: Existing file and repository terms remain unchanged
+-->
+
 # LeeWay Adapter Fabric Standard
 
 **Authority:** LeeWay Standards  
