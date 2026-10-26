@@ -1,3 +1,18 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.EDUCATION
+TAG: LEEWAY.STANDARDS.EDUCATION.MASTER_CLASS.README
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Preserve the LeeWay Sovereign Architect Master Class curriculum index
+WHY = Qualify governance identity without altering lessons or visual assets
+WHO = LeeWay Standards repository stewardship
+WHERE = Master_Class/README.md
+WHEN = 2026-10-25 (header qualification)
+HOW = Add a leading HTML comment while preserving all original curriculum and links
+LICENSE: Existing file and repository terms remain unchanged
+-->
+
 <p align="center">
   <img src="../public/LeeWayStandardslogo.png" alt="LeeWay Standards Logo" width="300" />
 </p>
