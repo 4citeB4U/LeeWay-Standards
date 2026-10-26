@@ -33,3 +33,24 @@ test('strict scan rejects markers without complete 5WH and license',t=>{const ro
 
 test('markdown marker spoofing remains blocked and content immutable',t=>{const root=fixture(t),f=path.join(root,'spoof.md');const source='body LEEWAY HEADER REGION: TAG: DISCOVERY_PIPELINE: license';fs.writeFileSync(f,source);const r=run(root,['--strict']);assert.notEqual(r.status,0);assert.equal(fs.readFileSync(f,'utf8'),source);});
 test('markdown apply refuses unreviewed header auto repair',t=>{const root=fixture(t),f=path.join(root,'incomplete.md');const source='# Existing owner text\\n';fs.writeFileSync(f,source);const r=run(root,['--apply']);assert.notEqual(r.status,0);assert.equal(fs.readFileSync(f,'utf8'),source);});
+
+test('format-aware read-only validation covers Python PowerShell YAML HTML',t=>{
+ const root=fixture(t);
+ const comment="# LEEWAY HEADER — DO NOT REMOVE\n# REGION: CORE.TEST.FORMAT\n# TAG: CORE.TEST.FORMAT.MAIN\n# DISCOVERY_PIPELINE: governed\n# 5WH:\n# WHAT = test\n# WHY = validation\n# WHO = LeeWay\n# WHERE = fixture\n# WHEN = 2026-10-14\n# HOW = parser\n# LICENSE:\n# MIT\n";
+ const htmlHeader='<!--\n'+"LEEWAY HEADER — DO NOT REMOVE\nREGION: CORE.TEST.FORMAT\nTAG: CORE.TEST.FORMAT.MAIN\nDISCOVERY_PIPELINE: governed\n5WH:\nWHAT = test\nWHY = validation\nWHO = LeeWay\nWHERE = fixture\nWHEN = 2026-10-14\nHOW = parser\nLICENSE:\nMIT"+'\n-->\n';
+ for (const ext of ['py','ps1','yaml','yml']) fs.writeFileSync(path.join(root,'good.'+ext),comment+'\n');
+ fs.writeFileSync(path.join(root,'good.html'),htmlHeader+'<!doctype html>\n');
+ const r=run(root,['--strict']);
+ assert.equal(r.status,0,r.stderr+' '+r.stdout);
+ assert.equal(JSON.parse(r.stdout).scanned,5);
+ assert.equal(JSON.parse(r.stdout).invalid,0);
+});
+test('incoming noncompliant Python and YAML are reported, never rewritten',t=>{
+ const root=fixture(t);
+ for(const ext of ['py','yml'])fs.writeFileSync(path.join(root,'bad.'+ext),'print(1)\n');
+ const r=run(root,['--strict']);
+ assert.notEqual(r.status,0);
+ assert.equal(JSON.parse(r.stdout).scanned,2);
+ assert.equal(JSON.parse(r.stdout).invalid,2);
+ assert.equal(fs.readFileSync(path.join(root,'bad.py'),'utf8'),'print(1)\n');
+});
