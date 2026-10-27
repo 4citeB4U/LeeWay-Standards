@@ -1,10 +1,17 @@
 /*
 LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.STANDARDS.TESTS
-TAG: ENGINEERING_LOOP_ADMISSION_TEST_V1
-5WH: WHAT = Negative admission regression; WHY = No work completed on absent approvals;
-WHO = LeeWay Standards; WHERE = tests/engineering-loop-admission.test.mjs;
-WHEN = 2026-10-25; HOW = Node test fixtures without production trust. LICENSE: MIT.
+TAG: LEEWAY.STANDARDS.TESTS.ENGINEERING.ADMISSION
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Test the draft engineering-loop admission policy against blocked stage and authority evidence
+WHY = Preserve fail-closed regression behavior and distinguish synthetic fixtures from production
+WHO = LeeWay Standards / Creator-authorized engineering
+WHERE = tests/engineering-loop-admission.test.mjs
+WHEN = 2026-10-25
+HOW = Execute deterministic Node assertions with fixture-only evidence
+AUTHORITY: Synthetic source regression only; no production grant or fabricated independent Veritas.
+LICENSE: MIT
 */
 import test from 'node:test';
 import assert from 'node:assert/strict';
