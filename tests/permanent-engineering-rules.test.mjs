@@ -20,3 +20,20 @@ test('C3 remains the mission and SK cannot be prematurely promoted',()=>{assert.
 test('authorization, rollback, capability execution and evidence remain explicit',()=>{for(const term of ['authorization','rollback','real-physical-evidence','Veritas','human-approval'])assert.ok(policy.requires.includes(term));for(const id of ['R07','R08','R12','R13','R17','R18','R24'])assert.ok(prose.includes(id+' '))});
 
 test('R25 mandates GitHub before building and after verification without mistaking source for deployment',()=>{assert.match(prose,/^R25 GitHub-First Source and Reuse Authority:/m);assert.ok(policy.requires.includes('github-source-first'));assert.ok(policy.requires.includes('github-post-change-reconciliation'));assert.match(policy.githubFirstRule.before,/canonical GitHub source/);assert.match(policy.githubFirstRule.after,/GitHub commit, PR, CI/);assert.equal(policy.githubFirstRule.noFixedHostIdentity,true);assert.equal(policy.githubFirstRule.executionAuthority,'AUTHORIZED_RUNTIME_AND_VERITAS');});
+
+test('LAW 15 and R10/R25 retain GitHub source authority without inventing live execution',()=>{
+ const laws=read('../Docs/governance/LEEWAY-CANONICAL-ENGINEERING-LAWS.md');
+ assert.match(laws,/LAW 15 — GITHUB SOURCE AUTHORITY/);
+ assert.match(laws,/GitHub distributes versioned source and contracts/);
+ assert.match(laws,/Engineering-loop evidence is an admission prerequisite/);
+ assert.match(laws,/A manifest or CI report may be/);
+ assert.equal(policy.githubFirstRule.consequentialAcceptanceRequiresIndependentVeritas,true);
+ assert.equal(policy.githubFirstRule.veritasMustNotSelfCertify,true);
+ assert.equal(policy.githubFirstRule.hardcodedHostPathIsAuthority,false);
+ assert.equal(policy.githubFirstRule.installedRuntimeMustMatchGitHubPinnedSource,true);
+ assert.deepEqual(policy.portableSourceAndEngineeringAdmission.evidenceStages,policy.lifecycle);
+ assert.equal(policy.portableSourceAndEngineeringAdmission.sourceTestDoesNotAuthorizeProduction,true);
+ assert.equal(policy.portableSourceAndEngineeringAdmission.noGlobalBlockForScopedLegacyDebt,true);
+ assert.match(prose,/^R10 Treat drive paths as observed local deployment bindings/m);
+ assert.match(prose,/^R25 GitHub-First Source and Reuse Authority:.*ten-stage engineering loop/m);
+});
