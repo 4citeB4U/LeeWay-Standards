@@ -47,7 +47,7 @@ export function auditSourceText(text,{file='unknown',repository='UNVERIFIED',com
     const guarded=HOST_GUARD.test(line);
     if(matches.length===0&&!guarded)continue;
     const location=matches.length>0?'ABSOLUTE_HOST_PATH':'HOSTNAME_AUTHORITY_COMPARISON';
-    const authorityContext=DRIVE_IDENTITY.test(line)||OPERATIVE.test(line)||guarded;
+    const assignment=/\b(?:const|let|var)\s+[A-Za-z0-9_]*(?:Path|Dir|Root|Writer|File)\s*=/i.test(line);\n    const authorityContext=DRIVE_IDENTITY.test(line)||OPERATIVE.test(line)||assignment||guarded;
     const actionRequired=category==='EXECUTABLE_SOURCE'&&authorityContext;
     findings.push({
       repository,commit,file:file.replaceAll('\\','/'),line:i+1,
