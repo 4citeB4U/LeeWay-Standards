@@ -1,12 +1,16 @@
 /*
 LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.STANDARDS.QUALIFICATION
-TAG: LEEWAY_QUALIFICATION_PROGRESSION_CONTRACT_V1
-WHO: LeeWay Standards. WHAT: Define mandatory authority, reconciliation, and safe-resumption evidence.
-WHEN: 2026-10-25. WHERE: standards/qualification-progression.mjs.
-WHY: A discovered blocker must become a governed and resumable workflow, not a dead end.
-HOW: Deterministic required-evidence evaluation with typed next actions; no implicit grants.
-AUTHORITY: Standards contract only; production trust is established by independent providers.
+TAG: LEEWAY.STANDARDS.QUALIFICATION.PROGRESSION
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Define original-job qualification progression and safe resumption evidence
+WHY = Keep pending authority repair resumable without automatic execution grants
+WHO = LeeWay Standards / Creator-authorized engineering
+WHERE = standards/qualification-progression.mjs
+WHEN = 2026-10-25
+HOW = Require scoped reconciliation and signed decision proofs before recommending resumption
+AUTHORITY: Existing Standards source; production trust remains with Runtime Fabric and independent Veritas.
 LICENSE: MIT
 */
 export const QUALIFICATION_TERMS=Object.freeze([
