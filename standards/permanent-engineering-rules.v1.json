@@ -60,6 +60,91 @@
     "after": "Reconcile GitHub commit, PR, CI, source identity and acceptance; independently qualify runtime execution.",
     "sourceAuthority": "GITHUB_VERSIONED_SOURCE_AND_RELEASE",
     "executionAuthority": "AUTHORIZED_RUNTIME_AND_VERITAS",
-    "noFixedHostIdentity": true
+    "noFixedHostIdentity": true,
+    "consequentialAcceptanceRequiresIndependentVeritas": true,
+    "veritasMustNotSelfCertify": true,
+    "hardcodedHostPathIsAuthority": false,
+    "installedRuntimeMustMatchGitHubPinnedSource": true,
+    "sourceOnlyProofCannotPromoteProduction": true,
+    "scopedDefectOnly": true
+  },
+  "portableSourceAndEngineeringAdmission": {
+    "governingLaw": "Docs/governance/LEEWAY-CANONICAL-ENGINEERING-LAWS.md#law-15--github-source-authority-portable-bindings-and-veritas-completion-proof",
+    "canonicalSource": "GITHUB_REPOSITORY_COMMIT_BLOB_OR_RELEASE_DIGEST",
+    "executionBinding": "QUALIFIED_LOCAL_OR_REMOTE_ADAPTER_NOT_SOURCE_IDENTITY",
+    "exceptionClasses": [
+      "HISTORICAL_EVIDENCE",
+      "TEST_FIXTURE",
+      "VENDOR_OR_GENERATED",
+      "AUTHORIZED_DYNAMIC_RUNTIME_BINDING"
+    ],
+    "actionRequiredClasses": [
+      "EXECUTABLE_ABSOLUTE_DRIVE_BINDING",
+      "PATH_BASED_SIGNER_ELIGIBILITY",
+      "UNPINNED_CANONICAL_SOURCE_SUBSTITUTION"
+    ],
+    "evidenceStages": [
+      "Investigate",
+      "Diagnose",
+      "Plan",
+      "Implement",
+      "Test",
+      "Validate",
+      "Repair",
+      "Retest",
+      "Verify",
+      "Evidence"
+    ],
+    "states": [
+      "PROPOSED",
+      "SOURCE_EVIDENCE_READY",
+      "BLOCKED",
+      "VERITAS_PASS",
+      "VERITAS_FAIL"
+    ],
+    "sourceTestDoesNotAuthorizeProduction": true,
+    "independentVerifierRequired": true,
+    "signedSourceAndExecutionEvidenceRequired": true,
+    "noGlobalBlockForScopedLegacyDebt": true,
+    "noBlindCleanup": true,
+    "documentationContract": {
+      "recordSchema": "leeway.engineering.loop-evidence.v1",
+      "documentationOwner": "EXISTING_GITHUB_MISSION_OR_PROTECTED_EVIDENCE_AUTHORITY",
+      "policy": "Docs/governance/ENGINEERING-LOOP-EVIDENCE-ADMISSION-V1.md",
+      "checker": "scripts/check-engineering-loop-evidence.mjs",
+      "phaseStatuses": [
+        "EVIDENCED",
+        "BLOCKED",
+        "NOT_APPLICABLE"
+      ],
+      "mandatoryStageFields": [
+        "status",
+        "observedAt",
+        "observation",
+        "evidenceRef"
+      ],
+      "exceptionsPermittedOnlyFor": [
+        "Repair",
+        "Retest"
+      ],
+      "requiredEvidenceIdentifiers": [
+        "workId",
+        "checkpointId",
+        "source.repository",
+        "source.commit",
+        "source.artifactSha256",
+        "scope.authorizationRef",
+        "scope.rollbackEvidenceRef",
+        "formula.executionState",
+        "tests.negativeEvidenceRef",
+        "outcome.evidenceRef"
+      ],
+      "sourcePreflightCannotCertifyVeritas": true,
+      "documentedBlockedAttemptIsNotProductionPass": true,
+      "requiresActualIndependentVeritasBeforeReceiptLearning": true,
+      "noFalseSourceOnlyPass": true,
+      "stageOrderMustBeChronologicalUTC": true,
+      "exactSourceRepositoryAndCommitPinRequired": true
+    }
   }
 }

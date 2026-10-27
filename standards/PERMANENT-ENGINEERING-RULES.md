@@ -1,3 +1,18 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.GOVERNANCE
+TAG: LEEWAY.STANDARDS.GOVERNANCE.PERMANENT_ENGINEERING_RULES
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Preserve and extend the canonical R01-R25 engineering requirements
+WHY = Enforce scoped GitHub-first Veritas evidence and host-independent authority
+WHO = LeeWay Standards / Creator Authority
+WHERE = standards/PERMANENT-ENGINEERING-RULES.md
+WHEN = 2026-10-27 governed amendment; earlier rule text preserved
+HOW = Add source identity header and strengthen R10/R25 without changing rule count
+LICENSE: Existing file and repository terms remain unchanged
+-->
+
 # LeeWay Permanent Engineering Rules
 
 Authority: LeeWay Standards. Active mission: Golden Package C3. Existing law remains authoritative.
@@ -12,7 +27,7 @@ R06 Establish canonical source, version, runtime owner and hashes before mutatio
 R07 Execute verified LeeWay Formula where required.
 R08 Reuse Runtime Fabric, Skill Orchestrator, Veritas and canonical authority; no competing brain or control plane.
 R09 Diagnose the exact dependency and repair the smallest canonical component.
-R10 Treat drive paths as local installation observations, never system identity.
+R10 Treat drive paths as observed local deployment bindings, never canonical source/authority identity. Verify installed bytes against GitHub-owned source/commit/digest before relying on a binding; report executable hardcoded-drive dependencies as scoped portability defects. Preserve historical receipts and require authorized native storage and secret custody.
 R11 Preserve existing source and user changes; test rollback.
 R12 Never bypass authorization, integrity, security or Veritas.
 
@@ -29,7 +44,7 @@ R21 Turn stable repeated work into reusable deterministic capabilities.
 R22 Require measurable gains in portability, reliability, reuse or execution.
 R23 Apply LeeWay file standards at creation and every change to LeeWay-authored governed source, not vendor/generated/binary/lock/receipt files. Validate the leading header, REGION, TAG, complete 5WH, true owner/path, authorized roles and license before acceptance; preserve syntax, shebangs and upstream attribution. APIs, wrappers, adapters and services must have verified LeeWay contracts and authority bindings, not cosmetic names. Record exemptions and missing proof as BLOCKED, never invent metadata or claim a header is runtime verification.
 R24 Human approval governs consequential actions and permission changes.
-R25 GitHub-First Source and Reuse Authority: At the beginning of every substantive LeeWay engineering task, recover the Master Checkpoint and inspect canonical GitHub repositories, branches, implementations, acceptance contracts, source versions, hashes, and verified evidence. Classify ALREADY BUILT, PARTIALLY BUILT, MISSING GLUE, or TRULY MISSING; extend the canonical owner rather than duplicating it. After implementation, return to GitHub to reconcile commit, PR, CI, provenance, and acceptance status. GitHub owns versioned source and release identity; physical runtime tests separately establish deployed behavior. Never use a particular drive, machine, provider, or historical deployment as canonical identity.
+R25 GitHub-First Source and Reuse Authority: At the beginning of every substantive LeeWay engineering task, recover the Master Checkpoint and inspect canonical GitHub repositories, branches, implementations, acceptance contracts, source versions, hashes, and verified evidence. Classify ALREADY BUILT, PARTIALLY BUILT, MISSING GLUE, or TRULY MISSING; extend the canonical owner rather than duplicating it. After implementation, return to GitHub to reconcile commit, PR, CI, provenance, and acceptance status. GitHub owns versioned source and release identity; physical runtime tests separately establish deployed behavior. Never use a particular drive, machine, provider, or historical deployment as canonical identity. Require scoped, evidence-linked completion of the ten-stage engineering loop before independent Veritas production/learning qualification. Source scans, synthetic tests, CI, or a self-attested manifest are never production PASS. Audit any executable host-path assumptions; bind authorized local execution/storage/secrets through inspected, hash-matched deployment adapters rather than treating GitHub as a device filesystem. Follow LAW 15 of the Canonical Engineering Laws.
 
 ## Required lifecycle
 Investigate → Diagnose → Plan → Implement → Test → Validate → Repair → Retest → Verify → Evidence.
