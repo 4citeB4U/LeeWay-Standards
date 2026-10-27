@@ -119,6 +119,7 @@
       ],
       "mandatoryStageFields": [
         "status",
+        "observedAt",
         "observation",
         "evidenceRef"
       ],
@@ -141,7 +142,9 @@
       "sourcePreflightCannotCertifyVeritas": true,
       "documentedBlockedAttemptIsNotProductionPass": true,
       "requiresActualIndependentVeritasBeforeReceiptLearning": true,
-      "noFalseSourceOnlyPass": true
+      "noFalseSourceOnlyPass": true,
+      "stageOrderMustBeChronologicalUTC": true,
+      "exactSourceRepositoryAndCommitPinRequired": true
     }
   }
 }
