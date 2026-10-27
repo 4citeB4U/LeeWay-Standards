@@ -1,11 +1,16 @@
 /*
 LEEWAY HEADER — DO NOT REMOVE
-REGION: LEEWAY.STANDARDS.ENGINEERING
-TAG: LEEWAY_ENGINEERING_LOOP_ADMISSION_V1
-5WH: WHAT = Enforce canonical engineering-loop completion; WHY = Prevent repeated unadvanced blocked qualifications and unsupported PASS.
-WHO = LeeWay Standards; WHERE = standards/engineering-loop-admission.mjs; WHEN = 2026-10-27.
-HOW = Bounded deterministic checkpoint evidence and no implicit trust or autoapproval.
-AUTHORITY: Standards decision contract; a qualified Runtime host MUST authenticate every artifact before calling this evaluator.
+REGION: LEEWAY.STANDARDS.QUALIFICATION
+TAG: LEEWAY.STANDARDS.ENGINEERING.ADMISSION
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Preserve original ten-stage engineering-loop admission semantics and evidence gates
+WHY = Reject unsupported promotion while keeping the existing Standards evaluator canonical
+WHO = LeeWay Standards / Creator-authorized engineering
+WHERE = standards/engineering-loop-admission.mjs
+WHEN = 2026-10-27
+HOW = Validate pure checkpoint evidence after independent Runtime provider authentication
+AUTHORITY: Existing Standards source; production trust remains with Runtime Fabric and independent Veritas.
 LICENSE: MIT
 */
 export const ENGINEERING_STAGES=Object.freeze(['Investigate','Diagnose','Plan','Implement','Test','Validate','Repair','Retest','Verify','Evidence']);
