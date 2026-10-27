@@ -21,7 +21,7 @@ const blob='b'.repeat(64);
 const reference='https://github.com/4citeB4U/LeeWay-Standards/commit/'+sha;
 const receipt='leeway-receipt://TEST-ONLY/'+blob;
 const stage=(status='EVIDENCED',other={})=>({
-  status, observation:'Synthetic controlled test fixture observation',evidenceRef:reference,...other
+  status, observation:'Synthetic controlled test fixture observation',observedAt:'2026-10-27T20:00:00.000Z',evidenceRef:reference,...other
 });
 function documentedFixture(){
   return {
@@ -135,4 +135,24 @@ test('unknown stages and missing input fail closed without crashing',()=>{
   assert.equal(inspectEngineeringLoopEvidence(null).documentationComplete,false);
   const q=documentedFixture();q.stages.HiddenPromotion=stage();
   contains(inspectEngineeringLoopEvidence(q),'UNKNOWN_ENGINEERING_STAGE:HiddenPromotion');
+});
+
+test('pinned GitHub source evidence must match the exact source repository and commit',()=>{
+ const q=documentedFixture();
+ q.source.evidenceRef='https://github.com/4citeB4U/LeeWay-Standards/commit/'+'c'.repeat(40);
+ contains(inspectEngineeringLoopEvidence(q),'GITHUB_SOURCE_PIN_READBACK_REFERENCE_MISSING');
+ q.source.evidenceRef='https://github.com/external-supplier/other-project/commit/'+sha;
+ contains(inspectEngineeringLoopEvidence(q),'GITHUB_SOURCE_PIN_READBACK_REFERENCE_MISSING');
+});
+test('ordered UTC stage observations are mandatory and reverse chronology blocks source readiness',()=>{
+ const q=documentedFixture();
+ q.stages.Implement.observedAt='2026-10-27T19:00:00.000Z';
+ contains(inspectEngineeringLoopEvidence(q),'STAGE_CHRONOLOGY_REVERSED:Implement');
+ q.stages.Implement.observedAt='tomorrow';
+ contains(inspectEngineeringLoopEvidence(q),'STAGE_TIMESTAMP_MISSING_OR_INVALID:Implement');
+});
+test('canonical source cannot be an unaffiliated non-LeeWay repository',()=>{
+ const q=documentedFixture();q.source.repository='unapproved/example';
+ const r=inspectEngineeringLoopEvidence(q);
+ contains(r,'CANONICAL_REPOSITORY_MISSING');
 });
