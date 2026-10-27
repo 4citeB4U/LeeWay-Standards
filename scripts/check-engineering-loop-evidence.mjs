@@ -24,11 +24,22 @@ export const STAGES = Object.freeze([
 const SHA40 = /^[a-f0-9]{40}$/i;
 const SHA64 = /^[a-f0-9]{64}$/i;
 const NAME = /^[A-Za-z0-9._:-]{1,160}$/;
-const REPO = /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/;
+const REPO = /^4citeB4U\/[A-Za-z0-9_.-]+$/;
 const STAGE_STATUS = new Set(['EVIDENCED','BLOCKED','NOT_APPLICABLE']);
 const OUTCOME = new Set(['PASS','FAIL','BLOCKED','NOT_EXECUTED']);
 const FORMULA = new Set(['EXECUTED','NOT_EXECUTED','BLOCKED','FAILED']);
 const checkName = value => typeof value === 'string' && NAME.test(value);
+const observedTime = value => {
+  if(typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(value))return null;
+  const parsed=Date.parse(value);
+  return Number.isFinite(parsed) && new Date(parsed).toISOString()===value ? parsed : null;
+};
+const sourceMatchesPin=(ref,source)=>{
+  if(typeof ref!=='string')return false;
+  const matched=/^https:\/\/github\.com\/([A-Za-z0-9_.-]+)\/([A-Za-z0-9_.-]+)\/(?:blob|tree|commit)\/([a-f0-9]{40})(?:\/[A-Za-z0-9_.\/-]+)?$/i.exec(ref);
+  return Boolean(matched && (matched[1]+'/'+matched[2]).toLowerCase()===String(source?.repository||'').toLowerCase()
+    && matched[3].toLowerCase()===String(source?.commit||'').toLowerCase());
+};
 const hasText = value => typeof value === 'string' && value.trim().length > 8;
 const sourceRef = value => {
   if(typeof value !== 'string') return false;
@@ -68,7 +79,7 @@ export function inspectEngineeringLoopEvidence(record) {
   errorIf(problems,!REPO.test(source?.repository || ''),'CANONICAL_REPOSITORY_MISSING');
   errorIf(problems,!SHA40.test(source?.commit || ''),'IMMUTABLE_GITHUB_COMMIT_MISSING');
   errorIf(problems,!SHA64.test(source?.artifactSha256 || ''),'SOURCE_ARTIFACT_HASH_MISSING');
-  errorIf(problems,!sourceRef(source?.evidenceRef),'GITHUB_SOURCE_READBACK_REFERENCE_MISSING');
+  errorIf(problems,!sourceMatchesPin(source?.evidenceRef,source),'GITHUB_SOURCE_PIN_READBACK_REFERENCE_MISSING');
   const scope=record.scope;
   errorIf(problems,!hasText(scope?.objective),'OBJECTIVE_MISSING');
   errorIf(problems,!Array.isArray(scope?.acceptanceCriteria) ||
@@ -81,6 +92,7 @@ export function inspectEngineeringLoopEvidence(record) {
   const stages=record.stages;
   errorIf(problems,!stages || typeof stages !== 'object' ||
     Array.isArray(stages),'STAGES_OBJECT_MISSING');
+  let lastObservedTime=null;
   for(const key of STAGES){
     const evidence=stages?.[key];
     if(!evidence || !STAGE_STATUS.has(evidence.status)){
@@ -89,6 +101,13 @@ export function inspectEngineeringLoopEvidence(record) {
     }
     if(!sourceRef(evidence.evidenceRef))
       problems.push('STAGE_EVIDENCE_REFERENCE_MISSING:'+key);
+    const time=observedTime(evidence.observedAt);
+    if(time===null)problems.push('STAGE_TIMESTAMP_MISSING_OR_INVALID:'+key);
+    else {
+      if(lastObservedTime!==null && time<lastObservedTime)
+        problems.push('STAGE_CHRONOLOGY_REVERSED:'+key);
+      lastObservedTime=time;
+    }
     if(!hasText(evidence.observation))
       problems.push('STAGE_OBSERVATION_MISSING:'+key);
     if(evidence.status==='NOT_APPLICABLE'){
