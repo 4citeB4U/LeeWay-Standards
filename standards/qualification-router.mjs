@@ -1,12 +1,16 @@
 /*
 LEEWAY HEADER — DO NOT REMOVE
-REGION: LEEWAY.STANDARDS.AUTHORITY
-TAG: LEEWAY_DELEGATED_QUALIFICATION_ROUTER_V1
-5WH: WHAT = Resolve qualification ownership and permitted next transitions.
-WHY = Missing approvals must enter governed work, not disappear as generic BLOCKED_QUALIFICATION.
-WHO = LeeWay Standards; WHERE = standards/qualification-router.mjs; WHEN = 2026-10-25.
-HOW = Least-privilege, explicitly delegated scope, expiry, segregation, no self-elevation.
-AUTHORITY: Decision proposal only; grants and signatures require independent Root of Trust validation.
+REGION: LEEWAY.STANDARDS.QUALIFICATION
+TAG: LEEWAY.STANDARDS.QUALIFICATION.ROUTER
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Resolve existing independent qualification owners and next actions
+WHY = Reject unverified delegated approval or missing independent Veritas providers
+WHO = LeeWay Standards / Creator-authorized engineering
+WHERE = standards/qualification-router.mjs
+WHEN = 2026-10-25
+HOW = Match the exact scoped verified delegation and qualifying verifier
+AUTHORITY: Existing Standards source; production trust remains with Runtime Fabric and independent Veritas.
 LICENSE: MIT
 */
 const valid=x=>typeof x==='string'&&/^[A-Za-z0-9._:-]{3,128}$/.test(x);
