@@ -1,12 +1,16 @@
 /*
-LEEWAY HEADER - DO NOT REMOVE
-REGION: CORE
-TAG: CORE.TESTS.PERMANENT_ENGINEERING_RULES.MAIN
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.TESTS
+TAG: LEEWAY.STANDARDS.TESTS.PERMANENT_ENGINEERING_RULES
 DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
-WHAT: Validate permanent engineering governance without inventing execution evidence.
-WHY: Prevent omitted rules, mission drift or unauthorized SK promotion.
-WHO: LeeWay Standards. WHERE: tests/permanent-engineering-rules.test.mjs.
-WHEN: 2026-10-08. HOW: Read canonical governed contract and numbered rule text.
+5WH:
+WHAT = Verify exact R01-R25 source law, lifecycle and GitHub authority invariant
+WHY = Reject omitted or self-certifying rules before source admission
+WHO = LeeWay Standards engineering
+WHERE = tests/permanent-engineering-rules.test.mjs
+WHEN = 2026-10-27 amended governing assertions, original test suite retained
+HOW = Read exact canonical JSON and Markdown contracts; Node regression tests
+LICENSE: Existing LeeWay repository terms remain unchanged
 */
 import test from 'node:test';
 import assert from 'node:assert/strict';
