@@ -106,6 +106,42 @@
     "independentVerifierRequired": true,
     "signedSourceAndExecutionEvidenceRequired": true,
     "noGlobalBlockForScopedLegacyDebt": true,
-    "noBlindCleanup": true
+    "noBlindCleanup": true,
+    "documentationContract": {
+      "recordSchema": "leeway.engineering.loop-evidence.v1",
+      "documentationOwner": "EXISTING_GITHUB_MISSION_OR_PROTECTED_EVIDENCE_AUTHORITY",
+      "policy": "Docs/governance/ENGINEERING-LOOP-EVIDENCE-ADMISSION-V1.md",
+      "checker": "scripts/check-engineering-loop-evidence.mjs",
+      "phaseStatuses": [
+        "EVIDENCED",
+        "BLOCKED",
+        "NOT_APPLICABLE"
+      ],
+      "mandatoryStageFields": [
+        "status",
+        "observation",
+        "evidenceRef"
+      ],
+      "exceptionsPermittedOnlyFor": [
+        "Repair",
+        "Retest"
+      ],
+      "requiredEvidenceIdentifiers": [
+        "workId",
+        "checkpointId",
+        "source.repository",
+        "source.commit",
+        "source.artifactSha256",
+        "scope.authorizationRef",
+        "scope.rollbackEvidenceRef",
+        "formula.executionState",
+        "tests.negativeEvidenceRef",
+        "outcome.evidenceRef"
+      ],
+      "sourcePreflightCannotCertifyVeritas": true,
+      "documentedBlockedAttemptIsNotProductionPass": true,
+      "requiresActualIndependentVeritasBeforeReceiptLearning": true,
+      "noFalseSourceOnlyPass": true
+    }
   }
 }
