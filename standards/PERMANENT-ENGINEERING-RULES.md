@@ -1,3 +1,18 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.GOVERNANCE
+TAG: LEEWAY.STANDARDS.GOVERNANCE.PERMANENT_ENGINEERING_RULES
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Preserve and extend the canonical R01-R25 engineering requirements
+WHY = Enforce scoped GitHub-first Veritas evidence and host-independent authority
+WHO = LeeWay Standards / Creator Authority
+WHERE = standards/PERMANENT-ENGINEERING-RULES.md
+WHEN = 2026-10-27 governed amendment; earlier rule text preserved
+HOW = Add source identity header and strengthen R10/R25 without changing rule count
+LICENSE: Existing file and repository terms remain unchanged
+-->
+
 # LeeWay Permanent Engineering Rules
 
 Authority: LeeWay Standards. Active mission: Golden Package C3. Existing law remains authoritative.
