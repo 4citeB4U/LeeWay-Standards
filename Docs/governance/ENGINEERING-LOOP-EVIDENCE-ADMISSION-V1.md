@@ -40,7 +40,7 @@ For each consequential mission use schema `leeway.engineering.loop-evidence.v1`.
 | `scope.objective`, `scope.acceptanceCriteria` | Creator-approved target, observable acceptance denominator and negative cases |
 | `scope.authorizationId`, `scope.authorizationRef` | Exact scoped owner approval reference; inspect authenticity separately |
 | `scope.rollbackStrategy`, `scope.rollbackEvidenceRef` | Actual preserved rollback and observed verification |
-| `stages.<name>` | **Every one** of the ten stages, with status, observation and provenance-bound evidence reference |
+| `stages.<name>` | **Every one** of the ten stages, with status, canonical UTC `observedAt`, observation and provenance-bound evidence reference in chronological order |
 | `formula.executionState` | `EXECUTED`, `NOT_EXECUTED`, `BLOCKED`, `FAILED` without inventing math |
 | `tests` | Actual positive and negative result labels and their evidence pointers |
 | `outcome` | Whether the original acceptance was met, with exact observation/evidence |
@@ -50,24 +50,24 @@ The stage order is immutable:
 
 `Investigate → Diagnose → Plan → Implement → Test → Validate → Repair → Retest → Verify → Evidence`
 
-Each stage is `EVIDENCED`, `BLOCKED`, or `NOT_APPLICABLE`, with an evidence pointer and a substantive observation. A `BLOCKED` stage must have a concrete reason, actual observation and the owning recovery gate. **Only Repair and Retest** may be `NOT_APPLICABLE`, and only with a specific reason and an authorized exception reference. An unattempted step must never be recorded as executed.
+Each stage is `EVIDENCED`, `BLOCKED`, or `NOT_APPLICABLE`, with an evidence pointer, canonical UTC `observedAt` timestamp and a substantive observation. Subsequent stages must not carry earlier timestamps than preceding stages. A `BLOCKED` stage must have a concrete reason, actual observation and the owning recovery gate. **Only Repair and Retest** may be `NOT_APPLICABLE`, and only with a specific reason and an authorized exception reference. An unattempted step must never be recorded as executed.
 
 ## Record template for contributors
 
 Use this **human-facing template** in the existing mission issue/PR, linking original proof rather than pasting unverifiable declarations:
 
-| Stage | Actual observation (not prediction) | Result | Evidence ref | Blocker / next gate |
-| --- | --- | --- | --- | --- |
-| Investigate | Prior commits, receipts, existing solution, source provenance | | | |
-| Diagnose | Reproduction and cause versus hypothesis | | | |
-| Plan | Approved scope, dependencies, acceptance and rollback | | | |
-| Implement | Exact source diff and commit readback | | | |
-| Test | Real test command, inputs, outputs, negative cases | | | |
-| Validate | Compare observed result to original acceptance | | | |
-| Repair | Actual correction, or approved not-applicable explanation | | | |
-| Retest | Reproduction regression and related cases, or authorized exception | | | |
-| Verify | Independent evidence, physical behavior if required, Formula binding, observed post-state | | | |
-| Evidence | Immutable source/CI links, verified claims, remaining unverified scope, exact handoff | | | |
+| Stage | Actual observation (not prediction) | UTC observedAt | Result | Evidence ref | Blocker / next gate |
+| --- | --- | --- | --- | --- | --- |
+| Investigate | Prior commits, receipts, existing solution, source provenance | | | | |
+| Diagnose | Reproduction and cause versus hypothesis | | | | |
+| Plan | Approved scope, dependencies, acceptance and rollback | | | | |
+| Implement | Exact source diff and commit readback | | | | |
+| Test | Real test command, inputs, outputs, negative cases | | | | |
+| Validate | Compare observed result to original acceptance | | | | |
+| Repair | Actual correction, or approved not-applicable explanation | | | | |
+| Retest | Reproduction regression and related cases, or authorized exception | | | | |
+| Verify | Independent evidence, physical behavior if required, Formula binding, observed post-state | | | | |
+| Evidence | Immutable source/CI links, verified claims, remaining unverified scope, exact handoff | | | | |
 
 Add checkpoint, source commit, owner authority, Formula evaluator state, runtime state, original acceptance numerator/denominator, rollback result, Veritas status, canonical Receipt ID/hash and Learning Ledger readback **only where actually observed**. Include measured tokens, duration and rework counts when real comparable telemetry exists. Otherwise record `UNMEASURED`, not estimated savings.
 
@@ -87,7 +87,7 @@ Previous experience is discoverable evidence, not automatic peer proof. Resolve 
 
 1. At task claim time: record owning issue/PR, actual SHA, original acceptance gate, dependencies and rollback.
 2. During each meaningful stage: append dated observations and source/receipt links to the same existing owner issue/PR; do not wait until completion to reconstruct events from memory.
-3. Before saying DONE: run the ten-stage document preflight, verify **all** scoped evidence references and actual source/CI readback; identify unresolved fields instead of silently waiving them.
+3. Before saying DONE: run the ten-stage document preflight, verify **all** scoped evidence references and actual source/CI readback and the chronological evidence timestamps; identify unresolved fields instead of silently waiving them.
 4. Invoke the existing authorized **independent** Veritas PRE/POST or appropriate scoped independent diagnostic verifier. Veritas must authenticate runtime observations, source hashes, Formula lineage, owner role, signatures, replay protection, acceptance and stage claims. The preflight cannot substitute.
 5. Only after qualified verification use the **existing canonical Receipt Ledger**, then correlate and read back eligible **Learning Ledger** promotion. Success and verified failure remain separate outcome classes. Reuse only eligible learning and preserve corrections/counterexamples.
 6. Return to the original acceptance gate until verified; otherwise preserve exact blocker and next owner. An incomplete document blocks **only its claimed promotion**, not unrelated authorized work.
