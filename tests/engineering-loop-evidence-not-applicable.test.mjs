@@ -1,12 +1,17 @@
 /*
 LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.STANDARDS.TESTS
-TAG: LEEWAY_STANDARDS_ENGINEERING_LOOP_NA_REGRESSION_V1
-5WH: WHAT = Test conditional Repair/Retest N/A and fail-closed engineering-stage policy.
-WHY = Never invent repairs or accept missing evidence as a verified success.
-WHO = LeeWay Standards. WHERE = tests/engineering-loop-evidence-not-applicable.test.mjs.
-WHEN = 2026-10-27. HOW = Deterministic tests against the canonical draft evaluator.
-LICENSE: MIT.
+TAG: LEEWAY.STANDARDS.TESTS.ENGINEERING.NO_REPAIR
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Test conditional Repair and Retest evidence and source-only admission outcomes
+WHY = Prevent invented repair work and refuse absent or unsupported evidence
+WHO = LeeWay Standards / Creator-authorized engineering
+WHERE = tests/engineering-loop-evidence-not-applicable.test.mjs
+WHEN = 2026-10-27
+HOW = Exercise canonical draft evaluator with synthetic ten-stage regression cases
+AUTHORITY: Synthetic source regression only; no production grant or fabricated independent Veritas.
+LICENSE: MIT
 */
 import test from 'node:test';
 import assert from 'node:assert/strict';
