@@ -1,11 +1,17 @@
 /*
 LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.STANDARDS.TESTS
-TAG: QUALIFICATION_PROGRESSION_TEST_V1
-WHO: LeeWay Standards. WHAT: Reject missing reconciliation/resumption trust evidence.
-WHEN: 2026-10-25. WHERE: tests/qualification-progression.test.mjs.
-WHY: Production progress requires complete authorized transitions.
-HOW: Synthetic inputs only. AUTHORITY: TEST_ONLY. LICENSE: MIT.
+TAG: LEEWAY.STANDARDS.TESTS.QUALIFICATION.PROGRESSION
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Test original-checkpoint integrity and qualification resumption decisions
+WHY = Disallow approvals or progress without independently required authorization inputs
+WHO = LeeWay Standards / Creator-authorized engineering
+WHERE = tests/qualification-progression.test.mjs
+WHEN = 2026-10-25
+HOW = Use bounded synthetic reconciliation and expiry fixtures with Node assertions
+AUTHORITY: Synthetic source regression only; no production grant or fabricated independent Veritas.
+LICENSE: MIT
 */
 import test from 'node:test';
 import assert from 'node:assert/strict';
