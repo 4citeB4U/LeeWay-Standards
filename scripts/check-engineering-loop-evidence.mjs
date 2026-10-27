@@ -174,7 +174,7 @@ export function inspectEngineeringLoopEvidence(record) {
   });
 }
 
-if(process.argv[1] && path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
+if(import.meta.url.startsWith('file:') && process.argv[1] && path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   try{
     if(process.argv.length!==3)throw Error('ONE_EVIDENCE_MANIFEST_PATH_REQUIRED');
     const assessment=inspectEngineeringLoopEvidence(JSON.parse(
