@@ -1,10 +1,17 @@
 /*
 LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.STANDARDS.TESTS
-TAG: QUALIFICATION_ROUTER_TEST_V1
-5WH: WHAT = Test bounded delegated qualification routing; WHY = avoid dead-end blocks and privilege escalation;
-WHO = LeeWay Standards; WHERE = tests/qualification-router.test.mjs; WHEN = 2026-10-25;
-HOW = deterministic synthetic scopes, Node assertions. AUTHORITY: TEST_ONLY. LICENSE: MIT.
+TAG: LEEWAY.STANDARDS.TESTS.QUALIFICATION.ROUTER
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Test qualified delegated authority routing and missing-Veritas responses
+WHY = Prevent silent privilege escalation or dead-end blocked work
+WHO = LeeWay Standards / Creator-authorized engineering
+WHERE = tests/qualification-router.test.mjs
+WHEN = 2026-10-25
+HOW = Exercise deterministic scope and independent-verifier counterexamples
+AUTHORITY: Synthetic source regression only; no production grant or fabricated independent Veritas.
+LICENSE: MIT
 */
 import test from 'node:test';
 import assert from 'node:assert/strict';
