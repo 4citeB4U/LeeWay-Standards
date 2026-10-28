@@ -38,6 +38,31 @@ Cloudflare documents that a **purged** zone cannot be restored, and Cloudflare S
 
 **Correction:** The empty dashboard does not mean this Cloudflare account never contained the historic zone; it did. A separate email security alert for a running tunnel might still refer to another account. Historic source and audit both support **rapidwebdevelop.com**, not rapidweb.com. No DNS changes, zone recreation or migration are authorized by this audit.
 
+## Domain registration survives the Cloudflare purge — supplied registry evidence, October 28, 2026
+
+The owner supplied an ICANN RDAP extract last updated 2026-10-28 16:47:57 UTC confirming:
+
+| RDAP detail | Source-reported value |
+| --- | --- |
+| Domain | rapidwebdevelop.com |
+| Registry status | active |
+| Registrar | Squarespace Domains II LLC |
+| Reseller | Google Workspace |
+| Creation | 2025-04-14 13:28:23 UTC |
+| Expiration | 2027-04-14 13:28:23 UTC |
+| Nameservers | guss.ns.cloudflare.com ; pat.ns.cloudflare.com |
+| DNSSEC | unsigned |
+
+**Do not interpret registry status ACTIVE as Cloudflare zone ACTIVE.** The connected Cloudflare API has zero current zones and returns invalid identifier for the purged historical zone. The two nameservers are **legacy delegation**, not Cloudflare's new assignment. Cloudflare states that re-adding a purged site creates a fresh zone and assigns a **new nameserver pair**, which the registrar must publish after setup. Official docs: https://developers.cloudflare.com/dns/zone-setups/removal/ and https://developers.cloudflare.com/dns/zone-setups/troubleshooting/pending-nameservers/ .
+
+**Registrar authority is not yet proven:** RDAP redacts the registrant. Control must be established by the domain appearing in an owner-authenticated Squarespace Domains dashboard. Google Workspace is the reseller: per Squarespace, nameservers and DNS changes are made in its Domains dashboard while subscription/renewal matters can be managed in Google Workspace Admin. Official: https://support.squarespace.com/hc/en-us/articles/24615057474061-Managing-domains-registered-through-Google-Workspace .
+
+**Before switching nameservers:** capture the current registrar records and any obtainable historical DNS inventory, preserving Google Workspace MX, TXT verification, SPF, DKIM, DMARC, CAA, business email aliases, Cloudflare Email Routing, and old existing site addresses. Cloudflare's purged zone no longer contains recoverable DNS settings; a fresh zone's suggested records are not a replacement for owner-verified email and site settings. Cloudflare confirms SMTP/MX should be DNS-only and custom nameserver changes can disable Squarespace-managed email records. Official: https://developers.cloudflare.com/dns/manage-dns-records/how-to/email-records/ and https://support.squarespace.com/hc/en-us/articles/4404183898125-Review-change-or-reset-your-domain-s-nameservers .
+
+No public recursive or direct authoritative SOA/MX/TXT readback was completed in this environment. **Never mark public DNS healthy or email migrated based on the RDAP delegation alone.** Do not republish 2026-03 legacy A/AAAA values (those were Cloudflare-proxied edge IPs, not qualified origin IPs). No DNS changes, new Cloudflare zone or nameserver switch are authorized by the supplied registry data alone.
+
+**Recovery execution order:** verify authorized Squarespace login → snapshot current/historical email and site records → owner-approved Cloudflare site re-add → capture **new** assigned NS → populate exact legitimate DNS records with qualified real hosting origins → review Google Workspace email settings → replace registrar NS → verify root SOA/NS, DNSSEC, mail, HTTPS and OAuth audiences → independent Veritas/Receipt/Learning evidence.
+
 ## Recover the original account — no premature DNS changes
 
 1. Owner signs into the official Cloudflare dashboard with the mailbox that received the recent Tunnel update notification, then reconnects Cloudflare to ChatGPT under that correct account.
