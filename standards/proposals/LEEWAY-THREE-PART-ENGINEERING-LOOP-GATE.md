@@ -1,3 +1,18 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.GOVERNANCE.PROPOSALS
+TAG: LEEWAY.STANDARDS.GOVERNANCE.THREE_PART_ENGINEERING_LOOP_GATE.V1
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Propose mandatory GitHub, LeeWay Ecosystem, and Vercel evidence for each engineering-loop phase
+WHY = Prevent source-only success from being misreported as qualified deployment or production execution
+WHO = LeeWay Standards stewardship and owner-authorized reviewers
+WHERE = standards/proposals/LEEWAY-THREE-PART-ENGINEERING-LOOP-GATE.md
+WHEN = 2026-10-28
+HOW = Map the canonical ten-phase engineering loop to deployment evidence and release receipt fields
+LICENSE: Existing repository license and owner intellectual-property terms apply
+-->
+
 # Three-Part Delivery Gate — Engineering Loop Integration (Proposed)
 
 Status: PROPOSED; companion to Three-Part GitHub–Ecosystem–Vercel Delivery Law.
