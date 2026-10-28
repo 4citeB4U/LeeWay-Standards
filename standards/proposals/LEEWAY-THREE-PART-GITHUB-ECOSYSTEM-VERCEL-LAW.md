@@ -1,3 +1,18 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.GOVERNANCE.PROPOSALS
+TAG: LEEWAY.STANDARDS.GOVERNANCE.THREE_PART_DELIVERY_LAW.V1
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Propose the GitHub, LeeWay Ecosystem, and Vercel three-part delivery law
+WHY = Govern canonical source, static publishing, hosted ingress, execution, and production evidence without duplicate authority
+WHO = LeeWay Standards stewardship and owner-authorized reviewers
+WHERE = standards/proposals/LEEWAY-THREE-PART-GITHUB-ECOSYSTEM-VERCEL-LAW.md
+WHEN = 2026-10-28
+HOW = Define three-part responsibilities, fail-closed requirements, and qualified release acceptance
+LICENSE: Existing repository license and owner intellectual-property terms apply
+-->
+
 # LeeWay Three-Part GitHub–Ecosystem–Vercel Delivery Law (Proposed)
 
 Status: PROPOSED — not effective until owner review, Veritas validation and approved merge.
