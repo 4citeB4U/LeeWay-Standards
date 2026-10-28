@@ -2,6 +2,7 @@
 LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.STANDARDS.VERITAS.TEST
 TAG: LEEWAY.VERITAS.MEDIUM_FAILURE_AGGREGATION_REGRESSION_V1
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
 5WH:
 WHO = LeeWay Standards source owner and Veritas structural-policy verifier.
 WHAT = Exercise V-07 MEDIUM FAIL, HIGH FAIL and CRITICAL BLOCK precedence.
