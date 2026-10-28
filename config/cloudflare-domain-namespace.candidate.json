@@ -122,5 +122,24 @@
     "migrateDatabases": false,
     "issueIdentity": false,
     "publishDeviceCommands": false
+  },
+  "registrarEvidence": {
+    "source": "OWNER_SUPPLIED_RDAP_2026-10-28T16:47:57Z",
+    "registrableDomain": "rapidwebdevelop.com",
+    "registryStatus": "active",
+    "registrar": "Squarespace Domains II LLC",
+    "reseller": "Google Workspace",
+    "registrationExpiresUtc": "2027-04-14T13:28:23Z",
+    "dnssecDelegationSigned": false,
+    "legacyNameservers": [
+      "guss.ns.cloudflare.com",
+      "pat.ns.cloudflare.com"
+    ],
+    "oldCloudflareZoneStatus": "PURGED_2026-04-02",
+    "replacementNameservers": null,
+    "registrarAccountControlVerified": false,
+    "currentAuthoritativeSoaProbed": false,
+    "currentMxTxtDkimDmarcPreserved": false,
+    "identityAndEmailMigrationAuthorized": false
   }
 }
