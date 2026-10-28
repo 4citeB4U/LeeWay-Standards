@@ -1,0 +1,126 @@
+{
+  "schema": "leeway.cloudflare.domain-namespace.candidate.v1",
+  "evidenceStatus": "SOURCE_CANDIDATE_UNVERIFIED",
+  "historicalDomain": "rapidwebdevelop.com",
+  "spokenDomainUnverified": "rapidweb.com",
+  "ownership": {
+    "currentConnectedCloudflareZoneId": null,
+    "ownerConfirmed": false,
+    "nameserversVerified": false,
+    "activeZoneVerified": false,
+    "dnsMutationAuthorized": false
+  },
+  "platform": {
+    "authoritativeCode": "github",
+    "zoneAuthority": "CLOUDFLARE_UNBOUND",
+    "publicGateway": "HOST_UNBOUND",
+    "privateRuntime": "PROVIDER_UNBOUND",
+    "canonicalStorage": "LEEWAY_CONTINUUM_OWNER_AUTHORITY",
+    "devicePolicy": "NO_CREATOR_PC_DEPENDENCY_FOR_CLOUD"
+  },
+  "certificate": {
+    "strategy": "CLOUDFLARE_UNIVERSAL_SSL_FIRST_LEVEL_ONLY",
+    "requiresProxiedDns": true,
+    "allowNestedHostnames": false
+  },
+  "records": [
+    {
+      "name": "leeway",
+      "purpose": "UNIVERSAL_PUBLIC_PORTAL",
+      "access": "PUBLIC_UI",
+      "origin": null,
+      "route": "/ (governed app hub)",
+      "state": "UNBOUND"
+    },
+    {
+      "name": "agentlee",
+      "purpose": "AGENT_LEE_UI_HISTORICAL_COMPAT",
+      "access": "PUBLIC_UI_WITH_OWNER_ACTION_AUTH",
+      "origin": null,
+      "route": "/ (legacy redirect gated)",
+      "state": "UNBOUND"
+    },
+    {
+      "name": "mcp",
+      "purpose": "CHATGPT_DEVICE_BRIDGE_MCP_INGRESS",
+      "access": "OAUTH_BEARER",
+      "origin": null,
+      "route": "/mcp",
+      "state": "UNBOUND"
+    },
+    {
+      "name": "identity",
+      "purpose": "SINGLE_POCKET_ID_OIDC_ISSUER",
+      "access": "OIDC_ISSUER",
+      "origin": null,
+      "route": "/.well-known/openid-configuration",
+      "state": "UNBOUND"
+    },
+    {
+      "name": "maps",
+      "purpose": "LEEWAY_MAPS_PUBLIC_PRODUCT",
+      "access": "PUBLIC_UI",
+      "origin": null,
+      "route": "/",
+      "state": "UNBOUND"
+    },
+    {
+      "name": "logistics",
+      "purpose": "LEEWAY_LOGISTICS_PUBLIC_PRODUCT",
+      "access": "PUBLIC_UI",
+      "origin": null,
+      "route": "/",
+      "state": "UNBOUND"
+    },
+    {
+      "name": "voice",
+      "purpose": "VOICE_FABRIC_PUBLIC_GATEWAY",
+      "access": "AUTHENTICATED_REALTIME",
+      "origin": null,
+      "route": "/ (no device command bypass)",
+      "state": "UNBOUND"
+    },
+    {
+      "name": "docs",
+      "purpose": "LEEWAY_STANDARDS_AND_SKILLS_PUBLIC_DOCS",
+      "access": "PUBLIC_READ_ONLY",
+      "origin": null,
+      "route": "/",
+      "state": "UNBOUND"
+    }
+  ],
+  "privateAuthorities": [
+    "LEEWAY_RUNTIME_FABRIC",
+    "LEEWAY_CONTINUUM_CANONICAL_SQLITE",
+    "LEEWAY_VRAM_DATABASE",
+    "MACHINE_CONSCIOUSNESS",
+    "LEEWAY_FORMULA",
+    "INDEPENDENT_VERITAS",
+    "RECEIPT_AUTHORITY",
+    "LEARNING_LEDGER",
+    "NATIVE_DEVICE_EXECUTION",
+    "GPU_KERNELS",
+    "ECHO_MEMORY_AUTHORITY"
+  ],
+  "productionGates": [
+    "OWNER_PROVES_DOMAIN_AND_CLOUDFLARE_ZONE",
+    "EXACT_NAMESERVER_AND_TLS_VERIFICATION",
+    "CANONICAL_GITHUB_REVISION_PINNED",
+    "EXISTING_OWNER_POCKET_ID_ISSUER_ENROLLED",
+    "RUNTIME_FABRIC_AUTHENTICATED_MCP_BOUND",
+    "CONTINUUM_ORIGINAL_RECORD_HASH_READBACK",
+    "OWNER_DEVICE_CONSENT_AND_RUNTIME_ADMISSION",
+    "FORMULA_PRE_AND_POST",
+    "INDEPENDENT_VERITAS_PRE_AND_POST",
+    "RECEIPT_AUTHORITY_AND_LEARNING_LEDGER",
+    "ROLLBACK_AND_RECOVERY_EVIDENCE"
+  ],
+  "mutation": {
+    "createZone": false,
+    "createDnsRecords": false,
+    "replaceDomain": false,
+    "migrateDatabases": false,
+    "issueIdentity": false,
+    "publishDeviceCommands": false
+  }
+}

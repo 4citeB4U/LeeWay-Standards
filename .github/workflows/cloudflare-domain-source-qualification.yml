@@ -1,0 +1,40 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.STANDARDS.CLOUDFLARE.DOMAIN_SOURCE_CI
+# TAG: LEEWAY.CLOUDFLARE_DOMAIN_OWNER_FAIL_CLOSED_CI.V1
+# DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+# 5WH:
+# WHAT = Qualify historical RapidWebDevelop namespace without DNS writes
+# WHY = Block unverified account or domain identity and prohibited public private-authority exposure
+# WHO = LeeWay Standards maintainers and independent reviewers
+# WHERE = .github/workflows/cloudflare-domain-source-qualification.yml
+# WHEN = 2026-10-28
+# HOW = Run isolated Node source tests with no credentials or live Cloudflare API access
+# AUTHORITY: SOURCE_CONTRACT_ONLY.
+# LICENSE: MIT
+name: Cloudflare historical domain source qualification
+on:
+  pull_request:
+    paths:
+      - 'config/cloudflare-domain-namespace.candidate.json'
+      - 'scripts/qualify-cloudflare-domain-namespace.mjs'
+      - 'tests/cloudflare-domain-namespace.test.mjs'
+      - 'Docs/architecture/CLOUDFLARE-RAPIDWEB-RECOVERY-AND-DOMAIN-PLAN.md'
+      - '.github/workflows/cloudflare-domain-source-qualification.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-only-zone-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check source syntax
+        run: node --check scripts/qualify-cloudflare-domain-namespace.mjs
+      - name: Verify owner boundary, private systems and exact domain identity
+        run: node --test tests/cloudflare-domain-namespace.test.mjs
+      - name: Print fail-closed candidate and unresolved live bindings
+        run: node scripts/qualify-cloudflare-domain-namespace.mjs
