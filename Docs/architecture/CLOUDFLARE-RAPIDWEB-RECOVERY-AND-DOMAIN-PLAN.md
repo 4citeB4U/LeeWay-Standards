@@ -24,6 +24,20 @@ STATUS: SOURCE CANDIDATE — NO DNS OR ACCOUNT MUTATION.
 - Old agentx23 backend/src/routes/cfDeployment.ts may report deployed despite failed DNS or dummy InsForge publish. Old apps.ts includes hardcoded demo services and synthetic metrics. Require independent origin and DNS readback; do not copy these success semantics.
 - The currently connected Cloudflare account had no zones, named tunnels, Pages, Workers or D1. R2 returned code 10042 (not enabled). A security notification in another connected mailbox dated October 26, 2026 reports that its recipient has at least one Cloudflare Tunnel. That is an account-recovery lead only, not zone ownership proof. NEVER commit private email addresses, tokens, zone IDs or account identification to GitHub public source.
 
+## Confirmed historical Cloudflare zone deletion (read-only audit, 2026-10-28)
+
+The connected Cloudflare account DOES contain audit history for the exact original **rapidwebdevelop.com** zone, despite showing zero active zones in current inventory. The legacy Cloudflare audit log records:
+- 2026-02-26 14:36 UTC: DNS record creation burst under rapidwebdevelop.com.
+- 2026-03-15: repeated zone activation checks and additional DNS record updates.
+- 2026-03-26 14:36:14 UTC: successful delete action on the zone with name rapidwebdevelop.com.
+- 2026-04-02 14:36:15 UTC: successful purge on that same zone.
+
+The deletion occurred nearly exactly 28 days after initial DNS population and purge almost exactly seven days after deletion. This fits Cloudflare automatic **pending zone expiration** (28 days) followed by purging (7 days). This is a plausible explanation, NOT independently established deletion cause: the audit actor is recorded as the account user, but that does not prove a person clicked Remove or rule out automation. Verify registrar delegation and historical activation status before attributing intent.
+
+Cloudflare documents that a **purged** zone cannot be restored, and Cloudflare Support cannot restore DNS/settings after deletion. Re-adding the original domain after confirming ownership creates a **new** zone and normally a **new nameserver pair**; registrar nameservers should be updated only after correct DNS reconstruction. See https://developers.cloudflare.com/dns/zone-setups/removal/ and https://developers.cloudflare.com/dns/zone-setups/troubleshooting/domain-deleted/ .
+
+**Correction:** The empty dashboard does not mean this Cloudflare account never contained the historic zone; it did. A separate email security alert for a running tunnel might still refer to another account. Historic source and audit both support **rapidwebdevelop.com**, not rapidweb.com. No DNS changes, zone recreation or migration are authorized by this audit.
+
 ## Recover the original account — no premature DNS changes
 
 1. Owner signs into the official Cloudflare dashboard with the mailbox that received the recent Tunnel update notification, then reconnects Cloudflare to ChatGPT under that correct account.
