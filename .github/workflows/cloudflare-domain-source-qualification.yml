@@ -2,7 +2,13 @@
 # REGION: LEEWAY.STANDARDS.CLOUDFLARE.DOMAIN_SOURCE_CI
 # TAG: LEEWAY.CLOUDFLARE_DOMAIN_OWNER_FAIL_CLOSED_CI.V1
 # DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
-# 5WH: WHAT=Source qualification without DNS writes; WHY=Block unverified zone and private service exposure; WHO=LeeWay Standards; WHERE=.github/workflows/cloudflare-domain-source-qualification.yml; WHEN=2026-10-28; HOW=Node fixture checks.
+# 5WH:
+# WHAT = Qualify historical RapidWebDevelop namespace without DNS writes
+# WHY = Block unverified account or domain identity and prohibited public private-authority exposure
+# WHO = LeeWay Standards maintainers and independent reviewers
+# WHERE = .github/workflows/cloudflare-domain-source-qualification.yml
+# WHEN = 2026-10-28
+# HOW = Run isolated Node source tests with no credentials or live Cloudflare API access
 # AUTHORITY: SOURCE_CONTRACT_ONLY.
 # LICENSE: MIT
 name: Cloudflare historical domain source qualification
