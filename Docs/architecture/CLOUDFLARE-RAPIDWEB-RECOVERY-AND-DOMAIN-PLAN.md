@@ -3,7 +3,13 @@ LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.STANDARDS.CLOUDFLARE.RAPIDWEB_RECOVERY
 TAG: LEEWAY.DOMAIN_RECOVERY_AND_SUBDOMAIN_AUTHORITY.V1
 DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
-5WH: WHAT=Recover historical RapidWebDevelop Cloudflare zone and reserve an owner-gated LeeWay domain namespace; WHY=spoken rapidweb.com differs from documented rapidwebdevelop.com; WHO=LeeWay Industries / Veritas; WHERE=Docs/architecture/CLOUDFLARE-RAPIDWEB-RECOVERY-AND-DOMAIN-PLAN.md; WHEN=2026-10-28; HOW=read-only ownership checks and separate public/private origins.
+5WH:
+WHAT = Recover historical RapidWebDevelop Cloudflare zone and reserve an owner-gated LeeWay domain namespace
+WHY = The spoken rapidweb.com differs from GitHub-documented rapidwebdevelop.com and ownership is unverified
+WHO = LeeWay Industries and independent Veritas reviewers
+WHERE = Docs/architecture/CLOUDFLARE-RAPIDWEB-RECOVERY-AND-DOMAIN-PLAN.md
+WHEN = 2026-10-28
+HOW = Read-only original account/domain proof, public first-level names, separately governed private origins
 AUTHORITY: SOURCE_CANDIDATE_ONLY; no DNS write, owner identity, or production grant.
 LICENSE: MIT
 -->
