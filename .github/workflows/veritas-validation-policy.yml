@@ -1,0 +1,41 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.STANDARDS.VERITAS.CI
+# TAG: LEEWAY.VERITAS.MEDIUM_FAILURE_RULE_SOURCE_CI
+# DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+# 5WH:
+# WHAT = Execute the canonical V-07 policy regression against TypeScript source
+# WHY = Prevent false structural PASS when MEDIUM severity rules fail
+# WHO = LeeWay Standards source engineering
+# WHERE = .github/workflows/veritas-validation-policy.yml
+# WHEN = 2026-10-27
+# HOW = Node 22 strip-types direct TypeScript import and nine named source tests
+# AUTHORITY: SOURCE_ONLY, NOT PRODUCTION VERITAS
+# LICENSE: Existing LeeWay Standards repository terms
+# LICENSE: Existing LeeWay Standards terms.
+name: Veritas Validation Policy V-07 Proof
+on:
+  push:
+    branches:
+      - review/veritas-medium-rule-fail-20261027
+    paths:
+      - 'src/core/veritas/ValidationPolicy.ts'
+      - 'tests/veritas-validation-policy.test.mjs'
+      - '.github/workflows/veritas-validation-policy.yml'
+  pull_request:
+    paths:
+      - 'src/core/veritas/ValidationPolicy.ts'
+      - 'tests/veritas-validation-policy.test.mjs'
+      - '.github/workflows/veritas-validation-policy.yml'
+jobs:
+  veritas-structural-negative-policy:
+    name: V-07 medium severity regression (source only)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Exact TypeScript implementation + nine negative/sibling tests
+        run: |
+          node --experimental-strip-types --check src/core/veritas/ValidationPolicy.ts
+          node --experimental-strip-types --test tests/veritas-validation-policy.test.mjs

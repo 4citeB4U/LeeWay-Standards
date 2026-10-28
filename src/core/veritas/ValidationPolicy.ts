@@ -192,6 +192,7 @@ export function runValidationPolicy(payload: ValidationPayload): ValidationRepor
   const ruleResults: RuleResult[] = [];
   let criticalFailures = 0;
   let highFailures = 0;
+  let mediumFailures = 0;
   let blockedBy: string | undefined;
 
   for (const rule of VALIDATION_RULES) {
@@ -217,6 +218,8 @@ export function runValidationPolicy(payload: ValidationPayload): ValidationRepor
         if (!blockedBy) blockedBy = rule.ruleId;
       } else if (rule.severity === "HIGH") {
         highFailures += 1;
+      } else if (rule.severity === "MEDIUM") {
+        mediumFailures += 1;
       }
     }
   }
@@ -226,7 +229,7 @@ export function runValidationPolicy(payload: ValidationPayload): ValidationRepor
   const complianceScore = totalRules > 0 ? passedCount / totalRules : 0;
 
   const status: ValidationStatus =
-    criticalFailures > 0 ? "BLOCKED" : highFailures > 0 ? "FAIL" : "PASS";
+    criticalFailures > 0 ? "BLOCKED" : highFailures + mediumFailures > 0 ? "FAIL" : "PASS";
 
   return {
     requestId: payload.requestId,
