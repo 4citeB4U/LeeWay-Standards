@@ -42,7 +42,7 @@ LICENSE: Existing LeeWay Standards repository terms remain unchanged
 | Test | Initial candidate [Actions #40794147600](https://github.com/4citeB4U/LeeWay-Standards/actions/runs/40794147600) **16/16 source-fixture PASS**; later source scope adds two more negative tests |
 | Validate | Initial [Incoming Source Watch #40794147638](https://github.com/4citeB4U/LeeWay-Standards/actions/runs/40794147638) **FAILED** with `MISSING_5WH_BLOCK` and field/header errors in all three changed files; exact logs independently read |
 | Repair | Fetched actual canonical `scripts/auto-enforce-file-governance.mjs`, inspected parser; replaced compact 5WH comments with mandatory multiline `5WH:\nWHAT = ...` and full field sets, including YAML leading comments. Hardened missing obligation scope and deterministic IDs |
-| Retest | Revised CI source workflow and Standards governance workflow re-triggered on the repair commit; exact final result must be read back before a PASS can be asserted |
+| Retest | [18/18 source-fixture tests PASS, zero failures/skips — Actions #40794280441](https://github.com/4citeB4U/LeeWay-Standards/actions/runs/40794280441), repaired source commit `f9393c84e3471a205ed0446294f2f8b6a0ab743a`. Source check [Incoming Watch #40794280525](https://github.com/4citeB4U/LeeWay-Standards/actions/runs/40794280525) SUCCESS; [layer governance #40794280709](https://github.com/4citeB4U/LeeWay-Standards/actions/runs/40794280709) SUCCESS; [Standards enforcement #40794280551](https://github.com/4citeB4U/LeeWay-Standards/actions/runs/40794280551) SUCCESS. This is source-only regression, NOT live authority |
 | Verify | Source readback confirms all three repaired blobs; **independent production Veritas NOT RUN**, no actual signed role or host custody |
 | Evidence | This document + linked exact original source identities + first passing fixture run + observed governance failure + repair/test commits. Not a canonical receipt |
 
@@ -50,7 +50,7 @@ LICENSE: Existing LeeWay Standards repository terms remain unchanged
 
 ## Unfinished original acceptance and next exact action
 
-1. Confirm exact repaired HEAD CI source-fixture and incoming governance checks. Repair any observed test/header failure and rerun; never promote failed validation.
+1. Exact repaired source commit `f9393c84e3471a205ed0446294f2f8b6a0ab743a` has 18/18 tests and the three other source/governance checks SUCCESS. Preserve that evidence; when later documentation-only commits occur, verify the executable file blobs remain identical and check any newly triggered source-watch result.
 2. Receipt Authority owner approves a versioned compatibility document stating the semantics of `receiptHash`, `executionReceiptHash`, `chainProofHash`, `proof.sha256` and `payload_sha`. A new version, if needed, must be additive and independently validated; do not rewrite v1 history.
 3. Host owner pins actual Receipt writer, verifier roles, source/installed SHA-256 and chain custody. Independently validate `verifyAtomicReceiptCommit` against the original chained record and both hashes, including wrong predecessor, wrong host/owner, crash/replay and conflicting admissions.
 4. Reuse Learning PR #3 and original canonical Learning writer to prove true once-only effect, restart readback and production PRE/POST. Preserve all historical results.
