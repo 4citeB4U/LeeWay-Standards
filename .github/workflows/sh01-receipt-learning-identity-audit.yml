@@ -1,4 +1,17 @@
-# LEEWAY SH-01 — Source-only hash-identity compatibility; no signing or Ledger access.
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.STANDARDS.SH01.RECEIPT.CI
+# TAG: LEEWAY.SH01.RECEIPT.IDENTITY.CI
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+#
+# 5WH:
+# WHAT = Run scoped source compatibility tests on changed PR and branch commits
+# WHY = Prevent hash identity regression without promoting production authority
+# WHO = SH-01 contributor operating under canonical LeeWay Standards
+# WHERE = .github/workflows/sh01-receipt-learning-identity-audit.yml
+# WHEN = 2026-10-28
+# HOW = GitHub Actions checkout and Node22 syntax and native test execution
+#
+# LICENSE: Existing LeeWay Standards repository terms remain unchanged
 name: SH-01 Receipt-Learning Hash Identity Source Audit
 on:
   pull_request:
