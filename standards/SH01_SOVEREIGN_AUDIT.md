@@ -64,6 +64,30 @@ These are acceptance **dependencies**, not restrictions against independent para
 - [ ] Test sovereign-host boot, source-to-host identity, authenticated operation, shutdown/restart recovery and offline operation.
 - [ ] Run whole-system C3 with Formula, Veritas PRE/POST, Receipt readback and Learning admission.
 
+
+## Source root and executable test entrypoint findings (second pass)
+
+GitHub `main` root directories were inspected for the 12 repositories listed in the first checkpoint. This establishes source structure, **not** a successful run of any tests or a hosted service.
+
+| Workstream | Root evidence observed | Exact source test/start script found |
+| --- | --- | --- |
+| Standards | `standards/`, `contracts/`, `tests/`, `services/`, `package.json` | Script values not yet retrieved |
+| Runtime Fabric | `automation-runtime/`, `api/`, `contracts/`, `adapter.registry.json` | Entrypoints still require independent review |
+| Receipt Authority | **main branch contains only `README.md`** | Implementation is on draft [PR #1](https://github.com/4citeB4U/Receipt-Authority/pull/1); cannot claim deployed from main |
+| Independent Veritas | `src/`, `bin/`, `tests/`, `package.json` | `npm test` = `node --test tests/*.test.mjs`; `npm run check` includes syntax and tests; `npm run review:serve` = `node bin/start-review-service.mjs` |
+| Continuum | `src/`, `tests/`, `ui/`, `config/`, `package.json` | `npm test` is explicit Node suite across adapters, storage, host binding, capacity, UI and evidence; `npm run check:syntax` |
+| VRAM Database | `src/`, `sql/`, `test/`, `evidence/`, `package.json` | `npm test` = `node --test`; `npm run demo` = `node examples/local-demo.mjs` |
+| Model Hub | `src/`, `clients/`, `catalog/`, `tests/`, `package.json` | `npm start` = `node src/server.mjs`; `npm test` = `node --test tests/*.test.mjs`; `npm run check` |
+| GPU | `native/`, `contracts/`, `dispatch/`, `tests/` or equivalent root-level areas | Build and native acceptance commands not yet confirmed |
+| Device Bridge | `packages/`, `providers/`, `apps/`, `receipts/`, `tests/` | Device-specific command qualification pending |
+| Skills / MCP | `mcp-server/`, `mcp-remote/`, `skills/`, `receipts/`, `tests/` | Actual MCP provider startup proof pending |
+| Formula | `authority/`, `contracts/`, `runtime/`, `receipts/`, `tests/` | Frozen canonical evaluator and fixtures require hash pin |
+| Federate Web | `src/`, `bootstrap.json`, `ecosystem.manifest.json`, `tests/` | Live peer attach not established |
+
+The inspected package source blobs were: Veritas `3d8f38f8646b6c13cbf098ca0c3e2059bd875897`; Continuum `fa43164015f1b999b9171409e5855d5947f33694`; VRAM `a8945c56a3df6a72afef72ca05295d22bcf4316f`; Model Hub `87266981262c2570831001ae80910c285a8df6a7`. These are Git blob identifiers, **not** independently computed release SHA-256 hashes.
+
+**Qualification distinction:** identifying commands is INVESTIGATE evidence, not TEST PASS. The next stage must pin checked revisions, inspect actual registry/boot arguments and run the declared suites, then inspect CI/job logs and real host evidence. Receipt Authority PR #1 must be reviewed and integrated under Standards before a production Runtime binds it.
+
 ## Full engineering loop checkpoint
 
 INVESTIGATE: GitHub repository API and existing Standards registry; source PRs/issue.
