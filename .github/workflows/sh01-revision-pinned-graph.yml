@@ -1,11 +1,15 @@
 # LEEWAY HEADER — DO NOT REMOVE
-# REGION: LEEWAY.STANDARDS.SH01.SOURCE_GATE
-# TAG: LEEWAY.SH01.REVISION_PINNED_GRAPH_CI_V1
-# WHO: Existing Standards source-only audit.
-# WHAT: Validate exact 20 main pin snapshot and unique authority/dependency graph.
-# WHY: CI may verify inventory schema; it cannot certify sovereign production operation.
-# WHEN: 2026-10-28.
-# AUTHORITY: SOURCE_ONLY / NO HOST / NO VERITAS SIGNER.
+# REGION: LEEWAY.STANDARDS.SH01
+# TAG: LEEWAY.STANDARDS.SH01.SNAPSHOT_WORKFLOW
+# DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+# 5WH:
+# WHAT = Validate pinned SH-01 source snapshot, graph and negative regressions
+# WHY = Reject fake authority or source CI promotion
+# WHO = LeeWay Standards source audit
+# WHERE = .github/workflows/sh01-revision-pinned-graph.yml
+# WHEN = 2026-10-28
+# HOW = Node 22 GitHub Actions source-only
+# LICENSE: Existing LeeWay repository terms
 name: SH-01 Revision Pinned Dependency Graph
 on:
   pull_request:
