@@ -1,13 +1,18 @@
 /*
 LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.STANDARDS.SH01.RECEIPT.COMPATIBILITY
-TAG: LEEWAY.SH01.READONLY.RECEIPT_HASH_PAIR_AUDIT_V1
-5WH: WHO=SH-01 Standards source auditor; WHAT=read-only source-fixture consistency gate;
-WHEN=2026-10-28; WHERE=scripts/sh01-receipt-learning-identity-audit.mjs;
-WHY=prevent execution-receipt and chained-record proof identities being silently conflated;
-HOW=check v1 original producer/consumer wire shape and deterministic source digest only.
-AUTHORITY: AUDIT ONLY. Does NOT verify signer, production host, real Receipt Authority or canonical Learning.
-LICENSE: existing Standards repository terms.
+TAG: LEEWAY.SH01.RECEIPT.IDENTITY.AUDIT
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+
+5WH:
+WHAT = Read-only source fixture comparison of two distinct receipt hash identities
+WHY = Prevent silent conflation of execution receipt digest and enclosing chain proof
+WHO = SH-01 contributor operating under canonical LeeWay Standards
+WHERE = scripts/sh01-receipt-learning-identity-audit.mjs
+WHEN = 2026-10-28
+HOW = Validate supplied v1 event obligation and source readback without using production signers
+
+LICENSE: Existing LeeWay Standards repository terms remain unchanged
 */
 import {createHash} from 'node:crypto';
 
@@ -68,8 +73,12 @@ export function auditC3ReceiptHashPair({event,record,readback}={}){
  if(canonical(event)!==canonical(obligation.event)||
     obligation.requestId!==event.requestId||obligation.outcomeId!==event.outcomeId||
     obligation.receiptHash!==event.receiptHash||
+    obligation.scope!==event.scope||
     obligation.eventDigest!==hash(canonical(event))||
     obligation.admissionKey!==event.requestId+':'+event.outcomeId+':'+event.receiptHash||
+    obligation.obligationId!=='obl-'+hash(obligation.admissionKey)||
+    obligation.receiptRecordId!=='rr-'+hash(obligation.admissionKey)||
+    obligation.receiptCommitId!=='rc-'+hash('c3-receipt-commit-v1:'+hash(obligation.admissionKey)+':'+obligation.eventDigest)||
     record.entry.requestId!==event.requestId||
     record.entry.executionReceiptHash!==event.receiptHash||
     record.entry.receiptRecordId!==obligation.receiptRecordId||
