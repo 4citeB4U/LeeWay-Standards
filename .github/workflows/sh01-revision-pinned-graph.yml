@@ -1,0 +1,36 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.STANDARDS.SH01.SOURCE_GATE
+# TAG: LEEWAY.SH01.REVISION_PINNED_GRAPH_CI_V1
+# WHO: Existing Standards source-only audit.
+# WHAT: Validate exact 20 main pin snapshot and unique authority/dependency graph.
+# WHY: CI may verify inventory schema; it cannot certify sovereign production operation.
+# WHEN: 2026-10-28.
+# AUTHORITY: SOURCE_ONLY / NO HOST / NO VERITAS SIGNER.
+name: SH-01 Revision Pinned Dependency Graph
+on:
+  pull_request:
+    paths:
+      - 'standards/sh01-main-revision-snapshot.v1.json'
+      - 'scripts/verify-sh01-snapshot.mjs'
+      - 'tests/sh01-snapshot.test.mjs'
+      - '.github/workflows/sh01-revision-pinned-graph.yml'
+      - 'standards/SH01_REPOSITORY_REVISION_EVIDENCE.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-only-graph:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax and current pinned source evidence
+        run: |
+          node --check scripts/verify-sh01-snapshot.mjs
+          node --check tests/sh01-snapshot.test.mjs
+          node scripts/verify-sh01-snapshot.mjs
+      - name: Unique canonical owners, fail-closed gates, dependency DAG
+        run: node --test tests/sh01-snapshot.test.mjs
