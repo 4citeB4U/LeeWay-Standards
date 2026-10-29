@@ -1,16 +1,20 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.SH01
+TAG: LEEWAY.STANDARDS.SH01.EVIDENCE_DOCUMENT
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Document twenty pinned source repos and sovereign production blockers
+WHY = Give original standards owner reproducible source evidence
+WHO = LeeWay Standards source audit
+WHERE = standards/SH01_REPOSITORY_REVISION_EVIDENCE.md
+WHEN = 2026-10-28
+HOW = Connected GitHub metadata and exact CI source references
+LICENSE: Existing LeeWay repository terms
+-->
+
 # SH-01 — Revision-pinned source, authority and production gap evidence
 
-<!-- LEEWAY HEADER — DO NOT REMOVE
-REGION: LEEWAY.STANDARDS.SH01.SOURCE_AUDIT
-TAG: LEEWAY.SH01.20_MAIN_PINS_AND_BLOCKER_EVIDENCE_V1
-WHO: Existing Standards SH-01 audit in PR #61.
-WHAT: Precise repository source pins, entrypoint samples, CI observations and production denial gates.
-WHEN: 2026-10-28.
-WHERE: standards/SH01_REPOSITORY_REVISION_EVIDENCE.md.
-WHY: Distinguish repository/source tests from real autonomous sovereign hosting.
-HOW: GitHub repository+branch+contents+workflow/package reads, read-only snapshot and negative CI.
-AUTHORITY: AUDIT ONLY. No keys, registry mutation, receipt, signer, deployment or approval.
--->
 
 **Parent SH-01:** [LeeWay Standards draft PR #61](https://github.com/4citeB4U/LeeWay-Standards/pull/61), [canonical source checkpoint](SH01_SOVEREIGN_AUDIT.md). **Original four-authority C3 mission:** [Runtime Fabric #21](https://github.com/4citeB4U/Leeway-Runtime-Fabric/issues/21).
 
