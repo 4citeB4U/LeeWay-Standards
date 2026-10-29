@@ -1,14 +1,16 @@
 /*
 LEEWAY HEADER — DO NOT REMOVE
-REGION: LEEWAY.STANDARDS.SH01.SOURCE_AUDIT
-TAG: LEEWAY.SH01.REVISION_PINNED_GRAPH_VERIFIER_V1
-WHO: Existing LeeWay Standards source auditor; never a new policy issuer.
-WHAT: Validate source snapshot integrity and non-cyclic, uniquely owned dependency graph.
-WHEN: 2026-10-28.
-WHERE: scripts/verify-sh01-snapshot.mjs.
-WHY: A repository inventory must not invent authority or upgrade source CI to production PASS.
-HOW: Read-only deterministic JSON + invariant checks; no network, host calls, writes or release.
-LICENSE: MIT. AUTHORITY: SOURCE_ONLY.
+REGION: LEEWAY.STANDARDS.SH01
+TAG: LEEWAY.STANDARDS.SH01.GRAPH_VERIFIER
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Validate mainline pins and unique owners
+WHY = Reject source drift, duplicated authority and cycles
+WHO = LeeWay Standards source audit
+WHERE = scripts/verify-sh01-snapshot.mjs
+WHEN = 2026-10-28
+HOW = Read-only deterministic Node source verifier
+LICENSE: Existing LeeWay repository terms
 */
 import fs from 'node:fs';
 import {fileURLToPath} from 'node:url';
