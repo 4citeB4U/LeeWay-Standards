@@ -1,0 +1,45 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.STANDARDS.SH01.RECEIPT.CI
+# TAG: LEEWAY.SH01.RECEIPT.IDENTITY.CI
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+#
+# 5WH:
+# WHAT = Run scoped source compatibility tests on changed PR and branch commits
+# WHY = Prevent hash identity regression without promoting production authority
+# WHO = SH-01 contributor operating under canonical LeeWay Standards
+# WHERE = .github/workflows/sh01-receipt-learning-identity-audit.yml
+# WHEN = 2026-10-28
+# HOW = GitHub Actions checkout and Node22 syntax and native test execution
+#
+# LICENSE: Existing LeeWay Standards repository terms remain unchanged
+name: SH-01 Receipt-Learning Hash Identity Source Audit
+on:
+  pull_request:
+    paths:
+      - 'scripts/sh01-receipt-learning-identity-audit.mjs'
+      - 'tests/sh01-receipt-learning-identity-audit.test.mjs'
+      - '.github/workflows/sh01-receipt-learning-identity-audit.yml'
+  push:
+    branches:
+      - audit/sh01-receipt-learning-hash-compatibility-20261028
+    paths:
+      - 'scripts/sh01-receipt-learning-identity-audit.mjs'
+      - 'tests/sh01-receipt-learning-identity-audit.test.mjs'
+      - '.github/workflows/sh01-receipt-learning-identity-audit.yml'
+permissions:
+  contents: read
+jobs:
+  source-fixture-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check read-only audit code
+        run: node --check scripts/sh01-receipt-learning-identity-audit.mjs
+      - name: Check negative source-fixture tests
+        run: node --check tests/sh01-receipt-learning-identity-audit.test.mjs
+      - name: Execute bounded source-only tests
+        run: node --test tests/sh01-receipt-learning-identity-audit.test.mjs
