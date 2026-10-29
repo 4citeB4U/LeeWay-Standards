@@ -1,11 +1,19 @@
-# SH-01 — Sovereign Ecosystem Authority and Dependency Checkpoint
-
-<!-- REGION: LEEWAY.STANDARDS.SH01
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.SH01
 TAG: LEEWAY.SH01.AUTHORITY_AUDIT
-5WH: WHO=LeeWay Standards governance; WHAT=read-only source inventory and gap register;
-WHEN=2026-10-28; WHERE=standards/SH01_SOVEREIGN_AUDIT.md;
-WHY=preserve unique canonical owners; HOW=GitHub source checks and separate production gates.
-LICENSE: MIT. STATUS: audit evidence, NOT a Veritas PASS. -->
+5WH:
+WHAT = Preserve the existing SH-01 sovereign authority and dependency checkpoint.
+WHY = Qualify source/governance facts before sovereign-host production admission.
+WHO = LeeWay Standards governance contributors under Creator authority.
+WHERE = standards/SH01_SOVEREIGN_AUDIT.md.
+WHEN = 2026-10-28 header repair of the original audit document.
+HOW = Read-only GitHub source inventory and separately evidenced production gates.
+LICENSE: MIT (preserved from original SH-01 document claim).
+STATUS: SOURCE_AUDIT_ONLY; no Veritas or deployment approval.
+-->
+
+# SH-01 — Sovereign Ecosystem Authority and Dependency Checkpoint
 
 **Mission:** Independently qualify each LeeWay system before assembling a sovereign self-hosted production environment. Parent C3 remains open. This checkpoint does not supersede the existing authority registry, Formula, Runtime Fabric, Veritas, or Receipt Authority.
 
