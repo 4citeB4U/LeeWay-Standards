@@ -1,14 +1,16 @@
 /*
 LEEWAY HEADER — DO NOT REMOVE
-REGION: LEEWAY.STANDARDS.SH01.GRAPH_SOURCE_TEST
-TAG: LEEWAY.SH01.AUTHORITY_UNIQUENESS_NEGATIVE_TEST_V1
-WHO: Source-only LeeWay Standards qualification.
-WHAT: Verify independent owner, source pin, graph, real red blocker and no false production PASS.
-WHEN: 2026-10-28.
-WHERE: tests/sh01-snapshot.test.mjs.
-WHY: Source audit must be machine-checkable and preserve unresolved production gates.
-HOW: Node 22 local fixture with no privileged providers, files or credentials.
-LICENSE: MIT.
+REGION: LEEWAY.STANDARDS.SH01
+TAG: LEEWAY.STANDARDS.SH01.GRAPH_TESTS
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
+5WH:
+WHAT = Test graph and source authority refusal
+WHY = Preserve denied production and known host red evidence
+WHO = LeeWay Standards source audit
+WHERE = tests/sh01-snapshot.test.mjs
+WHEN = 2026-10-28
+HOW = Isolated Node tests with frozen snapshot fixtures
+LICENSE: Existing LeeWay repository terms
 */
 import test from 'node:test';
 import assert from 'node:assert/strict';
