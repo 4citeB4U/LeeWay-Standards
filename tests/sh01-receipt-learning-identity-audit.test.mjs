@@ -1,12 +1,18 @@
 /*
 LEEWAY HEADER — DO NOT REMOVE
-REGION: LEEWAY.STANDARDS.SH01.RECEIPT.COMPATIBILITY.TEST
-TAG: LEEWAY.SH01.RECEIPT_HASH_PAIR_NEGATIVE_SOURCE_TEST
-5WH: WHO=SH-01 contributor; WHAT=synthetic negative source-fixture tests; WHEN=2026-10-28;
-WHERE=tests/sh01-receipt-learning-identity-audit.test.mjs; WHY=defend v1 hash identity semantics;
-HOW=Node 22 built-in test runner, no external services or credentials.
-AUTHORITY: TEST ONLY, never real production Veritas/Receipt/Learning evidence.
-LICENSE: existing Standards repository terms.
+REGION: LEEWAY.STANDARDS.SH01.RECEIPT.TEST
+TAG: LEEWAY.SH01.RECEIPT.IDENTITY.TEST
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+
+5WH:
+WHAT = Execute synthetic positive and negative receipt hash identity fixtures
+WHY = Prove source audit rejects swapped digests and unearned claims
+WHO = SH-01 contributor operating under canonical LeeWay Standards
+WHERE = tests/sh01-receipt-learning-identity-audit.test.mjs
+WHEN = 2026-10-28
+HOW = Node22 test runner with no credentials or canonical provider writes
+
+LICENSE: Existing LeeWay Standards repository terms remain unchanged
 */
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -112,3 +118,16 @@ mutate('reject non-source readback status as a synthetic admission',x=>{
  x.readback.status='VERIFIED';
 },'CHAIN_PROOF_READBACK_NOT_BOUND');
 mutate('reject missing source readback',x=>{delete x.readback},'CHAIN_PROOF_READBACK_NOT_BOUND');
+
+mutate('reject changed obligation scope even if the record proof is recomputed',x=>{
+ x.record.entry.learningObligation.scope='USER_PRIVATE';
+ x.record.proof.sha256=hash(JSON.stringify({entry:x.record.entry,previousHash:null,createdAt:x.record.createdAt}));
+ x.readback.chainProofHash=x.record.proof.sha256;
+},'EXECUTION_RECEIPT_OBLIGATION_MISMATCH');
+mutate('reject invented deterministic receipt commitment IDs',x=>{
+ x.record.entry.learningObligation.receiptCommitId='rc-'+('f'.repeat(64));
+ x.record.entry.receiptCommitId=x.record.entry.learningObligation.receiptCommitId;
+ x.readback.receiptCommitId=x.record.entry.receiptCommitId;
+ x.record.proof.sha256=hash(JSON.stringify({entry:x.record.entry,previousHash:null,createdAt:x.record.createdAt}));
+ x.readback.chainProofHash=x.record.proof.sha256;
+},'EXECUTION_RECEIPT_OBLIGATION_MISMATCH');
