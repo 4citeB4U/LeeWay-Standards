@@ -2,6 +2,7 @@
 LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.STANDARDS.SH01
 TAG: LEEWAY.SH01.AUTHORITY_AUDIT
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 5WH:
 WHAT = Preserve the existing SH-01 sovereign authority and dependency checkpoint.
 WHY = Qualify source/governance facts before sovereign-host production admission.
