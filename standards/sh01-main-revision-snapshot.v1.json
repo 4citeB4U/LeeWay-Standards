@@ -1,0 +1,561 @@
+{
+  "schema": "leeway.sh01.sovereign-ecosystem-source-snapshot.v1",
+  "missionId": "SH-01",
+  "asOf": "2026-10-28",
+  "provenance": "CONNECTED_GITHUB_READS_CURRENT_MAIN; SOURCE_ONLY",
+  "authoritySource": "4citeB4U/LeeWay-Standards/standards/leeway-ecosystem-authority.v1.json",
+  "originalMission": "https://github.com/4citeB4U/Leeway-Runtime-Fabric/issues/21",
+  "parentReview": "https://github.com/4citeB4U/LeeWay-Standards/pull/61",
+  "productionAdmissionAuthorized": false,
+  "independentVeritasCertified": false,
+  "protectedLedgerMutated": false,
+  "repositories": [
+    {
+      "id": "standards",
+      "repository": "4citeB4U/LeeWay-Standards",
+      "defaultBranch": "main",
+      "pinnedMainSha": "8df16fa0221e073be2530a28033b2601eb67dd35",
+      "ownerRole": "LEEWAY_CONSTITUTIONAL_POLICY_OWNER",
+      "entrypointExample": "src/cli/leeway.js",
+      "sourceTestCommand": "npm run audit",
+      "workflowExample": ".github/workflows/enforce-leeway-standards.yml",
+      "bindingStatus": "PARTIALLY_BUILT",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Machine-readable policy manifest, trust-root issuer mapping and offline acceptance not fully qualified"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "formula",
+      "repository": "4citeB4U/Leeway-formula-live",
+      "defaultBranch": "main",
+      "pinnedMainSha": "c1033eb7bedb88661f21b7eec6016a6404ce2153",
+      "ownerRole": "GOLDEN_FORMULA_OWNER",
+      "entrypointExample": null,
+      "sourceTestCommand": null,
+      "workflowExample": ".github/workflows/portability.yml",
+      "bindingStatus": "PARTIALLY_BUILT",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Exact production artifact pin, deterministic native cross-runtime readback and signed inputs/outputs unverified"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "runtime",
+      "repository": "4citeB4U/Leeway-Runtime-Fabric",
+      "defaultBranch": "main",
+      "pinnedMainSha": "2f765288f6c150a2273f873670a2ed876a130864",
+      "ownerRole": "RUNTIME_EXECUTION_AND_SOVEREIGN_HOST_OWNER",
+      "entrypointExample": "server/index.cjs",
+      "sourceTestCommand": "npm run start:server",
+      "workflowExample": ".github/workflows/persistent-workplane-proof.yml",
+      "bindingStatus": "PARTIALLY_BUILT",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Standalone cold-boot/restart/offline service proof absent; host independence source gate FAIL 10 on separate review branch"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "veritas",
+      "repository": "4citeB4U/LEEWAY-VERITAS",
+      "defaultBranch": "main",
+      "pinnedMainSha": "64ab653a649408a014529fbbecbbf3cf30808579",
+      "ownerRole": "INDEPENDENT_VERITAS_OWNER",
+      "entrypointExample": "bin/start-review-service.mjs",
+      "sourceTestCommand": "npm test",
+      "workflowExample": ".github/workflows/veritas-source-proof.yml",
+      "bindingStatus": "MISSING_GLUE",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Independent production signer enrollment and live signed PRE/POST with revocation and actual readback unverified"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "receipt",
+      "repository": "4citeB4U/Receipt-Authority",
+      "defaultBranch": "main",
+      "pinnedMainSha": "439618b2960539513619a673ad236bb461e8a6fa",
+      "ownerRole": "CANONICAL_RECEIPT_AUTHORITY_OWNER",
+      "entrypointExample": null,
+      "sourceTestCommand": null,
+      "workflowExample": null,
+      "bindingStatus": "MISSING_GLUE",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Main only README; Receipt-Authority PR #1 and Runtime Receipt-owner PR #115 are draft; atomic live host outbox/ACK unqualified"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "learning",
+      "repository": "4citeB4U/LeeWay-Learning-Ledger",
+      "defaultBranch": "main",
+      "pinnedMainSha": "7c68a824b326b26a1d386edfba11d352863531a0",
+      "ownerRole": "CANONICAL_LEARNING_LEDGER_OWNER",
+      "entrypointExample": null,
+      "sourceTestCommand": null,
+      "workflowExample": null,
+      "bindingStatus": "MISSING_GLUE",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Main only README; Learning Ledger PR #3 is draft and not a deployed original canonical writer; idempotent live append unqualified"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "continuum",
+      "repository": "4citeB4U/LeeWay-Continuum",
+      "defaultBranch": "main",
+      "pinnedMainSha": "a8107cd61377079ac2c2fc9f99aa2061824bda21",
+      "ownerRole": "DURABLE_STORAGE_CONTINUUM_OWNER",
+      "entrypointExample": "src/integration/canonical-host-binding.mjs",
+      "sourceTestCommand": "npm test",
+      "workflowExample": ".github/workflows/continuum-tests.yml",
+      "bindingStatus": "PARTIALLY_BUILT",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Source CI passed on current main; exact full durable bytes/restore and owner-scope continuity unverified"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "vram",
+      "repository": "4citeB4U/LeeWay-VRAM-Database",
+      "defaultBranch": "main",
+      "pinnedMainSha": "e77cb786bdbb07d84f72957ae9de70eae5112e8c",
+      "ownerRole": "CHECKPOINT_METADATA_ONLY_ALLOCATOR_RUNTIME_OWNED",
+      "entrypointExample": "src/checkpoint-database.mjs",
+      "sourceTestCommand": "npm test",
+      "workflowExample": ".github/workflows/ci.yml",
+      "bindingStatus": "PARTIALLY_BUILT",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Standalone candidate CI passed on current main; actual Runtime-owned LDWMD allocator and persistence custody unqualified"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "gpu",
+      "repository": "4citeB4U/LeeWay-Edge-GPU",
+      "defaultBranch": "main",
+      "pinnedMainSha": "d7347eddeb1db3423f322fdc599c82e5f26eae5f",
+      "ownerRole": "PHYSICAL_COMPUTE_PROVIDER",
+      "entrypointExample": "app.js",
+      "sourceTestCommand": "npm run test:portable",
+      "workflowExample": ".github/workflows/portable-gpu-contracts.yml",
+      "bindingStatus": "PARTIALLY_BUILT",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Native diagnostics are not production inference/provider admission; real GPU+LDWMD+Formula chain unverified"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "model",
+      "repository": "4citeB4U/LeeWay-Model-Hub",
+      "defaultBranch": "main",
+      "pinnedMainSha": "c6d367155f01f769c44256e13b5f7913b5cc1214",
+      "ownerRole": "MODEL_REGISTRY_AND_PROVIDER_MANAGER",
+      "entrypointExample": "src/server.mjs",
+      "sourceTestCommand": "npm test",
+      "workflowExample": ".github/workflows/ci.yml",
+      "bindingStatus": "PARTIALLY_BUILT",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Source local provider exists; sovereign production inference and complete provider identity unverified"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "agent",
+      "repository": "4citeB4U/Agent-Lee-The-Sum-of-All-Systems",
+      "defaultBranch": "main",
+      "pinnedMainSha": "93731899ccaa3e317768d38555af4ac3710a8de8",
+      "ownerRole": "AGENT_LEE_LOGICAL_IDENTITY_OWNER",
+      "entrypointExample": "src/cli/leeway.js",
+      "sourceTestCommand": "npm run doctor",
+      "workflowExample": null,
+      "bindingStatus": "UNVERIFIED",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Multi-turn executive purpose/persona and state-governed action/restart unverified"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "skills",
+      "repository": "4citeB4U/LeeWay-Agent-Skills",
+      "defaultBranch": "main",
+      "pinnedMainSha": "26bb0e7df29d95008b20f23497d469c0e0ca6eab",
+      "ownerRole": "SKILLS_REFERENCE_AND_MCP_CONTRACT",
+      "entrypointExample": "mcp-server/dist/index.js",
+      "sourceTestCommand": "npm run verify:request-completion-fixture",
+      "workflowExample": ".github/workflows/verify-skill-fabric.yml",
+      "bindingStatus": "PARTIALLY_BUILT",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Published skill inventory is not proof of authenticated live MCP execution; explicit provider bindings required"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "device",
+      "repository": "4citeB4U/LEEWAY-DEVICE-BRIDGE",
+      "defaultBranch": "main",
+      "pinnedMainSha": "506fa7329c4570503783300e09a874f47c34746b",
+      "ownerRole": "DEVICE_TRANSPORT_AND_NATIVE_ADAPTER",
+      "entrypointExample": "operator/device-bridge-cli.mjs",
+      "sourceTestCommand": "npm run test:mcp",
+      "workflowExample": ".github/workflows/protocol-mcp.yml",
+      "bindingStatus": "PARTIALLY_BUILT",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Native transport/CLI and many workflows exist; authenticated cross-device actual capability execution unverified"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "federate",
+      "repository": "4citeB4U/Leeway-Federate-Web",
+      "defaultBranch": "main",
+      "pinnedMainSha": "0bc64d62e2056f22450cfb79a68e62fb8b62f308",
+      "ownerRole": "FEDERATED_NETWORK_ADAPTER",
+      "entrypointExample": "index.html",
+      "sourceTestCommand": null,
+      "workflowExample": ".github/workflows/peer-proof.yml",
+      "bindingStatus": "PARTIALLY_BUILT",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Browser topology and peer-proof workflows exist; independently authenticated live peer and remote capability unverified"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "live",
+      "repository": "4citeB4U/Leeway-live",
+      "defaultBranch": "main",
+      "pinnedMainSha": "fd0b310601dc2c82130ddd7b2150c27d8432748a",
+      "ownerRole": "PUBLIC_CONVERSATION_SURFACE",
+      "entrypointExample": "index.html",
+      "sourceTestCommand": null,
+      "workflowExample": ".github/workflows/live-runtime-gate.yml",
+      "bindingStatus": "PARTIALLY_BUILT",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Public UI exists; actual conversation/backend persistence unverified"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "rtc",
+      "repository": "4citeB4U/LeeWay-Edge-RTC",
+      "defaultBranch": "main",
+      "pinnedMainSha": "ba28fb8e3c636f8edddec88bdd4fa7d2a6b45840",
+      "ownerRole": "RTC_SESSION_ADAPTER",
+      "entrypointExample": "src/voice/realtime-conversation.ts",
+      "sourceTestCommand": "npm run test:conversation",
+      "workflowExample": ".github/workflows/pull-request-checks.yml",
+      "bindingStatus": "PARTIALLY_BUILT",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Session, reconnect and measured full-duplex mobile handoff remain unverified"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "voice",
+      "repository": "4citeB4U/LeeWay-Voice-Fabric",
+      "defaultBranch": "main",
+      "pinnedMainSha": "76dff6a1ff3482c0c17b60c4d294945224e3d8a1",
+      "ownerRole": "VOICE_IO_ADAPTER",
+      "entrypointExample": "src/bridge-runtime.js",
+      "sourceTestCommand": "npm test",
+      "workflowExample": ".github/workflows/live-browser-gate.yml",
+      "bindingStatus": "PARTIALLY_BUILT",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Voice source present; true audio AEC, barge-in, actual TTS playback remain unverified"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "vision",
+      "repository": "4citeB4U/Leeway-Agent-Lee-Vision",
+      "defaultBranch": "main",
+      "pinnedMainSha": "4751ea36a531d970fe2d7aba796b23c30b57a5d2",
+      "ownerRole": "VISUAL_SENSOR_UI_ADAPTER",
+      "entrypointExample": "index.html",
+      "sourceTestCommand": null,
+      "workflowExample": ".github/workflows/vision-floating-ui.yml",
+      "bindingStatus": "UNVERIFIED",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Visible UI and tests; independent physical sensor provenance unverified"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "workforce",
+      "repository": "4citeB4U/LeeWay-Digital-Workforce",
+      "defaultBranch": "main",
+      "pinnedMainSha": "83bfcd976655a41e4422dda7abf27b730c5bfe4d",
+      "ownerRole": "DIGITAL_WORKFORCE_APPLICATION",
+      "entrypointExample": "src",
+      "sourceTestCommand": "npm run build",
+      "workflowExample": ".github/workflows/factory-ci.yml",
+      "bindingStatus": "PARTIALLY_BUILT",
+      "liveProductionQualified": false,
+      "blockers": [
+        "App factory source present; governed external action and production delegation unverified"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    },
+    {
+      "id": "pocket",
+      "repository": "4citeB4U/LeeWay-Pocket-Agent",
+      "defaultBranch": "main",
+      "pinnedMainSha": "d5753fc1c13c3481263ca88d89ca9c0420fcbdb5",
+      "ownerRole": "ANDROID_CLIENT",
+      "entrypointExample": "app",
+      "sourceTestCommand": null,
+      "workflowExample": ".github/workflows/android-apk.yml",
+      "bindingStatus": "PARTIALLY_BUILT",
+      "liveProductionQualified": false,
+      "blockers": [
+        "Android app build source exists; physical device bridge parity and restart acceptance unverified"
+      ],
+      "sourceVerification": "GITHUB_REPOSITORY_MAIN_TREE_AND_PACKAGE_INSPECTED_WHERE_AVAILABLE"
+    }
+  ],
+  "workstreams": [
+    {
+      "id": "host",
+      "ownerRepository": "4citeB4U/Leeway-Runtime-Fabric",
+      "kind": "RUNTIME_WORKSTREAM_NOT_SEPARATE_AUTHORITY",
+      "dependencies": [
+        "standards",
+        "formula",
+        "runtime",
+        "veritas",
+        "receipt",
+        "learning",
+        "continuum",
+        "agent",
+        "device"
+      ],
+      "status": "MISSING_GLUE"
+    },
+    {
+      "id": "dispatcher",
+      "ownerRepository": "4citeB4U/Leeway-Runtime-Fabric",
+      "kind": "SUBSYSTEM_NOT_SEPARATE_AUTHORITY",
+      "dependencies": [
+        "standards",
+        "formula",
+        "runtime"
+      ],
+      "status": "PARTIALLY_BUILT"
+    },
+    {
+      "id": "consciousness",
+      "ownerRepository": "4citeB4U/Agent-Lee-The-Sum-of-All-Systems",
+      "kind": "MULTI_REPO_LOGICAL_SYSTEM_NOT_SEPARATE_ISSUER",
+      "dependencies": [
+        "agent",
+        "model",
+        "skills",
+        "continuum",
+        "runtime"
+      ],
+      "status": "UNVERIFIED"
+    },
+    {
+      "id": "bpv7",
+      "ownerRepository": null,
+      "kind": "EXTERNAL_ADAPTER_NOT_REPOSITORY_VERIFIED",
+      "dependencies": [
+        "federate",
+        "runtime"
+      ],
+      "status": "UNVERIFIED"
+    },
+    {
+      "id": "orbital",
+      "ownerRepository": null,
+      "kind": "EXTERNAL_ACCESS_AND_HARDWARE_NOT_VERIFIED",
+      "dependencies": [
+        "bpv7"
+      ],
+      "status": "UNVERIFIED"
+    }
+  ],
+  "dependencies": {
+    "standards": [],
+    "formula": [
+      "standards"
+    ],
+    "runtime": [
+      "standards",
+      "formula"
+    ],
+    "veritas": [
+      "standards"
+    ],
+    "receipt": [
+      "standards",
+      "runtime",
+      "formula",
+      "veritas"
+    ],
+    "learning": [
+      "receipt",
+      "veritas"
+    ],
+    "continuum": [
+      "standards",
+      "runtime"
+    ],
+    "vram": [
+      "continuum",
+      "runtime"
+    ],
+    "gpu": [
+      "runtime",
+      "formula",
+      "vram"
+    ],
+    "model": [
+      "runtime",
+      "continuum"
+    ],
+    "agent": [
+      "model",
+      "skills",
+      "continuum",
+      "runtime"
+    ],
+    "skills": [
+      "standards",
+      "runtime"
+    ],
+    "device": [
+      "standards",
+      "runtime"
+    ],
+    "federate": [
+      "standards",
+      "device"
+    ],
+    "live": [
+      "agent",
+      "device"
+    ],
+    "rtc": [
+      "live"
+    ],
+    "voice": [
+      "rtc",
+      "agent"
+    ],
+    "vision": [
+      "runtime"
+    ],
+    "workforce": [
+      "agent",
+      "skills"
+    ],
+    "pocket": [
+      "device"
+    ]
+  },
+  "liveObservations": [
+    {
+      "kind": "SOURCE_CI_SUCCESS",
+      "repo": "4citeB4U/LeeWay-VRAM-Database",
+      "sha": "e77cb786bdbb07d84f72957ae9de70eae5112e8c",
+      "url": "https://github.com/4citeB4U/LeeWay-VRAM-Database/actions/runs/40386259724"
+    },
+    {
+      "kind": "SOURCE_CI_SUCCESS",
+      "repo": "4citeB4U/LeeWay-Continuum",
+      "sha": "a8107cd61377079ac2c2fc9f99aa2061824bda21",
+      "url": "https://github.com/4citeB4U/LeeWay-Continuum/actions/runs/40647915213"
+    },
+    {
+      "kind": "SOURCE_CI_SUCCESS_DRAFT",
+      "repo": "4citeB4U/LeeWay-Standards",
+      "sha": "49b990d8b22b5ddb7726d62cfc1460fb8b2f9739",
+      "url": "https://github.com/4citeB4U/LeeWay-Standards/actions/runs/40791719245"
+    },
+    {
+      "kind": "SOURCE_CI_FAILURE_DRAFT",
+      "repo": "4citeB4U/LeeWay-Standards",
+      "sha": "49b990d8b22b5ddb7726d62cfc1460fb8b2f9739",
+      "url": "https://github.com/4citeB4U/LeeWay-Standards/actions/runs/40791718793"
+    },
+    {
+      "kind": "HOST_INDEPENDENCE_GATE_FAIL_10_DRAFT",
+      "repo": "4citeB4U/Leeway-Runtime-Fabric",
+      "sha": "684bbb86d6e08f114ce62e8873f97f023cef0fc1",
+      "url": "https://github.com/4citeB4U/Leeway-Runtime-Fabric/actions/runs/40791702215",
+      "details": [
+        "seven fixed-localhost-service references",
+        "two developer-drive-path defaults",
+        "one missing independent Veritas B8 admission source on the tested branch"
+      ]
+    },
+    {
+      "kind": "RECEIPT_OWNER_SOURCE_CI_SUCCESS_DRAFT_NOT_LIVE",
+      "repo": "4citeB4U/Leeway-Runtime-Fabric",
+      "sha": "85477c5df3788182f1adf66cfd1cb65f1641198b",
+      "url": "https://github.com/4citeB4U/Leeway-Runtime-Fabric/actions/runs/40631528803"
+    },
+    {
+      "kind": "LEARNING_SOURCE_CI_SUCCESS_DRAFT_NOT_LIVE",
+      "repo": "4citeB4U/LeeWay-Learning-Ledger",
+      "sha": "3b50a9b41a99cf0d48b2bb369f12447a207ae23c",
+      "url": "https://github.com/4citeB4U/LeeWay-Learning-Ledger/actions/runs/40630987933"
+    }
+  ],
+  "gates": [
+    {
+      "id": "SH-01-SOURCE-COVERAGE",
+      "status": "PARTIAL",
+      "note": "20 verified canonical repository main pins; deeper entrypoint review and independent CI for every repo remain OPEN"
+    },
+    {
+      "id": "VT-01",
+      "status": "OPEN",
+      "note": "Owner-approved production roots, signer and readback not qualified"
+    },
+    {
+      "id": "RC-01",
+      "status": "OPEN",
+      "note": "Receipt owned original writer/outbox and protected host history not qualified"
+    },
+    {
+      "id": "LL-01",
+      "status": "OPEN",
+      "note": "Canonical Learning draft source and authenticated durable uniqueness/readback not production deployed"
+    },
+    {
+      "id": "SH-02",
+      "status": "OPEN",
+      "note": "Portable Runtime Fabric service bootstrap and all hosted services not proven"
+    },
+    {
+      "id": "SH-03",
+      "status": "OPEN",
+      "note": "Full sovereign host cold boot/restart/offline acceptance never demonstrated"
+    },
+    {
+      "id": "FED-01",
+      "status": "OPEN",
+      "note": "Live independently authenticated multi-node failover not demonstrated"
+    }
+  ]
+}
