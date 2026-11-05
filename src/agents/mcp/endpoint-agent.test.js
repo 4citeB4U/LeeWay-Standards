@@ -1,11 +1,18 @@
 /*
 LEEWAY HEADER — DO NOT REMOVE
+
 REGION: MCP.AGENT.ENDPOINT.TEST
 TAG: MCP.ENDPOINT.AGENT.SOURCE_CONTRACT_TEST
-WHO: LeeWay Industries; WHAT: static endpoint discovery regression tests;
-WHEN: 2026-11-05; WHERE: src/agents/mcp;
-WHY: Count real source-defined HTTP routes without inventing live connectivity;
-HOW: Isolated fixture text, explicit service IDs, no network/device commands.
+
+5WH:
+WHAT = Test static Node, Python, Express and Fastify endpoint discovery.
+WHY = Prevent false route claims and cross-service conflict reports.
+WHO = LeeWay Industries; authorized source-test contributors.
+WHERE = src/agents/mcp/endpoint-agent.test.js
+WHEN = 2026-11-05
+HOW = Isolated file fixtures and Node test runner; no device or network commands.
+
+AUTHORIZED_ROLES: Source regression test only; no execution or deployment authority.
 LICENSE: MIT
 */
 import test from 'node:test';
