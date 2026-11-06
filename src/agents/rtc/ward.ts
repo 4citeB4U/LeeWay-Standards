@@ -7,12 +7,12 @@ TAG: SFU.NPC.ROOM_JANITOR
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=trash-2
 5WH:
-  WHAT = WARD — Watchful Agent for Room Disposal | Room Janitor NPC
-  WHY  = Sweeps empty SFU rooms every 60s to prevent memory leaks
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = services/sfu/src/agents/ward.ts
-  WHEN = 2026
-  HOW  = setInterval 60s → getRooms() filter empty → deleteRoom() → agentBus.emit
+WHAT = WARD — Watchful Agent for Room Disposal | Room Janitor NPC
+WHY  = Sweeps empty SFU rooms every 60s to prevent memory leaks
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = services/sfu/src/agents/ward.ts
+WHEN = 2026
+HOW  = setInterval 60s → getRooms() filter empty → deleteRoom() → agentBus.emit
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY
 */

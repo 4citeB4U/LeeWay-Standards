@@ -6,12 +6,12 @@ REGION: CLIENT.VOICE.ENGINE
 TAG: VOICE.ENGINE.HOOK
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 5WH:
-  WHAT = useVoiceEngineWorkflow hook — React integration for Voice Matching Engine
-  WHY  = Provides clean component interface to VoiceEngineController
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = src/voice/use-voice-engine.ts
-  WHEN = 2026
-  HOW  = Wraps controller lifetime, emits state changes, exposes action methods
+WHAT = useVoiceEngineWorkflow hook — React integration for Voice Matching Engine
+WHY  = Provides clean component interface to VoiceEngineController
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = src/voice/use-voice-engine.ts
+WHEN = 2026
+HOW  = Wraps controller lifetime, emits state changes, exposes action methods
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY
 */

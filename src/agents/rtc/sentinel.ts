@@ -7,12 +7,12 @@ TAG: SFU.NPC.SECURITY_GUARD
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=shield
 5WH:
-  WHAT = SENTINEL — Security Event and Network Traffic Inspector | Security Guard NPC
-  WHY  = Tracks signaling error rates and raises alerts on anomalous patterns
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = services/sfu/src/agents/sentinel.ts
-  WHEN = 2026
-  HOW  = setInterval 20s → error counter diff → rate threshold → agentBus.emit
+WHAT = SENTINEL — Security Event and Network Traffic Inspector | Security Guard NPC
+WHY  = Tracks signaling error rates and raises alerts on anomalous patterns
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = services/sfu/src/agents/sentinel.ts
+WHEN = 2026
+HOW  = setInterval 20s → error counter diff → rate threshold → agentBus.emit
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY
 */

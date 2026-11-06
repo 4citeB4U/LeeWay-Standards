@@ -7,13 +7,13 @@ TAG: VOICE.REGISTRY.DISCOVERY
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=mic-vocal
 5WH:
-  WHAT = LeeWay Voice Registry — discovers and classifies all browser TTS voices at runtime
-  WHY  = SpeechSynthesis.getVoices() is async and device-dependent; this registry
+WHAT = LeeWay Voice Registry — discovers and classifies all browser TTS voices at runtime
+WHY  = SpeechSynthesis.getVoices() is async and device-dependent; this registry
          fires onReady once voices are stable and provides gender/quality classification
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = src/voice/voice-registry.ts
-  WHEN = 2026
-  HOW  = speechSynthesis.getVoices() + voiceschanged event; heuristic name-based
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = src/voice/voice-registry.ts
+WHEN = 2026
+HOW  = speechSynthesis.getVoices() + voiceschanged event; heuristic name-based
          gender detection; local-service flag for quality; singleton exported
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY

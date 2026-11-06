@@ -6,12 +6,12 @@ REGION: CLIENT.VOICE.ENGINE
 TAG: VOICE.ENGINE.CONTROLLER
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 5WH:
-  WHAT = VoiceEngineController — state machine for Voice Matching + Modulation workflow
-  WHY  = Manages strict step progression, audio capture, analysis, matching, modulation, save
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = src/voice/engine-controller.ts
-  WHEN = 2026
-  HOW  = Redux-like state machine with guarded transitions, YIN pitch detection, 
+WHAT = VoiceEngineController — state machine for Voice Matching + Modulation workflow
+WHY  = Manages strict step progression, audio capture, analysis, matching, modulation, save
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = src/voice/engine-controller.ts
+WHEN = 2026
+HOW  = Redux-like state machine with guarded transitions, YIN pitch detection, 
          deterministic voice scoring, browser speech synthesis modulation
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY

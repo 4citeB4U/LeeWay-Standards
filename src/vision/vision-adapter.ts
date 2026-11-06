@@ -14,6 +14,14 @@ CONSTRAINTS:
 - Must not bypass governance
 - Must not create independent reasoning logic
 
+5WH:
+WHAT = Translate awareness packets into agent-ready outputs.
+WHY = Retain the existing stated component purpose
+WHO = LeeWay-Standards
+WHERE = Existing component identity retained in TAG
+WHEN = 2026-10-25 metadata qualification
+HOW = Preserve the existing implementation and its declared purpose
+
 LICENSE: PROPRIETARY
 */
 // CHAIN: Standards → Integrated → Runtime → Projections

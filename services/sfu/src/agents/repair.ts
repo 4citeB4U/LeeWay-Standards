@@ -7,13 +7,13 @@ TAG: SFU.NPC.AUTO_REPAIR
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=wrench
 5WH:
-  WHAT = REPAIR (AGT-006) — Rapid Error Processing & Automated Infrastructure Recovery
-  WHY  = Watches for agents in alert/offline state and triggers auto-resume cycles
+WHAT = REPAIR (AGT-006) — Rapid Error Processing & Automated Infrastructure Recovery
+WHY  = Watches for agents in alert/offline state and triggers auto-resume cycles
          so the system heals itself without operator intervention on edge hardware
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = services/sfu/src/agents/repair.ts
-  WHEN = 2026
-  HOW  = setInterval 25s → scan all agent snapshots → if status=alert or offline
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = services/sfu/src/agents/repair.ts
+WHEN = 2026
+HOW  = setInterval 25s → scan all agent snapshots → if status=alert or offline
          and tier !== oversight → runtime.resume(); log repair ticket
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY

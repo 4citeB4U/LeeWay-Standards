@@ -67,3 +67,42 @@ test('apply refuses unsupported format mutation and preserves bytes', t => {
   assert.equal(fs.readFileSync(f, 'utf8'), source, 'original bytes changed: ' + ext);
  }
 });
+
+
+test('complete metadata remains valid when relocated to another directory',t=>{
+ const root=fixture(t);
+ const header='<!--\nLEEWAY HEADER — DO NOT REMOVE\nREGION: AI.AGENT.EXAMPLE\nTAG: AI.AGENT.EXAMPLE.MAIN\nDISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render\n5WH:\nWHAT = test\nWHY = relocation\nWHO = original owner\nWHERE = original declared identity\nWHEN = 2026-10-25\nHOW = stable metadata\nLICENSE: Existing terms\n-->\n';
+ const a=path.join(root,'components'),b=path.join(root,'scripts');fs.mkdirSync(a);fs.mkdirSync(b);
+ fs.writeFileSync(path.join(a,'unit.md'),header+'# Same skill\n');
+ let result=run(root,['--strict']);assert.equal(result.status,0,result.stdout);
+ fs.renameSync(path.join(a,'unit.md'),path.join(b,'unit.md'));
+ result=run(root,['--strict']);assert.equal(result.status,0,result.stdout);
+ assert.equal(JSON.parse(result.stdout).changed,0);
+});
+test('HTML doctype before valid metadata is accepted, but body markers are not',t=>{
+ const root=fixture(t);
+ const header='<!--\nLEEWAY HEADER — DO NOT REMOVE\nREGION: UI.WEB.EXAMPLE\nTAG: UI.WEB.EXAMPLE.MAIN\nDISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render\n5WH:\nWHAT = html\nWHY = validation\nWHO = owner\nWHERE = document identity\nWHEN = 2026-10-25\nHOW = parser\nLICENSE: Existing terms\n-->';
+ const f=path.join(root,'page.html');fs.writeFileSync(f,'<!doctype html>\n'+header+'\n<html></html>\n');
+ let result=run(root,['--strict']);assert.equal(result.status,0,result.stdout);
+ fs.writeFileSync(f,'<!doctype html>\n<html><body>'+header+'</body></html>');
+ result=run(root,['--strict']);assert.notEqual(result.status,0);
+});
+
+
+test('canonical governance block after adjacent document metadata qualifies',t=>{
+ const root=fixture(t),f=path.join(root,'canon.md');
+ const metadata='<!--\nDOC_CLASS: CANON\nOWNER: Original owner\n-->\n';
+ const canonical='<!--\nLEEWAY HEADER — DO NOT REMOVE\nREGION: CORE.DOCS.CANON\nTAG: CORE.DOCS.CANON.MAIN\nDISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render\n5WH:\nWHAT = canon\nWHY = governed\nWHO = Original owner\nWHERE = stable identity\nWHEN = 2026-10-25\nHOW = reviewed\nLICENSE: Existing terms\n-->\n';
+ fs.writeFileSync(f,metadata+canonical+'# Canon body\n');
+ const ok=run(root,['--strict']);assert.equal(ok.status,0,ok.stdout);
+ fs.writeFileSync(f,metadata+'# prose\n'+canonical);
+ const fail=run(root,['--strict']);assert.notEqual(fail.status,0);
+});
+test('multiple leading metadata blocks cannot combine incomplete authority fields',t=>{
+ const root=fixture(t),f=path.join(root,'split.md');
+ const identity='<!--\nLEEWAY HEADER — DO NOT REMOVE\nREGION: CORE.DOCS.CANON\nTAG: CORE.DOCS.CANON.MAIN\nDISCOVERY_PIPELINE: valid\n-->\n';
+ const extra='<!--\n5WH:\nWHAT = split\nWHY = invalid\nWHO = no\nWHERE = no\nWHEN = no\nHOW = no\nLICENSE: Existing terms\n-->\n';
+ fs.writeFileSync(f,identity+extra+'# Body\n');
+ const result=run(root,['--strict']);assert.notEqual(result.status,0);
+ assert.equal(JSON.parse(result.stdout).invalid,1);
+});

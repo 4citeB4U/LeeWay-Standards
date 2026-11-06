@@ -7,12 +7,12 @@ TAG: SFU.LOGGING.CENTRAL
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=file-text
 5WH:
-  WHAT = LeeWay centralized logger — all agents + system write to unified /logs/ directory
-  WHY  = Single log directory enables tailing, rotation, shipping, and forensic audits
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = services/sfu/src/logger.ts
-  WHEN = 2026
-  HOW  = pino multistream → stdout + logs/combined.log; agentLogger() creates per-agent
+WHAT = LeeWay centralized logger — all agents + system write to unified /logs/ directory
+WHY  = Single log directory enables tailing, rotation, shipping, and forensic audits
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = services/sfu/src/logger.ts
+WHEN = 2026
+HOW  = pino multistream → stdout + logs/combined.log; agentLogger() creates per-agent
          child loggers that ALSO append to logs/<codename>.log
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY

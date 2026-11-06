@@ -7,13 +7,13 @@ TAG: VOICE.AUDIO.CAPTURE_PLAYBACK
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=audio-lines
 5WH:
-  WHAT = Low-level audio capture (PCM worklet mic) and gapless PCM playback
-  WHY  = Provides raw audio I/O for the voice loop — used when routing to the
+WHAT = Low-level audio capture (PCM worklet mic) and gapless PCM playback
+WHY  = Provides raw audio I/O for the voice loop — used when routing to the
          voice server (ws path). Web Speech API path does not use this module.
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = src/voice/audio.ts (adapted from agentleevoice AudioCapture/AudioPlayback)
-  WHEN = 2026
-  HOW  = getUserMedia → AudioWorklet PCM capture at 16 kHz;
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = src/voice/audio.ts (adapted from agentleevoice AudioCapture/AudioPlayback)
+WHEN = 2026
+HOW  = getUserMedia → AudioWorklet PCM capture at 16 kHz;
          PCM chunks queued via AudioContext for gapless 22050 Hz playback
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY

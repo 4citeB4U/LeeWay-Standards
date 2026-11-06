@@ -15,6 +15,14 @@ CONSTRAINTS:
 - Must respect governance and runtime mode
 - Must not introduce independent scheduling
 
+5WH:
+WHAT = Add a controlled, on-demand scan layer that detects regions of interest using minimal compute.
+WHY = Retain the existing stated component purpose
+WHO = LeeWay-Standards
+WHERE = Existing component identity retained in TAG
+WHEN = 2026-10-25 metadata qualification
+HOW = Preserve the existing implementation and its declared purpose
+
 LICENSE: PROPRIETARY
 */
 // CHAIN: Standards → Integrated → Runtime → Projections

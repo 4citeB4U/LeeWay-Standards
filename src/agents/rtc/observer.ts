@@ -7,12 +7,12 @@ TAG: SFU.NPC.VISION_PERCEPTION
 COLOR_ONION_HEX: NEON=#FF00CC FLUO=#CC00FF PASTEL=#F8E7FF
 ICON_ASCII: family=lucide glyph=eye
 5WH:
-  WHAT = OBSERVER — Optical Behavior & System Event Reporting | Vision NPC
-  WHY  = Performs real-time object detection and scene analysis on RTC streams
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = services/sfu/src/agents/observer.ts
-  WHEN = 2026
-  HOW  = Mediated frame capture (placeholder) → TFLite inference (architected) → object metadata broadcast
+WHAT = OBSERVER — Optical Behavior & System Event Reporting | Vision NPC
+WHY  = Performs real-time object detection and scene analysis on RTC streams
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = services/sfu/src/agents/observer.ts
+WHEN = 2026
+HOW  = Mediated frame capture (placeholder) → TFLite inference (architected) → object metadata broadcast
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY
 */

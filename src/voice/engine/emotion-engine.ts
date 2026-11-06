@@ -7,14 +7,14 @@ TAG: VOICE.EMOTION.ENGINE
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=activity
 5WH:
-  WHAT = LeeWay Emotion Engine — maps system state + text patterns to TTS parameter deltas
-  WHY  = Adds perceived intelligence and expressiveness to the voice output while
+WHAT = LeeWay Emotion Engine — maps system state + text patterns to TTS parameter deltas
+WHY  = Adds perceived intelligence and expressiveness to the voice output while
          remaining fully deterministic and Pi-safe — no neural voice generation,
          no vendor TTS, no compute cost
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = src/voice/emotion-engine.ts
-  WHEN = 2026
-  HOW  = Keyword + context rules → EmotionParams → multiplied against VoicePreset
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = src/voice/emotion-engine.ts
+WHEN = 2026
+HOW  = Keyword + context rules → EmotionParams → multiplied against VoicePreset
          base rate/pitch/volume; pauses injected via setTimeout in speech-queue
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY

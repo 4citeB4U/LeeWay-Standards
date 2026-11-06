@@ -7,12 +7,12 @@ TAG: CORE.SYSTEM.INTEGRITY.PROTECTOR
 COLOR_ONION_HEX: NEON=#FF0000 FLUO=#FF5F00 PASTEL=#FFD8D8
 ICON_ASCII: family=lucide glyph=shield-alert
 5WH:
-  WHAT = Code Integrity & Anti-Corruption Guard
-  WHY  = Ensures that LeeWay Standards are never 'rinsed' or removed. If standards are missing, the system breaks.
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = services/sfu/src/governance-guard.ts
-  WHEN = 2026
-  HOW  = Recursive scan of src files for the LeeWay Header pattern using Regex.
+WHAT = Code Integrity & Anti-Corruption Guard
+WHY  = Ensures that LeeWay Standards are never 'rinsed' or removed. If standards are missing, the system breaks.
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = services/sfu/src/governance-guard.ts
+WHEN = 2026
+HOW  = Recursive scan of src files for the LeeWay Header pattern using Regex.
 AGENTS: AUDIT ALIGN
 LICENSE: PROPRIETARY
 */

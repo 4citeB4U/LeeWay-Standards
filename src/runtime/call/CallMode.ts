@@ -6,6 +6,14 @@ AUTHORITY: LeeWay-Standards
 TAG: RUNTIME.CALL.MODE.CONTROLLER
 REGION: 🔵 RUNTIME
 PURPOSE: Orchestrates real-time call sessions with voice I/O, turn-taking, and governance integration
+5WH:
+WHAT = Orchestrates real-time call sessions with voice I/O, turn-taking, and governance integration
+WHY = Retain the existing stated component purpose
+WHO = LeeWay-Standards
+WHERE = Existing component identity retained in TAG
+WHEN = 2026-10-25 metadata qualification
+HOW = Preserve the existing implementation and its declared purpose
+
 LICENSE: PROPRIETARY
 */
 // CHAIN: Standards → Integrated → Runtime → Projections

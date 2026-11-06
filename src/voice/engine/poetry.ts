@@ -7,12 +7,12 @@ TAG: VOICE.PERSONA.POETRY
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=sparkles
 5WH:
-  WHAT = Agent Lee Poetry Bank — tiered response flourishes for voice output
-  WHY  = Gives Agent Lee's voice a distinct, human, mission-driven character
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = src/voice/poetry.ts
-  WHEN = 2026
-  HOW  = Keyed string arrays; getPoetryLine() picks randomly per signal type
+WHAT = Agent Lee Poetry Bank — tiered response flourishes for voice output
+WHY  = Gives Agent Lee's voice a distinct, human, mission-driven character
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = src/voice/poetry.ts
+WHEN = 2026
+HOW  = Keyed string arrays; getPoetryLine() picks randomly per signal type
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY
 */

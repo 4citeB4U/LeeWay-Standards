@@ -14,6 +14,14 @@ CONSTRAINTS:
 - Must not introduce reasoning beyond measurable facts
 - Must remain compact and explainable
 
+5WH:
+WHAT = Convert raw vision outputs into structured, agent-consumable awareness packets.
+WHY = Retain the existing stated component purpose
+WHO = LeeWay-Standards
+WHERE = Existing component identity retained in TAG
+WHEN = 2026-10-25 metadata qualification
+HOW = Preserve the existing implementation and its declared purpose
+
 LICENSE: PROPRIETARY
 */
 // CHAIN: Standards → Integrated → Runtime → Projections

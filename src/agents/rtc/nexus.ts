@@ -7,12 +7,12 @@ TAG: SFU.NPC.RUNTIME_WATCHDOG
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=cpu
 5WH:
-  WHAT = NEXUS — Node Environment eXecution and Uptime Supervisor | Runtime Watchdog NPC
-  WHY  = Monitors memory + CPU every 45s and alerts when thresholds are breached
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = services/sfu/src/agents/nexus.ts
-  WHEN = 2026
-  HOW  = setInterval 45s → process.memoryUsage() + loadavg → agentBus.emit
+WHAT = NEXUS — Node Environment eXecution and Uptime Supervisor | Runtime Watchdog NPC
+WHY  = Monitors memory + CPU every 45s and alerts when thresholds are breached
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = services/sfu/src/agents/nexus.ts
+WHEN = 2026
+HOW  = setInterval 45s → process.memoryUsage() + loadavg → agentBus.emit
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY
 */

@@ -7,13 +7,13 @@ TAG: CLIENT.RTC.HOOK.USESTORE
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=zap
 5WH:
-  WHAT = Real useRTCStore hook — connects to LeeWay SFU via WebSocket + mediasoup-client
-  WHY  = Replaces the mock store in LeeWay-Edge_RTC.tsx with live SFU signaling,
+WHAT = Real useRTCStore hook — connects to LeeWay SFU via WebSocket + mediasoup-client
+WHY  = Replaces the mock store in LeeWay-Edge_RTC.tsx with live SFU signaling,
          transport management, consumer negotiation, and stats polling
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = src/rtc/store.ts
-  WHEN = 2026
-  HOW  = Fetch JWT from /dev/token → open WS → auth → load mediasoup Device →
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = src/rtc/store.ts
+WHEN = 2026
+HOW  = Fetch JWT from /dev/token → open WS → auth → load mediasoup Device →
          joinRoom → createRecvTransport → consume producers → poll getStats every 2s
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY

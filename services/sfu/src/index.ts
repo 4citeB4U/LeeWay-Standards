@@ -7,12 +7,12 @@ TAG: SFU.ENTRY.MAIN
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=server
 5WH:
-  WHAT = LeeWay SFU entry point — initialises mediasoup workers and HTTP/WS server
-  WHY  = Bootstraps the production-grade, self-hosted WebRTC Selective Forwarding Unit
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = services/sfu/src/index.ts
-  WHEN = 2026
-  HOW  = dotenv config load → createWorkers() → createServer() → agentRegistry.startAll()
+WHAT = LeeWay SFU entry point — initialises mediasoup workers and HTTP/WS server
+WHY  = Bootstraps the production-grade, self-hosted WebRTC Selective Forwarding Unit
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = services/sfu/src/index.ts
+WHEN = 2026
+HOW  = dotenv config load → createWorkers() → createServer() → agentRegistry.startAll()
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY
 */

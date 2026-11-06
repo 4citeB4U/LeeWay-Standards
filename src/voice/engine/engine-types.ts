@@ -6,12 +6,12 @@ REGION: CLIENT.VOICE.ENGINE
 TAG: VOICE.ENGINE.TYPES
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 5WH:
-  WHAT = Complete TypeScript type definitions for Voice Matching + Modulation Engine
-  WHY  = Enables strict type safety across workflow controller, UI, and agents
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = src/voice/engine-types.ts
-  WHEN = 2026
-  HOW  = Defines contracts for support, analysis, matching, modulation, persistence
+WHAT = Complete TypeScript type definitions for Voice Matching + Modulation Engine
+WHY  = Enables strict type safety across workflow controller, UI, and agents
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = src/voice/engine-types.ts
+WHEN = 2026
+HOW  = Defines contracts for support, analysis, matching, modulation, persistence
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY
 */

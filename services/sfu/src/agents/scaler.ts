@@ -7,14 +7,14 @@ TAG: SFU.NPC.AUTO_SCALER
 COLOR_ONION_HEX: NEON=#00FFD1 FLUO=#00B4FF PASTEL=#C7F0FF
 ICON_ASCII: family=lucide glyph=trending-up
 5WH:
-  WHAT = SCALER (AGT-008) — Scalable Compute Allocation & Load-balancing Edge Runtime
-  WHY  = Monitors peer count + CPU against thresholds and issues scaling orders
+WHAT = SCALER (AGT-008) — Scalable Compute Allocation & Load-balancing Edge Runtime
+WHY  = Monitors peer count + CPU against thresholds and issues scaling orders
          so the SFU can handle 1000s of concurrent users across countless apps
          while not wasting resources on edge devices during idle periods
-  WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
-  WHERE = services/sfu/src/agents/scaler.ts
-  WHEN = 2026
-  HOW  = setInterval 45s → check rooms/peers/CPU → compare against capacity bands
+WHO  = LEEWAY INNOVATIONS A LEEWAY INDUSTY CREATION
+WHERE = services/sfu/src/agents/scaler.ts
+WHEN = 2026
+HOW  = setInterval 45s → check rooms/peers/CPU → compare against capacity bands
          → issue ScalingOrder on bus → NEXUS and WARD adjust workers accordingly
 AGENTS: ASSESS ALIGN AUDIT
 LICENSE: PROPRIETARY

@@ -1,28 +1,22 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: CORE.CI.GOVERNANCE
+# TAG: CORE.CI.STANDARDS_ENFORCEMENT.MAIN
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+# 5WH:
+# WHAT = Govern whole-repository file compliance admission
+# WHY = Preserve the proposed strict compliance policy in a reviewable isolated change
+# WHO = LeeWay Standards engineering
+# WHERE = .github/workflows/enforce-leeway-standards.yml
+# WHEN = 2026-10-25
+# HOW = GitHub Actions runs canonical read-only scanner and rejects every flagged or invalid governed file
+# LICENSE: Existing repository terms remain unchanged
 name: Enforce LeeWay Standards
 
 on:
   pull_request:
-    paths:
-      - '**.ts'
-      - '**.tsx'
-      - '**.js'
-      - '**.jsx'
-      - '**.mjs'
-      - '.github/workflows/enforce-leeway-standards.yml'
-      - 'standards/PERMANENT-ENGINEERING-RULES.md'
-      - 'standards/permanent-engineering-rules.v1.json'
   push:
     branches:
       - main
-    paths:
-      - '**.ts'
-      - '**.tsx'
-      - '**.js'
-      - '**.jsx'
-      - '**.mjs'
-      - '.github/workflows/enforce-leeway-standards.yml'
-      - 'standards/PERMANENT-ENGINEERING-RULES.md'
-      - 'standards/permanent-engineering-rules.v1.json'
 
 jobs:
   enforce-standards:
@@ -47,70 +41,38 @@ jobs:
           cat enforcement-report.json
         continue-on-error: true
 
-      - name: Parse and Validate Compliance Score
+      - name: Validate 100 Percent Source Compliance
         run: |
           node -e "
           const fs = require('fs');
           const report = JSON.parse(fs.readFileSync('enforcement-report.json', 'utf8'));
-          const total = report.scanned || 0;
-          const compliant = total - (report.changed || 0);
-          const score = total === 0 ? 0 : Math.round((compliant / total) * 100);
-          
-          console.log('=== LeeWay Standards Enforcement Report ===');
-          console.log('Total Files Scanned:', total);
-          console.log('Compliant Files:', compliant);
-          console.log('Non-Compliant Files:', report.changed || 0);
-          console.log('Compliance Score:', score + '%');
-          console.log('');
-          
-          if (score < 70) {
-            console.error('❌ ENFORCEMENT FAILURE: Compliance score below 70%');
-            console.error('Required: 70% compliance or higher');
-            console.error('');
-            console.error('To auto-fix, run locally:');
-            console.error('  node scripts/auto-enforce-file-governance.mjs --apply');
+          const scanned = report.scanned || 0;
+          const changed = report.changed || 0;
+          const invalid = report.invalid || 0;
+          const records = report.results || [];
+          const malformed = !Array.isArray(records) || records.length !== scanned;
+          console.log('LeeWay strict admission:', {scanned, changed, invalid, malformed});
+          const flagged = Array.isArray(records) ? records.filter(r => r.changed || (Array.isArray(r.validationErrors) && r.validationErrors.length)) : [];
+          console.log('STRICT_ADMISSION_FLAGGED_COUNT:', flagged.length);
+          for (const r of flagged.slice(0, 40)) {
+            console.log('STRICT_ADMISSION_FLAGGED:', JSON.stringify({path:r.relativePath, changed:r.changed, errors:r.validationErrors}));
+          }
+          if (flagged.length > 40) console.log('STRICT_ADMISSION_ADDITIONAL_FLAGGED:', flagged.length - 40);
+          if (scanned === 0 || changed !== 0 || invalid !== 0 || malformed) {
+            console.error('STRICT_ADMISSION_FAILED: all scanned governed source must comply; no threshold rounding');
             process.exit(1);
           }
-          
-          if (score < 95) {
-            console.warn('⚠️  WARNING: Compliance score below 95%');
-            console.warn('Consider running auto-fix before merge');
-          } else {
-            console.log('✅ ENFORCEMENT PASSED: All files compliant');
-          }
+          console.log('STRICT_ADMISSION_PASS: 100% of scanned governed files compliant');
           "
 
-      - name: Comment PR with Enforcement Results
-        continue-on-error: true
-        if: github.event_name == 'pull_request'
-        uses: actions/github-script@v7
+      - name: Preserve read-only enforcement report
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          script: |
-            const fs = require('fs');
-            const report = JSON.parse(fs.readFileSync('enforcement-report.json', 'utf8'));
-            const total = report.scanned || 0;
-            const compliant = total - (report.changed || 0);
-            const score = total === 0 ? 0 : Math.round((compliant / total) * 100);
-            
-            let icon = score < 70 ? '❌' : score < 95 ? '⚠️' : '✅';
-            
-            const body = `${icon} **LeeWay Standards Enforcement Report**
-
-            | Metric | Value |
-            |--------|-------|
-            | Files Scanned | ${total} |
-            | Compliant | ${compliant} |
-            | Non-Compliant | ${report.changed || 0} |
-            | **Score** | **${score}%** |
-
-            ${score < 70 ? '🚫 **FAILED** - Compliance below 70% threshold\n\nRun locally to auto-fix:\n```bash\nnode scripts/auto-enforce-file-governance.mjs --apply\n```' : score < 95 ? '⚠️ **PASSED** - But consider improving compliance\n\nRun to optimize:\n```bash\nnode scripts/auto-enforce-file-governance.mjs --apply\n```' : '✅ **PASSED** - All files compliant'}`;
-            
-            await github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: body
-            });
+          name: leeway-governance-report
+          path: enforcement-report.json
+          if-no-files-found: error
+          retention-days: 30
 
   blocking-gate:
     runs-on: ubuntu-latest
