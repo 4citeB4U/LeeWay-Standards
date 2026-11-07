@@ -8,8 +8,8 @@ WHAT = Preserve the existing LEEWAY-CANONICAL-ENGINEERING-LAWS.md LeeWay source 
 WHY = Bring documented governance provenance under the existing source-header standard
 WHO = LeeWay Standards / Creator Authority
 WHERE = Docs/governance/LEEWAY-CANONICAL-ENGINEERING-LAWS.md
-WHEN = 2026-10-25 header qualification, original document history preserved
-HOW = Add leading comment without changing existing document content
+WHEN = 2026-10-25 header qualification, original document history preserved; 2026-11-07 Creator auditability amendment
+HOW = Add original leading header; append scoped auditability requirement within existing LAW 12
 LICENSE: Existing file and repository terms remain unchanged
 -->
 
@@ -78,6 +78,19 @@ For every affected source change, use the existing canonical validator and relev
 
 ## LAW 12 — PROOF, READBACK AND ACCEPTANCE
 Maintain separate statuses: **SOURCE_IMPLEMENTED / TESTED / CI_PASS / DEPLOYED / LIVE_OBSERVED / VERITAS_VERIFIED / QUALIFIED**. No health-200, model response, synthetic click or local-only render passes a physical PC+phone acceptance gate. Verify real source/owner, authorized actor, pre/post state, both devices as required, audio/vision/cursor interaction where required, actual user behavior, Veritas and receipts. A failed or unverified gate stays open. Explicitly include the outstanding acceptance denominator and no false progress.
+
+### Creator-facing engineering accountability — mandatory audit record (2026-11-07)
+
+This clause strengthens LAW 12, R01–R25, and the existing receipt/Veritas authorities. It is binding on LeeWay agents, LLMs, assistants, models, delegated workers and contributors regardless of their host. It creates no new authority, receipt store or runtime.
+
+1. **Recover authority before action.** Identify the canonical implementation, approved checkpoint, original acceptance gate, constraints, source version and available hashes before planning a mutation. A new chat or model does not reopen approved work.
+2. **Protect approved source.** Never overwrite qualified code or concurrent contributor work without evidence identifying the exact failed dependency, bounded Creator-authorized change, rollback and acceptance test. Preserve original source, old evidence and a reviewable diff.
+3. **Expose execution evidence to the Creator.** For every substantive executed action, provide or link the *actual accessible* tool invocation/command, parameters with secrets redacted, observed stdout/stderr or result, changed paths and before/after diff, test commands and failures, relevant hashes, source/commit identity, timestamps, runtime/device target and execution identifiers. Disclose unavailable logs or missing readback explicitly. Technical reasoning and decision justifications are reportable; inaccessible internal model reasoning is not a substitute for actual execution evidence. Do not hide externally observable actions behind that distinction.
+4. **Separate evidence from claims.** Explicitly classify consequential findings as VERIFIED, OBSERVED, INFERRED, PROPOSED, UNVERIFIED, FAILED or BLOCKED, and preserve SOURCE_IMPLEMENTED, TESTED, CI_PASS, DEPLOYED, LIVE_OBSERVED, VERITAS_VERIFIED and QUALIFIED as separate statuses. No narrative, generated artifact, model claim, queued job, successful command exit, or green CI run upgrades itself into runtime acceptance.
+5. **Require independent qualification.** Agent self-assessment is never an independent Veritas PASS. Verify the original requested acceptance criteria against the actual owning component, authority gates, measured inputs/outputs, negative tests, regressions and required physical devices; leave missing evidence UNVERIFIED or BLOCKED.
+6. **Record only real outcomes.** Preserve eligible execution receipts, exact receipt IDs/hashes, independently verified results and Learning Ledger correlations through their existing authorities. Do not manufacture them, claim persistence without successful readback, erase failures, or report Learning Ledger promotion without verified admission. When no eligible engineering execution occurred, say `RECEIPT NOT CREATED; LEARNING LEDGER NOT UPDATED`.
+
+Publish inspectable artifacts in the owning mission issue/PR or protected evidence authority, with credentials, personal data and sensitive device details appropriately redacted. If an execution log or tool is inaccessible, state the precise limit rather than inventing its contents. This audit clause does not waive Creator approval, platform security requirements, immutable receipt controls or existing file standards.
 
 ## LAW 13 — TEAM HUB HYGIENE
 Hub #22 holds the first-read law pointer, team directory, current mission links, concise cross-team blockers/pattern alerts, and canonical fix links. It is *not* a second report warehouse. Work logs, issue chronology, incremental notes and artifacts stay in owning repository missions/PRs. Each actionable hub note names affected teams, signature, exact evidence link, owner and next joint decision; use concise updates rather than repeating entire histories. Existing documentation authority map governs all files and immutable receipts stay in their originating evidence authority.
