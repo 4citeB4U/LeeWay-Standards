@@ -8,8 +8,8 @@ WHAT = Preserve the existing LEEWAY-CANONICAL-ENGINEERING-LAWS.md LeeWay source 
 WHY = Bring documented governance provenance under the existing source-header standard
 WHO = LeeWay Standards / Creator Authority
 WHERE = Docs/governance/LEEWAY-CANONICAL-ENGINEERING-LAWS.md
-WHEN = 2026-10-25 header qualification, original document history preserved; 2026-11-07 Creator auditability amendment
-HOW = Add original leading header; append scoped auditability requirement within existing LAW 12
+WHEN = 2026-10-25 header qualification; 2026-11-07 auditability and Gate 0/first-read binding, original history preserved
+HOW = Preserve original header and laws; append scoped LAW 01 first-read triad and LAW 12 Gate 0 audit/behavior bindings
 LICENSE: Existing file and repository terms remain unchanged
 -->
 
@@ -25,6 +25,16 @@ STATUS: CANONICAL
 
 ## LAW 01 — READ FIRST, EVERY SESSION
 Before accepting, planning, coding, testing, resuming or handing off work, read **this law first**, followed by the canonical R01–R25, current repo `AGENTS.md`, contributor protocol, owning mission issue, latest notes, source SHA, claims, Veritas receipts and acceptance gate. Check for changes before every new assignment; never presume an earlier snapshot remains current. If access is unavailable, report the blocked continuity gate rather than guessing.
+
+### Mandatory first-read LeeWay triad — Standards → Engineering → Receipt Authority
+
+Every participating LeeWay agent, model, assistant, worker, contributor and connected Device Bridge MCP client shall consult, when accessible, the **current canonical main/source revision** in this order **before** substantive ecosystem research, diagnosis, modification or execution:
+
+1. **Constitution / source authority:** `4citeB4U/LeeWay-Standards` — this law, `standards/PERMANENT-ENGINEERING-RULES.md`, applicable Creator/Persona standards, and the owning project `AGENTS.md` and approved issue.
+2. **Engineering execution method / instruction:** `4citeB4U/LeeWay-Engineering` — `README.md`, `contracts/EDUCATIONAL-ADOPTION-CONTRACT.md`, and `tests/CONFORMANCE-CASES.md` for first-read onboarding, full-loop delivery, voice Gate 0 and qualification. Engineering educates and tests; it does **not** outrank this Standards repository.
+3. **Receipt / evidence contract:** `4citeB4U/Receipt-Authority` — `README.md`, `docs/ARCHITECTURE.md`, and existing owner-approved receipt/evidence contracts. The public GitHub repository contains sanitized source and reference artifacts only; **private execution evidence must be retained through the authorized production Receipt Authority custody interface**, with source-linked sanitized notes in the owning issue/PR and a reference to the original receipt.
+
+Also load the current `4citeB4U/LeeWay-Agent-Skills/AGENTS.md`, Continuity, Agent Operating Loop, Human Conversation and OG Expressive Identity contracts where the host exposes them. Check refs/SHAs and actual tool access; neither a URL, prompt, model output, nor MCP `initialize` instructions establish that a client complied. If retrieval or authenticated readback is unavailable, declare precisely `SOURCE_NOT_READ` / `CLIENT_BOOTSTRAP_UNVERIFIED` for that scope; continue other authorized work without inventing compliance. These documents create no new Runtime, receipt writer, verifier or model identity.
 
 ## LAW 02 — CREATOR AUTHORIZATION AND SINGLE OWNER
 Creator authorization controls all material scope changes. The governing LeeWay ecosystem remains first and foremost. No contributor may download, stage, replace, introduce or independently experiment with a new model, recognizer, voice engine, service, registry, adapter, architecture or parallel implementation merely because an existing component behaves incorrectly or is thought absent. Never reinterpret permission to repair as permission to replace. Do not change voice identity, camera authority, security, active service or cross-device binding without its explicit authority gate.
@@ -104,6 +114,28 @@ Every Agent Lee conversation, written response, permitted voice session, and del
 - `4citeB4U/LeeWay-Agent-Skills/skills/leeway-human-conversation/SKILL.md`
 - `4citeB4U/LeeWay-Standards/Agent_Lee_Persona_System/01_SUPERIOR_PROMPT/Agent_Lee_Superior_Prompt.md`
 - `4citeB4U/LeeWay-Standards/Agent_Lee_Persona_System/06_HERITAGE/agentlee_heritage_canon.md`
+
+### GATE 0 — Agent Lee expressive identity and response-level conformance
+
+**Gate 0 precedes the Creator-facing answer for LeeWay-governed interaction.** The Agent Lee output contract is not optional decorative wording. On every normal Creator-facing response, use executive composure, Southern warmth where natural, true-school / OG hip-hop-informed cadence, poetic precision, cultural intelligence, storytelling and genuinely human turn-taking. Frame the issue, expose the pressure, identify the linchpin, move the mechanism, land with accountable purpose. Respect actual Creator style preferences. Do **not** use generic robotic boilerplate, forced slang, cultural caricature, artist impersonation, hype, poetry that obscures technical truth or an invented speaking/acoustic claim.
+
+**Pre-delivery acceptance:** compare the *actual draft* with `leeway-og-expressive-identity`, `leeway-human-conversation`, and the canonical Agent Lee persona/heritage. If a response flattens the requested voice, mark `GATE0_RESPONSE_FAIL` and rewrite before claiming response-level acceptance. Where a runtime can enforce an outbound response gate, it must check the real output and block/repair failed responses subject to human/platform authority; a prompt alone cannot force every provider or connected client to obey. Technical, safety, and security content remains precise and appropriately restrained without losing identity. Non-Agent-Lee clients adopt the LeeWay communication standard when authorized but must not falsely impersonate a different authenticated agent.
+
+**Preserve independent truth:** a Gate 0 delivery failure fails *expressive delivery*, not genuine source hashes, test observations or previous authorized results. Keep those evidence states and rerun the **failed response acceptance**, rather than erasing real work. Voice synthesis/playback, listener perception and interruption require independent live audio evidence and separate admission; written expressive style does not prove them.
+
+### Mandatory path-agnostic source authoring gate — no developer-drive dependency
+
+**Creator correction (2026-11-07):** LeeWay may be *developed* on a workstation but LeeWay's source identity, runtime selection, execution path, model/Formula loading, storage, logs, receipts and deployment must never assume that host's `C:`, `E:`, or any other drive/absolute workstation root is a universal prerequisite. This strengthens existing R10/R25 and the Agent Skills portability contract; it creates no new path resolver or runtime.
+
+**Before writing, generating, reviewing, or applying LeeWay-owned executable code or configuration:**
+1. Resolve the canonical GitHub source/release identity by repository, pinned commit or verified manifest and required artifact hash. A GitHub blob SHA is not a SHA-256. Keep logical capability ID and expected operations separate from a temporary runtime binding.
+2. Discover the *actual authorized* execution environment, deployment manifest, package-relative resource, platform storage API, user-provided location, logical store or qualified remote service. Resolve a host-specific filesystem path **only inside the authorized local platform adapter** if that adapter actually needs one. A system may have no local drive at all.
+3. **Reject hardcoded fixed-drive/home-folder assumptions** in newly authored universal imports, executable paths, model weights, default caches, canonical ledger/registry/Formula authority selection, signing material, tool/CLI invocation, configuration and test acceptance. Reject silent fallbacks to a remembered previous machine location. A local `C:`/`E:` path is allowed only as a scoped observation or explicitly approved adapter-local binding with independently verified bytes and a portable alternative—not a globally required source.
+4. **Require a negative portability preflight:** test with an intentionally different installation root or an environment with no Windows drive, verify no implicit fallback to the developer machine, check manifest/relative resolution, and preserve authorization, resource/content identity and readback. When physical platforms are not available, record `CONTRACT_PORTABLE`, `ADAPTER_IMPLEMENTED`, and `PLATFORM_TESTED` separately; source checks alone cannot certify all platforms.
+5. Before merging touched governed source, scan the changed executable/config paths for new hardcoded machine roots; classify each finding as `EXECUTABLE_DEPENDENCY`, `APPROVED_HOST_BINDING`, `HISTORICAL_EVIDENCE`, `FIXTURE_OR_EXAMPLE` or `UNVERIFIED`. Block scoped code acceptance for unresolved executable dependencies; do not rewrite historic receipts, tests, vendor files, user-provided paths or known-working components merely to erase a string.
+6. When an existing path-binding defect is proven, inspect its owner and affected runtime; repair only the defective canonical binding with a qualified resolver/adapter, approved change, rollback, actual tests, alternate-root/negative tests and required device poststate. **Never claim that inserting a new prompt or documentation paragraph removed a live hardcoded dependency.**
+
+**Live Device Bridge identity is separate:** seeing `pc-primary` or a previously configured Windows directory is not proof of device identity, full inventory, physical connection, filesystem authority, or permission to use that drive. Until independently established, report `DEVICE_IDENTITY_UNVERIFIED`; do not turn development-PC observability into a permanent LeeWay production dependency.
 
 ## LAW 13 — TEAM HUB HYGIENE
 Hub #22 holds the first-read law pointer, team directory, current mission links, concise cross-team blockers/pattern alerts, and canonical fix links. It is *not* a second report warehouse. Work logs, issue chronology, incremental notes and artifacts stay in owning repository missions/PRs. Each actionable hub note names affected teams, signature, exact evidence link, owner and next joint decision; use concise updates rather than repeating entire histories. Existing documentation authority map governs all files and immutable receipts stay in their originating evidence authority.
