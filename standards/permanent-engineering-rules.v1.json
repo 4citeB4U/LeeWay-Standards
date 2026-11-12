@@ -61,5 +61,66 @@
     "sourceAuthority": "GITHUB_VERSIONED_SOURCE_AND_RELEASE",
     "executionAuthority": "AUTHORIZED_RUNTIME_AND_VERITAS",
     "noFixedHostIdentity": true
+  },
+  "operationDefinitionContract": {
+    "status": "REVIEW_REQUIRED_NOT_RUNTIME_ENFORCED",
+    "lawReferences": [
+      "R01",
+      "R06",
+      "R07",
+      "R12",
+      "R14",
+      "R17",
+      "R18",
+      "R19",
+      "R21",
+      "R23",
+      "R24",
+      "R25",
+      "LAW_05",
+      "LAW_06",
+      "LAW_07",
+      "LAW_11",
+      "LAW_12",
+      "LAW_14"
+    ],
+    "appliesTo": "EVERY_CONSEQUENTIAL_GOVERNED_OPERATION_AT_ANY_WORKER_MODEL_TOOL_DEVICE_HANDOFF_OR_RELEASE_GATE",
+    "preconditions": [
+      "controllingLawsAndJurisdiction",
+      "policiesAndProcedures",
+      "missionWorkAndOwner",
+      "authorizedScopeAndGrant",
+      "evidenceAndTraceReferences",
+      "measurementAcceptanceBaseline",
+      "decisionOwnerAndCriteria",
+      "rollbackAndRecovery",
+      "skillAndTeachingObjectiveWhenApplicable"
+    ],
+    "runtimeEvidence": [
+      "operationAndCorrelationIdentity",
+      "selectedSkillsAndAuthorizedTools",
+      "actualInputsOutputsAndMeasuredEffects",
+      "evidenceForAndAgainst",
+      "incrementalNotesAndReferenceLinks",
+      "denialsOrBlockers",
+      "sourceAndAuthorityVersion"
+    ],
+    "outcomeRequirements": [
+      "independentDecisionWhenRequired",
+      "originalReceiptAndContinuumReadbackWhenEligible",
+      "eligibleLearningAdmissionOrExplicitNotAdmitted",
+      "correctionRetestAndOriginalMissionResumption",
+      "learnerPracticeAndIndependentTeachBackWhenApplicable",
+      "productionStatusDistinctFromCodeAndCi"
+    ],
+    "nonApplicableFieldHandling": "DOCUMENT_NA_REASON",
+    "missingMandatoryFieldHandling": "BLOCK_DEPENDENT_OPERATION_NOT_ALL_UNRELATED_WORK",
+    "disallowed": [
+      "SELF_GRANTED_AUTHORITY",
+      "SELF_ISSUED_VERITAS_OR_BADGE",
+      "INVENTED_EVIDENCE",
+      "DUPLICATE_LEDGER_OR_QUEUE",
+      "FALSE_PRODUCTION_CLAIM"
+    ]
   }
 }
