@@ -4,12 +4,12 @@ REGION: LEEWAY.STANDARDS.GOVERNED_ASSEMBLY
 TAG: LEEWAY.SEVEN_AUTHORITY_SOURCE_ALIGNMENT.V1
 DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 5WH:
-WHAT=Describe seven owning authorities and two-stage independent release reviews.
+WHAT=Describe seven owning authorities, ten stations, three tiers and independent release reviews.
 WHY=Prevent orphaned source tests, false Veritas promotion, unreceipted learning, and ungoverned deployment.
 WHO=LeeWay Standards owner and external support contributor under owner review.
 WHERE=Docs/architecture/SEVEN-AUTHORITY-GOVERNED-ASSEMBLY.md.
 WHEN=2026-11-11.
-HOW=The existing ecosystem registry enforces source graph invariants; Runtime integration is separately qualified.
+HOW=Source-only authority/ten-station/tier/device checks; Runtime enforcement requires separate identity qualification.
 LICENSE: Existing LeeWay Standards source terms apply.
 -->
 # LeeWay seven-authority assembly — one workId, one governed body

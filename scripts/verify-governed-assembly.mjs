@@ -4,12 +4,12 @@ REGION: LEEWAY.STANDARDS.GOVERNED_ASSEMBLY
 TAG: LEEWAY.STANDARDS.SEVEN_AUTHORITY_TOPOLOGY_GATE_V1
 DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 5WH:
-WHAT = Verify the existing ecosystem registry's seven-governance-authority handoff contract.
+WHAT = Validate the existing authority registry, ten factory stations, tiers and device-exclusive exception.
 WHY = Reject silently missing/duplicated roles and forged automatic approval before source admission.
 WHO = LeeWay Standards source authority (not the Runtime or an independent reviewer).
 WHERE = scripts/verify-governed-assembly.mjs.
 WHEN = 2026-11-11.
-HOW = Deterministic source-only structural inspection, negative tests, no host credentials.
+HOW = Exact authority, station, workforce, device and evidence-bound source invariants without host credentials.
 LICENSE: Existing LeeWay Standards source terms apply.
 */
 const EXPECTED=Object.freeze({"standards":{"repo":"4citeB4U/LeeWay-Standards","role":"CONSTITUTIONAL_RULES"},"runtime-fabric":{"repo":"4citeB4U/Leeway-Runtime-Fabric","role":"GOVERNED_EXECUTION"},"machine-consciousness":{"repo":"4citeB4U/Machine-Consciousness","role":"DETERMINISTIC_POLICY_SENTINEL"},"veritas":{"repo":"4citeB4U/LEEWAY-VERITAS","role":"INDEPENDENT_REVIEW"},"receipt-authority":{"repo":"4citeB4U/Receipt-Authority","role":"CANONICAL_RECEIPT_CUSTODY"},"learning-ledger":{"repo":"4citeB4U/LeeWay-Learning-Ledger","role":"VERIFIED_LEARNING"},"production-final":{"repo":"4citeB4U/LeeWay-Production-Final-Execution-Layer","role":"PRODUCTION_RELEASE"}});
