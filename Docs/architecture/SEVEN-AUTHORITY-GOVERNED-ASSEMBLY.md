@@ -9,7 +9,7 @@ WHO=LeeWay Standards owner and external support contributor under owner review.
 WHERE=Docs/architecture/SEVEN-AUTHORITY-GOVERNED-ASSEMBLY.md.
 WHEN=2026-11-11.
 HOW=The existing ecosystem registry enforces source graph invariants; Runtime integration is separately qualified.
-LICENSE=Existing LeeWay Standards source terms apply.
+LICENSE: Existing LeeWay Standards source terms apply.
 -->
 # LeeWay seven-authority assembly — one workId, one governed body
 
@@ -40,3 +40,7 @@ Failure at any stage creates an immutable, source-correlated `HOLD`/repair oblig
 **Live blockers:** Learning and Production source homes are not yet enrolled running authorities on their current mains; independent Veritas production signer roots are not established; Runtime↔Bridge discovery has previously failed 401; canonical Receipt/Learning exact append-readback chain remains unproven. No user private raw test data or secrets go into this public repo.
 
 **Rollback:** revert only this proposed assembly contract and its source checks; do not rewrite prior receipts, merge competing implementations or promote source-only nodes.
+
+## Source CI negative evidence and scoped repair
+
+The first proposed source commit [b01fbddf](https://github.com/4citeB4U/LeeWay-Standards/commit/b01fbddf562645d8d4d619bd7103f49407c9e607) passed the [existing ecosystem validator and all ten assembly tests](https://github.com/4citeB4U/LeeWay-Standards/actions/runs/43129756350). The concurrent [Incoming Source Watch run 43129756419](https://github.com/4citeB4U/LeeWay-Standards/actions/runs/43129756419) **failed**: the changed YAML lacked governance identity, and authored document/script/test headers required canonical LICENSE and 5WH fields. The correct fix changes those exact headers, preserves the validated underlying source, and requires a fresh positive watch result. No historical source test or fault is erased, and no production receipt is claimed.

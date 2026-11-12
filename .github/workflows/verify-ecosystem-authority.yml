@@ -1,3 +1,14 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.STANDARDS.GOVERNED_ASSEMBLY.CI
+# TAG: LEEWAY.STANDARDS.SEVEN_AUTHORITY_SOURCE_CI_V1
+# 5WH:
+# WHAT = Execute existing Standards ecosystem and seven-authority negative tests.
+# WHY = Fail closed when any source authority or handoff drifts.
+# WHO = LeeWay Standards CI and repository maintainers.
+# WHERE = .github/workflows/verify-ecosystem-authority.yml.
+# WHEN = 2026-11-11.
+# HOW = Node 22 source validation without writing production receipts.
+# LICENSE: Existing LeeWay Standards source terms apply.
 name: Verify LeeWay ecosystem authority
 on:
   push:

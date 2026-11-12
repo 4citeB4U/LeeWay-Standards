@@ -2,13 +2,14 @@
 LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.STANDARDS.GOVERNED_ASSEMBLY.TEST
 TAG: LEEWAY.STANDARDS.SEVEN_AUTHORITY_TOPOLOGY_NEGATIVE_V1
-5WH: WHAT=Test current seven-authority graph and fail-closed drift.
-WHY=Prevent governance documents from silently becoming execution approvals.
-WHO=LeeWay Standards maintainers.
-WHERE=tests/governed-assembly.test.mjs.
-WHEN=2026-11-11.
-HOW=Import the exact current source registry and mutate fixture copies.
-LICENSE=Existing LeeWay Standards source terms apply.
+5WH:
+WHAT = Test current seven-authority graph and fail-closed drift.
+WHY = Prevent governance documents from silently becoming execution approvals.
+WHO = LeeWay Standards maintainers.
+WHERE = tests/governed-assembly.test.mjs.
+WHEN = 2026-11-11.
+HOW = Import the exact current source registry and mutate fixture copies.
+LICENSE: Existing LeeWay Standards source terms apply.
 */
 import test from 'node:test';
 import assert from 'node:assert/strict';
