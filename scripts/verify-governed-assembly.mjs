@@ -56,6 +56,35 @@ export function validateGovernedAssembly(a){
    transition.sourceOnly!==true||!exact(transition.requiredProof,expected.requiredProof))
    fail('HANDOFF_PROOF_OR_AUTHORITY_DRIFT');
  }
+
+ const exception=a.deviceExclusiveException;
+ if(!exception||exception.schema!=='leeway.standards.device-exclusive-exception.v1'||
+   exception.status!=='SOURCE_ONLY_NATIVE_RUNTIME_NOT_ENROLLED'||
+   exception.otherEcosystemComponents!=='HARDWARE_AGNOSTIC'||
+   exception.leewayRole!=='SOFTWARE_CREATOR_AND_SOURCE_ORIGIN_ONLY'||
+   exception.nativeAccessStillRequiresOsAndHumanAuthorization!==true||
+   exception.externalRawIndexExportDefault!==false||
+   exception.genuineNativeIdentityVerified!==false||
+   exception.deviceNotLegalPerson!==true||exception.sourceOnly!==true)
+   fail('DEVICE_EXCEPTION_SCOPE_OR_AUTHORITY_DRIFT');
+ const exclusiveProducts=['digital-brain','diagnostics'];
+ if(!Array.isArray(exception.deviceExclusiveFamilies)||
+   exception.deviceExclusiveFamilies.length!==2||
+   !exclusiveProducts.every(id=>exception.deviceExclusiveFamilies.some(x=>x?.product===id)))
+   fail('EXCLUSIVE_DEVICE_PRODUCT_SET_DRIFT');
+ const exclusiveSeen=new Set();
+ for(const item of exception.deviceExclusiveFamilies){
+   if(exclusiveSeen.has(item.product))fail('EXCLUSIVE_DEVICE_PRODUCT_DUPLICATED');
+   exclusiveSeen.add(item.product);
+   if(item.repository!=='4citeB4U/Leeway-Digital-Brain-Diagnostincs-pkg'||
+      item.operationalAllegiance!=='ORIGIN_DEVICE_EXCLUSIVE'||
+      item.runtimeResidence!=='DEVICE_ONLY'||
+      item.nativePaths!=='ORIGIN_DEVICE_ONLY'||
+      item.nativeHardware!=='ORIGIN_DEVICE_ONLY'||
+      item.crossDeviceIdentityReuse!==false)
+     fail('EXCLUSIVE_DEVICE_IDENTITY_OR_PATH_DRIFT');
+ }
+
  if(a.alertPolicy?.emitter!=='machine-consciousness'||
    a.alertPolicy?.receiver!=='runtime-fabric'||
    a.alertPolicy?.operation!=='REQUEST_HOLD_AND_ALERT_ONLY'||

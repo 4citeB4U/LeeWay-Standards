@@ -36,3 +36,15 @@ test('rejects learning before receipt custody',()=>probe(x=>x.transitions.find(t
 test('rejects missing deployed POST',()=>probe(x=>x.transitions=x.transitions.filter(t=>t.id!=='DEPLOYED_POST_REVIEW')));
 test('rejects consciousness self-authorization',()=>probe(x=>x.alertPolicy.mayDirectlyAuthorize=true));
 test('rejects shortened engineering loop',()=>probe(x=>x.engineeringCycle.pop()));
+
+test('exact two device-exclusive product families stay attached to their origin device',()=>{
+ const x=validateGovernedAssembly(manifest);
+ assert.equal(x.status,'PASS_SOURCE_ASSEMBLY_TOPOLOGY');
+ assert.deepEqual(manifest.deviceExclusiveException.deviceExclusiveFamilies.map(x=>x.product).sort(),['diagnostics','digital-brain']);
+ assert.equal(manifest.deviceExclusiveException.otherEcosystemComponents,'HARDWARE_AGNOSTIC');
+});
+test('rejects portability of device-local Brain paths',()=>probe(x=>x.deviceExclusiveException.deviceExclusiveFamilies[0].nativePaths='GLOBAL'));
+test('rejects a portable Diagnostics identity',()=>probe(x=>x.deviceExclusiveException.deviceExclusiveFamilies[1].crossDeviceIdentityReuse=true));
+test('rejects extending device-exclusive ownership to Runtime',()=>probe(x=>x.deviceExclusiveException.deviceExclusiveFamilies.push({product:'runtime-fabric',repository:'4citeB4U/Leeway-Runtime-Fabric'})));
+test('rejects claiming device allegiance waives OS and human permissions',()=>probe(x=>x.deviceExclusiveException.nativeAccessStillRequiresOsAndHumanAuthorization=false));
+test('rejects claiming an unverified device as hardware-attested',()=>probe(x=>x.deviceExclusiveException.genuineNativeIdentityVerified=true));

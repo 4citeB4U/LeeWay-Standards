@@ -129,7 +129,8 @@
         "engineeringCycle",
         "productPath",
         "enforcement",
-        "alertPolicy"
+        "alertPolicy",
+        "deviceExclusiveException"
       ],
       "properties": {
         "schema": {
@@ -147,6 +148,31 @@
         },
         "contractOnly": {
           "const": true
+        },
+        "deviceExclusiveException": {
+          "type": "object",
+          "required": [
+            "schema",
+            "status",
+            "deviceExclusiveFamilies",
+            "otherEcosystemComponents",
+            "nativeAccessStillRequiresOsAndHumanAuthorization",
+            "externalRawIndexExportDefault",
+            "sourceOnly"
+          ],
+          "properties": {
+            "schema": {
+              "const": "leeway.standards.device-exclusive-exception.v1"
+            },
+            "deviceExclusiveFamilies": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "sourceOnly": {
+              "const": true
+            }
+          }
         }
       }
     }

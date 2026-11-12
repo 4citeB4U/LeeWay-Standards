@@ -581,6 +581,37 @@
       "mayDirectlyAuthorize": false,
       "acknowledgeOnlyWhen": "AUTHENTICATED_SECURITY_REVIEW_AND_RUNTIME_CUSTODY"
     },
-    "disclaimer": "This graph is enforceable source topology, not an enrolled agent, active Runtime middleware, production release or Veritas/Receipt/Learning result."
+    "disclaimer": "This graph is enforceable source topology, not an enrolled agent, active Runtime middleware, production release or Veritas/Receipt/Learning result.",
+    "deviceExclusiveException": {
+      "schema": "leeway.standards.device-exclusive-exception.v1",
+      "status": "SOURCE_ONLY_NATIVE_RUNTIME_NOT_ENROLLED",
+      "deviceExclusiveFamilies": [
+        {
+          "product": "digital-brain",
+          "repository": "4citeB4U/Leeway-Digital-Brain-Diagnostincs-pkg",
+          "operationalAllegiance": "ORIGIN_DEVICE_EXCLUSIVE",
+          "runtimeResidence": "DEVICE_ONLY",
+          "nativePaths": "ORIGIN_DEVICE_ONLY",
+          "nativeHardware": "ORIGIN_DEVICE_ONLY",
+          "crossDeviceIdentityReuse": false
+        },
+        {
+          "product": "diagnostics",
+          "repository": "4citeB4U/Leeway-Digital-Brain-Diagnostincs-pkg",
+          "operationalAllegiance": "ORIGIN_DEVICE_EXCLUSIVE",
+          "runtimeResidence": "DEVICE_ONLY",
+          "nativePaths": "ORIGIN_DEVICE_ONLY",
+          "nativeHardware": "ORIGIN_DEVICE_ONLY",
+          "crossDeviceIdentityReuse": false
+        }
+      ],
+      "otherEcosystemComponents": "HARDWARE_AGNOSTIC",
+      "leewayRole": "SOFTWARE_CREATOR_AND_SOURCE_ORIGIN_ONLY",
+      "deviceNotLegalPerson": true,
+      "nativeAccessStillRequiresOsAndHumanAuthorization": true,
+      "externalRawIndexExportDefault": false,
+      "genuineNativeIdentityVerified": false,
+      "sourceOnly": true
+    }
   }
 }
