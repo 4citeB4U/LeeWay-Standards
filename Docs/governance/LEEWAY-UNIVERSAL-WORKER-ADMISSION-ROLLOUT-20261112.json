@@ -508,5 +508,34 @@
     "badge_does_not_grant_authority",
     "no_canonical_Veritas_Receipt_Learning_produced_by_rollout"
   ],
-  "coverageDeclaration": "Draft source change across 61 of 63 identified LeeWay-related/AI app repositories; 2 repos empty and unable to branch; no merges or runtime admission tests performed."
+  "coverageDeclaration": "Draft source change across 61 of 63 identified LeeWay-related/AI app repositories; 2 repos empty and unable to branch; no merges or runtime admission tests performed.",
+  "sourceReadback": {
+    "checkedRepositories": 61,
+    "passed": 61,
+    "failed": 0,
+    "method": "Authenticated GitHub fetch_file on exact rollout branches; verified AGENTS.md source exists and contains LeeWay identity; grouped 15+15+15+15+1",
+    "doesNotProve": "runtime host bootstrap or enforcement"
+  },
+  "engineeringConformance": {
+    "repository": "4citeB4U/LeeWay-Engineering",
+    "branch": "creator/agent-society-law-regression-20261112",
+    "workflow": "LeeWay worker admission source conformance",
+    "workflowRunId": 43283797603,
+    "observedStatus": "completed",
+    "observedConclusion": "success",
+    "additionalSourceGate": {
+      "name": "External Assistant Contract Source Gate",
+      "workflowRunId": 43283798088,
+      "conclusion": "success"
+    },
+    "qualificationBoundary": "Engineering source-level checks only, not cross-repository CI or independent production qualification"
+  },
+  "nextRequiredOwnerGates": [
+    "Standards owner reviews and merges PR #71",
+    "Each repository owner reviews and merges its own entrypoint PR after local compatibility review",
+    "Repo CI invokes source admission validator or equivalent original owner-approved gate",
+    "Actual Runtime ingress binds verified identity, approved Standards version, original scope and grants before privileged execution",
+    "Agent/model hosts demonstrate real first-read with negative admission tests",
+    "Independent Veritas/Receipt/Learning/Production remain separately qualified"
+  ]
 }
