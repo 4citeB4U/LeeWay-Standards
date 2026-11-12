@@ -130,7 +130,8 @@
         "productPath",
         "enforcement",
         "alertPolicy",
-        "deviceExclusiveException"
+        "deviceExclusiveException",
+        "factoryFloor"
       ],
       "properties": {
         "schema": {
@@ -171,6 +172,36 @@
             },
             "sourceOnly": {
               "const": true
+            }
+          }
+        },
+        "factoryFloor": {
+          "type": "object",
+          "required": [
+            "schema",
+            "status",
+            "stations",
+            "workforceTiers",
+            "coldStart",
+            "handoff",
+            "productionIngressWired"
+          ],
+          "properties": {
+            "schema": {
+              "const": "leeway.standards.ten-station-factory-floor.v1"
+            },
+            "stations": {
+              "type": "array",
+              "minItems": 10,
+              "maxItems": 10
+            },
+            "workforceTiers": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "productionIngressWired": {
+              "const": false
             }
           }
         }

@@ -48,3 +48,23 @@ test('rejects a portable Diagnostics identity',()=>probe(x=>x.deviceExclusiveExc
 test('rejects extending device-exclusive ownership to Runtime',()=>probe(x=>x.deviceExclusiveException.deviceExclusiveFamilies.push({product:'runtime-fabric',repository:'4citeB4U/Leeway-Runtime-Fabric'})));
 test('rejects claiming device allegiance waives OS and human permissions',()=>probe(x=>x.deviceExclusiveException.nativeAccessStillRequiresOsAndHumanAuthorization=false));
 test('rejects claiming an unverified device as hardware-attested',()=>probe(x=>x.deviceExclusiveException.genuineNativeIdentityVerified=true));
+
+test('all ten stations are in original factory order with distinct owners',()=>{
+ const f=manifest.factoryFloor;
+ assert.equal(f.stations.length,10);
+ assert.equal(f.stations[1].station,'DEVICE_SENSORY');
+ assert.equal(f.stations[8].station,'INDEPENDENT_VERITAS');
+ assert.equal(f.handoff.independentVeritasPrePostRequired,true);
+ assert.equal(f.productionIngressWired,false);
+});
+test('cannot skip Receipt station',()=>probe(x=>x.factoryFloor.stations.splice(6,1)));
+test('cannot swap Veritas and Learning stations',()=>probe(x=>{
+ const s=x.factoryFloor.stations;[s[7],s[8]]=[s[8],s[7]];
+}));
+test('external Tier 2 cannot silently gain local write privileges',()=>probe(x=>x.factoryFloor.workforceTiers[2].localWritePermission='ALLOWED'));
+test('sentinel cannot become its own Receipt signer',()=>probe(x=>x.factoryFloor.workforceTiers[0].directReceiptSigning=true));
+test('local Tier 1 cannot bypass native OS permission',()=>probe(x=>x.factoryFloor.workforceTiers[1].canBypassNativeOs=true));
+test('voice cadence cannot be claimed as cryptographic proof',()=>probe(x=>x.factoryFloor.coldStart.voiceRuleZero='CRYPTOGRAPHIC_IDENTITY'));
+test('self-signed model packet cannot promote an execution',()=>probe(x=>x.factoryFloor.handoff.modelSelfSigningForbidden=false));
+test('cannot skip independently reviewed deployment POST',()=>probe(x=>x.factoryFloor.handoff.independentDeployedPostRequired=false));
+test('cannot pretend session is admitted without host proof',()=>probe(x=>x.factoryFloor.coldStart.sessionAdmissionVerified=true));

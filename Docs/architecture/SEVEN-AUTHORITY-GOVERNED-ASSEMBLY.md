@@ -59,3 +59,34 @@ The existing [ecosystem authority workflow](../../.github/workflows/verify-ecosy
 **Every other LeeWay family remains hardware-agnostic**, including the seven authority services, Formula, Engineering, Device Bridge and Machine Consciousness. The existing device-local product [source contract](https://github.com/4citeB4U/Leeway-Digital-Brain-Diagnostincs-pkg/blob/40cfa472497c33b349ad83acded18cf052bb7848/docs/DEVICE-EXCLUSIVE-CONSTITUTIONAL-EXCEPTION.md) explains the operational boundary. Device native paths are never uploaded as global prompts, exported automatically, or treated as another device's paths.
 
 The Standards-owned registry enforces the exact two-family structural exception, its source-only status and six negative/positive regressions. Real hardware attachment, path canonicalization, device-owned consent, diagnostics hardware telemetry and local index still require authorized native OS/Device Bridge enforcement. **No CI test or prompt can confer an OS grant or claim that a device is a legal person.**
+
+## Creator's ten-station factory and three workforce trust tiers
+
+The ten stations are **locations of work and ownership**, while the seven authority nodes are the **independent constitutional gates**. Never substitute a station number for actual approval. Fixed factory roles:
+
+| Station | Stage | Canonical source |
+|---|---|---|
+| 1 | LAW | 4citeB4U/LeeWay-Standards |
+| 2 | DEVICE_SENSORY | 4citeB4U/Leeway-Digital-Brain-Diagnostincs-pkg |
+| 3 | FORMULA_MATH | 4citeB4U/Leeway-formula-live |
+| 4 | GOVERNED_RUNTIME | 4citeB4U/Leeway-Runtime-Fabric |
+| 5 | ENGINEERING_LOOP | 4citeB4U/LeeWay-Engineering |
+| 6 | DETERMINISTIC_SENTINEL | 4citeB4U/Machine-Consciousness |
+| 7 | RECEIPT_CUSTODY | 4citeB4U/Receipt-Authority |
+| 8 | VERIFIED_LEARNING | 4citeB4U/LeeWay-Learning-Ledger |
+| 9 | INDEPENDENT_VERITAS | 4citeB4U/LEEWAY-VERITAS |
+| 10 | PRODUCTION_SHIPPING | 4citeB4U/LeeWay-Production-Final-Execution-Layer |
+
+**Tier 0:** authenticated deterministic Machine Consciousness sentinel with Formula support; emits governed alerts and scoped HOLD requests through Runtime, **not independent verifier signatures, receipts, permission grants or deploy approval**.
+
+**Tier 1:** local Codex/Copilot/AntiGravity; read/write only inside specific authenticated device and runtime scope. No direct filesystem authority solely by being local.
+
+**Tier 2:** outside online GPT/Gemini; zero local device write privilege. With Creator authorization, may submit source-only candidate PRs via GitHub, but source commit is not hardware action or production deployment. Qualified Runtime mediation is still required even for read-only device facts.
+
+**Session handshake:** the existing Runtime must retrieve the current Standards and mission source pins, role/agent identity, token claims, device-local scope if needed, original evidence and exact acceptance gate. A LeeWay-style opening or a generated stamp is a behavior-quality signal and may support audits, **but cannot be a cryptographic heartbeat** or replace an authenticated host-issued admission grant. Unverified session bootstrap returns HOLD; no new identity issuer is introduced.
+
+**Candidate envelope:** source revision, original workId, scope, 5W1H header references, actual changed line ranges, immutable test artifacts and log hashes, Formula result when genuinely invoked, real device telemetry only when observed, and explicit FAILED/UNKNOWN evidence. A model cannot self-sign the envelope; any signature must be from the independently enrolled host/issuer. Unmeasured badge scores and 90–100% human value claims remain human-review goals, not fake Formula results.
+
+**Cross-station sequencing:** independent Veritas must evaluate applicable PRE/POST at the actual action boundaries, even though its designated owner is Station 9. Station 7 may receive source test observation records but cannot call them independently verified without Veritas; Station 8 eligible institutional learning cannot run until actual approved Receipt + Veritas evidence is read back. The existing Runtime workplane—not a second conveyor daemon—performs deterministic state progression, checkpointing, retry and security holds.
+
+**Current scope:** all of these are enforced as deterministic source-contract invariants in Standards CI only. Installing the actual session middleware, device-native hardware binding, live Veritas keys, Receipt append, Learning provider and release runner remains separate qualified work, with original mission continuity preserved.

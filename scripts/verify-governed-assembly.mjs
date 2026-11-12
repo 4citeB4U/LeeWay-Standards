@@ -16,6 +16,8 @@ const EXPECTED=Object.freeze({"standards":{"repo":"4citeB4U/LeeWay-Standards","r
 const EDGES=Object.freeze({"POLICY_INTAKE":{"from":"standards","to":"runtime-fabric","requiredProof":["standardsRevision","ownerAuthorization","activeMissionId"]},"SENTINEL_ALERT":{"from":"machine-consciousness","to":"runtime-fabric","requiredProof":["standardsRevision","observedPolicyViolation","correlationId"]},"EXECUTION_REVIEW":{"from":"runtime-fabric","to":"veritas","requiredProof":["sourceRevision","formulaDecision","originalExecutionEvidence","correlationId"]},"VERIFIED_EVIDENCE_CUSTODY":{"from":"veritas","to":"receipt-authority","requiredProof":["independentDecisionReadback","sourceRevision","correlationId"]},"VERIFIED_LEARNING":{"from":"receipt-authority","to":"learning-ledger","requiredProof":["durableReceiptReadback","atomicLearningObligation","correlationId"]},"PRE_RELEASE_HANDOFF":{"from":"receipt-authority","to":"production-final","requiredProof":["standardsRevision","signedReleaseAuthorization","independentReviewReadback","canonicalReceiptReadback","rollbackPlan","correlationId"]},"DEPLOYED_POST_REVIEW":{"from":"production-final","to":"veritas","requiredProof":["approvedDeploymentTarget","deployedPoststate","sourceRevision","correlationId"]},"POST_DEPLOYMENT_CUSTODY":{"from":"veritas","to":"receipt-authority","requiredProof":["signedDeployedPostReview","deployedReadback","correlationId"]},"LEARNING_POLICY_OBSERVATION":{"from":"learning-ledger","to":"machine-consciousness","requiredProof":["verifiedLearningReadback","correlationId"]}});
 const CYCLE=Object.freeze(["INVESTIGATE","DIAGNOSE","PLAN","IMPLEMENT","TEST","VALIDATE","REPAIR","RETEST","VERIFY","EVIDENCE","CHECKPOINT","CONTINUE"]);
 const PRODUCT=Object.freeze(["IDEA","NEED","POLICY_ADMISSION","FORMULA_DECISION","GOVERNED_BUILD","SOURCE_TEST","EVIDENCE_CAPTURE","INDEPENDENT_REVIEW","CANONICAL_RECEIPT","ELIGIBLE_LEARNING","PRODUCTION_RELEASE_REVIEW","TARGET_DEPLOYMENT","INDEPENDENT_DEPLOYED_POST","DEPLOYED_RECEIPT","MARKETABLE_PRODUCT_ACCEPTANCE"]);
+const STATIONS=Object.freeze([[1,"LAW","4citeB4U/LeeWay-Standards"],[2,"DEVICE_SENSORY","4citeB4U/Leeway-Digital-Brain-Diagnostincs-pkg"],[3,"FORMULA_MATH","4citeB4U/Leeway-formula-live"],[4,"GOVERNED_RUNTIME","4citeB4U/Leeway-Runtime-Fabric"],[5,"ENGINEERING_LOOP","4citeB4U/LeeWay-Engineering"],[6,"DETERMINISTIC_SENTINEL","4citeB4U/Machine-Consciousness"],[7,"RECEIPT_CUSTODY","4citeB4U/Receipt-Authority"],[8,"VERIFIED_LEARNING","4citeB4U/LeeWay-Learning-Ledger"],[9,"INDEPENDENT_VERITAS","4citeB4U/LEEWAY-VERITAS"],[10,"PRODUCTION_SHIPPING","4citeB4U/LeeWay-Production-Final-Execution-Layer"]]);
+const WORKFORCE=Object.freeze(['TRUSTED_HOST_DETERMINISTIC_SENTINEL','LOCAL_IRON_BUILDER','OUTSIDE_DIPLOMATIC_CANDIDATE']);
 const fail=code=>{throw Error('LEEWAY_ASSEMBLY_'+code)};
 const exact=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 export function validateGovernedAssembly(a){
@@ -84,6 +86,53 @@ export function validateGovernedAssembly(a){
       item.crossDeviceIdentityReuse!==false)
      fail('EXCLUSIVE_DEVICE_IDENTITY_OR_PATH_DRIFT');
  }
+
+
+ const factory=a.factoryFloor;
+ if(!factory||factory.schema!=='leeway.standards.ten-station-factory-floor.v1'||
+   factory.status!=='SOURCE_CONTRACT_ONLY_RUNTIME_BOOTSTRAP_UNQUALIFIED'||
+   factory.deviceExceptionRef!=='leeway.standards.device-exclusive-exception.v1'||
+   factory.productionIngressWired!==false)
+   fail('FACTORY_FLOOR_SOURCE_SCOPE_DRIFT');
+ if(!Array.isArray(factory.stations)||factory.stations.length!==STATIONS.length)
+   fail('FACTORY_STATION_COUNT_INVALID');
+ for(let i=0;i<STATIONS.length;i++){
+   const [number,station,repository]=STATIONS[i],s=factory.stations[i];
+   if(!s||s.number!==number||s.station!==station||s.repository!==repository||s.sourceOnly!==true)
+     fail('FACTORY_STATION_ROLE_OR_ORDER_DRIFT');
+ }
+ if(!Array.isArray(factory.workforceTiers)||factory.workforceTiers.length!==3)
+   fail('WORKFORCE_TIER_COUNT_INVALID');
+ for(let i=0;i<3;i++){
+   const tier=factory.workforceTiers[i];
+   if(!tier||tier.tier!==i||tier.identity!==WORKFORCE[i]||tier.requiresRuntimeAdmission!==true)
+     fail('WORKFORCE_TIER_IDENTITY_DRIFT');
+ }
+ if(factory.workforceTiers[0].directReceiptSigning!==false||
+   factory.workforceTiers[0].directProductionApproval!==false||
+   factory.workforceTiers[1].localWritePermission!=='SPECIFIC_GRANTED_CAPABILITY_ONLY'||
+   factory.workforceTiers[1].canBypassNativeOs!==false||
+   factory.workforceTiers[2].localWritePermission!=='DENIED'||
+   factory.workforceTiers[2].sourceContribution!=='CREATOR_APPROVED_DRAFT_PR_CANDIDATE_ONLY'||
+   factory.workforceTiers[2].canClaimHardwareExecution!==false)
+   fail('WORKFORCE_TIER_ESCALATION');
+ const cold=factory.coldStart;
+ if(!cold||cold.activeSourcePinRequired!==true||
+   cold.exactAgentAndWorkIdRequired!==true||
+   cold.deviceBridgeRequiredWhenDeviceAction!==true||
+   cold.readOriginalEvidenceBeforeRetest!==true||
+   cold.sessionAdmissionVerified!==false||
+   cold.voiceRuleZero!=='BEHAVIORAL_COMPLIANCE_NOT_CRYPTOGRAPHIC_IDENTITY'||
+   cold.cryptographicIdentity!=='TRUSTED_HOST_ISSUED_SCOPED_ADMISSION_NOT_LLM_SELF_ATTESTED')
+   fail('COLD_START_SECURITY_CLAIM_DRIFT');
+ const h=factory.handoff;
+ if(!h||h.creatorSource!=='IDEA'||h.candidateOnlyBeforeHostAdmission!==true||
+    !['modelSelfSigningForbidden','authenticatedTransportAndScopeRequired','preserveOriginalTestLogAndHash',
+      'independentVeritasPrePostRequired','receiptAppendAndReadbackRequired',
+      'eligibleLearningOnlyAfterVerifiedReceipt','ownerApprovedDeploymentRequired',
+      'independentDeployedPostRequired','sourceTestsAloneCannotGrantProduction',
+      'noAdditionalQueueLedgerVerifier'].every(k=>h[k]===true))
+    fail('FACTORY_HANDOFF_PROOF_MISSING');
 
  if(a.alertPolicy?.emitter!=='machine-consciousness'||
    a.alertPolicy?.receiver!=='runtime-fabric'||
