@@ -9,7 +9,7 @@ WHO = Creator/Human Authority and the authenticated owning source role.
 WHERE = AGENTS.md in 4citeB4U/LeeWay-Standards.
 WHEN = 2026-11-12.
 HOW = Reuse current Standards, Engineering, Receipt Authority, Agent Skills and owning mission; qualified Runtime and CI enforcement separately required.
-LICENSE = Existing repository terms; no new license asserted.
+LICENSE: Existing repository terms; no new license asserted.
 -->
 # LeeWay Governance — Mandatory Worker Admission
 
