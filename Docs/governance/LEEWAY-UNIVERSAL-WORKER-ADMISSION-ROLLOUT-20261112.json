@@ -597,13 +597,40 @@
     "qualificationBoundary": "Engineering source-level checks only, not cross-repository CI or independent production qualification"
   },
   "nextRequiredOwnerGates": [
-    "Repair held CI without unrelated blind edits",
-    "Adopt original-approved root AGENTS first-read across remaining empty/confirmed LeeWay repos",
-    "Host-level identity/Standards/permission admission at actual Runtime execution boundary",
-    "Run negative live admission tests across multiple model and device routes",
-    "Independent Veritas PRE/POST, qualified receipt/Continuum/Learning and Production only for actual authorized effects"
+    "Runtime owning host supplies authenticated ZITADEL/role/Standards/grant verifier and proves trusted composition, not queued task callbacks",
+    "Enable enforcement in controlled staging without breaking authorized existing jobs",
+    "Run negative and positive tests with real host worker identity and device-scope grants; verify no action before admission",
+    "Investigate and repair three CI holds (Federate-Web, Mr-Android, AgenticOperatingSystem) without bypassing existing tests",
+    "Qualify native-device actions and actual Veritas/Receipt/Continuum/Learning/Production separate gate evidence"
   ],
   "standardsMergeCommit": "2e5e98bdc49cfe0bf180de394db054eaf2f8e3d3",
   "engineeringMergeCommit": "e9f6febf635597c18bbdc5e3328995c5d511a76b",
-  "workforceMergeCommit": "d41d76d27f6885783665538a3ec1b6db53abd20e"
+  "workforceMergeCommit": "d41d76d27f6885783665538a3ec1b6db53abd20e",
+  "runtimeAdmissionSource": {
+    "repository": "4citeB4U/Leeway-Runtime-Fabric",
+    "pr": "https://github.com/4citeB4U/Leeway-Runtime-Fabric/pull/173",
+    "mergeCommit": "00786bf1827c197c29ac06516fe8066c3ac6322f",
+    "sourceStatus": "MERGED_MAIN",
+    "mainReadback": "4/4 changed files present on main",
+    "ci": [
+      {
+        "name": "Runtime Worker Standards Admission",
+        "status": "PASS"
+      },
+      {
+        "name": "Persistent Workplane Proof",
+        "status": "PASS"
+      },
+      {
+        "name": "Runtime Fabric Vercel",
+        "status": "PASS"
+      }
+    ],
+    "gate": "Host-provided trusted verifier binds worker, work, handler, source Standards and SHA-256 operationDigest; task-authored authority denied",
+    "defaultEnforcement": "OFF_UNTIL_QUALIFIED_HOST_BINDING",
+    "runtimeHostIssuerBound": "UNVERIFIED",
+    "liveAdmissionNegativeTests": "NOT_EXECUTED",
+    "actualPrivilegedOperation": "NOT_EXECUTED",
+    "productionVeritasReceiptLearning": "NOT_QUALIFIED"
+  }
 }
