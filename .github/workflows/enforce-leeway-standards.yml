@@ -1,3 +1,15 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.STANDARDS.CI
+# TAG: LEEWAY.STANDARDS.CI.ENFORCE_STANDARDS.V1
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+# 5WH:
+# WHAT = Enforce LeeWay file governance, Sovereign Colony Constitution, and Permanent Engineering Rules on pushes and pull requests.
+# WHY = Prevent non-compliant source files or constitutional regressions from landing silently on main.
+# WHO = Creator (The Creator <leonardlee6@outlook.com>) / LeeWay-Standards.
+# WHERE = .github/workflows/enforce-leeway-standards.yml
+# WHEN = 2026-11-12
+# HOW = Execute Node 24 unit tests and read-only auto-enforce-file-governance compliance scoring.
+# LICENSE: MIT
 name: Enforce LeeWay Standards
 
 on:
