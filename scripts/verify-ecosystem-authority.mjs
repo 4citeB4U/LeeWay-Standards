@@ -20,12 +20,14 @@ CHAIN: Standards → Integrated → Runtime → Projections
 LICENSE: Existing file and repository license terms remain unchanged
 */
 import fs from "node:fs";
+import {validateGovernedAssembly} from "./verify-governed-assembly.mjs";
 const p="standards/leeway-ecosystem-authority.v1.json";
 const s="schemas/leeway-ecosystem-authority.v1.schema.json";
 const a="contracts/leeway-application-manifest.v1.schema.json";
 for(const f of [p,s,a]) if(!fs.existsSync(f)) throw new Error("Missing ecosystem authority artifact: "+f);
 const r=JSON.parse(fs.readFileSync(p,"utf8"));
 if(r.registryId!=="LEEWAY_ECOSYSTEM_AUTHORITY_V1") throw new Error("Registry identity drift");
+const assemblyResult=validateGovernedAssembly(r.governedAssembly);
 const byId=new Map();
 for(const x of r.authorities){
   if(byId.has(x.id)) throw new Error("Duplicate authority id: "+x.id);
@@ -43,4 +45,4 @@ const raw=JSON.stringify({...r,authority:{...r.authority,law:undefined}});
 for(const forbidden of ["127.0.0.1","localhost","D:\\\\","E:\\\\"]) if(raw.includes(forbidden)) throw new Error("Host-bound identity leaked into canonical registry: "+forbidden);
 if(r.executionLaw?.dockerRole!=="OPTIONAL_DEVELOPMENT_QUALIFICATION_PACKAGING_ADAPTER") throw new Error("Docker role drift");
 if(r.formulaControl?.evaluatorClaim!=="NOT_EXECUTED_BY_REGISTRY") throw new Error("Registry must not claim Formula execution");
-console.log(JSON.stringify({state:"PASS_ECOSYSTEM_AUTHORITY",registryId:r.registryId,authorities:r.authorities.length,core:r.requiredCoreIds.length,runtime:r.executionLaw.runtimeAuthority,device:r.executionLaw.deviceExecutionAuthority},null,2));
+console.log(JSON.stringify({state:"PASS_ECOSYSTEM_AUTHORITY",registryId:r.registryId,authorities:r.authorities.length,governedAssembly:assemblyResult,core:r.requiredCoreIds.length,runtime:r.executionLaw.runtimeAuthority,device:r.executionLaw.deviceExecutionAuthority},null,2));

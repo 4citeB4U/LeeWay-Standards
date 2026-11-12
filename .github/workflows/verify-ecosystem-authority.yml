@@ -1,3 +1,15 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.STANDARDS.GOVERNED_ASSEMBLY.CI
+# TAG: LEEWAY.STANDARDS.SEVEN_AUTHORITY_SOURCE_CI_V1
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+# 5WH:
+# WHAT = Execute existing Standards ecosystem and seven-authority negative tests.
+# WHY = Fail closed when any source authority or handoff drifts.
+# WHO = LeeWay Standards CI and repository maintainers.
+# WHERE = .github/workflows/verify-ecosystem-authority.yml.
+# WHEN = 2026-11-11.
+# HOW = Node 22 source validation without writing production receipts.
+# LICENSE: Existing LeeWay Standards source terms apply.
 name: Verify LeeWay ecosystem authority
 on:
   push:
@@ -7,6 +19,9 @@ on:
       - 'schemas/leeway-ecosystem-authority.v1.schema.json'
       - 'contracts/leeway-application-manifest.v1.schema.json'
       - 'scripts/verify-ecosystem-authority.mjs'
+      - 'scripts/verify-governed-assembly.mjs'
+      - 'scripts/capture-ecosystem-authority-evidence.mjs'
+      - 'tests/governed-assembly.test.mjs'
       - '.github/workflows/verify-ecosystem-authority.yml'
   pull_request:
     paths:
@@ -26,4 +41,37 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: node scripts/verify-ecosystem-authority.mjs
+      - name: Execute authority verification and capture hashed results
+        run: node scripts/capture-ecosystem-authority-evidence.mjs
+      - name: Preserve source evidence on PASS or FAIL
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: standards-assembly-source-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .local-evidence/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 90
+  evidence-index:
+    needs: verify
+    if: always()
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Verify original source evidence artifact is indexed
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const {owner,repo}=context.repo;
+            const jobs=(await github.rest.actions.listJobsForWorkflowRun({owner,repo,run_id:context.runId,per_page:100})).data.jobs.filter(j=>j.name==='verify');
+            let artifacts=[];
+            for(let i=0;i<5;i++){
+              artifacts=(await github.rest.actions.listWorkflowRunArtifacts({owner,repo,run_id:context.runId,per_page:100})).data.artifacts.filter(x=>x.name.startsWith('standards-assembly-source-'));
+              if(artifacts.length===1)break;
+              await new Promise(resolve=>setTimeout(resolve,1500));
+            }
+            const qualified=jobs.length===1&&jobs[0].conclusion==='success'&&artifacts.length===1&&artifacts[0].size_in_bytes>0&&!artifacts[0].expired;
+            await core.summary.addHeading(qualified?'Standards source evidence indexed':'Standards source custody incomplete').addRaw('Run '+context.runId+'; jobs '+jobs.length+'; artifacts '+artifacts.length+'. Source-only; independent Veritas, Receipt and production remain unqualified.').write();
+            if(!qualified)core.setFailed('SOURCE_EVIDENCE_CUSTODY_INCOMPLETE');
