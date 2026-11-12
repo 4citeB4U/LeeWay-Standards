@@ -12,7 +12,8 @@
     "requiredCoreIds",
     "authorities",
     "sharedApplicationManifest",
-    "truthLaws"
+    "truthLaws",
+    "governedAssembly"
   ],
   "properties": {
     "schemaVersion": {
@@ -114,6 +115,39 @@
       "minItems": 5,
       "items": {
         "type": "string"
+      }
+    },
+    "governedAssembly": {
+      "type": "object",
+      "required": [
+        "schema",
+        "status",
+        "contractOnly",
+        "canonicalPolicy",
+        "nodes",
+        "transitions",
+        "engineeringCycle",
+        "productPath",
+        "enforcement",
+        "alertPolicy"
+      ],
+      "properties": {
+        "schema": {
+          "const": "leeway.standards.governed-assembly.v1"
+        },
+        "nodes": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7
+        },
+        "transitions": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9
+        },
+        "contractOnly": {
+          "const": true
+        }
       }
     }
   }

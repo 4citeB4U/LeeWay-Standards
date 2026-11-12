@@ -7,6 +7,8 @@ on:
       - 'schemas/leeway-ecosystem-authority.v1.schema.json'
       - 'contracts/leeway-application-manifest.v1.schema.json'
       - 'scripts/verify-ecosystem-authority.mjs'
+      - 'scripts/verify-governed-assembly.mjs'
+      - 'tests/governed-assembly.test.mjs'
       - '.github/workflows/verify-ecosystem-authority.yml'
   pull_request:
     paths:
@@ -27,3 +29,4 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/verify-ecosystem-authority.mjs
+      - run: node --test tests/ecosystem-authority.test.mjs tests/governed-assembly.test.mjs
