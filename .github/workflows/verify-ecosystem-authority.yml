@@ -1,6 +1,7 @@
 # LEEWAY HEADER — DO NOT REMOVE
 # REGION: LEEWAY.STANDARDS.GOVERNED_ASSEMBLY.CI
 # TAG: LEEWAY.STANDARDS.SEVEN_AUTHORITY_SOURCE_CI_V1
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 # 5WH:
 # WHAT = Execute existing Standards ecosystem and seven-authority negative tests.
 # WHY = Fail closed when any source authority or handoff drifts.

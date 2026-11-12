@@ -2,6 +2,7 @@
 LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.STANDARDS.GOVERNED_ASSEMBLY
 TAG: LEEWAY.SEVEN_AUTHORITY_SOURCE_ALIGNMENT.V1
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 5WH:
 WHAT=Describe seven owning authorities and two-stage independent release reviews.
 WHY=Prevent orphaned source tests, false Veritas promotion, unreceipted learning, and ungoverned deployment.
@@ -44,3 +45,5 @@ Failure at any stage creates an immutable, source-correlated `HOLD`/repair oblig
 ## Source CI negative evidence and scoped repair
 
 The first proposed source commit [b01fbddf](https://github.com/4citeB4U/LeeWay-Standards/commit/b01fbddf562645d8d4d619bd7103f49407c9e607) passed the [existing ecosystem validator and all ten assembly tests](https://github.com/4citeB4U/LeeWay-Standards/actions/runs/43129756350). The concurrent [Incoming Source Watch run 43129756419](https://github.com/4citeB4U/LeeWay-Standards/actions/runs/43129756419) **failed**: the changed YAML lacked governance identity, and authored document/script/test headers required canonical LICENSE and 5WH fields. The correct fix changes those exact headers, preserves the validated underlying source, and requires a fresh positive watch result. No historical source test or fault is erased, and no production receipt is claimed.
+
+The second [source-watch run 43130163874](https://github.com/4citeB4U/LeeWay-Standards/actions/runs/43130163874) reported **0 invalid headers but 4 files requiring mutation** because the existing canonical scanner requires a leading `DISCOVERY_PIPELINE` marker in addition to the full identity/5WH block. This follow-up adds that marker without weakening the scanner or changing executable gate behavior. The original source-watch failures remain linked.

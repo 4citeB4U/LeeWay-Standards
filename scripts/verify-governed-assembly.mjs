@@ -2,6 +2,7 @@
 LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.STANDARDS.GOVERNED_ASSEMBLY
 TAG: LEEWAY.STANDARDS.SEVEN_AUTHORITY_TOPOLOGY_GATE_V1
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 5WH:
 WHAT = Verify the existing ecosystem registry's seven-governance-authority handoff contract.
 WHY = Reject silently missing/duplicated roles and forged automatic approval before source admission.

@@ -2,6 +2,7 @@
 LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.STANDARDS.GOVERNED_ASSEMBLY.TEST
 TAG: LEEWAY.STANDARDS.SEVEN_AUTHORITY_TOPOLOGY_NEGATIVE_V1
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 5WH:
 WHAT = Test current seven-authority graph and fail-closed drift.
 WHY = Prevent governance documents from silently becoming execution approvals.
