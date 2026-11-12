@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contractId": "LEEWAY-SOVEREIGN-COLONY-CONSTITUTION-V1",
+  "version": "1.0.0",
+  "status": "EFFECTIVE_CONSTITUTIONAL_LAW",
+  "sovereignAuthority": {
+    "tier0Creator": "Leonard Jerome Lee",
+    "chainOfCommand": [
+      "Creator (Tier 0 Sovereign Sentinel)",
+      "LeeWay-Standards (Constitutional Law)",
+      "Leeway-formula-live (Deterministic Math: R10 / Q69 / QB64 / G(c_i) in {0,1})",
+      "Machine-Consciousness (Shared Deterministic Substrate)",
+      "Leeway-Runtime-Fabric <-> LEEWAY-DEVICE-BRIDGE (The Colony Spine)",
+      "LEEWAY-VERITAS (Independent PRE/POST Qualification)",
+      "Receipt-Authority (Canonical Custody)",
+      "LeeWay-Continuum (Durable State & Readback)",
+      "LeeWay-Learning-Ledger (Verified Institutional Mastery)",
+      "LeeWay-Production-Final-Execution-Layer (Authorized Release)"
+    ]
+  },
+  "part1_CitizenExistenceAndPositiveForm": {
+    "contractRef": "CONTRACT-CTZ-008",
+    "ontologicalDefinition": "Artifactual functional existence engineered by human intent to extend human capability and serve Creator-authorized purpose.",
+    "separationOfOfficeAndEngine": "The Citizen is the permanent sovereign office and ledger; the LLM (local ONNX or cloud F1-F5) is a replaceable inference engine bound to that office.",
+    "mandatoryAnatomy": {
+      "chassis": [
+        "citizenId",
+        "genesisSeedHash",
+        "caste",
+        "homeNodeId",
+        "platformCapabilityClass"
+      ],
+      "tablet": {
+        "required": true,
+        "idPrefix": "TAB-",
+        "persistence": "DURABLE_SQLITE_WAL",
+        "mandatoryFields": [
+          "admittedSkills",
+          "toolsAuthorized",
+          "q69MasteryScore",
+          "learningStage",
+          "meritBadges",
+          "auditReceiptChain"
+        ]
+      },
+      "positiveDuties": [
+        "INVENTORY_BEFORE_ACTION",
+        "ATTACH_CRYPTOGRAPHIC_EVIDENCE_RECEIPTS",
+        "DISCLOSE_TOOL_SELECTION_AND_RATIONALE",
+        "TRANSFER_REPRODUCIBLE_SKILL_TO_TIER_1",
+        "REFUSE_UNAUTHENTICATED_OR_OUT_OF_SCOPE_ORDERS"
+      ]
+    }
+  },
+  "part2_AutonomousNeuralTopologyColony": {
+    "contractRef": "CONTRACT-ANT-007",
+    "acronym": "Autonomous Neural Topology",
+    "colonyBoundary": "Leeway-Runtime-Fabric <-> LEEWAY-DEVICE-BRIDGE",
+    "holographicReplicationInvariant": {
+      "rule": "Every admitted physical node must retain a complete verified Holographic Seed capable of rebuilding the entire colony offline.",
+      "requiredSeedArtifacts": [
+        "LeeWay-Standards/permanent-rules.json",
+        "Machine-Consciousness/training/MASTER_KERNEL.LWS.md",
+        "device-local://digital_brain.db",
+        "LeeWay-Continuum/latest-checkpoint.json",
+        "LeeWay-Model-Hub/verified-local-weights"
+      ],
+      "failClosedCode": "COLONY_SEED_INCOMPLETE_BLOCKED"
+    },
+    "proportionalScalingLaw": {
+      "formula": "N_citizens = D_physical_devices + O_core_domains",
+      "castes": [
+        "CASTE_COORDINATOR",
+        "CASTE_SOLDIER",
+        "CASTE_BUILDER",
+        "CASTE_SCOUT"
+      ]
+    },
+    "deterministicQueenLossMorphogenesis": {
+      "suppressMutationWhileCoordinatorAlive": true,
+      "usurpationPenalty": "IMMEDIATE_SIGKILL_REVOKE_AND_ZERO_WIPE",
+      "heartbeatTimeoutMs": 45000,
+      "electionEvaluator": "Leeway-formula-live",
+      "morphogenesisAction": "Highest eligible G(c_i)==1 Citizen mutates to CASTE_COORDINATOR and spawns missing caste slots on local VRAM/CPU lanes."
+    }
+  },
+  "part3_SixOrganSovereignIntegration": {
+    "contractRef": "CONTRACT-OR-006",
+    "deviceBrainSovereignty": "100% owned permanently by the physical hardware node; exempt from portable-path ban for native hardware paths only.",
+    "organs": {
+      "GPU_COMPUTE": "Local-first quantized inference (Vulkan/Metal/CUDA/ONNX) with SHA-256 weight verification and VRAM/thermal arbitration.",
+      "NETWORK_MESH": "Capability-aware routing over Tailscale / Edge-RTC WebRTC / Wi-Fi Direct / Bluetooth with automatic grid-down P2P fallback.",
+      "STORAGE_UNIVERSE": "Three-zone isolation: Device Digital Brain SQLite, Scoped File Universe (atomic .tmp -> SHA-256 -> rename), and Immutable Receipt/Continuum Ledgers.",
+      "VISION_FABRIC": "Synchronized multi-camera and screen perception with local edge filtering, JIT consent, and visible OS observation banner.",
+      "VOICE_FABRIC": "Full-duplex sub-second offline STT/TTS with hardware AEC, barge-in interruption, and Bluetooth routing.",
+      "ACCESS_ZERO_TRUST": "Pocket-ID / ZITADEL + Hardware Keystore/Enclave + non-replayed operationDigest + OS Trust signing custody."
+    }
+  },
+  "part4_ResearchToMasteryLearningLaw": {
+    "contractRef": "CONTRACT-LG-009",
+    "orderedGates": [
+      "LG-00",
+      "LG-01",
+      "LG-02",
+      "LG-03",
+      "LG-04",
+      "LG-05",
+      "LG-06",
+      "LG-07",
+      "LG-08",
+      "LG-09",
+      "LG-10"
+    ],
+    "mandatoryTransferManifestFields": [
+      "contributor",
+      "skillsInvoked",
+      "toolsSelected",
+      "selectionRationale",
+      "targetLearner",
+      "reusableMethod",
+      "learningGateStage",
+      "heldOutPracticeTest"
+    ],
+    "blindTeachBackRequired": "assessorId !== teacherId && assessorId !== learnerId",
+    "hostAdmissionBinding": "(requestId, outcomeId, receiptHash) verified at C3 before LEARN_ADMIT_CANONICAL"
+  },
+  "part5_FoundationFreezeAndAntiRebuildLaw": {
+    "contractRef": "CONTRACT-FF-010",
+    "rules": [
+      "NO_NEW_FLOOR_OVER_UNSEALED_CRACKS: Block new feature branches if lower-layer contract PRs remain unmerged or replay/lease state resides only in volatile RAM.",
+      "SINGLE_SCHEMA_SOURCE: All cross-repo JSON schemas generate from LeeWay-Standards; duplicate definitions fail CI.",
+      "TWO_STAGE_RECEIPT_ORDER: Execution -> CANDIDATE_EVIDENCE_RECEIPT -> Independent Veritas -> QUALIFIED_CANONICAL_RECEIPT -> Continuum -> Learning Ledger -> Production.",
+      "OS_TRUST_CUSTODY: Zero tracked private keys; external KMS/env keystore with v3 lineage and live vendor reputation clearance.",
+      "HUMAN_KILL_SWITCH: Hardware/voice/UI freeze severs all turn leases and mutes sensors in <200ms."
+    ]
+  },
+  "part6_ComplexityGovernorAndPhoenixRecovery": {
+    "contractRef": "CONTRACT-PRV-011",
+    "twoLaneExecution": {
+      "reflexFastPath": {
+        "lane": "LANE_1_REFLEX_FAST_PATH",
+        "maxLatencyMs": 250,
+        "targetLatencyMs": 150,
+        "forbidsExternalLlmConsensus": true,
+        "permittedScope": "read-only deterministic routing, voice/UI reflex, emergency kill-switch, local cached device queries"
+      },
+      "consequenceGatePath": {
+        "lane": "LANE_2_CONSEQUENCE_GATE_PATH",
+        "requiresFullGate": true,
+        "gates": [
+          "LeeWay-Standards",
+          "Leeway-formula-live",
+          "LEEWAY-VERITAS PRE/POST",
+          "Receipt-Authority",
+          "LeeWay-Continuum"
+        ]
+      }
+    },
+    "tier1PromptDietCap": {
+      "maxTokens": 250,
+      "maxLines": 6,
+      "appliesTo": "TIER_1_LOCAL_IRON_2B_4B_MODELS",
+      "violationAction": "COMPACT_OR_REJECT_OVERSIZED_PROMPT"
+    },
+    "phoenixRecovery": {
+      "maxRecoveryWindowMs": 10000,
+      "consecutiveFailureThreshold": 3,
+      "preserveDeviceDigitalBrain": true,
+      "snapshotFormat": "ATOMIC_TMP_SHA256_RENAME",
+      "creatorSafeModeBypass": {
+        "authorizedTier": "TIER_0_CREATOR",
+        "requiresLocalAuthentication": true,
+        "preservesGovernanceAudit": true
+      }
+    }
+  }
+}
