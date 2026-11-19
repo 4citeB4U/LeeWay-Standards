@@ -47,3 +47,26 @@ This checklist is a proposed qualification aid, not a declaration of existing op
 - [ ] User/operator/customer documentation and training material.
 - [ ] Commercial collateral and claims reviewed against evidence.
 - [ ] Replication and competency/recovery evidence captured.
+
+
+## Workforce-first pipeline
+- [ ] Agent Lee's operating playbook is present, versioned and tested against the intended order of operations.
+- [ ] Idea is structured using WHO / WHAT / WHEN / WHERE / WHY / HOW before work assignment.
+- [ ] Capability-based workforce plan and job/skill requirements are created.
+- [ ] LeeWay Employment hiring/selection contract is audited; selection and approval are recorded as appropriate.
+- [ ] Worker/agent enrollment, identity, authentication, permissions, qualifications, tool access, onboarding and limits are established.
+- [ ] Onboarding evidence is linked; roster status is not treated as proof of enrollment or authorization.
+- [ ] Roster interface is audited and qualified; worker identity, role, skills, access references, status and availability are recorded as supported.
+- [ ] Blackboard interface and communication contract are audited and qualified.
+- [ ] Workforce coordination, assignment, progress, dependencies, handoffs, blockers, escalations and results are routed through Blackboard.
+- [ ] No undocumented direct worker-to-worker coordination bypass is used.
+- [ ] Blackboard message references are linked to product/work/task, authenticated actor, timestamps, correlation/causation, version, status and artifact references as applicable.
+- [ ] Blackboard outage, stale/duplicate messages, failed handoffs, unauthorized actors and recovery/fallback are tested; fallback is governed.
+- [ ] Task-specific skills, knowledge, tools, equipment, permissions, prerequisites and acceptance criteria are confirmed before execution.
+- [ ] Work packages have owners, assignments, inputs, expected outputs, dependency, destination app, permissions, acceptance and review paths.
+- [ ] Office, IDE, Content Foundry and CRM/ERP assignments are justified by audited capabilities and interfaces, not assumptions based on app names.
+- [ ] Content Foundry role and interfaces are verified before routing content work.
+- [ ] Logistics is conditionally used only for justified, audited logistics capabilities and needs.
+- [ ] Integration links artifacts and work results back to the canonical product/work/task identity.
+- [ ] Release and production actions are subject to the defined approval and evidence gates.
+- [ ] Replication/training package includes versioned materials, reproducibility, recovery and competency/review evidence.
