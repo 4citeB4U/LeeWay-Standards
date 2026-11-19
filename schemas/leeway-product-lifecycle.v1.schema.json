@@ -1,0 +1,39 @@
+{
+ "$schema":"https://json-schema.org/draft/2020-12/schema",
+ "$id":"https://github.com/4citeB4U/LeeWay-Standards/blob/main/schemas/leeway-product-lifecycle.v1.schema.json",
+ "title":"LeeWay Product Lifecycle Workspace",
+ "type":"object",
+ "additionalProperties":false,
+ "required":["schemaVersion","productId","owner","fiveW1H","stage","status","workflowVersion"],
+ "properties":{
+  "schemaVersion":{"const":"1.0.0"},
+  "productId":{"type":"string","minLength":1},
+  "owner":{"type":"string","minLength":1},
+  "contributors":{"type":"array","items":{"type":"string"}},
+  "fiveW1H":{
+   "type":"object","additionalProperties":false,
+   "required":["who","what","when","where","why","how"],
+   "properties":{
+    "who":{"type":"string","minLength":1},
+    "what":{"type":"string","minLength":1},
+    "when":{"type":"string","minLength":1},
+    "where":{"type":"string","minLength":1},
+    "why":{"type":"string","minLength":1},
+    "how":{"type":"string","minLength":1}
+   }
+  },
+  "stage":{"enum":["IDEA_DISCOVERY","MARKET_VALIDATION","REQUIREMENTS_DESIGN","BUILD_PROTOTYPE","INTEGRATION_QUALIFICATION","COMMERCIAL_LAUNCH","PRODUCTION_OPERATION","REPLICATION_TRAINING","IMPROVEMENT_LIFECYCLE"]},
+  "status":{"enum":["PLANNED","IN_PROGRESS","BLOCKED","REVIEW_REQUIRED","APPROVED","VERIFIED","DEGRADED","UNKNOWN","NOT_CONFIGURED"]},
+  "workflowVersion":{"type":"string","minLength":1},
+  "requirements":{"type":"array","items":{"type":"string"}},
+  "artifactRefs":{"type":"array","items":{"type":"string"}},
+  "appLinks":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["systemId","purpose","status"],"properties":{"systemId":{"type":"string"},"purpose":{"type":"string"},"status":{"enum":["VERIFIED","PARTIAL","PLANNED","DEGRADED","UNKNOWN","NOT_CONFIGURED"]},"interfaceRef":{"type":"string"},"evidenceRefs":{"type":"array","items":{"type":"string"}}}}},
+  "tasks":{"type":"array","items":{"type":"string"}},
+  "riskRefs":{"type":"array","items":{"type":"string"}},
+  "decisionRefs":{"type":"array","items":{"type":"string"}},
+  "evidenceRefs":{"type":"array","items":{"type":"string"}},
+  "approvalRefs":{"type":"array","items":{"type":"string"}},
+  "recoveryPlanRef":{"type":"string"},
+  "replicationPackageRef":{"type":"string"}
+ }
+}

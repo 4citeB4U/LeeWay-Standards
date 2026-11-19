@@ -1,0 +1,27 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://github.com/4citeB4U/LeeWay-Standards/blob/main/schemas/leeway-ecosystem-relationship.v1.schema.json",
+  "title":"LeeWay Ecosystem Relationship",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schemaVersion","relationshipId","sourceSystemId","targetSystemId","relationshipType","status","contractVersion"],
+  "properties":{
+    "schemaVersion":{"const":"1.0.0"},
+    "relationshipId":{"type":"string","minLength":1},
+    "sourceSystemId":{"type":"string","minLength":1},
+    "targetSystemId":{"type":"string","minLength":1},
+    "relationshipType":{"enum":["PROVIDES","CONSUMES","GOVERNS","VERIFIES","RECORDS","INTEGRATES_WITH","DEPENDS_ON"]},
+    "capabilityId":{"type":"string"},
+    "interface":{"type":"string"},
+    "dependencyMode":{"enum":["REQUIRED","OPTIONAL","CONDITIONAL"]},
+    "condition":{"type":"string"},
+    "permissions":{"type":"array","items":{"type":"string"}},
+    "evidenceRefs":{"type":"array","items":{"type":"string"}},
+    "status":{"enum":["VERIFIED","PARTIAL","PLANNED","DEGRADED","UNKNOWN","NOT_CONFIGURED"]},
+    "contractVersion":{"type":"string","minLength":1},
+    "notes":{"type":"string"}
+  },
+  "allOf":[
+    {"if":{"properties":{"relationshipType":{"const":"DEPENDS_ON"}},"required":["relationshipType"]},"then":{"required":["dependencyMode"]}}
+  ]
+}
