@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "leeWayHeader": {
+    "region": "LEEWAY.STANDARDS.UNIVERSAL_ACCESS",
+    "tag": "LEEWAY.UNIVERSAL_ACCESS.V1",
+    "what": "Define LeeWay's free-to-all-user access contract.",
+    "why": "Keep LeeWay-owned experience and controls free without misrepresenting external provider requirements.",
+    "who": "Creator, LeeWay Standards, Runtime owners, and application maintainers.",
+    "where": "standards/leeway-universal-access.v1.json.",
+    "when": "2026-11-19.",
+    "how": "Prohibit LeeWay paywalls and require truthful external-provider status plus a non-paid LeeWay path where implemented.",
+    "license": "Existing repository terms."
+  },
+  "contractId": "LEEWAY-UNIVERSAL-ACCESS-V1",
+  "version": "1.0.0",
+  "status": "CREATOR_APPROVED_SOURCE_POLICY",
+  "userExperience": {
+    "leeWayOwnedAccess": "FREE_TO_ALL_USERS",
+    "identityAndConsent": "REQUIRED_BUT_NOT_A_FEE_GATE",
+    "prohibitedLeeWayGates": [
+      "LEEWAY_PAYMENT_REQUIRED",
+      "LEEWAY_PREMIUM_ONLY_CAPABILITY",
+      "LEEWAY_PAYWALL_UI",
+      "LEEWAY_PAID_TIER_REQUIRED"
+    ],
+    "requiredSurfaces": [
+      "agent_virtual_tablet",
+      "floating_widgets",
+      "universal_extension",
+      "web_experiences",
+      "native_applications"
+    ]
+  },
+  "externalProviderBoundary": {
+    "principle": "External provider plans, account eligibility, device platform restrictions, and hosting outages must be disclosed accurately and must never be mislabeled as a LeeWay payment requirement.",
+    "prohibitedResponses": [
+      "FABRICATED_FREE_ACCESS",
+      "PAYWALL_BYPASS",
+      "EXTERNAL_ENTITLEMENT_MISREPRESENTED_AS_LEEWAY_FEE"
+    ],
+    "requiredAvailabilityState": "EXTERNAL_PROVIDER_UNAVAILABLE_OR_REQUIRES_PROVIDER_ELIGIBILITY",
+    "fallbackRule": "Where a LeeWay-owned alternative exists and is authorized, offer it without a LeeWay payment gate; otherwise report the unavailable boundary plainly."
+  },
+  "runtimeAndDeviceBoundary": {
+    "authorizationRule": "Owner authentication, per-device consent, capability grants, Formula, Veritas, receipts, and platform permission remain required and are not monetization controls.",
+    "noPrivilegeFromPayment": true,
+    "noFeeFromAuthorizationDenial": true
+  },
+  "enforcement": {
+    "sourceRequirements": [
+      "No LeeWay-owned client surface may render a payment-required gate for a LeeWay capability.",
+      "Runtime errors must preserve the actual external-provider or authorization boundary.",
+      "Application manifests and UI policy adapters must distinguish disabled authorization from external-provider availability."
+    ],
+    "acceptance": [
+      "Source policy regression test passes.",
+      "Each product surface is tested against a denied grant and an unavailable external provider without displaying a LeeWay paywall.",
+      "Production evidence records each external provider dependency separately from LeeWay access."
+    ]
+  }
+}
