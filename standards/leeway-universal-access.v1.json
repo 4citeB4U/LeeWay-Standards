@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "leeWayHeader": {
+    "region": "LEEWAY.STANDARDS.UNIVERSAL_ACCESS",
+    "tag": "LEEWAY.UNIVERSAL_ACCESS.V1",
+    "what": "Define LeeWay's free-setup, active-service charging, ownership disclosure, and zero-mandatory-operator-cost contract.",
+    "why": "Allow transparent charges for active LeeWay services without billing people for setup or non-use and without making the Creator depend on compulsory provider spending.",
+    "who": "Creator, LeeWay Standards, Runtime owners, and application maintainers.",
+    "where": "standards/leeway-universal-access.v1.json.",
+    "when": "2026-11-19.",
+    "how": "Require a no-cost setup path, charge only for defined active services, stop LeeWay billing when service use stops, disclose ownership per asset, and retain local/self-hosted operator paths.",
+    "license": "Existing repository terms."
+  },
+  "contractId": "LEEWAY-UNIVERSAL-ACCESS-V1",
+  "version": "1.2.0",
+  "status": "CREATOR_APPROVED_SOURCE_POLICY",
+  "developerAndOwnerAccess": {
+    "setupAndConfiguration": "FREE_WITHOUT_MANDATORY_LEEWAY_BACKEND_PAYMENT",
+    "identityAndConsent": "REQUIRED_BUT_NOT_A_FEE_GATE",
+    "requiredNoCostPaths": [
+      "self_hosted_runtime",
+      "bring_your_own_storage",
+      "bring_your_own_provider_credentials",
+      "local_first_or_owner_selected_hosting"
+    ],
+    "prohibitedMandatoryBackendGates": [
+      "PAY_TO_CONFIGURE_LEEWAY",
+      "PAY_TO_ACCESS_DEVELOPER_BACKEND_CONTRACTS",
+      "MANDATORY_LEEWAY_MANAGED_STORAGE_FEE",
+      "MANDATORY_LEEWAY_HOSTED_RUNTIME_FEE"
+    ],
+    "requiredSurfaces": [
+      "agent_virtual_tablet",
+      "floating_widgets",
+      "universal_extension",
+      "web_experiences",
+      "native_applications"
+    ]
+  },
+  "customerCommercialLifecycle": {
+    "setup": "FREE_NO_LEEWAY_CHARGE",
+    "activeService": "EXPLICIT_PAYMENT_GATE_PERMITTED_FOR_DEFINED_LEEWAY_SERVICE",
+    "inactiveOrNotUsingService": "NO_RECURRING_LEEWAY_SERVICE_CHARGE",
+    "requirements": [
+      "A payment gate must name the specific active LeeWay service being purchased.",
+      "A payment gate must not charge for account creation, initial configuration, exported configuration, or access to the independently available backend contract.",
+      "When a customer stops using a billed LeeWay service, LeeWay recurring service billing must stop under the applicable service terms.",
+      "Provider charges selected directly by the owner must remain disclosed as provider charges, not LeeWay service charges."
+    ]
+  },
+  "ownershipDisclosure": {
+    "principle": "Ownership, license, hosting custody, portability, and post-service access vary by asset and service; they must be stated specifically rather than implied by a universal ownership claim.",
+    "minimumDisclosure": [
+      "customer_owned_data_and_exports",
+      "customer_selected_storage_location",
+      "service_specific_license_or_subscription_rights",
+      "post_service_export_and_access_terms"
+    ],
+    "prohibitedClaims": [
+      "UNIVERSAL_CUSTOMER_OWNERSHIP_WITHOUT_SERVICE_TERMS",
+      "UNDECLARED_POST_SERVICE_LOCKOUT",
+      "CROSS_USER_CUSTODY_OR_ACCESS"
+    ]
+  },
+  "storageAndHostingOwnership": {
+    "principle": "A user's files, storage selection, backup location, and provider credentials remain that user's controlled resources. LeeWay adapters configure and access them only with owner authorization.",
+    "requiredChoices": [
+      "owner_local_storage",
+      "owner_selected_cloud_storage",
+      "owner_selected_self_hosted_service"
+    ],
+    "prohibitedDesigns": [
+      "LEEWAY_OWNED_STORAGE_AS_ONLY_PATH",
+      "UNAUTHORIZED_CROSS_USER_STORAGE_ACCESS",
+      "LOCK_IN_OF_USER_DATA_TO_MANDATORY_PAID_HOST"
+    ]
+  },
+  "commerceBoundary": {
+    "principle": "LeeWay may charge for clearly defined active product, subscription, marketplace, or managed services. Such commerce must never be recast as a mandatory payment to configure, develop, self-host, export configuration, or use the independently available backend and user-owned storage path.",
+    "permittedOptionalGates": [
+      "EXPLICIT_PRODUCT_SUBSCRIPTION",
+      "OPTIONAL_MANAGED_SERVICE",
+      "OPTIONAL_MARKETPLACE_PURCHASE",
+      "THIRD_PARTY_PROVIDER_PLAN"
+    ],
+    "requiredDisclosure": "A surface presenting a payment gate must identify the product or provider being purchased, state whether a self-hosted or owner-selected alternative exists, and never claim that the core LeeWay backend is paid-only."
+  },
+  "externalProviderBoundary": {
+    "principle": "External provider plans, account eligibility, device platform restrictions, and hosting outages must be disclosed accurately and must never be mislabeled as a compulsory LeeWay backend fee.",
+    "prohibitedResponses": [
+      "FABRICATED_FREE_ACCESS",
+      "PAYWALL_BYPASS",
+      "EXTERNAL_ENTITLEMENT_MISREPRESENTED_AS_LEEWAY_FEE"
+    ],
+    "requiredAvailabilityState": "EXTERNAL_PROVIDER_UNAVAILABLE_OR_REQUIRES_PROVIDER_ELIGIBILITY",
+    "fallbackRule": "Offer the authorized self-hosted, owner-selected, or local path when it exists; otherwise report the unavailable external boundary plainly."
+  },
+  "operatorCostBoundary": {
+    "principle": "The Creator's LeeWay operation must have an authorized zero-mandatory-provider-cost deployment path. Managed hosting is optional, never the sole required runtime path.",
+    "requiredPaths": [
+      "local_first_execution",
+      "self_hosted_runtime",
+      "self_hosted_storage",
+      "open_source_or_no_cost_dependency_alternative_where_feasible"
+    ],
+    "requiredDisclosure": "Hardware, electricity, internet access, domain registration, and optional third-party provider charges may still exist. They must be disclosed as external costs; this policy does not fabricate a claim that every physical or third-party resource is free.",
+    "prohibitedDesigns": [
+      "MANDATORY_PAID_CLOUD_RUNTIME_FOR_CORE_LEEWAY",
+      "MANDATORY_PAID_STORAGE_FOR_CORE_LEEWAY",
+      "UNDISCLOSED_RECURRING_PROVIDER_COST_AS_CORE_REQUIREMENT"
+    ]
+  },
+  "runtimeAndDeviceBoundary": {
+    "authorizationRule": "Owner authentication, per-device consent, capability grants, Formula, Veritas, receipts, and platform permission remain required and are not monetization controls.",
+    "noPrivilegeFromPayment": true,
+    "noFeeFromAuthorizationDenial": true
+  },
+  "enforcement": {
+    "sourceRequirements": [
+      "No developer, setup, configuration, backend-contract, or user-owned-storage path may require a mandatory LeeWay payment.",
+      "Each billed LeeWay surface must identify its active service and present the applicable non-use billing state.",
+      "Each product must disclose customer data/export ownership and post-service terms at an asset or service level.",
+      "Each backend adapter must document its self-hosted or owner-selected alternative when technically applicable.",
+      "Optional commerce gates must identify their product/provider scope and must not disable the independently available backend contract.",
+      "Core LeeWay deployments must retain a documented zero-mandatory-provider-cost path.",
+      "Runtime errors must preserve the actual external-provider or authorization boundary.",
+      "Application manifests and UI policy adapters must distinguish disabled authorization from external-provider availability."
+    ],
+    "acceptance": [
+      "Source policy regression test passes.",
+      "Each product surface is tested for free setup, active-service charging, no-use billing cessation, owner-controlled storage, and truthful commerce presentation.",
+      "Production evidence records each external provider dependency and each optional paid service separately from the free backend contract."
+    ]
+  }
+}
