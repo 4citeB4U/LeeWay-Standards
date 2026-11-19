@@ -3,25 +3,31 @@
   "leeWayHeader": {
     "region": "LEEWAY.STANDARDS.UNIVERSAL_ACCESS",
     "tag": "LEEWAY.UNIVERSAL_ACCESS.V1",
-    "what": "Define LeeWay's free-to-all-user access contract.",
-    "why": "Keep LeeWay-owned experience and controls free without misrepresenting external provider requirements.",
+    "what": "Define LeeWay's zero-mandatory-cost developer and user-owned-backend contract.",
+    "why": "Keep configuration, development, runtime contracts, and user storage accessible without a compulsory LeeWay-hosted payment dependency.",
     "who": "Creator, LeeWay Standards, Runtime owners, and application maintainers.",
     "where": "standards/leeway-universal-access.v1.json.",
     "when": "2026-11-19.",
-    "how": "Prohibit LeeWay paywalls and require truthful external-provider status plus a non-paid LeeWay path where implemented.",
+    "how": "Require self-host and bring-your-own-storage/provider paths, prohibit pay-to-configure backend gates, and preserve optional product commerce separately.",
     "license": "Existing repository terms."
   },
   "contractId": "LEEWAY-UNIVERSAL-ACCESS-V1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "CREATOR_APPROVED_SOURCE_POLICY",
-  "userExperience": {
-    "leeWayOwnedAccess": "FREE_TO_ALL_USERS",
+  "developerAndOwnerAccess": {
+    "setupAndConfiguration": "FREE_WITHOUT_MANDATORY_LEEWAY_BACKEND_PAYMENT",
     "identityAndConsent": "REQUIRED_BUT_NOT_A_FEE_GATE",
-    "prohibitedLeeWayGates": [
-      "LEEWAY_PAYMENT_REQUIRED",
-      "LEEWAY_PREMIUM_ONLY_CAPABILITY",
-      "LEEWAY_PAYWALL_UI",
-      "LEEWAY_PAID_TIER_REQUIRED"
+    "requiredNoCostPaths": [
+      "self_hosted_runtime",
+      "bring_your_own_storage",
+      "bring_your_own_provider_credentials",
+      "local_first_or_owner_selected_hosting"
+    ],
+    "prohibitedMandatoryBackendGates": [
+      "PAY_TO_CONFIGURE_LEEWAY",
+      "PAY_TO_ACCESS_DEVELOPER_BACKEND_CONTRACTS",
+      "MANDATORY_LEEWAY_MANAGED_STORAGE_FEE",
+      "MANDATORY_LEEWAY_HOSTED_RUNTIME_FEE"
     ],
     "requiredSurfaces": [
       "agent_virtual_tablet",
@@ -31,15 +37,38 @@
       "native_applications"
     ]
   },
+  "storageAndHostingOwnership": {
+    "principle": "A user's files, storage selection, backup location, and provider credentials remain that user's controlled resources. LeeWay adapters configure and access them only with owner authorization.",
+    "requiredChoices": [
+      "owner_local_storage",
+      "owner_selected_cloud_storage",
+      "owner_selected_self_hosted_service"
+    ],
+    "prohibitedDesigns": [
+      "LEEWAY_OWNED_STORAGE_AS_ONLY_PATH",
+      "UNAUTHORIZED_CROSS_USER_STORAGE_ACCESS",
+      "LOCK_IN_OF_USER_DATA_TO_MANDATORY_PAID_HOST"
+    ]
+  },
+  "commerceBoundary": {
+    "principle": "LeeWay may offer separately defined product, subscription, marketplace, or service payment gates. Such commerce must never be recast as a mandatory payment to configure, develop, self-host, or use the backend contracts and user-owned storage path.",
+    "permittedOptionalGates": [
+      "EXPLICIT_PRODUCT_SUBSCRIPTION",
+      "OPTIONAL_MANAGED_SERVICE",
+      "OPTIONAL_MARKETPLACE_PURCHASE",
+      "THIRD_PARTY_PROVIDER_PLAN"
+    ],
+    "requiredDisclosure": "A surface presenting a payment gate must identify the product or provider being purchased, state whether a self-hosted or owner-selected alternative exists, and never claim that the core LeeWay backend is paid-only."
+  },
   "externalProviderBoundary": {
-    "principle": "External provider plans, account eligibility, device platform restrictions, and hosting outages must be disclosed accurately and must never be mislabeled as a LeeWay payment requirement.",
+    "principle": "External provider plans, account eligibility, device platform restrictions, and hosting outages must be disclosed accurately and must never be mislabeled as a compulsory LeeWay backend fee.",
     "prohibitedResponses": [
       "FABRICATED_FREE_ACCESS",
       "PAYWALL_BYPASS",
       "EXTERNAL_ENTITLEMENT_MISREPRESENTED_AS_LEEWAY_FEE"
     ],
     "requiredAvailabilityState": "EXTERNAL_PROVIDER_UNAVAILABLE_OR_REQUIRES_PROVIDER_ELIGIBILITY",
-    "fallbackRule": "Where a LeeWay-owned alternative exists and is authorized, offer it without a LeeWay payment gate; otherwise report the unavailable boundary plainly."
+    "fallbackRule": "Offer the authorized self-hosted, owner-selected, or local path when it exists; otherwise report the unavailable external boundary plainly."
   },
   "runtimeAndDeviceBoundary": {
     "authorizationRule": "Owner authentication, per-device consent, capability grants, Formula, Veritas, receipts, and platform permission remain required and are not monetization controls.",
@@ -48,14 +77,16 @@
   },
   "enforcement": {
     "sourceRequirements": [
-      "No LeeWay-owned client surface may render a payment-required gate for a LeeWay capability.",
+      "No developer, setup, configuration, backend-contract, or user-owned-storage path may require a mandatory LeeWay payment.",
+      "Each backend adapter must document its self-hosted or owner-selected alternative when technically applicable.",
+      "Optional commerce gates must identify their product/provider scope and must not disable the independently available backend contract.",
       "Runtime errors must preserve the actual external-provider or authorization boundary.",
       "Application manifests and UI policy adapters must distinguish disabled authorization from external-provider availability."
     ],
     "acceptance": [
       "Source policy regression test passes.",
-      "Each product surface is tested against a denied grant and an unavailable external provider without displaying a LeeWay paywall.",
-      "Production evidence records each external provider dependency separately from LeeWay access."
+      "Each product surface is tested for a free configuration path, owner-controlled storage, and truthful optional-commerce presentation.",
+      "Production evidence records each external provider dependency and each optional paid service separately from the free backend contract."
     ]
   }
 }
