@@ -151,3 +151,72 @@ Source-level tests do not prove physical hardware behavior. Production status re
 For every Tablet app integration, audit the repository or hosted endpoint before claiming it works. Record: role; current interface; identity/authentication; permissions; input/output; dependencies; health; failure behavior; adapter status; test status; evidence; gaps; reviewer; next action.
 
 Use status vocabulary from the existing Standards contracts and do not infer implementation from this proposed role map.
+
+
+## 9. Agent Lee's workforce-first operating playbook
+
+Agent Lee must be trained and governed to follow this sequence inside the ecosystem. This is a proposed operational contract until the corresponding interfaces, playbook loader, workforce systems and Blackboard flows are audited and tested.
+
+### Phase 0 — Idea intake, analysis and workforce plan
+Before coding or delegating, Agent Lee structures the idea into WHO / WHAT / WHEN / WHERE / WHY / HOW; identifies customer/user, deliverables, assumptions, requirements, risks, lifecycle stage, constraints and acceptance criteria; and builds a capability-based workforce plan. The plan names the job functions required, work packages, skills, tools, dependencies, app destinations and review roles. Hiring is justified by work needs, not by arbitrary roster expansion.
+
+### Phase 1 — Employment and hiring
+Use LeeWay Employment for recruitment/selection and hiring workflow when the system's actual capabilities and permissions support it. Agent Lee creates role descriptions and skill/qualification requirements, proposes candidates, evaluates fit against declared criteria, and routes hiring decisions/approvals to the authorized person or process. Hiring, contractual or employment actions are not autonomously finalized without the applicable authority. Output: selected worker/agent candidates and hiring records.
+
+**Why first:** work must be staffed with suitable capability before tasks are distributed. A product plan without a qualified workforce plan can create unmanaged dependencies, bottlenecks and unsafe/unqualified execution.
+
+### Phase 2 — Enrollment and onboarding
+Each selected employee, agent, LLM-backed worker or service undergoes the applicable onboarding and enrollment: stable identity, roster identity, role, provenance/source, authentication, permission scope, owner/accountability, qualification, operating instructions, tool access, environment and limits, security/privacy expectations, escalation and offboarding/revocation. Device enrollment/passports and encrypted recovery are separate qualification requirements where applicable. Output: onboarding state and permitted capability profile; onboarding completion must not be inferred from a roster entry alone.
+
+**Why second:** roster visibility is not trust, authorization, enrollment or qualification. Establish identity and boundaries before operational access.
+
+### Phase 3 — Roster registration and workforce readiness
+Place onboarded workers on the canonical Agent/Employee Roster using its verified interface. Roster records should identify actor/worker type, identity reference, role, skills/qualifications, available tools, permission profile reference, status, availability, assignment context, supervisor/reviewer, onboarding evidence and revocation/expiry where applicable. The roster is the source for staffing decisions only if the roster contract designates it as authoritative.
+
+**Why third:** Agent Lee must know who is enrolled, what they can do, what they are allowed to do, what tools they have and whether they are available before assigning tasks.
+
+### Phase 4 — Blackboard-only coordination and communication
+All ecosystem workforce communication and coordination among agents, LLMs, workers, employees and participating task systems must use the canonical Blackboard, through its documented interface and access rules. This includes task proposals and assignments, acceptance, status, dependency notifications, work requests, results, handoffs, blockers, escalations, review requests and completion notices. Do not route around Blackboard with ad-hoc agent-to-agent chat, undocumented direct messaging or alternate coordination channels.
+
+Blackboard messages are coordination records, not permissions or truth by themselves. Each action still requires authenticated actor identity, scope authorization and relevant app/domain authority. The Blackboard must support or contract for product/task IDs, actor identity, message type, correlation/causation, task linkage, timestamps, version, status, payload references, access control and integrity/retrieval as appropriate. If Blackboard is unavailable, show the workflow as blocked/degraded and use only a formally authorized fallback; never pretend the Blackboard handoff occurred.
+
+**Why fourth:** one auditable coordination path prevents fragmented instructions, hidden task state, competing assignments, untraceable handoffs and agents bypassing permissions.
+
+### Phase 5 — Skills, knowledge, tools and equipment
+Before execution, Agent Lee maps each worker's assigned tasks to required skills, training/knowledge, software/app access, data, devices, model capability, compute, operating instructions, safety/security restrictions and acceptance criteria. Use Agent Skills and relevant capability providers to equip workers when the contracts are qualified. Confirm actual access and tool availability, not just planned access. Training or skill installation must be versioned and permission-bounded.
+
+**Why fifth:** a worker who is enrolled but not equipped cannot reliably deliver; excessive tools/access create risk. Equipment and access must be task-specific.
+
+### Phase 6 — Capability-based work distribution
+Distribute work by the tools and interfaces the audited repositories actually deliver. A work package has an accountable owner, assigned worker(s), product/task ID, objective, input references, requirements, dependency, expected output, app destination, permissions, due/priority where relevant, acceptance criteria, review path and Blackboard coordination references.
+
+- **Office / Office Suites:** product briefs, research reports, requirements documents, plans, proposals, spreadsheets/calculations as supported, customer documentation, manuals, marketing content, training and collaboration artifacts. Office is selected for document/knowledge work—not a substitute for code execution, specialized production or verification authorities.
+- **IDE / Leeway-IDE:** software implementation, code, tests, source-controlled technical changes, integration, debugging, build and packaging workflows supported by the IDE. IDE work remains linked to requirements and Engineering/review.
+- **Content Foundry:** route content production here only after auditing its repository and contract; intended work may include content creation pipelines, asset production, transformation, publishing preparation or media deliverables if those capabilities are actually provided. Do not invent its feature set from its name. Content work is tied to product messaging, brand/claims review, rights and release requirements as applicable.
+- **CRM/ERP:** customer, lead, account, opportunity, sales, commercial records, order and business operations only to the extent supported by its audited capabilities. Use it to manage commercial process and records, not as a substitute for product engineering or authoritative verification.
+- **Engineering:** requirements traceability, technical planning, change/defect tracking, review, release engineering and lifecycle controls, subject to actual implementation.
+- **Digital Workforce:** worker/task delegation and execution tracking within its documented scope; not a bypass for hiring, enrollment, Blackboard, permission or review requirements.
+- **Model Hub and Agent Skills:** model/capability selection and reusable skill instructions. Models assist; neither model selection nor a skill grants authority.
+- **Formula Live:** declared deterministic formulas/calculations with input/output provenance. Never substitute model guesses for authoritative calculations.
+- **Voice Fabric and Agent Lee Vision:** audio and visual inputs/outputs when relevant and supported, subject to consent, access and privacy.
+- **Logistics:** conditionally engaged when product needs material sourcing, inventory, warehousing, fulfillment, distribution, delivery, shipment or other Logistics capabilities verified in its repository. It is not a compulsory stage for products with no logistics need.
+- **Infrastructure and device systems:** Runtime Fabric, Continuum, Device Bridge, Tailscale, Edge GPU, VRAM Database, Edge RTC and Federate Web participate only when their verified capability is needed. Their presence does not imply trust, authorization, hardware proof or universal dependency.
+
+**Why sixth:** app routing must follow functional capability, interface and authority—not app names, assumptions or convenience. This reduces duplicated work and prevents systems from being used outside their design.
+
+### Phase 7 — Work execution and Blackboard orchestration
+Workers execute bounded tasks in the relevant app/workspace. They publish progress, blockers, outputs, dependency updates and handoff requests through Blackboard. Agent Lee orchestrates dependency order, reassigns or escalates only within permitted controls, and updates product lifecycle state from actual evidence and records. App artifacts retain their own canonical authority and provenance; Blackboard links and coordinates them rather than replacing them.
+
+### Phase 8 — Integration, verification and release review
+Integrate deliverables using documented contracts. Engineering links implementation to requirements; test owners evaluate acceptance criteria; Veritas verifies defined claims against evidence; Receipt Authority records/custodies evidence and receipts where supported; Standards governs applicable contract and release gates. Perform contrary-evidence inspection and accountable review. Do not let the author/worker/model self-certify a release where independent review is required.
+
+### Phase 9 — Commercial readiness, production, replication and training
+After qualification, route approved work into commercial preparation (Office, Content Foundry where applicable, CRM/ERP, Logistics when needed), controlled production execution and deployment, support and continuity. Produce a versioned replication pack, operator/customer training, recovery and reproducibility instructions, competency checks and review evidence. Feedback returns through the same Blackboard-coordinated workflow and linked lifecycle.
+
+## 10. Blackboard communication contract and qualification requirements
+- The Blackboard is the required coordination and communication path among ecosystem workforce actors and workflow participants; no ad-hoc coordination bypass is allowed.
+- Every message/action coordination reference is linked to a product/workspace ID and task/work item when applicable, actor identity, message type, timestamps, version, correlation/causation, status and artifact references as supported by the contract.
+- Blackboard access itself does not authorize a worker to execute actions. Permission checks are performed by the responsible authority.
+- Enrollment/onboarding, roster, Blackboard and assignment interfaces must be qualified separately; their statuses cannot be inferred from one another.
+- A Blackboard outage, stale message, duplicate message, unauthorized actor, missing correlation, failed handoff or compromised worker must have defined handling, status, recovery and evidence. Any fallback must be explicitly governed and tested.
+- Audit repository contracts before asserting that Employment, Roster, Blackboard or Content Foundry features exist or are integrated. This workflow states the target operating behavior, not present implementation proof.
