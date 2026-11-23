@@ -357,5 +357,379 @@
       "PUBLIC_STORY": "RAPIDWEBDEVELOP_VERIFIED"
     },
     "runtimeProofBoundary": "Canonical source convergence does not establish deployed Runtime Fabric, Formula execution, physical Device Bridge pairing, or a completed persistent workId."
+  },
+  "governedAssembly": {
+    "schema": "leeway.standards.governed-assembly.v1",
+    "status": "SOURCE_TOPOLOGY_ONLY_PRODUCTION_NOT_ADMITTED",
+    "intent": "IDEA_TO_MARKETABLE_PRODUCT_WITH_INDEPENDENT_CUSTODY",
+    "contractOnly": true,
+    "canonicalPolicy": "4citeB4U/LeeWay-Standards",
+    "immutableCorrelation": "SAME_MISSION_AND_SOURCE_REVISION_AT_EVERY_HANDOFF",
+    "engineeringCycle": [
+      "INVESTIGATE",
+      "DIAGNOSE",
+      "PLAN",
+      "IMPLEMENT",
+      "TEST",
+      "VALIDATE",
+      "REPAIR",
+      "RETEST",
+      "VERIFY",
+      "EVIDENCE",
+      "CHECKPOINT",
+      "CONTINUE"
+    ],
+    "productPath": [
+      "IDEA",
+      "NEED",
+      "POLICY_ADMISSION",
+      "FORMULA_DECISION",
+      "GOVERNED_BUILD",
+      "SOURCE_TEST",
+      "EVIDENCE_CAPTURE",
+      "INDEPENDENT_REVIEW",
+      "CANONICAL_RECEIPT",
+      "ELIGIBLE_LEARNING",
+      "PRODUCTION_RELEASE_REVIEW",
+      "TARGET_DEPLOYMENT",
+      "INDEPENDENT_DEPLOYED_POST",
+      "DEPLOYED_RECEIPT",
+      "MARKETABLE_PRODUCT_ACCEPTANCE"
+    ],
+    "enforcement": {
+      "actionAdmissionOwner": "runtime-fabric",
+      "observationOwner": "machine-consciousness",
+      "independentDecisionOwner": "veritas",
+      "receiptCustodyOwner": "receipt-authority",
+      "learningAdmissionOwner": "learning-ledger",
+      "releaseOwner": "production-final",
+      "noDirectLlmExecution": true,
+      "noUnknownApiOrFileAdmission": true,
+      "rejectUnqualifiedEvidence": true,
+      "noSelfApproval": true,
+      "failClosedOnMissingBindings": true,
+      "liveIngressWired": false,
+      "productionAuthorized": false
+    },
+    "nodes": [
+      {
+        "id": "standards",
+        "repo": "4citeB4U/LeeWay-Standards",
+        "role": "CONSTITUTIONAL_RULES",
+        "sourceOnly": true,
+        "approvedRuntimeBinding": "NOT_VERIFIED",
+        "productionQualified": false
+      },
+      {
+        "id": "runtime-fabric",
+        "repo": "4citeB4U/Leeway-Runtime-Fabric",
+        "role": "GOVERNED_EXECUTION",
+        "sourceOnly": true,
+        "approvedRuntimeBinding": "NOT_VERIFIED",
+        "productionQualified": false
+      },
+      {
+        "id": "machine-consciousness",
+        "repo": "4citeB4U/Machine-Consciousness",
+        "role": "DETERMINISTIC_POLICY_SENTINEL",
+        "sourceOnly": true,
+        "approvedRuntimeBinding": "NOT_VERIFIED",
+        "productionQualified": false
+      },
+      {
+        "id": "veritas",
+        "repo": "4citeB4U/LEEWAY-VERITAS",
+        "role": "INDEPENDENT_REVIEW",
+        "sourceOnly": true,
+        "approvedRuntimeBinding": "NOT_VERIFIED",
+        "productionQualified": false
+      },
+      {
+        "id": "receipt-authority",
+        "repo": "4citeB4U/Receipt-Authority",
+        "role": "CANONICAL_RECEIPT_CUSTODY",
+        "sourceOnly": true,
+        "approvedRuntimeBinding": "NOT_VERIFIED",
+        "productionQualified": false
+      },
+      {
+        "id": "learning-ledger",
+        "repo": "4citeB4U/LeeWay-Learning-Ledger",
+        "role": "VERIFIED_LEARNING",
+        "sourceOnly": true,
+        "approvedRuntimeBinding": "NOT_VERIFIED",
+        "productionQualified": false
+      },
+      {
+        "id": "production-final",
+        "repo": "4citeB4U/LeeWay-Production-Final-Execution-Layer",
+        "role": "PRODUCTION_RELEASE",
+        "sourceOnly": true,
+        "approvedRuntimeBinding": "NOT_VERIFIED",
+        "productionQualified": false
+      }
+    ],
+    "transitions": [
+      {
+        "id": "POLICY_INTAKE",
+        "from": "standards",
+        "to": "runtime-fabric",
+        "requiredProof": [
+          "standardsRevision",
+          "ownerAuthorization",
+          "activeMissionId"
+        ],
+        "sourceOnly": true
+      },
+      {
+        "id": "SENTINEL_ALERT",
+        "from": "machine-consciousness",
+        "to": "runtime-fabric",
+        "requiredProof": [
+          "standardsRevision",
+          "observedPolicyViolation",
+          "correlationId"
+        ],
+        "sourceOnly": true
+      },
+      {
+        "id": "EXECUTION_REVIEW",
+        "from": "runtime-fabric",
+        "to": "veritas",
+        "requiredProof": [
+          "sourceRevision",
+          "formulaDecision",
+          "originalExecutionEvidence",
+          "correlationId"
+        ],
+        "sourceOnly": true
+      },
+      {
+        "id": "VERIFIED_EVIDENCE_CUSTODY",
+        "from": "veritas",
+        "to": "receipt-authority",
+        "requiredProof": [
+          "independentDecisionReadback",
+          "sourceRevision",
+          "correlationId"
+        ],
+        "sourceOnly": true
+      },
+      {
+        "id": "VERIFIED_LEARNING",
+        "from": "receipt-authority",
+        "to": "learning-ledger",
+        "requiredProof": [
+          "durableReceiptReadback",
+          "atomicLearningObligation",
+          "correlationId"
+        ],
+        "sourceOnly": true
+      },
+      {
+        "id": "PRE_RELEASE_HANDOFF",
+        "from": "receipt-authority",
+        "to": "production-final",
+        "requiredProof": [
+          "standardsRevision",
+          "signedReleaseAuthorization",
+          "independentReviewReadback",
+          "canonicalReceiptReadback",
+          "rollbackPlan",
+          "correlationId"
+        ],
+        "sourceOnly": true
+      },
+      {
+        "id": "DEPLOYED_POST_REVIEW",
+        "from": "production-final",
+        "to": "veritas",
+        "requiredProof": [
+          "approvedDeploymentTarget",
+          "deployedPoststate",
+          "sourceRevision",
+          "correlationId"
+        ],
+        "sourceOnly": true
+      },
+      {
+        "id": "POST_DEPLOYMENT_CUSTODY",
+        "from": "veritas",
+        "to": "receipt-authority",
+        "requiredProof": [
+          "signedDeployedPostReview",
+          "deployedReadback",
+          "correlationId"
+        ],
+        "sourceOnly": true
+      },
+      {
+        "id": "LEARNING_POLICY_OBSERVATION",
+        "from": "learning-ledger",
+        "to": "machine-consciousness",
+        "requiredProof": [
+          "verifiedLearningReadback",
+          "correlationId"
+        ],
+        "sourceOnly": true
+      }
+    ],
+    "alertPolicy": {
+      "emitter": "machine-consciousness",
+      "receiver": "runtime-fabric",
+      "operation": "REQUEST_HOLD_AND_ALERT_ONLY",
+      "mayDirectlyAuthorize": false,
+      "acknowledgeOnlyWhen": "AUTHENTICATED_SECURITY_REVIEW_AND_RUNTIME_CUSTODY"
+    },
+    "disclaimer": "This graph is enforceable source topology, not an enrolled agent, active Runtime middleware, production release or Veritas/Receipt/Learning result.",
+    "deviceExclusiveException": {
+      "schema": "leeway.standards.device-exclusive-exception.v1",
+      "status": "SOURCE_ONLY_NATIVE_RUNTIME_NOT_ENROLLED",
+      "deviceExclusiveFamilies": [
+        {
+          "product": "digital-brain",
+          "repository": "4citeB4U/Leeway-Digital-Brain-Diagnostincs-pkg",
+          "operationalAllegiance": "ORIGIN_DEVICE_EXCLUSIVE",
+          "runtimeResidence": "DEVICE_ONLY",
+          "nativePaths": "ORIGIN_DEVICE_ONLY",
+          "nativeHardware": "ORIGIN_DEVICE_ONLY",
+          "crossDeviceIdentityReuse": false
+        },
+        {
+          "product": "diagnostics",
+          "repository": "4citeB4U/Leeway-Digital-Brain-Diagnostincs-pkg",
+          "operationalAllegiance": "ORIGIN_DEVICE_EXCLUSIVE",
+          "runtimeResidence": "DEVICE_ONLY",
+          "nativePaths": "ORIGIN_DEVICE_ONLY",
+          "nativeHardware": "ORIGIN_DEVICE_ONLY",
+          "crossDeviceIdentityReuse": false
+        }
+      ],
+      "otherEcosystemComponents": "HARDWARE_AGNOSTIC",
+      "leewayRole": "SOFTWARE_CREATOR_AND_SOURCE_ORIGIN_ONLY",
+      "deviceNotLegalPerson": true,
+      "nativeAccessStillRequiresOsAndHumanAuthorization": true,
+      "externalRawIndexExportDefault": false,
+      "genuineNativeIdentityVerified": false,
+      "sourceOnly": true
+    },
+    "factoryFloor": {
+      "schema": "leeway.standards.ten-station-factory-floor.v1",
+      "status": "SOURCE_CONTRACT_ONLY_RUNTIME_BOOTSTRAP_UNQUALIFIED",
+      "stations": [
+        {
+          "number": 1,
+          "station": "LAW",
+          "repository": "4citeB4U/LeeWay-Standards",
+          "sourceOnly": true
+        },
+        {
+          "number": 2,
+          "station": "DEVICE_SENSORY",
+          "repository": "4citeB4U/Leeway-Digital-Brain-Diagnostincs-pkg",
+          "sourceOnly": true
+        },
+        {
+          "number": 3,
+          "station": "FORMULA_MATH",
+          "repository": "4citeB4U/Leeway-formula-live",
+          "sourceOnly": true
+        },
+        {
+          "number": 4,
+          "station": "GOVERNED_RUNTIME",
+          "repository": "4citeB4U/Leeway-Runtime-Fabric",
+          "sourceOnly": true
+        },
+        {
+          "number": 5,
+          "station": "ENGINEERING_LOOP",
+          "repository": "4citeB4U/LeeWay-Engineering",
+          "sourceOnly": true
+        },
+        {
+          "number": 6,
+          "station": "DETERMINISTIC_SENTINEL",
+          "repository": "4citeB4U/Machine-Consciousness",
+          "sourceOnly": true
+        },
+        {
+          "number": 7,
+          "station": "RECEIPT_CUSTODY",
+          "repository": "4citeB4U/Receipt-Authority",
+          "sourceOnly": true
+        },
+        {
+          "number": 8,
+          "station": "VERIFIED_LEARNING",
+          "repository": "4citeB4U/LeeWay-Learning-Ledger",
+          "sourceOnly": true
+        },
+        {
+          "number": 9,
+          "station": "INDEPENDENT_VERITAS",
+          "repository": "4citeB4U/LEEWAY-VERITAS",
+          "sourceOnly": true
+        },
+        {
+          "number": 10,
+          "station": "PRODUCTION_SHIPPING",
+          "repository": "4citeB4U/LeeWay-Production-Final-Execution-Layer",
+          "sourceOnly": true
+        }
+      ],
+      "workforceTiers": [
+        {
+          "tier": 0,
+          "identity": "TRUSTED_HOST_DETERMINISTIC_SENTINEL",
+          "source": "MACHINE_CONSCIOUSNESS_FORMULA",
+          "directReceiptSigning": false,
+          "directProductionApproval": false,
+          "requiresRuntimeAdmission": true
+        },
+        {
+          "tier": 1,
+          "identity": "LOCAL_IRON_BUILDER",
+          "source": "RUNTIME_AUTHENTICATED_LOCAL_AGENT",
+          "localWritePermission": "SPECIFIC_GRANTED_CAPABILITY_ONLY",
+          "canBypassNativeOs": false,
+          "requiresRuntimeAdmission": true
+        },
+        {
+          "tier": 2,
+          "identity": "OUTSIDE_DIPLOMATIC_CANDIDATE",
+          "source": "UNTRUSTED_EXTERNAL_MODEL",
+          "localWritePermission": "DENIED",
+          "sourceContribution": "CREATOR_APPROVED_DRAFT_PR_CANDIDATE_ONLY",
+          "canClaimHardwareExecution": false,
+          "requiresRuntimeAdmission": true
+        }
+      ],
+      "coldStart": {
+        "activeSourcePinRequired": true,
+        "exactAgentAndWorkIdRequired": true,
+        "deviceBridgeRequiredWhenDeviceAction": true,
+        "readOriginalEvidenceBeforeRetest": true,
+        "sessionAdmissionVerified": false,
+        "voiceRuleZero": "BEHAVIORAL_COMPLIANCE_NOT_CRYPTOGRAPHIC_IDENTITY",
+        "cryptographicIdentity": "TRUSTED_HOST_ISSUED_SCOPED_ADMISSION_NOT_LLM_SELF_ATTESTED"
+      },
+      "handoff": {
+        "creatorSource": "IDEA",
+        "candidateOnlyBeforeHostAdmission": true,
+        "modelSelfSigningForbidden": true,
+        "authenticatedTransportAndScopeRequired": true,
+        "preserveOriginalTestLogAndHash": true,
+        "independentVeritasPrePostRequired": true,
+        "receiptAppendAndReadbackRequired": true,
+        "eligibleLearningOnlyAfterVerifiedReceipt": true,
+        "ownerApprovedDeploymentRequired": true,
+        "independentDeployedPostRequired": true,
+        "sourceTestsAloneCannotGrantProduction": true,
+        "noAdditionalQueueLedgerVerifier": true
+      },
+      "deviceExceptionRef": "leeway.standards.device-exclusive-exception.v1",
+      "productionIngressWired": false
+    }
   }
 }
