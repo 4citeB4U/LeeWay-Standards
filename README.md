@@ -192,3 +192,7 @@ npm run leeway -- scan
 
 ## License
 MIT (see `LICENSE` file).
+
+## Evidence discovery: contributor first-read (proposed)
+
+All agents/LLMs must follow the existing [canonical engineering laws](Docs/governance/LEEWAY-CANONICAL-ENGINEERING-LAWS.md). The proposed [evidence discovery and original-custody companion](Docs/governance/LEEWAY-EVIDENCE-DISCOVERY-ROUTING.md) points to the existing Receipt Authority JSON category/lookup proposal, latest owner contributor notes and original source evidence. Search previous documents, receipts, tests and retests before running a new test; a source report never becomes a verified production receipt by indexing. **Not an adopted Standards change** until reviewed in [draft PR #67](https://github.com/4citeB4U/LeeWay-Standards/pull/67).
