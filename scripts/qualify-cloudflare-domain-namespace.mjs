@@ -44,6 +44,29 @@ export function qualifyCloudflareDomainNamespace(plan, observation=null){
       || plan?.spokenDomainUnverified!=="rapidweb.com"){
     fail("LEEWAY_DOMAIN_IDENTITY_CONFLICT");
   }
+  // Public RDAP shows a live registration, not a live Cloudflare DNS zone.
+  // A purged zone requires new assigned nameservers; the old pair cannot be
+  // promoted as authoritative merely because it remains at the registrar.
+  const registry=plan.registrarEvidence;
+  if(registry?.source!=="OWNER_SUPPLIED_RDAP_2026-10-28T16:47:57Z"
+    || registry?.registrableDomain!==EXACT_ROOT
+    || registry?.registryStatus!=="active"
+    || registry?.registrar!=="Squarespace Domains II LLC"
+    || registry?.reseller!=="Google Workspace"
+    || registry?.registrationExpiresUtc!=="2027-04-14T13:28:23Z"
+    || registry?.dnssecDelegationSigned!==false
+    || registry?.oldCloudflareZoneStatus!=="PURGED_2026-04-02"
+    || !Array.isArray(registry.legacyNameservers)
+    || registry.legacyNameservers.length!==2
+    || registry.legacyNameservers[0]!=="guss.ns.cloudflare.com"
+    || registry.legacyNameservers[1]!=="pat.ns.cloudflare.com"
+    || registry?.replacementNameservers!==null
+    || registry?.registrarAccountControlVerified!==false
+    || registry?.currentAuthoritativeSoaProbed!==false
+    || registry?.currentMxTxtDkimDmarcPreserved!==false
+    || registry?.identityAndEmailMigrationAuthorized!==false){
+    fail("LEEWAY_DOMAIN_RDAP_IS_NOT_CLOUDFLARE_ACTIVATION");
+  }
   if(plan.ownership?.currentConnectedCloudflareZoneId!==null
       || plan.ownership?.ownerConfirmed!==false
       || plan.ownership?.nameserversVerified!==false
@@ -103,6 +126,12 @@ export function qualifyCloudflareDomainNamespace(plan, observation=null){
     similarlyNamedButUnverifiedDomain:plan.spokenDomainUnverified,
     publicHosts,
     privateAuthorities:plan.privateAuthorities,
+    registryStatus:"OWNER_SUPPLIED_RDAP_ACTIVE",
+    historicCloudflareZone:"PURGED",
+    oldNameservers:"HISTORICAL_DELEGATION_DO_NOT_REUSE",
+    replacementNameservers:"NOT_ASSIGNED",
+    registrarAccess:"NOT_PROVEN",
+    googleWorkspaceAndEmailDns:"NOT_RECONSTRUCTED",
     dnsRecordChanges:"NOT_PERFORMED",
     ownershipVerification:"NOT_PROVEN",
     dnsReadback:"NOT_PROBED",

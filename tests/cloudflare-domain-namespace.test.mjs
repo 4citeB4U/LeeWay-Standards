@@ -101,3 +101,31 @@ test("even exact owner zone readback does not confer issuer, DNS write, or produ
   assert.equal(observed.productionAdmission,"NOT_GRANTED");
   assert.equal(observed.issuerAndMcp,"NOT_PROBED");
 });
+
+test("RDAP confirms registration but may not be treated as restored Cloudflare",()=>{
+  const v=qualifyCloudflareDomainNamespace(canonical);
+  assert.equal(v.registryStatus,"OWNER_SUPPLIED_RDAP_ACTIVE");
+  assert.equal(v.historicCloudflareZone,"PURGED");
+  assert.equal(v.oldNameservers,"HISTORICAL_DELEGATION_DO_NOT_REUSE");
+  assert.equal(v.registrarAccess,"NOT_PROVEN");
+  assert.equal(v.replacementNameservers,"NOT_ASSIGNED");
+  assert.equal(v.googleWorkspaceAndEmailDns,"NOT_RECONSTRUCTED");
+  assert.equal(v.dnsRecordChanges,"NOT_PERFORMED");
+});
+
+test("tampered registry ownership, nameserver reuse and email claims cannot pass source",()=>{
+  for(const [k,val] of [
+    ["registrableDomain","rapidweb.com"],
+    ["registrar","Cloudflare Inc."],
+    ["reseller","Unknown"],
+    ["oldCloudflareZoneStatus","ACTIVE"],
+    ["registrarAccountControlVerified",true],
+    ["replacementNameservers",["guss.ns.cloudflare.com","pat.ns.cloudflare.com"]],
+    ["currentAuthoritativeSoaProbed",true],
+    ["currentMxTxtDkimDmarcPreserved",true],
+    ["identityAndEmailMigrationAuthorized",true]
+  ]){
+    const x=clone();x.registrarEvidence[k]=val;
+    assert.throws(()=>qualifyCloudflareDomainNamespace(x),/LEEWAY_DOMAIN_RDAP_IS_NOT_CLOUDFLARE_ACTIVATION/,k);
+  }
+});
