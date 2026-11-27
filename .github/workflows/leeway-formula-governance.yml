@@ -1,0 +1,32 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.STANDARDS.FORMULA.GOVERNANCE
+# TAG: LEEWAY.FORMULA.GOVERNANCE.CI
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+# 5WH:
+# WHAT = GitHub Actions workflow for Formula governance validation.
+# WHY = Check mandatory governance documentation on pushes and pull requests.
+# WHO = Creator and authenticated LeeWay contributors; existing ownership unchanged.
+# WHERE = .github/workflows/leeway-formula-governance.yml
+# WHEN = Governance metadata repair for review.
+# HOW = Run the existing Node.js governance verifier in GitHub Actions.
+# LICENSE: Not asserted; repository license decision pending.
+
+name: LeeWay Formula Governance
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  governance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify mandatory governance documents
+        run: node scripts/verify-universal-formula-governance.mjs

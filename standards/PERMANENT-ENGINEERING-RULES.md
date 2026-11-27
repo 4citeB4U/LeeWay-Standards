@@ -1,3 +1,17 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.FORMULA.GOVERNANCE
+TAG: LEEWAY.FORMULA.STANDARDS.PERMANENT.ENGINEERING.RULES.MD
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Governance requirements for standards/PERMANENT-ENGINEERING-RULES.md.
+WHY = Enforce canonical Formula consumption.
+WHO = Creator and authenticated LeeWay contributors.
+WHERE = standards/PERMANENT-ENGINEERING-RULES.md
+WHEN = 2026-11-26
+HOW = Apply canonical governance and executable admission.
+LICENSE: Not asserted; repository license decision pending.
+-->
 # LeeWay Permanent Engineering Rules
 
 Authority: LeeWay Standards. Active mission: Golden Package C3. Existing law remains authoritative.
@@ -38,3 +52,58 @@ If a defect interrupts a task: retain the last checkpoint and objective; identif
 
 ## Prohibitions
 Never invent Formula results, hashes, Veritas PASS, receipts, execution history, or physical recovery. Never substitute description for an actual action, discard uncommitted work, kill processes on appearance alone, set hard-coded new drive defaults, replace working components instead of missing glue, or alter packages/data without authorization. Do not announce SK while C3 is open. Security or integrity failures block only affected actions until legitimate repair.
+
+<!-- LEEWAY UNIVERSAL FORMULA GOVERNANCE BEGIN -->
+
+# LeeWay Universal Formula Governance
+
+Authority: Creator and LeeWay Standards.
+Formula identity: LEEWAY-FORMULA-v1.0.
+
+The canonical LeeWay Formula is mandatory throughout
+the entire LeeWay ecosystem.
+
+Every current and future application, capability,
+agent, worker, employee, model, provider, adapter,
+automation and integration inherits this requirement.
+
+All applicable interactions, responses, decisions,
+actions, revisions, executions, computations, model
+inferences, resource allocations, information transfers,
+memory operations, storage operations and deployments
+must consume the canonical Formula through their
+authorized and qualified domain contracts.
+
+Formula availability, documentation, configuration,
+health and historical results do not constitute actual
+Formula consumption for a new operation.
+
+Recover relevant authorized memory before substantive
+work. Preserve identity, provenance, Formula integrity,
+authorization, original receipts and verified learning.
+
+Never invent observations, adapter mappings, mathematical
+results, execution evidence or independent verification.
+
+No application may bypass applicable Formula governance
+by dispatching directly to a provider.
+
+Every new application and capability must demonstrate
+applicable Formula consumption before production admission.
+
+Preserve the existing authority hierarchy:
+
+Creator > Standards > Root of Trust > Runtime Fabric >
+Agent Lee > Harness > Formula > skills/models/tools >
+execution > Veritas > Receipt Authority > Learning Ledger.
+
+Execute the complete engineering loop:
+
+INVESTIGATE > DIAGNOSE > PLAN > IMPLEMENT > TEST >
+VALIDATE > REPAIR > RETEST > VERIFY > EVIDENCE >
+CHECKPOINT > CONTINUE.
+
+Documentation compliance does not establish executable
+enforcement or production admission.
+
+<!-- LEEWAY UNIVERSAL FORMULA GOVERNANCE END -->
