@@ -1,8 +1,9 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.OPTIMIZATION
 TAG: AI.OPTIMIZATION.MEMORY_LEARNING
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 COLOR_ONION_HEX:
 NEON=#FFD700
@@ -28,9 +29,8 @@ AUDIT
 ASSIGNED_SACRED_AGENTS:
 L3_Cognition: Echo.ts
 
-LICENSE:
-MIT
-*/
+LICENSE: MIT
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L3_Cognition: Echo.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 

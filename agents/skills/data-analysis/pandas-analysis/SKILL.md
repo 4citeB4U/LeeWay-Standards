@@ -1,8 +1,9 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.SKILL.DATA_ANALYSIS
 TAG: AI.SKILL.DATA_ANALYSIS.PANDAS_ANALYSIS
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 COLOR_ONION_HEX:
 NEON=#39FF14
@@ -28,9 +29,8 @@ AUDIT
 ASSIGNED_SACRED_AGENTS:
 L3_Cognition: LilyCortex.ts, L7_Memory: Sage.ts
 
-LICENSE:
-MIT
-*/
+LICENSE: MIT
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L3_Cognition: LilyCortex.ts, L7_Memory: Sage.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 

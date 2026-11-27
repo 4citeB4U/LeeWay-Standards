@@ -1,8 +1,9 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.SKILL.RESEARCH
 TAG: AI.SKILL.RESEARCH.KNOWLEDGE_SYNTHESIS
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 COLOR_ONION_HEX:
 NEON=#39FF14
@@ -28,9 +29,8 @@ AUDIT
 ASSIGNED_SACRED_AGENTS:
 L3_Cognition: Atlas.ts, L3_Cognition: Nova.ts
 
-LICENSE:
-MIT
-*/
+LICENSE: MIT
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L3_Cognition: Atlas.ts, L3_Cognition: Nova.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 

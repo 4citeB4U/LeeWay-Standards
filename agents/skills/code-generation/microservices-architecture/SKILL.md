@@ -1,8 +1,9 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: DEV.CODEGEN
 TAG: DEV.CODEGEN.MICROSERVICES_ARCHITECTURE
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 COLOR_ONION_HEX:
 NEON=#39FF14
@@ -28,9 +29,8 @@ AUDIT
 ASSIGNED_SACRED_AGENTS:
 L6_Execution: LiveConductorAgent.ts, L6_Execution: code_scout_agent.py
 
-LICENSE:
-MIT
-*/
+LICENSE: MIT
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L6_Execution: LiveConductorAgent.ts, L6_Execution: code_scout_agent.py. No unassigned Clones may natively execute this without Hive Mind routing.
 

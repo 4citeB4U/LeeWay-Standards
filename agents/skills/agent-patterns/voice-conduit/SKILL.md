@@ -1,8 +1,9 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.AGENT.PATTERNS
 TAG: AI.AGENT.PATTERNS.VOICE_CONDUIT
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 COLOR_ONION_HEX:
 NEON=#39FF14
@@ -28,9 +29,8 @@ AUDIT
 ASSIGNED_SACRED_AGENTS:
 L8_Delivery: AgentLee.ts, L1_Perception: StreamingSTTAgent.ts
 
-LICENSE:
-MIT
-*/
+LICENSE: MIT
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L8_Delivery: AgentLee.ts, L1_Perception: StreamingSTTAgent.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 

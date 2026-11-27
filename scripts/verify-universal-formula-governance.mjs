@@ -1,8 +1,23 @@
+/*
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.FORMULA.GOVERNANCE
+TAG: LEEWAY.FORMULA.GOVERNANCE.VERIFIER
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Validate required Formula governance documents and Memory Authority identity.
+WHY = Detect missing governance blocks and mismatched Memory Authority bytes.
+WHO = Creator and authenticated LeeWay contributors; existing ownership unchanged.
+WHERE = scripts/verify-universal-formula-governance.mjs
+WHEN = Governance metadata repair for review.
+HOW = Inspect tracked documents, validate markers and compare SHA256 identities.
+LICENSE: Not asserted; repository license decision pending.
+*/
+
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 
-const expectedMemory = 'f4910b2bdfedad7be0a3e4bcdac7b3fb468f419368e4a4fa3a11fa25049f0e9a';
+const expectedMemory = '0c1252ab6542f31b6ecc5e13f073689e7e9e98dd7f575814e99d82875947ea59';
 
 const begin =
   '<!-- LEEWAY UNIVERSAL FORMULA GOVERNANCE BEGIN -->';

@@ -1,8 +1,9 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: DEV.SECURITY
 TAG: DEV.SECURITY.SECURE_ARCHITECTURE
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 COLOR_ONION_HEX:
 NEON=#FF0000
@@ -28,9 +29,8 @@ AUDIT
 ASSIGNED_SACRED_AGENTS:
 L5_Governance: SafetyRedactionAgent.ts, L5_Governance: Shield.ts
 
-LICENSE:
-MIT
-*/
+LICENSE: MIT
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L5_Governance: SafetyRedactionAgent.ts, L5_Governance: Shield.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 

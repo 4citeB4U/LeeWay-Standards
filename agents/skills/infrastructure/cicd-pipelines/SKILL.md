@@ -1,8 +1,9 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.SKILL.INFRASTRUCTURE
 TAG: AI.SKILL.INFRASTRUCTURE.CICD_PIPELINES
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 COLOR_ONION_HEX:
 NEON=#39FF14
@@ -28,9 +29,8 @@ AUDIT
 ASSIGNED_SACRED_AGENTS:
 L5_Governance: BrainSentinel.ts, L5_Governance: LeewayStandardsAgent.ts
 
-LICENSE:
-MIT
-*/
+LICENSE: MIT
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L5_Governance: BrainSentinel.ts, L5_Governance: LeewayStandardsAgent.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 

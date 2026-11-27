@@ -2,6 +2,7 @@
 LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.STANDARDS.FORMULA.GOVERNANCE
 TAG: LEEWAY.FORMULA.STANDARDS.PERMANENT.ENGINEERING.RULES.MD
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 5WH:
 WHAT = Governance requirements for standards/PERMANENT-ENGINEERING-RULES.md.
 WHY = Enforce canonical Formula consumption.
@@ -9,7 +10,7 @@ WHO = Creator and authenticated LeeWay contributors.
 WHERE = standards/PERMANENT-ENGINEERING-RULES.md
 WHEN = 2026-11-26
 HOW = Apply canonical governance and executable admission.
-LICENSE = Not asserted; repository license decision pending.
+LICENSE: Not asserted; repository license decision pending.
 -->
 # LeeWay Permanent Engineering Rules
 

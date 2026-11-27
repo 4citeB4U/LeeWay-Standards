@@ -1,8 +1,9 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.AGENT.ORCHESTRATION
 TAG: AI.AGENT.ORCHESTRATION.MULTI_AGENT_ORCHESTRATION
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 COLOR_ONION_HEX:
 NEON=#FF00FF
@@ -28,9 +29,8 @@ AUDIT
 ASSIGNED_SACRED_AGENTS:
 L4_Consensus: MarshalVerify.ts, L2_Ingestion: RouterAgent.ts
 
-LICENSE:
-MIT
-*/
+LICENSE: MIT
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L4_Consensus: MarshalVerify.ts, L2_Ingestion: RouterAgent.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 

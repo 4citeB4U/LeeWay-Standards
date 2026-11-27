@@ -1,8 +1,9 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.TOOLS
 TAG: AI.TOOLS.CUSTOM_TOOL_CREATION
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 COLOR_ONION_HEX:
 NEON=#9370DB
@@ -28,9 +29,8 @@ AUDIT
 ASSIGNED_SACRED_AGENTS:
 L6_Execution: Azr-Coordinator, L2_Ingestion: Aria.ts
 
-LICENSE:
-MIT
-*/
+LICENSE: MIT
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L6_Execution: Azr-Coordinator, L2_Ingestion: Aria.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 

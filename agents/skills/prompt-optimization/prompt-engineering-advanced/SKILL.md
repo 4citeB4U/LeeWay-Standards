@@ -1,8 +1,9 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.PROMPTS
 TAG: AI.PROMPTS.PROMPT_ENGINEERING_ADVANCED
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 COLOR_ONION_HEX:
 NEON=#FF69B4
@@ -28,9 +29,8 @@ AUDIT
 ASSIGNED_SACRED_AGENTS:
 L3_Cognition: Agent.Phi-3.5-Orchestrator.json
 
-LICENSE:
-MIT
-*/
+LICENSE: MIT
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L3_Cognition: Agent.Phi-3.5-Orchestrator.json. No unassigned Clones may natively execute this without Hive Mind routing.
 

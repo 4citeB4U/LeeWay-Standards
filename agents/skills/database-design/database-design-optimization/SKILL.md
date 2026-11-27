@@ -1,8 +1,9 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.SKILL.DATABASE_DESIGN
 TAG: AI.SKILL.DATABASE_DESIGN.DATABASE_DESIGN_OPTIMIZATION
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 COLOR_ONION_HEX:
 NEON=#39FF14
@@ -28,9 +29,8 @@ AUDIT
 ASSIGNED_SACRED_AGENTS:
 L7_Memory: ClerkArchive.ts, L7_Memory: indexer.py
 
-LICENSE:
-MIT
-*/
+LICENSE: MIT
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L7_Memory: ClerkArchive.ts, L7_Memory: indexer.py. No unassigned Clones may natively execute this without Hive Mind routing.
 

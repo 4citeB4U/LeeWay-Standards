@@ -1,8 +1,9 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.SKILL.PERFORMANCE_OPTIMIZATION
 TAG: AI.SKILL.PERFORMANCE_OPTIMIZATION.PERFORMANCE_ENGINEERING
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 COLOR_ONION_HEX:
 NEON=#39FF14
@@ -28,9 +29,8 @@ AUDIT
 ASSIGNED_SACRED_AGENTS:
 L4_Consensus: Sovereign-Auditor
 
-LICENSE:
-MIT
-*/
+LICENSE: MIT
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L4_Consensus: Sovereign-Auditor. No unassigned Clones may natively execute this without Hive Mind routing.
 

@@ -1,8 +1,9 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: AI.SKILL.AI_ML
 TAG: AI.SKILL.AI_ML.ML_MODEL_DEVELOPMENT
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 COLOR_ONION_HEX:
 NEON=#39FF14
@@ -28,9 +29,8 @@ AUDIT
 ASSIGNED_SACRED_AGENTS:
 L8_Delivery: AgentLee.ts (Prime Override)
 
-LICENSE:
-MIT
-*/
+LICENSE: MIT
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L8_Delivery: AgentLee.ts (Prime Override). No unassigned Clones may natively execute this without Hive Mind routing.
 

@@ -2,6 +2,7 @@
 LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.STANDARDS.FORMULA.GOVERNANCE
 TAG: LEEWAY.FORMULA.AGENT.MD
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 5WH:
 WHAT = Governance requirements for AGENT.md.
 WHY = Enforce canonical Formula consumption.
@@ -9,7 +10,7 @@ WHO = Creator and authenticated LeeWay contributors.
 WHERE = AGENT.md
 WHEN = 2026-11-26
 HOW = Apply canonical governance and executable admission.
-LICENSE = Not asserted; repository license decision pending.
+LICENSE: Not asserted; repository license decision pending.
 -->
 # LeeWay AGENT.md
 

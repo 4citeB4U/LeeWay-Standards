@@ -1,8 +1,9 @@
-/*
+<!--
 LEEWAY HEADER — DO NOT REMOVE
 
 REGION: DEV.DEVOPS
 TAG: DEV.DEVOPS.DOCKERFILE_CREATION
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 
 COLOR_ONION_HEX:
 NEON=#FF8C00
@@ -28,9 +29,8 @@ AUDIT
 ASSIGNED_SACRED_AGENTS:
 L2_Ingestion: Nexus.ts, L4_Consensus: GuardAegis.ts
 
-LICENSE:
-MIT
-*/
+LICENSE: MIT
+-->
 
 > **SOVEREIGN ALIGNMENT:** This skill is strictly executed by L2_Ingestion: Nexus.ts, L4_Consensus: GuardAegis.ts. No unassigned Clones may natively execute this without Hive Mind routing.
 
