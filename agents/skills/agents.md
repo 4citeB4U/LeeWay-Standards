@@ -1,3 +1,16 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.FORMULA.GOVERNANCE
+TAG: LEEWAY.FORMULA.AGENTS.SKILLS.AGENTS.MD
+5WH:
+WHAT = Governance requirements for agents/skills/agents.md.
+WHY = Enforce canonical Formula consumption.
+WHO = Creator and authenticated LeeWay contributors.
+WHERE = agents/skills/agents.md
+WHEN = 2026-11-26
+HOW = Apply canonical governance and executable admission.
+LICENSE = Not asserted; repository license decision pending.
+-->
 # Autonomous Agent Ecosystem
 
 The LeeWay Edge RTC framework operates via an automated task force of intelligence modules. Rather than a flat, unmanaged codebase, the entire WebRTC environment is stewarded by specialized agents that monitor, repair, and enforce architectural integrity.

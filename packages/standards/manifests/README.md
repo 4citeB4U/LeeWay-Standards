@@ -1,3 +1,16 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.FORMULA.GOVERNANCE
+TAG: LEEWAY.FORMULA.PACKAGES.STANDARDS.MANIFESTS.README.MD
+5WH:
+WHAT = Governance requirements for packages/standards/manifests/README.md.
+WHY = Enforce canonical Formula consumption.
+WHO = Creator and authenticated LeeWay contributors.
+WHERE = packages/standards/manifests/README.md
+WHEN = 2026-11-26
+HOW = Apply canonical governance and executable admission.
+LICENSE = Not asserted; repository license decision pending.
+-->
 Agent manifests and runtime registration artifacts belong here.
 
 <!-- LEEWAY UNIVERSAL FORMULA GOVERNANCE BEGIN -->

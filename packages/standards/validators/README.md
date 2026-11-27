@@ -1,3 +1,16 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.FORMULA.GOVERNANCE
+TAG: LEEWAY.FORMULA.PACKAGES.STANDARDS.VALIDATORS.README.MD
+5WH:
+WHAT = Governance requirements for packages/standards/validators/README.md.
+WHY = Enforce canonical Formula consumption.
+WHO = Creator and authenticated LeeWay contributors.
+WHERE = packages/standards/validators/README.md
+WHEN = 2026-11-26
+HOW = Apply canonical governance and executable admission.
+LICENSE = Not asserted; repository license decision pending.
+-->
 Validators are hosted in LeeWay-Standards/src and consume standards contracts.
 
 <!-- LEEWAY UNIVERSAL FORMULA GOVERNANCE BEGIN -->

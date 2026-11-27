@@ -1,4 +1,17 @@
 <!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.FORMULA.GOVERNANCE
+TAG: LEEWAY.FORMULA.AGENT.LEE.PERSONA.SYSTEM.README.MD
+5WH:
+WHAT = Governance requirements for Agent_Lee_Persona_System/README.md.
+WHY = Enforce canonical Formula consumption.
+WHO = Creator and authenticated LeeWay contributors.
+WHERE = Agent_Lee_Persona_System/README.md
+WHEN = 2026-11-26
+HOW = Apply canonical governance and executable admission.
+LICENSE = Not asserted; repository license decision pending.
+-->
+<!--
 LEEWAY_HEADER - DO NOT REMOVE
 TAG: AI.PERSONA.MODULE.README
 REGION: 🧠 AI

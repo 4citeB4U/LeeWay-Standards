@@ -1,3 +1,16 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.FORMULA.GOVERNANCE
+TAG: LEEWAY.FORMULA.CONTRACTS.MD
+5WH:
+WHAT = Governance requirements for CONTRACTS.md.
+WHY = Enforce canonical Formula consumption.
+WHO = Creator and authenticated LeeWay contributors.
+WHERE = CONTRACTS.md
+WHEN = 2026-11-26
+HOW = Apply canonical governance and executable admission.
+LICENSE = Not asserted; repository license decision pending.
+-->
 # LeeWay CONTRACTS.md
 
 <!-- LEEWAY UNIVERSAL FORMULA GOVERNANCE BEGIN -->

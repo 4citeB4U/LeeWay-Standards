@@ -1,3 +1,16 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.FORMULA.GOVERNANCE
+TAG: LEEWAY.FORMULA.PACKAGES.STANDARDS.RECEIPTS.README.MD
+5WH:
+WHAT = Governance requirements for packages/standards/receipts/README.md.
+WHY = Enforce canonical Formula consumption.
+WHO = Creator and authenticated LeeWay contributors.
+WHERE = packages/standards/receipts/README.md
+WHEN = 2026-11-26
+HOW = Apply canonical governance and executable admission.
+LICENSE = Not asserted; repository license decision pending.
+-->
 Runtime receipts are written to LeeWay-Standards/receipts.
 This folder is reserved for packaged distribution artifacts.
 

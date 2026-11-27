@@ -1,3 +1,16 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.STANDARDS.FORMULA.GOVERNANCE
+TAG: LEEWAY.FORMULA.DOCS.GOVERNANCE.LEEWAY.UNIVERSAL.FORMULA.GOVERNANCE.LAW.MD
+5WH:
+WHAT = Governance requirements for Docs/governance/LEEWAY-UNIVERSAL-FORMULA-GOVERNANCE-LAW.md.
+WHY = Enforce canonical Formula consumption.
+WHO = Creator and authenticated LeeWay contributors.
+WHERE = Docs/governance/LEEWAY-UNIVERSAL-FORMULA-GOVERNANCE-LAW.md
+WHEN = 2026-11-26
+HOW = Apply canonical governance and executable admission.
+LICENSE = Not asserted; repository license decision pending.
+-->
 # LeeWay Universal Formula Governance
 
 Authority: Creator and LeeWay Standards.
